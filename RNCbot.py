@@ -1,7 +1,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 
-# Enable logging
+#### Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
@@ -10,16 +10,16 @@ logger = logging.getLogger(__name__)
 
 ###### Commands
 def start(bot, update):
-    update.message.reply_text('Hi!')
+    update.message.reply_text('Hi! /commands')
 
+def commands(bot, update):
+    update.message.reply_text("In RaidenCommunityBot commands:\n\n"
+        "/resources\n"
+        "/videos\n"
+        "/events")
 
 def help(bot, update):
     update.message.reply_text('Help!')
-
-
-def echo(bot, update):
-    """Echo the user message."""
-    update.message.reply_text(update.message.text)
 
 def resources(bot, update):
     update.message.reply_text('Raiden Network resources:\n\n'
@@ -30,7 +30,6 @@ def resources(bot, update):
 	    "Specification PDF media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf\n"
 	    "Medium Publications medium.com/@raiden_network\n"
 	    "Weekly Github Update reddit.com/user/bor4/posts/\n\n"
-
 	    "Feel free to PM me @RaidenCommunityInfoBot",disable_web_page_preview=1)
 
 def events(bot, update):
@@ -70,24 +69,21 @@ def error(bot, update, error):
     logger.warning('Update "%s" caused error "%s"', update, error)
 
 
-
-
+###### Running the bot
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("TOKEN")
+    updater = Updater("650990516:AAFlLI_ddf7g82irFs5JrVD3s8EZT2CfiII")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
 
     # Commands
     dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("commands", commands))
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("resources", resources))
     dp.add_handler(CommandHandler("events", events))
     dp.add_handler(CommandHandler("videos", videos))
-
-    # on noncommand i.e message - echo the message on Telegram
-    dp.add_handler(MessageHandler(Filters.text, echo))
 
     # log all errors
     dp.add_error_handler(error)
