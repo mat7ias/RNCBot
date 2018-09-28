@@ -43,9 +43,31 @@ def events(bot, update):
         "28/8 - Copenhagen Ethereum Meetup twitter.com/raiden_network/status/1030051960949551109\n"
         "19/7-20/7 - DappCon Lefteris and Augusto dappcon.io/#speakers",disable_web_page_preview=1)
 
+def videos(bot, update):
+    update.message.reply_text("Raiden Network videos/presentations:\n"
+        "Raiden youtube channel youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg\n"
+        "Brainbot Technologies channel youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos\n"
+        "Lefteris Raiden presentation youtu.be/93qOwUSj4PQ\n"
+        "Lefteris interview devcon3 youtu.be/00RPE96LRVM\n"
+        "The Raiden Network Heiko Hees devcon2 youtu.be/4igFqFqQga4\n"
+        "Edcon 2018 youtu.be/VsZuDJMmVPY?t=7h45m51s\n"
+        "Augusto explains Raiden oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687\n"
+        "On The L2 Summit State Channel Panel youtu.be/jzoS0tPUAiQ?t=2h10m9s\n"
+        "Off The Chain presentation youtu.be/8Duil4pLzhI\n"
+        "DAPPCON 2018 youtu.be/hSMIpl6e_Ow\n"
+        "DAPPCON 2018 Panel Talking State Channels and Plasma youtu.be/zmS0i3ZQZak\n"
+        "Copenhagen Ethereum Meetup Jacob youtu.be/arecj2vyjlE\n"
+        "Tackling Scalability Panel youtu.be/AH2g-KpPk7w\n\n"
+        "uRaiden videos:\n"
+        "uRaiden presentation Devcon3: youtu.be/yx0__aFvjzk?t=9m35s\n"
+        "uRaiden Berlin Meetup drone demo: youtube.com/watch?v=E6CIgJPxgpQ\n"
+        "ScalingNOW! Loredana talk: youtu.be/81gK-5qLFeg\n"
+        "Feel free to PM me @RaidenCommunityInfoBot"
+        ,disable_web_page_preview=1)
 
 
 
+###### Error logging
 def error(bot, update, error):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, error)
@@ -55,7 +77,7 @@ def error(bot, update, error):
 
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("")
+    updater = Updater("TOKEN")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -65,6 +87,7 @@ def main():
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("resources", resources))
     dp.add_handler(CommandHandler("events", events))
+    dp.add_handler(CommandHandler("videos", videos))
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
