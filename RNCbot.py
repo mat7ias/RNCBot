@@ -16,7 +16,8 @@ def commands(bot, update):
     update.message.reply_text("In RaidenCommunityBot commands:\n\n"
         "/resources\n"
         "/videos\n"
-        "/events")
+        "/events\n"
+        "/rules")
 
 def help(bot, update):
     update.message.reply_text('Help!')
@@ -62,6 +63,54 @@ def videos(bot, update):
         "Feel free to PM me @RaidenCommunityInfoBot"
         ,disable_web_page_preview=1)
 
+def whenmoon(bot, update):
+    update.message.reply_text("The speed of light is 299.8km/s (or 299.792.458"
+        "m/s). Average distance to moon is 384400km at the closest two points. "
+        "1.28 seconds on average for information travelling at the speed of"
+        "light to reach the Moon.\n"
+        "Although I think we can be more accurate about "When Moon" since the"
+        " distance fluctuates between 363104-405704km. Which means that if we"
+        "ignore computation/processing time the shortest time to moon is 1.21 "
+        "seconds (time for light to reach surface of the Moon from the Earth:"
+        "https://i.imgur.com/nj8q3db.png).\n"
+        "For the longest time we need to do a bit more and make some "
+        "assumptions. First is that being the longest distance also implied "
+        "that we have no direct line of sight and that we will need to send "
+        "our Raiden Network transfer with the help of either satellites."
+        "OneWeb are setting up satellites with a low earth orbit of 1200km "
+        "(https://en.wikipedia.org/wiki/OneWeb_satellite_constellation) so "
+        "let's assume that's our satellite orbit for the Earth.\n"
+        "For the Moon we will also need to send the Raiden Network transfer to "
+        "the furthest point and again need to use satellites. The lowest ""
+        "realistic lunar orbit is 15km (to avoid hitting lunar mountains, "
+        "which reach heights of 6.1km; "
+        "https://en.wikipedia.org/wiki/Lunar_orbit). \n"
+        "So now we need to find the distance for this path: "
+        "https://i.imgur.com/a8VxSnm.png"
+        "With some quick maths we can figure this distance out as such "
+        "https://i.imgur.com/1zNeIMt.png and our final maximum distance being ""
+        "a total of 431538km. Again if we ignore computation/processing time "
+        "between the Payee and Payer then we have a maximum transfer time of "
+        "1.44 seconds.\n"
+        "I am happy to officially announce that Raiden Network will Moon in "
+        "1.21-1.44 seconds once the milestone is reached in Q4 2018."
+        "Hope this helps!",disable_web_page_preview=1)
+
+def rules(bot, update):
+    update.message.reply_text("1) This channel is about freedom of speech, "
+        "but please keep in mind that it has its limits. Passionate debate is "
+        "welcome, but unreasonable disrespect to any fellow members of the "
+        "group (and especially the Raiden team) will not be tolerated. Doing "
+        "so may result in your message being removed (this will be discussed "
+        "with you in private messages)."
+        "2) Not allowed: referral links unrelated to Raiden, telegram channel "
+        "links, self promo media, pump and dump groups, NSFW content,  "
+        "excessive swearing, spam in general, doxxing.\n""
+        "3) Excessive trolling will result in removed messages."
+        "4) Please stay on topic, this channel is about the Raiden Network "
+        "and scaling.")
+
+
 
 
 ###### Error logging
@@ -72,7 +121,7 @@ def error(bot, update, error):
 ###### Running the bot
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("650990516:AAFlLI_ddf7g82irFs5JrVD3s8EZT2CfiII")
+    updater = Updater("TOKEN")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -84,6 +133,8 @@ def main():
     dp.add_handler(CommandHandler("resources", resources))
     dp.add_handler(CommandHandler("events", events))
     dp.add_handler(CommandHandler("videos", videos))
+    dp.add_handler(CommandHandler("whenmoon", whenmoon))
+    dp.add_handler(CommandHandler("rules", rules))
 
     # log all errors
     dp.add_error_handler(error)
