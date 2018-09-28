@@ -9,6 +9,14 @@ logger = logging.getLogger(__name__)
 
 
 ###### Commands
+
+###### To add your own follow the template of (for examples look below):
+######  def COMMAND(bot, update):
+######    update.message.reply_text("ADD TEXT HERE",disable_web_page_preview=1)
+###### Then make sure you add the commands section at the bottom. You got this!
+######    dp.add_handler(CommandHandler("COMMAND", rules))
+
+
 def start(bot, update):
     update.message.reply_text('Hi! /commands')
 
@@ -25,13 +33,12 @@ def heybot(bot, update):
 def resources(bot, update):
     update.message.reply_text('Raiden Network resources:\n\n'
         "Website raiden.network/\n"
-	"FAQ raiden.network/faq.html\n"
-	"Github github.com/raiden-network/raiden\n"
-	"Documentation readthedocs.org/projects/raiden-network/\n"
-	"Specification PDF media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf\n"
-	"Medium Publications medium.com/@raiden_network\n"
-	"Raiden Explorer [WIP] explorer.raiden.network/home"
-	"Weekly Github Update reddit.com/user/bor4/posts/\n\n"
+        "FAQ raiden.network/faq.html\n"
+        "Github github.com/raiden-network/raiden\n"
+        "Documentation readthedocs.org/projects/raiden-network/\n"
+        "Specification PDF media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf\n"
+        "Medium Publications medium.com/@raiden_network\n"
+        "Weekly Github Update reddit.com/user/bor4/posts/\n\n"
         "MicroRaiden:\n\n"
         "uRaiden site: micro.raiden.network/\n"
         "uRaiden codebase: github.com/raiden-network/microraiden\n"
@@ -128,12 +135,12 @@ def error(bot, update, error):
 ###### Running the bot
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("TOKEN")
+    updater = Updater("650990516:AAFlLI_ddf7g82irFs5JrVD3s8EZT2CfiII")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
 
-    # Commands
+##### Commands
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("commands", commands))
     dp.add_handler(CommandHandler("heybot", heybot))
