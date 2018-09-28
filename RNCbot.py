@@ -8,14 +8,12 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
-
+###### Commands
 def start(bot, update):
-    """Send a message when the command /start is issued."""
     update.message.reply_text('Hi!')
 
 
 def help(bot, update):
-    """Send a message when the command /help is issued."""
     update.message.reply_text('Help!')
 
 
@@ -69,7 +67,6 @@ def videos(bot, update):
 
 ###### Error logging
 def error(bot, update, error):
-    """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, error)
 
 
@@ -82,7 +79,7 @@ def main():
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
 
-    # on different commands - answer in Telegram
+    # Commands
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("resources", resources))
