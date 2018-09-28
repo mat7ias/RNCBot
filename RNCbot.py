@@ -30,6 +30,7 @@ def resources(bot, update):
 	"Documentation readthedocs.org/projects/raiden-network/\n"
 	"Specification PDF media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf\n"
 	"Medium Publications medium.com/@raiden_network\n"
+	"Raiden Explorer [WIP] explorer.raiden.network/home"
 	"Weekly Github Update reddit.com/user/bor4/posts/\n\n"
         "MicroRaiden:\n\n"
         "uRaiden site: micro.raiden.network/\n"
