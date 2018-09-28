@@ -25,12 +25,12 @@ def heybot(bot, update):
 def resources(bot, update):
     update.message.reply_text('Raiden Network resources:\n\n'
         "Website raiden.network/\n"
-	    "FAQ raiden.network/faq.html\n"
-	    "Github github.com/raiden-network/raiden\n"
-	    "Documentation readthedocs.org/projects/raiden-network/\n"
-	    "Specification PDF media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf\n"
-	    "Medium Publications medium.com/@raiden_network\n"
-	    "Weekly Github Update reddit.com/user/bor4/posts/\n\n"
+	"FAQ raiden.network/faq.html\n"
+	"Github github.com/raiden-network/raiden\n"
+	"Documentation readthedocs.org/projects/raiden-network/\n"
+	"Specification PDF media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf\n"
+	"Medium Publications medium.com/@raiden_network\n"
+	"Weekly Github Update reddit.com/user/bor4/posts/\n\n"
         "MicroRaiden:\n\n"
         "uRaiden site: micro.raiden.network/\n"
         "uRaiden codebase: github.com/raiden-network/microraiden\n"
