@@ -10,11 +10,6 @@ logger = logging.getLogger(__name__)
 
 ###### Commands
 
-###### To add your own follow the template of (for examples look below):
-######  def COMMAND(bot, update):
-######    update.message.reply_text("ADD TEXT HERE",disable_web_page_preview=1)
-###### Then make sure you add the commands section at the bottom. You got this!
-######    dp.add_handler(CommandHandler("COMMAND", rules))
 
 
 def start(bot, update):
