@@ -35,7 +35,7 @@ def start(bot, update):
     message_id = update.message.message_id
     pprint(update.message.chat.type)
 
-############################### Spam filter ####################################
+############################ Spam/Flood filter ##################################
 
 def sameuser(bot, update):
     user_id = update.message.from_user.id
@@ -80,7 +80,7 @@ def commands(bot, update):
         "/videos\n"
         "/events\n"
         "/rules\n"
-        "adminlist")
+        "/adminlist")
 
 def heybot(bot, update):
     update.message.reply_text('Hey!')
@@ -201,7 +201,7 @@ def error(bot, update, error):
 ###### Running the bot
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater(bot=bot,workers=10)
+    updater = Updater(bot_token)
 
 ##### Get the dispatcher to register handlers
     dp = updater.dispatcher
