@@ -11,7 +11,8 @@ import yaml
 import telegram
 
 #### Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - '
+                    '%(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -21,7 +22,9 @@ if os.path.isfile("config.ymal"):
     with open("config.ymal") as config_file:
         config = yaml.load(config_file)
 else:
-    exit("No configuration file 'config.json' found")
+    exit("No configuration file 'config.yaml' found")
+    sys.exit()
+
 
 ##### load config
 bot_token = config['bot_token']
@@ -35,7 +38,7 @@ def start(bot, update):
     message_id = update.message.message_id
     pprint(update.message.chat.type)
 
-############################ Spam/Flood filter ##################################
+############################ Spam/Flood filter #################################
 
 def sameuser(bot, update):
     user_id = update.message.from_user.id
@@ -54,8 +57,10 @@ def sameuser(bot, update):
                 bot.restrictChatMember(chat_id,
                 user_id = spammerid,
                 can_send_messages=False,
-                until_date=time.time()+int(float(30)*60)) # 30 min restriction
-                update.message.reply_text("You're typing at lightning speed! Cool off for 30min")
+                until_date=time.time()+int(float(60)*60)) # 30 min restriction
+                update.message.reply_text("You're typing at lightning speed! "
+                    "My flood filter has turned on to cool off that fire for"
+                    "an hour.")
 	        print("Flooder tripped")
             else:
                count = 0
@@ -91,7 +96,8 @@ def resources(bot, update):
         "FAQ raiden.network/faq.html\n"
         "Github github.com/raiden-network/raiden\n"
         "Documentation readthedocs.org/projects/raiden-network/\n"
-        "Specification PDF media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf\n"
+        "Specification PDF media.readthedocs.org/pdf/raiden-network-specificati"
+        "on/latest/raiden-network-specification.pdf\n"
         "Medium Publications medium.com/@raiden_network\n"
         "Weekly Github Update reddit.com/user/bor4/posts/\n\n"
         "MicroRaiden:\n\n"
@@ -105,24 +111,30 @@ def resources(bot, update):
 def events(bot, update):
     update.message.reply_text("Upcoming Events:\n\n"
         "Recent Events:\n"
-        "5/9 - Full Node: Mass adApption & use-cases https://www.eventbrite.com/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603\n"
+        "5/9 - Full Node: Mass adApption & use-cases https://www.eventbrite.com"
+        "/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603\n"
         "7/9-9/9 - ETHBerlin Scaling & Interoperability Panel ethberlin.com/\n"
-        "28/8 - Copenhagen Ethereum Meetup twitter.com/raiden_network/status/1030051960949551109\n"
-        "19/7-20/7 - DappCon Lefteris and Augusto dappcon.io/#speakers",disable_web_page_preview=1)
+        "28/8 - Copenhagen Ethereum Meetup twitter.com/raiden_network/status/10"
+        "30051960949551109\n"
+        "19/7-20/7 - DappCon Lefteris and Augusto dappcon.io/#speakers",
+        disable_web_page_preview=1)
 
 def videos(bot, update):
     update.message.reply_text("Raiden Network videos/presentations:\n"
         "Raiden youtube channel youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg\n"
-        "Brainbot Technologies channel youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos\n"
+        "Brainbot Technologies channel youtube.com/channel/UCAfSoSy9FK5UqlSxqcs"
+        "QElA/videos\n"
         "Lefteris Raiden presentation youtu.be/93qOwUSj4PQ\n"
         "Lefteris interview devcon3 youtu.be/00RPE96LRVM\n"
         "The Raiden Network Heiko Hees devcon2 youtu.be/4igFqFqQga4\n"
         "Edcon 2018 youtu.be/VsZuDJMmVPY?t=7h45m51s\n"
-        "Augusto explains Raiden oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687\n"
+        "Augusto explains Raiden oktahedron.diskordia.org/?podcast=oh007-raiden"
+        "#t=1:56.687\n"
         "On The L2 Summit State Channel Panel youtu.be/jzoS0tPUAiQ?t=2h10m9s\n"
         "Off The Chain presentation youtu.be/8Duil4pLzhI\n"
         "DAPPCON 2018 youtu.be/hSMIpl6e_Ow\n"
-        "DAPPCON 2018 Panel Talking State Channels and Plasma youtu.be/zmS0i3ZQZak\n"
+        "DAPPCON 2018 Panel Talking State Channels and Plasma youtu.be/zmS0i3ZQ"
+        "Zak\n"
         "Copenhagen Ethereum Meetup Jacob youtu.be/arecj2vyjlE\n"
         "Tackling Scalability Panel youtu.be/AH2g-KpPk7w\n\n"
         "uRaiden videos:\n"
@@ -137,8 +149,8 @@ def whenmoon(bot, update):
         "m/s). Average distance to moon is 384400km at the closest two points. "
         "1.28 seconds on average for information travelling at the speed of"
         "light to reach the Moon.\n"
-        """Although I think we can be more accurate about "When Moon" since the"""
-        " distance fluctuates between 363104-405704km. Which means that if we"
+        "Although I think we can be more accurate about When Moon since the "
+        "distance fluctuates between 363104-405704km. Which means that if we "
         "ignore computation/processing time the shortest time to moon is 1.21 "
         "seconds (time for light to reach surface of the Moon from the Earth:"
         "https://i.imgur.com/nj8q3db.png).\n"
