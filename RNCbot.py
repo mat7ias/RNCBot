@@ -59,7 +59,7 @@ def sameuser(bot, update):
                 can_send_messages=False,
                 until_date=time.time()+int(float(60)*60)) # 30 min restriction
                 update.message.reply_text("You're typing at lightning speed! "
-                    "My flood filter has turned on to cool off that fire for"
+                    "My flood filter has turned on to cool off that fire for "
                     "an hour.")
 	        print("Flooder tripped")
             else:
