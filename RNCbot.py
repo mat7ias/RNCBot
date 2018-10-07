@@ -1,26 +1,86 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
+from time import time
+from collections import deque
+from pathlib import Path
+import time
+import os
+from pprint import pprint
+import sys
+import yaml
+import telegram
 
 #### Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
-
 logger = logging.getLogger(__name__)
 
+##### Open config_file
+config = None
+if os.path.isfile("config.ymal"):
+    with open("config.ymal") as config_file:
+        config = yaml.load(config_file)
+else:
+    exit("No configuration file 'config.json' found")
 
-###### Commands
+##### load config
+bot_token = config['bot_token']
+bot = telegram.Bot(token=bot_token)
 
-
-
+# Start message
 def start(bot, update):
     update.message.reply_text('Hi! /commands')
+    user_id = update.message.from_user.id
+    chat_id = update.message.chat.id
+    message_id = update.message.message_id
+    pprint(update.message.chat.type)
+
+############################### Spam filter ####################################
+
+def sameuser(bot, update):
+    user_id = update.message.from_user.id
+    previous_user = config['previous_user_id']
+    count = config['msg_count']
+    spammerid = int
+    chat_id = update.message.chat.id
+
+    pprint(update.message.chat.type)
+
+    if (user_id == previous_user):
+        config['msg_count'] = count + 1
+        if (count >= 6):
+            if spammerid != user_id:
+                spammerid = user_id
+                bot.restrictChatMember(chat_id,
+                user_id = spammerid,
+                can_send_messages=False,
+                until_date=time.time()+int(float(30)*60)) # 30 min restriction
+                update.message.reply_text("You're typing at lightning speed! Cool off for 30min")
+	        print("Flooder tripped")
+            else:
+               count = 0
+    else:
+        count = 0
+        config['msg_count'] = count
+        config['previous_user_id'] = user_id
+
+
+
+################################ Commands ######################################
+
+###### To add your own follow the template of (for examples look below):
+###### def COMMAND(bot, update):
+###### update.message.reply_text("ADD TEXT HERE",disable_web_page_preview=1)
+###### Then make sure you add the commands section at the bottom. You got this!
+###### dp.add_handler(CommandHandler("COMMAND", command))
 
 def commands(bot, update):
     update.message.reply_text("In RaidenCommunityBot commands:\n\n"
         "/resources\n"
         "/videos\n"
         "/events\n"
-        "/rules")
+        "/rules\n"
+        "adminlist")
 
 def heybot(bot, update):
     update.message.reply_text('Hey!')
@@ -119,23 +179,34 @@ def rules(bot, update):
         "4) Please stay on topic, this channel is about the Raiden Network "
         "and scaling.")
 
+def adminlist(bot, update):
+    update.message.reply_text("RNC Admin List:\n\n"
+        "Mattias - @Mat7ias\n"
+        "Boris - @BOR44\n"
+        "Emil - @emiliorull\n"
+        "Chomsky - @Chomsky12\n"
+        "Ryan - @R2theD2\n"
+        "Tim - @Kaleaso\n"
+        "Hudazara - @Hudazara\n")
 
+def ignorethat(bot, update):
+    update.message.reply_text("I'm not sure I want to ignore that...")
 
+###############################################################################
 
 ###### Error logging
 def error(bot, update, error):
     logger.warning('Update "%s" caused error "%s"', update, error)
 
-
 ###### Running the bot
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("650990516:AAFlLI_ddf7g82irFs5JrVD3s8EZT2CfiII")
+    updater = Updater(bot=bot,workers=10)
 
-    # Get the dispatcher to register handlers
+##### Get the dispatcher to register handlers
     dp = updater.dispatcher
 
-##### Commands
+##### CommandHandlers
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("commands", commands))
     dp.add_handler(CommandHandler("heybot", heybot))
@@ -144,15 +215,18 @@ def main():
     dp.add_handler(CommandHandler("videos", videos))
     dp.add_handler(CommandHandler("whenmoon", whenmoon))
     dp.add_handler(CommandHandler("rules", rules))
+    dp.add_handler(CommandHandler("adminlist", adminlist))
+    dp.add_handler(CommandHandler("ignorethat", ignorethat))
 
-    # log all errors
+##### MessageHandlers
+    dp.add_handler(MessageHandler(Filters.all, sameuser))
+
+##### Log all errors
     dp.add_error_handler(error)
 
-    # Start the Bot
+# Start the Bot
     updater.start_polling()
-
     updater.idle()
-
 
 if __name__ == '__main__':
     main()
