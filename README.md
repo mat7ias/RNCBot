@@ -1,3 +1,3 @@
 # RNCbot
-CommunityTelegramBot
-t.me/RaidenCommunityInfoBot
+Telegram bot
+https://t.me/RaidenCommunityInfoBot
