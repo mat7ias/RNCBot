@@ -61,7 +61,7 @@ def sameuser(bot, update):
                 can_send_messages=False,
                 until_date=time.time()+int(float(60)*60)) # 60 min restriction
                 update.message.reply_text("You're typing at \xE2\x9A\xA1 speed!"
-                " My flood filter has turned on to cool off that ""
+                " My flood filter has turned on to cool off that "
                 "\xF0\x9F\x94\xA5 for an hour.")
                 pprint('Flooder tripped')
                 pprint(spammerid)
@@ -141,7 +141,8 @@ def videos(bot, update):
         "Zak\n"
         "Copenhagen Ethereum Meetup Jacob youtu.be/arecj2vyjlE\n"
         "Tackling Scalability Panel youtu.be/AH2g-KpPk7w\n"
-        "Mass Adoption and Use-Cases youtu.be/GrWqRVDOC4M\n\n"
+        "Mass Adoption and Use-Cases youtu.be/GrWqRVDOC4M\n"
+        "ETHBerlin view.ly/v/MrLm3vSB1XEK\n\n"
         "uRaiden videos:\n"
         "uRaiden presentation Devcon3: youtu.be/yx0__aFvjzk?t=9m35s\n"
         "uRaiden Berlin Meetup drone demo: youtube.com/watch?v=E6CIgJPxgpQ\n"
