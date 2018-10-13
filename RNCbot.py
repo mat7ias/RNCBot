@@ -79,8 +79,9 @@ def sameuser(bot, update):
 ###### To add your own follow the template of (for examples look below):
 ###### def COMMAND(bot, update):
 ###### update.message.reply_text("ADD TEXT HERE",disable_web_page_preview=1)
-###### Then make sure you add the commands section at the bottom. You got this!
+###### Then make sure you add the commands in the CommandHandler section:
 ###### dp.add_handler(CommandHandler("COMMAND", command))
+###### You got this!
 
 def commands(bot, update):
     update.message.reply_text("In RaidenCommunityBot commands:\n\n"
@@ -191,7 +192,7 @@ def rules(bot, update):
         "2) Not allowed: referral links unrelated to Raiden, telegram channel "
         "links, self promo media, pump and dump groups, NSFW content,  "
         "excessive swearing, spam in general, doxxing.\n"
-        "3) Excessive trolling will result in removed messages."
+        "3) Excessive trolling will result in removed messages.\n"
         "4) Please stay on topic, this channel is about the Raiden Network "
         "and scaling.")
 
