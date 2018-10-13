@@ -25,7 +25,6 @@ else:
     exit("No configuration file 'config.yaml' found")
     sys.exit()
 
-
 ##### load config
 bot_token = config['bot_token']
 bot = telegram.Bot(token=bot_token)
@@ -47,7 +46,6 @@ def sameuser(bot, update):
     spammerid = int
     chat_id = update.message.chat.id
     pprint(update.message.chat.type)
-
 
     if (user_id == previous_user) and (update.message.chat.type == 'supergroup'):
         config['msg_count'] = count + 1
@@ -71,8 +69,6 @@ def sameuser(bot, update):
         count = 0
         config['msg_count'] = count
         config['previous_user_id'] = user_id
-
-
 
 ################################ Commands ######################################
 
