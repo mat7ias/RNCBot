@@ -46,22 +46,25 @@ def sameuser(bot, update):
     count = config['msg_count']
     spammerid = int
     chat_id = update.message.chat.id
-
     pprint(update.message.chat.type)
 
-    if (user_id == previous_user):
+
+    if (user_id == previous_user) and (update.message.chat.type == 'supergroup'):
         config['msg_count'] = count + 1
+        if (count == 5):
+	    update.message.reply_text("\xF0\x9F\x8C\x8A")
         if (count >= 6):
             if spammerid != user_id:
                 spammerid = user_id
                 bot.restrictChatMember(chat_id,
                 user_id = spammerid,
                 can_send_messages=False,
-                until_date=time.time()+int(float(60)*60)) # 30 min restriction
-                update.message.reply_text("You're typing at lightning speed! "
-                    "My flood filter has turned on to cool off that fire for "
-                    "an hour.")
-	        print("Flooder tripped")
+                until_date=time.time()+int(float(60)*60)) # 60 min restriction
+                update.message.reply_text("You're typing at \xE2\x9A\xA1 speed!"
+                " My flood filter has turned on to cool off that ""
+                "\xF0\x9F\x94\xA5 for an hour.")
+                pprint('Flooder tripped')
+                pprint(spammerid)
             else:
                count = 0
     else:
@@ -105,7 +108,7 @@ def resources(bot, update):
         "uRaiden codebase: github.com/raiden-network/microraiden\n"
         "uRaiden docs: microraiden.readthedocs.io/en/docs-develop/\n"
         "uRaiden dev chat: gitter.im/raiden-network/microraiden\n"
-        "uRaiden testnet demos: demo.micro.raiden.network/\n"
+        "uRaiden testnet demos: demo.micro.raiden.network/\n\n"
         "Feel free to PM me @RaidenCommunityInfoBot",disable_web_page_preview=1)
 
 def events(bot, update):
@@ -136,11 +139,12 @@ def videos(bot, update):
         "DAPPCON 2018 Panel Talking State Channels and Plasma youtu.be/zmS0i3ZQ"
         "Zak\n"
         "Copenhagen Ethereum Meetup Jacob youtu.be/arecj2vyjlE\n"
-        "Tackling Scalability Panel youtu.be/AH2g-KpPk7w\n\n"
+        "Tackling Scalability Panel youtu.be/AH2g-KpPk7w\n"
+        "Mass Adoption and Use-Cases youtu.be/GrWqRVDOC4M\n\n"
         "uRaiden videos:\n"
         "uRaiden presentation Devcon3: youtu.be/yx0__aFvjzk?t=9m35s\n"
         "uRaiden Berlin Meetup drone demo: youtube.com/watch?v=E6CIgJPxgpQ\n"
-        "ScalingNOW! Loredana talk: youtu.be/81gK-5qLFeg\n"
+        "ScalingNOW! Loredana talk: youtu.be/81gK-5qLFeg\n\n"
         "Feel free to PM me @RaidenCommunityInfoBot"
         ,disable_web_page_preview=1)
 
