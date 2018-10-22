@@ -85,7 +85,9 @@ def commands(bot, update):
         "/videos\n"
         "/events\n"
         "/rules\n"
-        "/adminlist")
+        "/adminlist\n"
+        "/previousevents\n"
+        "/devcon4agenda\n")
 
 def heybot(bot, update):
     update.message.reply_text('Hey!')
@@ -219,6 +221,11 @@ def adminlist(bot, update):
 def ignorethat(bot, update):
     update.message.reply_text("I'm not sure I want to ignore that...")
 
+def devcon4agenda(bot, update):
+    update.message.reply_text("https://docs.google.com/spreadsheets/d/e/2PACX-1"
+    "vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7-QBRka1AAwKrX"
+    "O4kTP/pubhtml", disable_web_page_preview=1)
+
 ###############################################################################
 
 ###### Error logging
@@ -246,6 +253,7 @@ def main():
     dp.add_handler(CommandHandler("rules", rules))
     dp.add_handler(CommandHandler("adminlist", adminlist))
     dp.add_handler(CommandHandler("ignorethat", ignorethat))
+    dp.add_handler(CommandHandler("devcon4agenda", devcon4agenda))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.all, sameuser))
