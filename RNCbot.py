@@ -109,15 +109,25 @@ def resources(bot, update):
         "Feel free to PM me @RaidenCommunityInfoBot",disable_web_page_preview=1)
 
 def events(bot, update):
-    update.message.reply_text("Current Event:\n"
-        "Hacktoberfest github.com/raiden-network/raiden/labels/hacktoberfest\n"
-        "\nRecent Events:\n"
+    update.message.reply_text("Upcoming/Current Events:\n"
+        "29/10 - The Future of LAYER 2: Prague Edition bit.ly/2CWcwN5\n"
+        "1/11 - DevCon4 Raiden Workshop 1PM-3PM https://devcon4.ethereum.org/\n"
+        "1/10-31/10 - Hacktoberfest github.com/raiden-network/raiden/labels/"
+        "hacktoberfest",
+        disable_web_page_preview=1)
+
+def previousevents(bot, update):
+    update.message.reply_text("Previous Events:\n"
         "5/9 - Full Node: Mass adApption & use-cases www.eventbrite.com"
         "/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603\n"
         "7/9-9/9 - ETHBerlin Scaling & Interoperability Panel ethberlin.com/\n"
         "28/8 - Copenhagen Ethereum Meetup twitter.com/raiden_network/status/10"
         "30051960949551109\n"
-        "19/7-20/7 - DappCon Lefteris and Augusto dappcon.io/#speakers",
+        "19/7-20/7 - DappCon Lefteris and Augusto dappcon.io/#speakers\n"
+        "30/6-1/7 - Off The Chain Workshop in Berlin (Lefteris) binarydistrict."
+        "com/courses/master-workshop-off-the-chain/\n"
+        "18/5 - State Channel Panel for Boston layer 2 scaling workshop"
+        "bostonblockchaincommunity.com/",
         disable_web_page_preview=1)
 
 def videos(bot, update):
@@ -218,6 +228,7 @@ def error(bot, update, error):
 ###### Running the bot
 def main():
     # Create the EventHandler and pass it your bot's token.
+    print("Bot starting")
     updater = Updater(bot_token)
 
 ##### Get the dispatcher to register handlers
@@ -229,6 +240,7 @@ def main():
     dp.add_handler(CommandHandler("heybot", heybot))
     dp.add_handler(CommandHandler("resources", resources))
     dp.add_handler(CommandHandler("events", events))
+    dp.add_handler(CommandHandler("previousevents", previousevents))
     dp.add_handler(CommandHandler("videos", videos))
     dp.add_handler(CommandHandler("whenmoon", whenmoon))
     dp.add_handler(CommandHandler("rules", rules))
