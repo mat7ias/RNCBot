@@ -97,6 +97,8 @@ def resources(bot, update):
         "Website raiden.network/\n"
         "FAQ raiden.network/faq.html\n"
         "Github github.com/raiden-network/raiden\n"
+        "Raiden Explorer explorer.raiden.network/\n"
+        "Raiden Network Roadmap raiden.network/roadmap.html\n"
         "Documentation readthedocs.org/projects/raiden-network/\n"
         "Specification PDF media.readthedocs.org/pdf/raiden-network-specificati"
         "on/latest/raiden-network-specification.pdf\n"
@@ -113,14 +115,14 @@ def resources(bot, update):
 def events(bot, update):
     update.message.reply_text("Upcoming/Current Events:\n"
         "29/10 - The Future of LAYER 2: Prague Edition bit.ly/2CWcwN5\n"
-        "1/11 - DevCon4 Raiden Workshop 1PM-3PM https://devcon4.ethereum.org/\n"
+        "1/11 - DevCon4 Raiden Workshop 1PM-3PM devcon4.ethereum.org/\n"
         "1/10-31/10 - Hacktoberfest github.com/raiden-network/raiden/labels/"
         "hacktoberfest",
         disable_web_page_preview=1)
 
 def previousevents(bot, update):
     update.message.reply_text("Previous Events:\n"
-        "5/9 - Full Node: Mass adApption & use-cases www.eventbrite.com"
+        "5/9 - Full Node: Mass adApption & use-cases eventbrite.com"
         "/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603\n"
         "7/9-9/9 - ETHBerlin Scaling & Interoperability Panel ethberlin.com/\n"
         "28/8 - Copenhagen Ethereum Meetup twitter.com/raiden_network/status/10"
@@ -156,7 +158,8 @@ def videos(bot, update):
         "uRaiden videos:\n"
         "uRaiden presentation Devcon3: youtu.be/yx0__aFvjzk?t=9m35s\n"
         "uRaiden Berlin Meetup drone demo: youtube.com/watch?v=E6CIgJPxgpQ\n"
-        "ScalingNOW! Loredana talk: youtu.be/81gK-5qLFeg\n\n"
+        "ScalingNOW! Loredana talk: youtu.be/81gK-5qLFeg\n"
+        "Raiden Network Web Application Demo youtu.be/ASWeFdHDK-E\n\n"
         "Feel free to PM me @RaidenCommunityInfoBot"
         ,disable_web_page_preview=1)
 
@@ -235,7 +238,7 @@ def error(bot, update, error):
 ###### Running the bot
 def main():
     # Create the EventHandler and pass it your bot's token.
-    print("Bot starting")
+    print("Bot started")
     updater = Updater(bot_token)
 
 ##### Get the dispatcher to register handlers
