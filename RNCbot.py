@@ -80,7 +80,7 @@ def sameuser(bot, update):
 ###### You got this!
 
 def commands(bot, update):
-    update.message.reply_text("In RaidenCommunityBot commands:\n\n"
+    update.message.reply_text("My commands:\n\n"
         "/resources\n"
         "/videos\n"
         "/events\n"
@@ -154,14 +154,13 @@ def videos(bot, update):
         "Copenhagen Ethereum Meetup Jacob youtu.be/arecj2vyjlE\n"
         "Tackling Scalability Panel youtu.be/AH2g-KpPk7w\n"
         "Mass Adoption and Use-Cases youtu.be/GrWqRVDOC4M\n"
-        "ETHBerlin view.ly/v/MrLm3vSB1XEK\n\n"
-        "uRaiden videos:\n"
-        "uRaiden presentation Devcon3: youtu.be/yx0__aFvjzk?t=9m35s\n"
-        "uRaiden Berlin Meetup drone demo: youtube.com/watch?v=E6CIgJPxgpQ\n"
-        "ScalingNOW! Loredana talk: youtu.be/81gK-5qLFeg\n"
+        "ETHBerlin view.ly/v/MrLm3vSB1XEK\n"
         "Raiden Network Web Application Demo youtu.be/ASWeFdHDK-E\n\n"
-        "Feel free to PM me @RaidenCommunityInfoBot"
-        ,disable_web_page_preview=1)
+        "uRaiden videos:\n"
+        "uRaiden presentation Devcon3 youtu.be/yx0__aFvjzk?t=9m35s\n"
+        "uRaiden Berlin Meetup drone demo youtube.com/watch?v=E6CIgJPxgpQ\n"
+        "ScalingNOW! Loredana talk youtu.be/81gK-5qLFeg\n"
+        "Feel free to PM me @RaidenCommunityInfoBot",disable_web_page_preview=1)
 
 def whenmoon(bot, update):
     update.message.reply_text("The speed of light is 299.8km/s (or 299.792.458"
@@ -226,8 +225,54 @@ def ignorethat(bot, update):
 
 def devcon4agenda(bot, update):
     update.message.reply_text("https://docs.google.com/spreadsheets/d/e/2PACX-1"
-    "vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7-QBRka1AAwKrX"
-    "O4kTP/pubhtml", disable_web_page_preview=1)
+        "vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7-QBRka1AA"
+        "wKrXO4kTP/pubhtml", disable_web_page_preview=1)
+
+def adminpolicy(bot, update):
+    update.message.reply_text("RNC Admin Policy:\n\n"
+        "1.  Enforce the Rules of Conduct for RNC with the conditions below.\n"
+        "2.  No bans towards members regardless of how much they break the "
+        "Rules of Conduct, given they?re not obviously bots (refer to rule 4)"
+        "The most severe restriction available to non-bots is temporary "
+        "Read-Only. If it?s not clear if they?re a bot then PM the user and "
+        "judge depending on their response.\n"
+        "3.  Don't ban trolls but give a warning then remove messages if it "
+        "gets excessive and is breaking Rules of Conduct. We can collectively "
+        "discuss actions beyond that with active admins (if you?re the only "
+        "active admin and you decide urgent action is needed for the sake of "
+        "the community then do it).\n"
+        "4.  Stay censorship free focused. Never use admin rights to silence "
+        "other members on individual judgement. If Rules of Conduct for the "
+        "group is being broken then that requires a discussion with that "
+        "individual (starting with a warning referred to in rule 3) then if "
+        "they continue a discussion with active admins is needed on whether or "
+        "not to go ahead with temporarily restricting the user (starting with "
+        "a short/temporary restriction, usually 7 days or less). A restriction "
+        "can be requested to be reviewed at any point.\n"
+        "5.  Ban obvious non-human bots (or restrict them to read only).\n"
+        "6.  In regards to direct shilling, make it clear this is a Raiden "
+        "focused group and staying on topic is part of the Rules and Conduct "
+        "in the Pinned Message. For indirect shilling please be polite and try "
+        "and steer the conversation back to Raiden if you feel it's having a "
+        "negative impact.\n"
+        "7. Excessively negative comments towards other Raiden "
+        "channel admins is not allowed by admins in the RNC group. Members can "
+        "talk about it how they want but remind them to keep it civil if they "
+        "start breaking RNC Rules Of Conduct.\n"
+        "8.  No changes to admins without cooperation and collaboration "
+        "between that active admin or if they?re MIA then all active admins. "
+        "Sometimes people don't want to mod anymore, that's fine as long "
+        "as you bring it up. Please don't go MIA due to not wanting to put in "
+        "effort to moderate. This isn?t a chore so if it feels that way please "
+        "let one of the other admins know before it gets to that point.\n"
+        "9.  Any changes to admin policy or significant changes to Rules of "
+        "Conduct and description/logo need a vote. Voting lasts for 24 hours "
+        "or until majority is reached. Obviously if someone has mentioned "
+        "they're on holidays or will be away this rule does not apply.\n"
+        "10.  No admin can help link someone's identity to their personal "
+        "account on telegram with the information they have within this "
+        "admin channel. That will result in possible suspension and "
+        "collaborative discussion of being removed from that admin of RNC.")
 
 ###############################################################################
 
@@ -257,6 +302,7 @@ def main():
     dp.add_handler(CommandHandler("adminlist", adminlist))
     dp.add_handler(CommandHandler("ignorethat", ignorethat))
     dp.add_handler(CommandHandler("devcon4agenda", devcon4agenda))
+    dp.add_handler(CommandHandler("adminpolicy", adminpolicy))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.all, sameuser))
