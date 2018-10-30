@@ -223,10 +223,11 @@ def adminlist(bot, update):
 def ignorethat(bot, update):
     update.message.reply_text("I'm not sure I want to ignore that...")
 
-def devcon4agenda(bot, update):
-    update.message.reply_text("https://docs.google.com/spreadsheets/d/e/2PACX-1"
-        "vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7-QBRka1AA"
-        "wKrXO4kTP/pubhtml", disable_web_page_preview=1)
+def devcon(bot, update):
+    update.message.reply_text("Agenda: https://docs.google.com/spreadsheets/d/"
+        "e/2PACX-1vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7"
+        "-QBRka1AAwKrXO4kTP/pubhtml\n"
+        "Livestream: https://devcon4.tv/", disable_web_page_preview=1)
 
 def adminpolicy(bot, update):
     update.message.reply_text("RNC Admin Policy:\n\n"
@@ -301,7 +302,7 @@ def main():
     dp.add_handler(CommandHandler("rules", rules))
     dp.add_handler(CommandHandler("adminlist", adminlist))
     dp.add_handler(CommandHandler("ignorethat", ignorethat))
-    dp.add_handler(CommandHandler("devcon4agenda", devcon4agenda))
+    dp.add_handler(CommandHandler("devcon", devcon))
     dp.add_handler(CommandHandler("adminpolicy", adminpolicy))
 
 ##### MessageHandlers
