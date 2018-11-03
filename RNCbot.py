@@ -113,15 +113,16 @@ def resources(bot, update):
         "Feel free to PM me @RaidenCommunityInfoBot",disable_web_page_preview=1)
 
 def events(bot, update):
-    update.message.reply_text("Upcoming/Current Events:\n"
-        "29/10 - The Future of LAYER 2: Prague Edition bit.ly/2CWcwN5\n"
-        "1/11 - DevCon4 Raiden Workshop 1PM-3PM devcon4.ethereum.org/\n"
-        "1/10-31/10 - Hacktoberfest github.com/raiden-network/raiden/labels/"
-        "hacktoberfest",
-        disable_web_page_preview=1)
+    update.message.reply_text("Upcoming Events:\n"
+        "TBD"
+        ,disable_web_page_preview=1)
 
 def previousevents(bot, update):
     update.message.reply_text("Previous Events:\n"
+        "31/10-2/11 - DevCon4 Raiden Workshop 1PM-3PM devcon4.ethereum.org/"
+        "29/10 - The Future of LAYER 2: Prague Edition bit.ly/2CWcwN5\n"
+        "1/10-31/10 - Hacktoberfest github.com/raiden-network/raiden/labels/"
+        "hacktoberfest\n"
         "5/9 - Full Node: Mass adApption & use-cases eventbrite.com"
         "/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603\n"
         "7/9-9/9 - ETHBerlin Scaling & Interoperability Panel ethberlin.com/\n"
@@ -212,13 +213,13 @@ def rules(bot, update):
 
 def adminlist(bot, update):
     update.message.reply_text("RNC Admin List:\n\n"
-        "Mattias - @Mat7ias\n"
         "Boris - @BOR44\n"
         "Emil - @emiliorull\n"
         "Chomsky - @Chomsky12\n"
         "Ryan - @R2theD2\n"
         "Tim - @Kaleaso\n"
-        "Hudazara - @Hudazara\n")
+        "Hudazara - @Hudazara\n"
+        "Mattias - @Mat7ias")
 
 def ignorethat(bot, update):
     update.message.reply_text("I'm not sure I want to ignore that...")
@@ -227,7 +228,13 @@ def devcon(bot, update):
     update.message.reply_text("Agenda: https://docs.google.com/spreadsheets/d/"
         "e/2PACX-1vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7"
         "-QBRka1AAwKrXO4kTP/pubhtml\n"
-        "Livestream: https://devcon4.tv/", disable_web_page_preview=1)
+        "Livestream: https://devcon4.tv/\n"
+        "Guidebook: https://guidebook.com/guide/117233/\n"
+        "Handy Devcon Events summary by EthereumJesus: https://docs.google.com/"
+        "spreadsheets/d/1gGlIdmx4AjtvRviAgL-PmqsO9y0-Lo2XXM5BHK_n188/edit#gid"
+        "=0\nGuide to Layer 2 at Devcon: https://www.reddit.com/r/raidennetwor"
+        "k/comments/9sx9d0/con_a_guide_to_layer_2_and_scaling_at_devcon/"
+        ,disable_web_page_preview=1)
 
 def adminpolicy(bot, update):
     update.message.reply_text("RNC Admin Policy:\n\n"
