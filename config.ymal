@@ -1,6 +1,5 @@
 #Load bot token
-"bot_token": 650990516:AAFlLI_ddf7g82irFs5JrVD3s8EZT2CfiII
-
+"bot_token": YOUR BOT TOKEN HERE
 #Flood filter
 "previous_user_id": 0
 "msg_count": 0
