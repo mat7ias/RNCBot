@@ -19,7 +19,7 @@ commands: >
 heybot: >
    Hey!
 
-resources: >
+resources: >-
    Raiden Network resources:
    [Website](https://raiden.network/)
    [FAQ](https://raiden.network/faq.html)
@@ -30,6 +30,7 @@ resources: >
    [Specification PDF](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
    [Medium Publications](https://medium.com/@raiden_network)
    [Weekly Github Update](https://reddit.com/user/bor4/posts/)
+   
    MicroRaiden:
    [uRaiden Website](https://micro.raiden.network/)
    [uRaiden Codebase](https://github.com/raiden-network/microraiden)
@@ -54,7 +55,7 @@ previousevents: >
    30/6-1/7 - [Off The Chain Workshop in Berlin (Lefteris)](binarydistrict.com/courses/master-workshop-off-the-chain/)
    18/5 - [State Channel Panel for Boston layer 2 scaling](workshopbostonblockchaincommunity.com/)
 
-videos: >
+videos: >-
    Raiden Network videos/presentations:
    [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
    [Brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
@@ -75,6 +76,7 @@ videos: >
    [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Lefteris
    [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
    [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
+   
    uRaiden videos:
    [uRaiden presentation Devcon3](youtu.be/yx0__aFvjzk?t=9m35s) - Loredana
    [uRaiden Berlin Meetup drone demo](youtube.com/watch?v=E6CIgJPxgpQ) - Loredana
