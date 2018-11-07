@@ -6,9 +6,9 @@
 "msg_count": 0
 
 #Messages
+#Messages
 commands: >
    My commands:
-
 
    /resources
 
@@ -28,38 +28,36 @@ heybot: >
 resources: >
    Raiden Network resources:
 
-   [Website](raiden.network/)
+   [Website](https://raiden.network/)
 
-   [FAQ](raiden.network/faq.html)
+   [FAQ](https://raiden.network/faq.html)
 
-   [Github](github.com/raiden-network/raiden)
+   [Github](https://github.com/raiden-network/raiden)
 
-   [Raiden Explorer](explorer.raiden.network/)
+   [Raiden Explorer](https://explorer.raiden.network/)
 
-   [Raiden Network Roadmap](raiden.network/roadmap.html)
+   [Raiden Network Roadmap](https://raiden.network/roadmap.html)
 
-   [Documentation](readthedocs.org/projects/raiden-network/)
+   [Documentation](https://readthedocs.org/projects/raiden-network/)
 
-   [Specification PDF](media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
+   [Specification PDF](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
 
-   [Medium Publications](medium.com/@raiden_network)
+   [Medium Publications](https://medium.com/@raiden_network)
 
-   [Weekly Github Update](reddit.com/user/bor4/posts/)
+   [Weekly Github Update](https://reddit.com/user/bor4/posts/)
 
 
    MicroRaiden:
 
+   [uRaiden site](https://micro.raiden.network/)
 
-   [uRaiden site](micro.raiden.network/)
+   [uRaiden codebase](https://github.com/raiden-network/microraiden)
 
-   [uRaiden codebase](github.com/raiden-network/microraiden)
+   [uRaiden docs](https://microraiden.readthedocs.io/en/docs-develop/)
 
-   [uRaiden docs](microraiden.readthedocs.io/en/docs-develop/)
+   [uRaiden dev chat](https://gitter.im/raiden-network/microraiden)
 
-   [uRaiden dev chat](gitter.im/raiden-network/microraiden)
-
-   [uRaiden testnet](demos: demo.micro.raiden.network/)
-
+   [uRaiden testnet](https://demo.micro.raiden.network/)
 
    Feel free to PM me @RaidenCommunityInfoBot
 
@@ -75,34 +73,34 @@ previousevents: >
    Previous Events:
 
 
-   31/10-2/11 - [DevCon4 Raiden Workshop 1PM-3PM devcon4.ethereum.org/29/10 - The Future of LAYER 2: Prague Edition (https://www.eventbrite.com/e/the-future-of-layer-2-prague-edition-tickets-51535876193)
+   31/10-2/11 - [DevCon4 Raiden Workshop 1PM-3PM devcon4.ethereum.org/29/10 - The Future of LAYER 2: Prague Edition](https://www.eventbrite.com/e/the-future-of-layer-2-prague-edition-tickets-51535876193)
 
-   1/10-31/10 - [Hacktoberfest (github.com/raiden-network/raiden/labels/hacktoberfest)
+   1/10-31/10 - [Hacktoberfest](github.com/raiden-network/raiden/labels/hacktoberfest)
 
-   5/9 - [Full Node: Mass adApption & use-cases (eventbrite.com/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603)
+   5/9 - [Full Node: Mass adApption & use-cases](eventbrite.com/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603)
 
-   7/9-9/9 - [ETHBerlin Scaling & Interoperability Panel (ethberlin.com/)
+   7/9-9/9 - [ETHBerlin Scaling & Interoperability Panel](ethberlin.com/)
 
-   28/8 - [Copenhagen Ethereum Meetup(twitter.com/raiden_network/status/1030051960949551109)
+   28/8 - [Copenhagen Ethereum Meetup](twitter.com/raiden_network/status/1030051960949551109)
 
-   19/7-20/7 - [DappCon Lefteris and Augusto(dappcon.io/#speakers)
+   19/7-20/7 - [DappCon Lefteris and Augusto](dappcon.io/#speakers)
 
-   30/6-1/7 - [Off The Chain Workshop in Berlin (Lefteris)(binarydistrict.com/courses/master-workshop-off-the-chain/)
+   30/6-1/7 - [Off The Chain Workshop in Berlin (Lefteris)](binarydistrict.com/courses/master-workshop-off-the-chain/)
 
-   18/5 - [State Channel Panel for Boston layer 2 scaling(workshopbostonblockchaincommunity.com/)
+   18/5 - [State Channel Panel for Boston layer 2 scaling](workshopbostonblockchaincommunity.com/)
 
 videos: >
    Raiden Network videos/presentations:
 
-   [Raiden youtube channel(youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
+   [Raiden youtube channel](youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
 
-   [Brainbot Technologies channel(youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
+   [Brainbot Technologies channel](youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
 
-   [Lefteris Raiden presentation(youtu.be/93qOwUSj4PQ)
+   [Lefteris Raiden presentation](youtu.be/93qOwUSj4PQ)
 
-   [Lefteris interview devcon3 (youtu.be/00RPE96LRVM)
+   [Lefteris interview devcon3](youtu.be/00RPE96LRVM)
 
-   [The Raiden Network Heiko Hees devcon2 (youtu.be/4igFqFqQga4)
+   [The Raiden Network Heiko Hees devcon2](youtu.be/4igFqFqQga4)
 
    [Edcon 2018](youtu.be/VsZuDJMmVPY?t=7h45m51s)
 
@@ -146,7 +144,7 @@ whenmoon: >
 
    For the longest time, we need to do a bit more and make some assumptions. First is that being the longest distance also implied that we have no direct line of sight and that we will need to send our Raiden Network transfer with the help of satellites. [OneWeb are setting up satellites with a low earth orbit of 1200km](https://en.wikipedia.org/wiki/OneWeb_satellite_constellation) so let's assume that's our satellite orbit for the Earth.
 
-   For the Moon, we will also need to send the Raiden Network transfer to the furthest point and again need to use satellites. The lowest realistic lunar orbit is 15km (to avoid hitting lunar mountains, [which reach heights of 6.1km](https://en.wikipedia.org/wiki/Lunar_orbit). 
+   For the Moon, we will also need to send the Raiden Network transfer to the furthest point and again need to use satellites. The lowest realistic lunar orbit is 15km (to avoid hitting lunar mountains, [which reach heights of 6.1km](https://en.wikipedia.org/wiki/Lunar_orbit).
 
    So now we need to find the distance [for this path](https://i.imgur.com/a8VxSnm.png).With some quick maths, we can figure this distance out as such [this](https://i.imgur.com/1zNeIMt.png) and our final maximum distance being a total of 431538km. Again if we ignore computation/processing time between the Payee and Payer then we have a maximum transfer time of 1.44 seconds.
 
@@ -154,7 +152,6 @@ whenmoon: >
 
 rules: >
    Raiden Network Community telegram channel rules:
-
 
    1) This channel is about freedom of speech, but please keep in mind that it has its limits. Passionate debate is welcome, but unreasonable disrespect to any fellow members of the group (and especially the Raiden team) will not be tolerated. Doing so may result in your message being removed (this will be discussed with you in private messages).
 
@@ -166,7 +163,6 @@ rules: >
 
 adminlist: >
    RNC Admin List:
-
 
    Boris - @BOR44
 
