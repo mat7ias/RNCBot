@@ -86,8 +86,7 @@ def commands(bot, update):
         "/events\n"
         "/rules\n"
         "/adminlist\n"
-        "/previousevents\n"
-        "/devcon4agenda\n")
+        "/previousevents\n")
 
 def heybot(bot, update):
     update.message.reply_text('Hey!')
@@ -114,7 +113,11 @@ def resources(bot, update):
 
 def events(bot, update):
     update.message.reply_text("Upcoming Events:\n"
-        "TBD"
+        "8/11 - Discover Raiden, a lightning payment solution for Ethereum me"
+        "etup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/\n"
+        "9/11 - Raiden Workshop: lightning payment solution for Ethereum with "
+        "its creators eventbrite.es/e/entradas-raiden-workshop-lightning-paymen"
+        "t-solution-for-ethereum-with-its-creators-52005322319"
         ,disable_web_page_preview=1)
 
 def previousevents(bot, update):
