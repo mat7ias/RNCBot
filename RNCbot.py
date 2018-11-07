@@ -75,35 +75,37 @@ def sameuser(bot, update):
 def commands(bot, update):
     chat_id = update.message.chat.id
     msg = config['commands']
-    bot.sendMessage(chat_id=chat_id,text=msg,disable_web_page_preview=1)
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def heybot(bot, update):
-    update.message.reply_text('Hey!')
+    chat_id = update.message.chat.id
+    msg = config['heybot']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def resources(bot, update):
     chat_id = update.message.chat.id
     msg = config['resources']
-    bot.sendMessage(chat_id=chat_id,text=msg,disable_web_page_preview=1)
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def events(bot, update):
     chat_id = update.message.chat.id
     msg = config['events']
-    bot.sendMessage(chat_id=chat_id,text=msg,disable_web_page_preview=1)
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def previousevents(bot, update):
     chat_id = update.message.chat.id
     msg = config['previousevents']
-    bot.sendMessage(chat_id=chat_id,text=msg,disable_web_page_preview=1)
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def videos(bot, update):
     chat_id = update.message.chat.id
     msg = config['videos']
-    bot.sendMessage(chat_id=chat_id,text=msg,disable_web_page_preview=1)
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def whenmoon(bot, update):
     chat_id = update.message.chat.id
     msg = config['whenmoon']
-    bot.sendMessage(chat_id=chat_id,text=msg,disable_web_page_preview=1)
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def rules(bot, update):
     chat_id = update.message.chat.id
@@ -116,7 +118,9 @@ def adminlist(bot, update):
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def ignorethat(bot, update):
-    update.message.reply_text("I'm not sure I want to ignore that...")
+    chat_id = update.message.chat.id
+    msg = config['ignorethat']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def devcon(bot, update):
     chat_id = update.message.chat.id
