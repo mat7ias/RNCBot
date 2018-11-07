@@ -132,6 +132,11 @@ def adminpolicy(bot, update):
     msg = config['adminpolicy']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def pulse(bot, update):
+    chat_id = update.message.chat.id
+    msg = config['pulse']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 ###############################################################################
 
 ###### Error logging
@@ -161,6 +166,7 @@ def main():
     dp.add_handler(CommandHandler("ignorethat", ignorethat))
     dp.add_handler(CommandHandler("devcon", devcon))
     dp.add_handler(CommandHandler("adminpolicy", adminpolicy))
+    dp.add_handler(CommandHandler("pulse", pulse))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.all, sameuser))
