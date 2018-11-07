@@ -22,40 +22,43 @@ commands: >
 
    /previousevents
 
+heybot: >
+   Hey!
+
 resources: >
    Raiden Network resources:
 
-   Website raiden.network/
+   [Website](raiden.network/)
 
-   FAQ raiden.network/faq.html
+   [FAQ](raiden.network/faq.html)
 
-   Github github.com/raiden-network/raiden
+   [Github](github.com/raiden-network/raiden)
 
-   Raiden Explorer explorer.raiden.network/
+   [Raiden Explorer](explorer.raiden.network/)
 
-   Raiden Network Roadmap raiden.network/roadmap.html
+   [Raiden Network Roadmap](raiden.network/roadmap.html)
 
-   Documentation readthedocs.org/projects/raiden-network/
+   [Documentation](readthedocs.org/projects/raiden-network/)
 
-   Specification PDF media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf
+   [Specification PDF](media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
 
-   Medium Publications medium.com/@raiden_network
+   [Medium Publications](medium.com/@raiden_network)
 
-   Weekly Github Update reddit.com/user/bor4/posts/
+   [Weekly Github Update](reddit.com/user/bor4/posts/)
 
 
    MicroRaiden:
 
 
-   uRaiden site: micro.raiden.network/
+   [uRaiden site](micro.raiden.network/)
 
-   uRaiden codebase: github.com/raiden-network/microraiden
+   [uRaiden codebase](github.com/raiden-network/microraiden)
 
-   uRaiden docs: microraiden.readthedocs.io/en/docs-develop/
+   [uRaiden docs](microraiden.readthedocs.io/en/docs-develop/)
 
-   uRaiden dev chat: gitter.im/raiden-network/microraiden
+   [uRaiden dev chat](gitter.im/raiden-network/microraiden)
 
-   uRaiden testnet demos: demo.micro.raiden.network/
+   [uRaiden testnet](demos: demo.micro.raiden.network/)
 
 
    Feel free to PM me @RaidenCommunityInfoBot
@@ -64,88 +67,88 @@ events: >
    Upcoming Events:
 
 
-   8/11 - Discover Raiden, a lightning payment solution for Ethereum meetup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/
+   8/11 - [Discover Raiden, a lightning payment solution for Ethereum](meetup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/)
 
-   9/11 - Raiden Workshop: lightning payment solution for Ethereum with its creators eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319
+   9/11 - [Raiden Workshop: lightning payment solution for Ethereum with its creators](eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319)
 
 previousevents: >
    Previous Events:
 
 
-   31/10-2/11 - DevCon4 Raiden Workshop 1PM-3PM devcon4.ethereum.org/29/10 - The Future of LAYER 2: Prague Edition bit.ly/2CWcwN5
+   31/10-2/11 - [DevCon4 Raiden Workshop 1PM-3PM devcon4.ethereum.org/29/10 - The Future of LAYER 2: Prague Edition (https://www.eventbrite.com/e/the-future-of-layer-2-prague-edition-tickets-51535876193)
 
-   1/10-31/10 - Hacktoberfest github.com/raiden-network/raiden/labels/hacktoberfest
+   1/10-31/10 - [Hacktoberfest (github.com/raiden-network/raiden/labels/hacktoberfest)
 
-   5/9 - Full Node: Mass adApption & use-cases eventbrite.com/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603
+   5/9 - [Full Node: Mass adApption & use-cases (eventbrite.com/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603)
 
-   7/9-9/9 - ETHBerlin Scaling & Interoperability Panel ethberlin.com/
+   7/9-9/9 - [ETHBerlin Scaling & Interoperability Panel (ethberlin.com/)
 
-   28/8 - Copenhagen Ethereum Meetup twitter.com/raiden_network/status/1030051960949551109
+   28/8 - [Copenhagen Ethereum Meetup(twitter.com/raiden_network/status/1030051960949551109)
 
-   19/7-20/7 - DappCon Lefteris and Augusto dappcon.io/#speakers
+   19/7-20/7 - [DappCon Lefteris and Augusto(dappcon.io/#speakers)
 
-   30/6-1/7 - Off The Chain Workshop in Berlin (Lefteris) binarydistrict.com/courses/master-workshop-off-the-chain/
+   30/6-1/7 - [Off The Chain Workshop in Berlin (Lefteris)(binarydistrict.com/courses/master-workshop-off-the-chain/)
 
-   18/5 - State Channel Panel for Boston layer 2 scaling workshopbostonblockchaincommunity.com/
+   18/5 - [State Channel Panel for Boston layer 2 scaling(workshopbostonblockchaincommunity.com/)
 
 videos: >
    Raiden Network videos/presentations:
 
-   Raiden youtube channel youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg
+   [Raiden youtube channel(youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
 
-   Brainbot Technologies channel youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos
+   [Brainbot Technologies channel(youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
 
-   Lefteris Raiden presentation youtu.be/93qOwUSj4PQ
+   [Lefteris Raiden presentation(youtu.be/93qOwUSj4PQ)
 
-   Lefteris interview devcon3 youtu.be/00RPE96LRVM
+   [Lefteris interview devcon3 (youtu.be/00RPE96LRVM)
 
-   The Raiden Network Heiko Hees devcon2 youtu.be/4igFqFqQga4
+   [The Raiden Network Heiko Hees devcon2 (youtu.be/4igFqFqQga4)
 
-   Edcon 2018 youtu.be/VsZuDJMmVPY?t=7h45m51s
+   [Edcon 2018](youtu.be/VsZuDJMmVPY?t=7h45m51s)
 
-   Augusto explains Raiden oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687
+   [Augusto explains Raiden](oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687)
 
-   On The L2 Summit State Channel Panel youtu.be/jzoS0tPUAiQ?t=2h10m9s
+   [On The L2 Summit State Channel Panel](youtu.be/jzoS0tPUAiQ?t=2h10m9s)
 
-   Off The Chain presentation youtu.be/8Duil4pLzhI
+   [Off The Chain presentation](youtu.be/8Duil4pLzhI)
 
-   DAPPCON 2018 youtu.be/hSMIpl6e_Ow
+   [DAPPCON 2018 (youtu.be/hSMIpl6e_Ow)
 
-   DAPPCON 2018 Panel Talking State Channels and Plasma youtu.be/zmS0i3ZQZak
+   [DAPPCON 2018 Panel Talking State Channels and Plasma](youtu.be/zmS0i3ZQZak)
 
-   Ethereum Asia Tour youtu.be/MI5vgqq1hzA
+   [Ethereum Asia Tour](youtu.be/MI5vgqq1hzA)
 
-   Copenhagen Ethereum Meetup Jacob youtu.be/arecj2vyjlE
+   [Copenhagen Ethereum Meetup Jacob](youtu.be/arecj2vyjlE)
 
-   Tackling Scalability Panel youtu.be/AH2g-KpPk7w
+   [Tackling Scalability Panel](youtu.be/AH2g-KpPk7w)
 
-   Mass Adoption and Use-Cases youtu.be/GrWqRVDOC4M
+   [Mass Adoption and Use-Cases](youtu.be/GrWqRVDOC4M)
 
-   ETHBerlin view.ly/v/MrLm3vSB1XEK
+   [ETHBerlin](view.ly/v/MrLm3vSB1XEK)
 
-   Raiden Network Web Application Demo youtu.be/ASWeFdHDK-E
+   [Raiden Network Web Application Demo](youtu.be/ASWeFdHDK-E)
 
 
    uRaiden videos:
 
-   uRaiden presentation Devcon3 youtu.be/yx0__aFvjzk?t=9m35s
+   [uRaiden presentation Devcon3](youtu.be/yx0__aFvjzk?t=9m35s)
 
-   uRaiden Berlin Meetup drone demo youtube.com/watch?v=E6CIgJPxgpQ
+   [uRaiden Berlin Meetup drone demo](youtube.com/watch?v=E6CIgJPxgpQ)
 
-   ScalingNOW! Loredana talk youtu.be/81gK-5qLFeg
+   [ScalingNOW! talk with Loredana](youtu.be/81gK-5qLFeg)
 
    Feel free to PM me @RaidenCommunityInfoBot
 
 whenmoon: >
    The speed of light is 299.8km/s (or 299.792.458m/s). Average distance to the Moon is 384400km at the closest two points. 1.28 seconds on average for information traveling at the speed of light to reach the Moon.
 
-   Although I think we can be more accurate about When Moon since the distance fluctuates between 363104-405704km. Which means that if we ignore computation/processing time the shortest time to the moon is 1.21 seconds (time for light to reach the surface of the Moon from the Earth: https://i.imgur.com/nj8q3db.png
+   Although I think we can be more accurate about When Moon since the distance fluctuates between 363104-405704km. Which means that if we ignore computation/processing time the shortest time to the moon is 1.21 seconds ([time for light to reach the surface of the Moon from the Earth](https://i.imgur.com/nj8q3db.png)).
 
-   For the longest time, we need to do a bit more and make some assumptions. First is that being the longest distance also implied that we have no direct line of sight and that we will need to send our Raiden Network transfer with the help of satellites. OneWeb are setting up satellites with a low earth orbit of 1200km (https://en.wikipedia.org/wiki/OneWeb_satellite_constellation) so let's assume that's our satellite orbit for the Earth.
+   For the longest time, we need to do a bit more and make some assumptions. First is that being the longest distance also implied that we have no direct line of sight and that we will need to send our Raiden Network transfer with the help of satellites. [OneWeb are setting up satellites with a low earth orbit of 1200km](https://en.wikipedia.org/wiki/OneWeb_satellite_constellation) so let's assume that's our satellite orbit for the Earth.
 
-   For the Moon, we will also need to send the Raiden Network transfer to the furthest point and again need to use satellites. The lowest realistic lunar orbit is 15km (to avoid hitting lunar mountains, which reach heights of 6.1km; https://en.wikipedia.org/wiki/Lunar_orbit).
+   For the Moon, we will also need to send the Raiden Network transfer to the furthest point and again need to use satellites. The lowest realistic lunar orbit is 15km (to avoid hitting lunar mountains, [which reach heights of 6.1km](https://en.wikipedia.org/wiki/Lunar_orbit). 
 
-   So now we need to find the distance for this path: https://i.imgur.com/a8VxSnm.pngWith some quick maths, we can figure this distance out as such https://i.imgur.com/1zNeIMt.png and our final maximum distance being a total of 431538km. Again if we ignore computation/processing time between the Payee and Payer then we have a maximum transfer time of 1.44 seconds.
+   So now we need to find the distance [for this path](https://i.imgur.com/a8VxSnm.png).With some quick maths, we can figure this distance out as such [this](https://i.imgur.com/1zNeIMt.png) and our final maximum distance being a total of 431538km. Again if we ignore computation/processing time between the Payee and Payer then we have a maximum transfer time of 1.44 seconds.
 
    I am happy to officially announce that Raiden Network will Moon in 1.21-1.44 seconds once the milestone is reached in Q4 2018.Hope this helps!
 
@@ -179,18 +182,21 @@ adminlist: >
 
    RNC Admin List:
 
+ignorethat: >
+   I'm not sure I want to ignore that...
+
 devcon: >
-   Devcon4 has finished but heres what happened!
+   Devcon4 has finished but here's some past resources if you're interested!
 
-   Agenda: https://docs.google.com/spreadsheets/d/e/2PACX-1vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7-QBRka1AAwKrXO4kTP/pubhtml
+   [Agenda](https://docs.google.com/spreadsheets/d/e/2PACX-1vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7-QBRka1AAwKrXO4kTP/pubhtml)
 
-   Livestream: https://devcon4.tv/
+   [Livestream](https://devcon4.tv/)
 
-   Guidebook: https://guidebook.com/guide/117233/
+   [Guidebook](https://guidebook.com/guide/117233/)
 
-   Handy Devcon Events summary by EthereumJesus: https://docs.google.com/spreadsheets/d/1gGlIdmx4AjtvRviAgL-PmqsO9y0-Lo2XXM5BHK_n188/edit#gid=0
+   [Handy Devcon Events summary by EthereumJesus](https://docs.google.com/spreadsheets/d/1gGlIdmx4AjtvRviAgL-PmqsO9y0-Lo2XXM5BHK_n188/edit#gid=0)
 
-   Guide to Layer 2 at Devcon: https://www.reddit.com/r/raidennetwork/comments/9sx9d0/con_a_guide_to_layer_2_and_scaling_at_devcon/
+   [Guide to Layer 2 at Devcon](https://www.reddit.com/r/raidennetwork/comments/9sx9d0/con_a_guide_to_layer_2_and_scaling_at_devcon/)
 
 adminpolicy: >
    RNC Admin Policy:
