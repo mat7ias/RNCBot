@@ -102,6 +102,11 @@ def videos(bot, update):
     msg = config['videos']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def uraiden(bot, update):
+    chat_id = update.message.chat.id
+    msg = config['uraiden']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 def whenmoon(bot, update):
     chat_id = update.message.chat.id
     msg = config['whenmoon']
@@ -160,6 +165,7 @@ def main():
     dp.add_handler(CommandHandler("events", events))
     dp.add_handler(CommandHandler("previousevents", previousevents))
     dp.add_handler(CommandHandler("videos", videos))
+    dp.add_handler(CommandHandler("uraiden", uraiden))
     dp.add_handler(CommandHandler("whenmoon", whenmoon))
     dp.add_handler(CommandHandler("rules", rules))
     dp.add_handler(CommandHandler("adminlist", adminlist))
