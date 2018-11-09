@@ -1,5 +1,5 @@
 #Load bot token
-"bot_token": YOUR BOT TOKEN HERE
+"bot_token": 650990516:AAHqUbCfFz4oDUJqM6KvNTASDosVbCzebxE
 
 #Flood filter
 "previous_user_id": 0
@@ -34,20 +34,20 @@ resources: >
 
 events: >
    Upcoming Events:
-   8/11 - [Discover Raiden, a lightning payment solution for Ethereum](meetup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/)
-   9/11 - [Raiden Workshop: lightning payment solution for Ethereum with its creators](eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319)
+   9/11 - [Raiden Workshop: lightning payment solution for Ethereum with its creators](https://eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319)
 
 previousevents: >
    Recent Events:
-   31/10-2/11 - [DevCon4](https://devcon4.ethereum.org/)
+   8/11 - [Discover Raiden, a lightning payment solution for Ethereum](https://meetup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/)
+   31/10-2/11 - [Devcon4](https://devcon4.ethereum.org/)
    29/10 - [The Future of LAYER 2: Prague Edition](https://www.eventbrite.com/e/the-future-of-layer-2-prague-edition-tickets-51535876193)
-   1/10-31/10 - [Hacktoberfest](github.com/raiden-network/raiden/labels/hacktoberfest)
-   5/9 - [Full Node: Mass adApption & use-cases](eventbrite.com/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603)
-   7/9-9/9 - [ETHBerlin Scaling & Interoperability Panel](ethberlin.com/)
-   28/8 - [Copenhagen Ethereum Meetup](twitter.com/raiden_network/status/1030051960949551109)
-   19/7-20/7 - [DappCon Lefteris and Augusto](dappcon.io/#speakers)
-   30/6-1/7 - [Off The Chain Workshop in Berlin (Lefteris)](binarydistrict.com/courses/master-workshop-off-the-chain/)
-   18/5 - [State Channel Panel for Boston layer 2 scaling](workshopbostonblockchaincommunity.com/)
+   1/10-31/10 - [Hacktoberfest](https://github.com/raiden-network/raiden/labels/hacktoberfest)
+   5/9 - [Full Node: Mass adApption & use-cases](https://eventbrite.com/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603)
+   7/9-9/9 - [ETHBerlin Scaling & Interoperability Panel](https://ethberlin.com/)
+   28/8 - [Copenhagen Ethereum Meetup](https://twitter.com/raiden_network/status/1030051960949551109)
+   19/7-20/7 - [DappCon Lefteris and Augusto](https://dappcon.io/#speakers)
+   30/6-1/7 - [Off The Chain Workshop in Berlin (Lefteris)](https://binarydistrict.com/courses/master-workshop-off-the-chain/)
+   18/5 - [State Channel Panel for Boston layer 2 scaling](https://workshopbostonblockchaincommunity.com/)
 
 videos: >
    Raiden Network videos/presentations:
@@ -56,7 +56,7 @@ videos: >
    [Devcon1](https://youtu.be/h791zjvf3uQ) - Heiko
    [Devcon2](https://youtu.be/4igFqFqQga4) - Heiko
    [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ) - Lefteris
-   [Oktahedron podcast](oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687) - Augusto
+   [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687) - Augusto
    [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
    [Asseth](https://youtu.be/93qOwUSj4PQ) - Lefteris
    [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s) - Lefteris
@@ -82,7 +82,6 @@ uraiden: >
    [Presentation Devcon3](https://youtu.be/yx0__aFvjzk?t=9m35s) - Loredana
    [Berlin Meetup drone demo](https://youtube.com/watch?v=E6CIgJPxgpQ) - Loredana
    [ScalingNOW!](https://youtu.be/81gK-5qLFeg) - Loredana
-   Feel free to PM me @RaidenCommunityInfoBot
 
 whenmoon: >
    The speed of light is 299.8km/s (or 299.792.458m/s). Average distance to the Moon is 384400km at the closest two points. 1.28 seconds on average for information traveling at the speed of light to reach the Moon.
@@ -124,4 +123,3 @@ pulse: >
    Raiden Pulse:
    [Raiden Pulse #1: News from July and August](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e)
    [Raiden Pulse #2: News from September and October](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67)
-
