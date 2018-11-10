@@ -107,7 +107,7 @@ def heybot(bot, update):
     message_id = update.message.message_id
     chat_id = update.message.chat.id
     msg = config['heybot']
-    update.message.reply_text("Hey "+str(update.message.chat.first_name)+"!")
+    update.message.reply_text("Hey "+str(update.message.from_user.first_name)+"!")
 
 def resources(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
