@@ -1,5 +1,5 @@
 #Load bot token
-"bot_token": TOKEN
+"bot_token": BOT_TOKEN
 
 #Flood filter
 "previous_user_id": 0
@@ -11,15 +11,26 @@ pmme: >
 
 commands: >
    My commands:
-   /resources
-   /videos
-   /pulse
-   /events
-   /rules
-   /adminlist
-   /previousevents
-   /uraiden
-   /adminpolicy
+   /resources - Raiden Network resources
+   /videos - Raiden Network related videos
+   /events - Upcoming events
+   /rules - RNC channel rules
+   /adminlist - List the admins of RNC
+   /uraiden - MicroRaiden resources
+   /contact - Raiden email
+   /extras - extra commands
+
+extras: >
+   /heybot - say hi!
+   /adminpolicy - RNC admin policy
+   /previousevents - previous events of 2018
+   /pulse - The Raiden Pulse series
+   /whenmoon - When?
+   /id - Print my telegram ID
+   /brainbot - Brainbot website and jobs
+   /nightly - Nightly releases
+   /releases - Github releases page
+   /ignorethat - Tell me to ignore what you just said
 
 start: >
    Hi
@@ -131,3 +142,16 @@ pulse: >
    Raiden Pulse:
    [Raiden Pulse #1: News from July and August](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e)
    [Raiden Pulse #2: News from September and October](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67)
+
+nightly: >
+   [Raiden Network Nightlies Releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html)
+
+releases: >
+   [Raiden Network Releases List](https://github.com/raiden-network/raiden/releases)
+
+contact: >
+   Raiden contact email: contact@raiden.network
+
+brainbot: >
+   [Brainbot labs](https://brainbot.li/)
+   [Jobs](https://angel.co/brainbot-group/jobs)
