@@ -102,6 +102,12 @@ def commands(bot, update):
     msg = config['commands']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def extras(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['extras']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 def heybot(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
@@ -198,6 +204,18 @@ def releases(bot, update):
     msg = config['releases']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def contact(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['contact']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
+def brainbot(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['brainbot']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 ###############################################################################
 
 ###### Error logging
@@ -217,6 +235,7 @@ def main():
     dp.add_handler(CommandHandler('id', getid))
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("commands", commands))
+    dp.add_handler(CommandHandler("extras", extras))
     dp.add_handler(CommandHandler("heybot", heybot))
     dp.add_handler(CommandHandler("resources", resources))
     dp.add_handler(CommandHandler("events", events))
@@ -232,6 +251,8 @@ def main():
     dp.add_handler(CommandHandler("pulse", pulse))
     dp.add_handler(CommandHandler("nightly", nightly))
     dp.add_handler(CommandHandler("releases", releases))
+    dp.add_handler(CommandHandler("contact", contact))
+    dp.add_handler(CommandHandler("brainbot", brainbot))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.all, sameuser))
