@@ -1,5 +1,5 @@
 #Load bot token
-"bot_token": BOT_TOKEN
+"bot_token": TOKEN
 
 #Flood filter
 "previous_user_id": 0
@@ -17,11 +17,11 @@ commands: >
    /rules - RNC channel rules
    /adminlist - List the admins of RNC
    /uraiden - MicroRaiden resources
-   /contact - Raiden email
-   /extras - extra commands
+   /email - Raiden contact email
+   /extras - Extra commands
 
 extras: >
-   /heybot - say hi!
+   /heybot - Say hi!
    /adminpolicy - RNC admin policy
    /previousevents - previous events of 2018
    /pulse - The Raiden Pulse series
@@ -149,7 +149,7 @@ nightly: >
 releases: >
    [Raiden Network Releases List](https://github.com/raiden-network/raiden/releases)
 
-contact: >
+email: >
    Raiden contact email: contact@raiden.network
 
 brainbot: >
