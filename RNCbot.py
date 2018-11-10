@@ -91,7 +91,7 @@ def start(bot, update):
     chat_id = update.message.chat.id
     if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
         msg = config['pmme']
-	bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1)
+        bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1)
     else:
         msg = config['start']
         update.message.reply_text("Hey "+str(update.message.chat.first_name)+"! Get a list of my commands with /commands")
@@ -104,9 +104,10 @@ def commands(bot, update):
 
 def heybot(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
+    message_id = update.message.message_id
     chat_id = update.message.chat.id
     msg = config['heybot']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    update.message.reply_text("Hey "+str(update.message.chat.first_name)+"!")
 
 def resources(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -170,9 +171,14 @@ def devcon(bot, update):
 
 def adminpolicy(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
+    message_id = update.message.message_id
     chat_id = update.message.chat.id
-    msg = config['adminpolicy']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
+        msg = config['pmme']
+        bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1)
+    else:
+        msg = config['adminpolicy']
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def pulse(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
