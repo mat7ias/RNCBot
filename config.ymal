@@ -1,5 +1,5 @@
 #Load bot token
-"bot_token": YOUR_TOKEN_HERE
+"bot_token": YOUR_TOKEN
 
 #Flood filter
 "previous_user_id": 0
@@ -7,7 +7,7 @@
 
 #Messages
 pmme: >
-   "Some things a better left for behind closed doors. PM me @RaidenCommunityInfoBot"
+   This response is too long for group chats. PM me @RaidenCommunityInfoBot
 
 commands: >
    My commands:
@@ -19,12 +19,15 @@ commands: >
    /adminlist
    /previousevents
    /uraiden
+   Private message only:
+   /adminpolicy
+   /whenmoon
 
 start: >
    Hey
 
 heybot: >
-   Hey!
+   Hey
 
 resources: >
    Raiden Network resources:
