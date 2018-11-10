@@ -1,5 +1,5 @@
 #Load bot token
-"bot_token": YOUR_BOT_TOKEN
+"bot_token": TOKEN
 
 #Flood filter
 "previous_user_id": 0
@@ -41,10 +41,11 @@ resources: >
 
 events: >
    Upcoming Events:
-   9/11 - [Raiden Workshop: lightning payment solution for Ethereum with its creators](https://eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319)
+   TBD
 
 previousevents: >
    Recent Events:
+   9/11 - [Raiden Workshop: lightning payment solution for Ethereum with its creators](https://eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319)
    8/11 - [Discover Raiden, a lightning payment solution for Ethereum](https://meetup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/)
    31/10-2/11 - [Devcon4](https://devcon4.ethereum.org/)
    29/10 - [The Future of LAYER 2: Prague Edition](https://www.eventbrite.com/e/the-future-of-layer-2-prague-edition-tickets-51535876193)
