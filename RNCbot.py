@@ -87,10 +87,11 @@ def getid(bot, update):
 
 def start(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
-
+    message_id = update.message.message_id
+    chat_id = update.message.chat.id
     if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
-		msg = random.choice(MESSAGES['pmme']) % (name)
-		bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1) 
+        msg = config['pmme']
+	bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1)
     else:
         msg = config['start']
         update.message.reply_text("Hey "+str(update.message.chat.first_name)+"! Get a list of my commands with /commands")
