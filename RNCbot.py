@@ -16,6 +16,13 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - '
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Configure Logging
+
+FORMAT = '%(asctime)s -- %(levelname)s -- %(module)s %(lineno)d -- %(message)s'
+logging.basicConfig(level=logging.INFO, format=FORMAT)
+logger = logging.getLogger('root')
+logger.info("Running "+sys.argv[0])
+
 ##### Open config_file
 config = None
 if os.path.isfile("config.ymal"):
@@ -29,13 +36,16 @@ else:
 bot_token = config['bot_token']
 bot = telegram.Bot(token=bot_token)
 
-# Start message
-def start(bot, update):
-    update.message.reply_text('Hi! /commands')
-    user_id = update.message.from_user.id
-    chat_id = update.message.chat.id
-    message_id = update.message.message_id
-    pprint(update.message.chat.type)
+def get_name(user):
+        try:
+            name = user.first_name
+        except (NameError, AttributeError):
+            try:
+                name = user.username
+            except (NameError, AttributeError):
+                logger.info("No username or first name")
+                return	""
+        return name
 
 ############################ Spam/Flood filter #################################
 
@@ -71,73 +81,100 @@ def sameuser(bot, update):
         config['previous_user_id'] = user_id
 
 ################################ Commands ######################################
+def getid(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    update.message.reply_text(str(update.message.chat.first_name)+" : "+str(update.message.chat.id))
+
+def start(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+
+    if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
+		msg = random.choice(MESSAGES['pmme']) % (name)
+		bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1) 
+    else:
+        msg = config['start']
+        update.message.reply_text("Hey "+str(update.message.chat.first_name)+"! Get a list of my commands with /commands")
 
 def commands(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['commands']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def heybot(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['heybot']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def resources(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['resources']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def events(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['events']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def previousevents(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['previousevents']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def videos(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['videos']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def uraiden(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['uraiden']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def whenmoon(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['whenmoon']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def rules(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['rules']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def adminlist(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['adminlist']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def ignorethat(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['ignorethat']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def devcon(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['devcon']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def adminpolicy(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['adminpolicy']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def pulse(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['pulse']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -158,6 +195,7 @@ def main():
     dp = updater.dispatcher
 
 ##### CommandHandlers
+    dp.add_handler(CommandHandler('id', getid))
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("commands", commands))
     dp.add_handler(CommandHandler("heybot", heybot))
