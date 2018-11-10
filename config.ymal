@@ -1,11 +1,14 @@
 #Load bot token
-"bot_token": 650990516:AAHqUbCfFz4oDUJqM6KvNTASDosVbCzebxE
+"bot_token": YOUR_TOKEN_HERE
 
 #Flood filter
 "previous_user_id": 0
 "msg_count": 0
 
 #Messages
+pmme: >
+   "Some things a better left for behind closed doors. PM me @RaidenCommunityInfoBot"
+
 commands: >
    My commands:
    /resources
@@ -16,6 +19,9 @@ commands: >
    /adminlist
    /previousevents
    /uraiden
+
+start: >
+   Hey
 
 heybot: >
    Hey!
@@ -46,7 +52,7 @@ previousevents: >
    7/9-9/9 - [ETHBerlin Scaling & Interoperability Panel](https://ethberlin.com/)
    28/8 - [Copenhagen Ethereum Meetup](https://twitter.com/raiden_network/status/1030051960949551109)
    19/7-20/7 - [DappCon Lefteris and Augusto](https://dappcon.io/#speakers)
-   30/6-1/7 - [Off The Chain Workshop in Berlin (Lefteris)](https://binarydistrict.com/courses/master-workshop-off-the-chain/)
+   30/6-1/7 - [Off The Chain Workshop in Berlin](https://binarydistrict.com/courses/master-workshop-off-the-chain/)
    18/5 - [State Channel Panel for Boston layer 2 scaling](https://workshopbostonblockchaincommunity.com/)
 
 videos: >
