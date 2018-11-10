@@ -1,8 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 from time import time
-from collections import deque
-from pathlib import Path
 import time
 import os
 from pprint import pprint
@@ -235,7 +233,6 @@ def main():
     dp.add_handler(CommandHandler('id', getid))
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("commands", commands))
-    dp.add_handler(CommandHandler("extras", extras))
     dp.add_handler(CommandHandler("heybot", heybot))
     dp.add_handler(CommandHandler("resources", resources))
     dp.add_handler(CommandHandler("events", events))
