@@ -1,5 +1,5 @@
 #Load bot token
-"bot_token": YOUR_TOKEN
+"bot_token": YOUR_BOT_TOKEN
 
 #Flood filter
 "previous_user_id": 0
@@ -19,12 +19,10 @@ commands: >
    /adminlist
    /previousevents
    /uraiden
-   Private message only:
    /adminpolicy
-   /whenmoon
 
 start: >
-   Hey
+   Hi
 
 heybot: >
    Hey
