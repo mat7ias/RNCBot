@@ -1,233 +1,133 @@
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-import logging
-from time import time
-from collections import deque
-from pathlib import Path
-import time
-import os
-from pprint import pprint
-import sys
-import yaml
-import telegram
+#Load bot token
+"bot_token": YOUR_BOT_TOKEN
 
-#### Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - '
-                    '%(message)s',
-                    level=logging.INFO)
-logger = logging.getLogger(__name__)
+#Flood filter
+"previous_user_id": 0
+"msg_count": 0
 
-# Configure Logging
+#Messages
+pmme: >
+   This response is too long for group chats. PM me @RaidenCommunityInfoBot
 
-FORMAT = '%(asctime)s -- %(levelname)s -- %(module)s %(lineno)d -- %(message)s'
-logging.basicConfig(level=logging.INFO, format=FORMAT)
-logger = logging.getLogger('root')
-logger.info("Running "+sys.argv[0])
+commands: >
+   My commands:
+   /resources
+   /videos
+   /pulse
+   /events
+   /rules
+   /adminlist
+   /previousevents
+   /uraiden
+   /adminpolicy
 
-##### Open config_file
-config = None
-if os.path.isfile("config.ymal"):
-    with open("config.ymal") as config_file:
-        config = yaml.load(config_file)
-else:
-    exit("No configuration file 'config.yaml' found")
-    sys.exit()
+start: >
+   Hi
 
-##### load config
-bot_token = config['bot_token']
-bot = telegram.Bot(token=bot_token)
+heybot: >
+   Hey
 
-def get_name(user):
-        try:
-            name = user.first_name
-        except (NameError, AttributeError):
-            try:
-                name = user.username
-            except (NameError, AttributeError):
-                logger.info("No username or first name")
-                return	""
-        return name
+resources: >
+   Raiden Network resources:
+   [Website](https://raiden.network/)
+   [FAQ](https://raiden.network/faq.html)
+   [Github](https://github.com/raiden-network/raiden)
+   [Raiden Explorer](https://explorer.raiden.network/)
+   [Raiden Network Roadmap](https://raiden.network/roadmap.html)
+   [Documentation](https://readthedocs.org/projects/raiden-network/)
+   [Specification PDF](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
+   [Medium Publications](https://medium.com/@raiden_network)
+   [Weekly Github Update](https://reddit.com/user/bor4/posts/)
 
-############################ Spam/Flood filter #################################
+events: >
+   Upcoming Events:
+   TBD
 
-def sameuser(bot, update):
-    user_id = update.message.from_user.id
-    previous_user = config['previous_user_id']
-    count = config['msg_count']
-    spammerid = int
-    chat_id = update.message.chat.id
-    pprint(update.message.chat.type)
+previousevents: >
+   Recent Events:
+   9/11 - [Raiden Workshop: lightning payment solution for Ethereum with its creators](https://eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319)
+   8/11 - [Discover Raiden, a lightning payment solution for Ethereum](https://meetup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/)
+   31/10-2/11 - [Devcon4](https://devcon4.ethereum.org/)
+   29/10 - [The Future of LAYER 2: Prague Edition](https://www.eventbrite.com/e/the-future-of-layer-2-prague-edition-tickets-51535876193)
+   1/10-31/10 - [Hacktoberfest](https://github.com/raiden-network/raiden/labels/hacktoberfest)
+   5/9 - [Full Node: Mass adApption & use-cases](https://eventbrite.com/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603)
+   7/9-9/9 - [ETHBerlin Scaling & Interoperability Panel](https://ethberlin.com/)
+   28/8 - [Copenhagen Ethereum Meetup](https://twitter.com/raiden_network/status/1030051960949551109)
+   19/7-20/7 - [DappCon Lefteris and Augusto](https://dappcon.io/#speakers)
+   30/6-1/7 - [Off The Chain Workshop in Berlin](https://binarydistrict.com/courses/master-workshop-off-the-chain/)
+   18/5 - [State Channel Panel for Boston layer 2 scaling](https://workshopbostonblockchaincommunity.com/)
 
-    if (user_id == previous_user) and (update.message.chat.type == 'supergroup'):
-        config['msg_count'] = count + 1
-        if (count == 5):
-	    update.message.reply_text("\xF0\x9F\x8C\x8A")
-        if (count >= 6):
-            if spammerid != user_id:
-                spammerid = user_id
-                bot.restrictChatMember(chat_id,
-                user_id = spammerid,
-                can_send_messages=False,
-                until_date=time.time()+int(float(60)*60)) # 60 min restriction
-                update.message.reply_text("You're typing at \xE2\x9A\xA1 speed!"
-                " My flood filter has turned on to cool off that "
-                "\xF0\x9F\x94\xA5 for an hour.")
-                pprint('Flooder tripped')
-                pprint(spammerid)
-            else:
-               count = 0
-    else:
-        count = 0
-        config['msg_count'] = count
-        config['previous_user_id'] = user_id
+videos: >
+   Raiden Network videos/presentations:
+   [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
+   [Brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
+   [Devcon1](https://youtu.be/h791zjvf3uQ) - Heiko
+   [Devcon2](https://youtu.be/4igFqFqQga4) - Heiko
+   [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ) - Lefteris
+   [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687) - Augusto
+   [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
+   [Asseth](https://youtu.be/93qOwUSj4PQ) - Lefteris
+   [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s) - Lefteris
+   [L2 Summit State Channel Panel](https://youtu.be/jzoS0tPUAiQ?t=2h10m9s) - Lefteris
+   [Off The Chain presentation](https://youtu.be/8Duil4pLzhI) - Lefteris
+   [DAPPCON 2018](https://youtu.be/hSMIpl6e_Ow) - Lefteris
+   [DAPPCON 2018 Panel Talking State Channels and Plasma](https://youtu.be/zmS0i3ZQZak) - Lefteris
+   [Ethereum Asia Tour](https://youtu.be/MI5vgqq1hzA) - Jacob
+   [Copenhagen Ethereum Meetup](https://youtu.be/arecj2vyjlE) - Jacob
+   [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w) - Lefteris
+   [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Lefteris
+   [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
+   [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
 
-################################ Commands ######################################
-def getid(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    update.message.reply_text(str(update.message.chat.first_name)+" : "+str(update.message.chat.id))
+uraiden: >
+   MicroRaiden:
+   [uRaiden Github](https://micro.raiden.network/)
+   [uRaiden Codebase](https://github.com/raiden-network/microraiden)
+   [uRaiden Docs](https://microraiden.readthedocs.io/en/docs-develop/)
+   [uRaiden Dev Chat](https://gitter.im/raiden-network/microraiden)
+   [uRaiden Demo](https://demo.micro.raiden.network/)
+   MicroRaiden videos:
+   [Presentation Devcon3](https://youtu.be/yx0__aFvjzk?t=9m35s) - Loredana
+   [Berlin Meetup drone demo](https://youtube.com/watch?v=E6CIgJPxgpQ) - Loredana
+   [ScalingNOW!](https://youtu.be/81gK-5qLFeg) - Loredana
 
-def start(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    message_id = update.message.message_id
-    chat_id = update.message.chat.id
-    if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
-        msg = config['pmme']
-        bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1)
-    else:
-        msg = config['start']
-        update.message.reply_text("Hey "+str(update.message.chat.first_name)+"! Get a list of my commands with /commands")
+whenmoon: >
+   The speed of light is 299.8km/s (or 299.792.458m/s). Average distance to the Moon is 384400km at the closest two points. 1.28 seconds on average for information traveling at the speed of light to reach the Moon.
+   Although I think we can be more accurate about When Moon since the distance fluctuates between 363104-405704km. Which means that if we ignore computation/processing time the shortest time to the moon is 1.21 seconds ([time for light to reach the surface of the Moon from the Earth](https://i.imgur.com/nj8q3db.png)).
+   For the longest time, we need to do a bit more and make some assumptions. First is that being the longest distance also implied that we have no direct line of sight and that we will need to send our Raiden Network transfer with the help of satellites. [OneWeb are setting up satellites with a low earth orbit of 1200km](https://en.wikipedia.org/wiki/OneWeb_satellite_constellation) so let's assume that's our satellite orbit for the Earth.
+   For the Moon, we will also need to send the Raiden Network transfer to the furthest point and again need to use satellites. The lowest realistic lunar orbit is 15km (to avoid hitting lunar mountains, [which reach heights of 6.1km](https://en.wikipedia.org/wiki/Lunar_orbit).
+   So now we need to find the distance [for this path](https://i.imgur.com/a8VxSnm.png). With some quick maths, we can figure this distance out as such [this](https://i.imgur.com/1zNeIMt.png) and our final maximum distance being a total of 431538km. Again if we ignore computation/processing time between the Payee and Payer then we have a maximum transfer time of 1.44 seconds.
+   I am happy to officially announce that Raiden Network will Moon in 1.21-1.44 seconds once the milestone is reached in Q4 2018.Hope this helps!
 
-def commands(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['commands']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+rules: >
+   Raiden Network Community telegram channel rules:
+   1) This channel is about freedom of speech, but please keep in mind that it has its limits. Passionate debate is welcome, but unreasonable disrespect to any fellow members of the group (and especially the Raiden team) will not be tolerated. Doing so may result in your message being removed (this will be discussed with you in private messages).
+   2) Not allowed: referral links unrelated to Raiden, telegram channel links, self promo media, pump and dump groups, NSFW content,  excessive swearing, spam in general, doxxing.
+   3) Excessive trolling will result in removed messages.
+   4) Please stay on topic, this channel is about the Raiden Network and scaling.
 
-def heybot(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    message_id = update.message.message_id
-    chat_id = update.message.chat.id
-    msg = config['heybot']
-    update.message.reply_text("Hey "+str(update.message.from_user.first_name)+"!")
+adminlist: >
+   RNC Admin List:
+   Boris - @BOR44
+   Emil - @emiliorull
+   Chomsky - @Chomsky12
+   Ryan - @R2theD2
+   Tim - @Kaleaso
+   Hudazara - @Hudazara
+   Mattias - @Mat7ias
 
-def resources(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['resources']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+ignorethat: >
+   I'm not sure I want to ignore that...
 
-def events(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['events']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+devcon: >
+   Devcon4 has finished but here's some past resources!
+   [Agenda](https://docs.google.com/spreadsheets/d/e/2PACX-1vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7-QBRka1AAwKrXO4kTP/pubhtml)
+   [Livestream](https://devcon4.tv/)
+   [Guidebook](https://guidebook.com/guide/117233/)
+   [Handy Devcon Events summary by EthereumJesus](https://docs.google.com/spreadsheets/d/1gGlIdmx4AjtvRviAgL-PmqsO9y0-Lo2XXM5BHK_n188/edit#gid=0)
+   [Guide to Layer 2 at Devcon](https://www.reddit.com/r/raidennetwork/comments/9sx9d0/con_a_guide_to_layer_2_and_scaling_at_devcon/)
 
-def previousevents(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['previousevents']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-def videos(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['videos']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-def uraiden(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['uraiden']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-def whenmoon(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['whenmoon']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-def rules(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['rules']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-def adminlist(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['adminlist']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-def ignorethat(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['ignorethat']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-def devcon(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['devcon']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-def adminpolicy(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    message_id = update.message.message_id
-    chat_id = update.message.chat.id
-    if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
-        msg = config['pmme']
-        bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1)
-    else:
-        msg = config['adminpolicy']
-        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-def pulse(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
-    chat_id = update.message.chat.id
-    msg = config['pulse']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
-###############################################################################
-
-###### Error logging
-def error(bot, update, error):
-    logger.warning('Update "%s" caused error "%s"', update, error)
-
-###### Running the bot
-def main():
-    # Create the EventHandler and pass it your bot's token.
-    print("Bot started")
-    updater = Updater(bot_token)
-
-##### Get the dispatcher to register handlers
-    dp = updater.dispatcher
-
-##### CommandHandlers
-    dp.add_handler(CommandHandler('id', getid))
-    dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CommandHandler("commands", commands))
-    dp.add_handler(CommandHandler("heybot", heybot))
-    dp.add_handler(CommandHandler("resources", resources))
-    dp.add_handler(CommandHandler("events", events))
-    dp.add_handler(CommandHandler("previousevents", previousevents))
-    dp.add_handler(CommandHandler("videos", videos))
-    dp.add_handler(CommandHandler("uraiden", uraiden))
-    dp.add_handler(CommandHandler("whenmoon", whenmoon))
-    dp.add_handler(CommandHandler("rules", rules))
-    dp.add_handler(CommandHandler("adminlist", adminlist))
-    dp.add_handler(CommandHandler("ignorethat", ignorethat))
-    dp.add_handler(CommandHandler("devcon", devcon))
-    dp.add_handler(CommandHandler("adminpolicy", adminpolicy))
-    dp.add_handler(CommandHandler("pulse", pulse))
-
-##### MessageHandlers
-    dp.add_handler(MessageHandler(Filters.all, sameuser))
-
-##### Log all errors
-    dp.add_error_handler(error)
-
-# Start the Bot
-    updater.start_polling()
-    updater.idle()
-
-if __name__ == '__main__':
-    main()
+pulse: >
+   Raiden Pulse:
+   [Raiden Pulse #1: News from July and August](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e)
+   [Raiden Pulse #2: News from September and October](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67)
