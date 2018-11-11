@@ -14,19 +14,19 @@ commands: >
    /resources - Raiden Network resources
    /videos - Raiden Network related videos
    /events - Upcoming events
-   /rules - RNC channel rules
-   /adminlist - List the admins of RNC
    /uraiden - MicroRaiden resources
    /email - Raiden contact email
    /extras - Extra commands
 
 extras: >
    /heybot - Say hi!
-   /adminpolicy - RNC admin policy
+   /adminlist - List the admins of @RaidenNetworkCommunity
+   /adminpolicy - @RaidenNetworkCommunity admin policy (PM)
+   /rules - RNC (@RaidenNetworkCommunity) channel rules
    /previousevents - previous events of 2018
    /pulse - The Raiden Pulse series
    /whenmoon - When?
-   /id - Print my telegram ID
+   /id - Print my telegram ID (PM)
    /brainbot - Brainbot website and jobs
    /nightly - Nightly releases
    /releases - Github releases page
@@ -89,6 +89,7 @@ videos: >
    [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Lefteris
    [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
    [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
+   [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
 
 uraiden: >
    MicroRaiden:
@@ -118,7 +119,7 @@ rules: >
    4) Please stay on topic, this channel is about the Raiden Network and scaling.
 
 adminlist: >
-   RNC Admin List:
+   RNC Admin List (@RaidenNetworkCommunity):
    Boris - @BOR44
    Emil - @emiliorull
    Chomsky - @Chomsky12
