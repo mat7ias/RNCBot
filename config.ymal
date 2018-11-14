@@ -15,21 +15,21 @@ commands: >
    /videos - Raiden Network related videos
    /events - Upcoming events
    /uraiden - MicroRaiden resources
-   /email - Raiden contact email
    /extras - Extra commands
 
 extras: >
    /heybot - Say hi!
    /adminlist - List the admins of @RaidenNetworkCommunity
-   /adminpolicy - @RaidenNetworkCommunity admin policy (PM)
-   /rules - RNC (@RaidenNetworkCommunity) channel rules
+   /adminpolicy - RNC admin policy (via PM)
+   /rules - RNC channel rules
    /previousevents - previous events of 2018
    /pulse - The Raiden Pulse series
    /whenmoon - When?
-   /id - Print my telegram ID (PM)
+   /id - Print my telegram ID (via PM)
    /brainbot - Brainbot website and jobs
    /nightly - Nightly releases
    /releases - Github releases page
+   /email - Raiden contact email
    /ignorethat - Tell me to ignore what you just said
 
 start: >
@@ -47,8 +47,11 @@ resources: >
    [Raiden Network Roadmap](https://raiden.network/roadmap.html)
    [Documentation](https://readthedocs.org/projects/raiden-network/)
    [Specification PDF](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
-   [Medium Publications](https://medium.com/@raiden_network)
-   [Weekly Github Update](https://reddit.com/user/bor4/posts/)
+   [Medium Publications](https://medium.com/@raiden_network) and [Blog](https://medium.com/raiden-network)
+   [Twitter](https://twitter.com/raiden_network)
+   [Reddit](https://www.reddit.com/r/raidennetwork)
+   [Weekly Reddit Github Update](https://reddit.com/user/bor4/posts/)
+   [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/)
 
 events: >
    Upcoming Events:
@@ -90,6 +93,7 @@ videos: >
    [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
    [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
    [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
+   [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI) - Mattias
 
 uraiden: >
    MicroRaiden:
@@ -119,7 +123,7 @@ rules: >
    4) Please stay on topic, this channel is about the Raiden Network and scaling.
 
 adminlist: >
-   RNC Admin List (@RaidenNetworkCommunity):
+   RNC Admin List:
    Boris - @BOR44
    Emil - @emiliorull
    Chomsky - @Chomsky12
@@ -127,9 +131,6 @@ adminlist: >
    Tim - @Kaleaso
    Hudazara - @Hudazara
    Mattias - @Mat7ias
-
-ignorethat: >
-   I'm not sure I want to ignore that...
 
 devcon: >
    Devcon4 has finished but here's some past resources!
@@ -140,7 +141,7 @@ devcon: >
    [Guide to Layer 2 at Devcon](https://www.reddit.com/r/raidennetwork/comments/9sx9d0/con_a_guide_to_layer_2_and_scaling_at_devcon/)
 
 pulse: >
-   Raiden Pulse:
+   Raiden [Pulse](https://medium.com/raiden-network):
    [Raiden Pulse #1: News from July and August](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e)
    [Raiden Pulse #2: News from September and October](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67)
 
