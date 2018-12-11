@@ -71,14 +71,23 @@ def sameuser(bot, update):
                 "\xF0\x9F\x94\xA5 for an hour.")
                 pprint('Flooder tripped')
                 pprint(spammerid)
-            else:
-               count = 0
+                count = 0
     else:
         count = 0
         config['msg_count'] = count
         config['previous_user_id'] = user_id
 
+################################ Welcome #######################################
+
+def welcome(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    message_id = update.message.message_id
+    chat_id = update.message.chat.id
+    msg = config['heybot']
+    update.message.reply_text("Welcome "+str(update.message.from_user.first_name)+"!")
+
 ################################ Commands ######################################
+
 def getid(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
@@ -110,6 +119,12 @@ def extras(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['extras']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
+def community(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['community']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def heybot(bot, update):
@@ -170,8 +185,7 @@ def adminlist(bot, update):
 def ignorethat(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
-    msg = config['ignorethat']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    update.message.reply_text("I'm not sure I want to ignore that, "+str(update.message.chat.first_name)+"...")
 
 def devcon(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -240,6 +254,7 @@ def main():
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("commands", commands))
     dp.add_handler(CommandHandler("extras", extras))
+    dp.add_handler(CommandHandler("community", community))
     dp.add_handler(CommandHandler("heybot", heybot))
     dp.add_handler(CommandHandler("resources", resources))
     dp.add_handler(CommandHandler("events", events))
@@ -260,6 +275,7 @@ def main():
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.all, sameuser))
+    dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, welcome))
 
 ##### Log all errors
     dp.add_error_handler(error)
