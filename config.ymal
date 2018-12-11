@@ -1,5 +1,5 @@
 #Load bot token
-"bot_token": TOKEN
+"bot_token": YOUR_TOKEN
 
 #Flood filter
 "previous_user_id": 0
@@ -18,18 +18,19 @@ commands: >
    /extras - Extra commands
 
 extras: >
-   /heybot - Say hi!
-   /adminlist - List the admins of @RaidenNetworkCommunity
-   /adminpolicy - RNC admin policy (via PM)
-   /rules - RNC channel rules
    /previousevents - previous events of 2018
    /pulse - The Raiden Pulse series
-   /whenmoon - When?
-   /id - Print my telegram ID (via PM)
+   /community - Community contributions
    /brainbot - Brainbot website and jobs
    /nightly - Nightly releases
    /releases - Github releases page
    /email - Raiden contact email
+   /heybot - Say hi!
+   /adminlist - List the admins of @RaidenNetworkCommunity
+   /adminpolicy - RNC telegram admin policy (via PM)
+   /rules - RNC telegram channel rules
+   /whenmoon - When?
+   /id - Print my telegram ID (via PM)
    /ignorethat - Tell me to ignore what you just said
 
 start: >
@@ -51,7 +52,12 @@ resources: >
    [Twitter](https://twitter.com/raiden_network)
    [Reddit](https://www.reddit.com/r/raidennetwork)
    [Weekly Reddit Github Update](https://reddit.com/user/bor4/posts/)
-   [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/)
+
+community: >
+   [TopRDNtransfers telegram channel](https://t.me/TopRDNtransfers) - @Kaleaso
+   [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/) - @Surferfc
+   [This bot!](https://github.com/mat7ias/RNCbot)
+   [Non-profit 3D printed Raiden souvenir](https://www.shapeways.com/shops/raiden)
 
 events: >
    Upcoming Events:
@@ -59,6 +65,7 @@ events: >
 
 previousevents: >
    Recent Events:
+   7/12-9/12 - [Sponsoring](https://twitter.com/neutral_project/status/1064436809600397312) at [ETHSingapore](https://ethsingapore.co/)
    9/11 - [Raiden Workshop: lightning payment solution for Ethereum with its creators](https://eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319)
    8/11 - [Discover Raiden, a lightning payment solution for Ethereum](https://meetup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/)
    31/10-2/11 - [Devcon4](https://devcon4.ethereum.org/)
@@ -94,6 +101,7 @@ videos: >
    [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
    [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
    [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI) - Mattias
+   [Devcon4 2018](https://youtu.be/v9UQlE2We50) - Lefteris
 
 uraiden: >
    MicroRaiden:
