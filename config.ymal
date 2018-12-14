@@ -1,5 +1,5 @@
 #Load bot token
-"bot_token": YOUR_TOKEN
+"bot_token": TOKEN
 
 #Flood filter
 "previous_user_id": 0
@@ -96,7 +96,7 @@ videos: >
    [Ethereum Asia Tour](https://youtu.be/MI5vgqq1hzA) - Jacob
    [Copenhagen Ethereum Meetup](https://youtu.be/arecj2vyjlE) - Jacob
    [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w) - Lefteris
-   [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Lefteris
+   [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Augusto
    [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
    [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
    [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
@@ -119,9 +119,9 @@ whenmoon: >
    The speed of light is 299.8km/s (or 299.792.458m/s). Average distance to the Moon is 384400km at the closest two points. 1.28 seconds on average for information traveling at the speed of light to reach the Moon.
    Although I think we can be more accurate about When Moon since the distance fluctuates between 363104-405704km. Which means that if we ignore computation/processing time the shortest time to the moon is 1.21 seconds ([time for light to reach the surface of the Moon from the Earth](https://i.imgur.com/nj8q3db.png)).
    For the longest time, we need to do a bit more and make some assumptions. First is that being the longest distance also implied that we have no direct line of sight and that we will need to send our Raiden Network transfer with the help of satellites. [OneWeb are setting up satellites with a low earth orbit of 1200km](https://en.wikipedia.org/wiki/OneWeb_satellite_constellation) so let's assume that's our satellite orbit for the Earth.
-   For the Moon, we will also need to send the Raiden Network transfer to the furthest point and again need to use satellites. The lowest realistic lunar orbit is 15km (to avoid hitting lunar mountains, [which reach heights of 6.1km](https://en.wikipedia.org/wiki/Lunar_orbit).
+   For the Moon, we will also need to send the Raiden Network transfer to the furthest point and again need to use satellites. The lowest realistic lunar orbit is 15km (to avoid hitting lunar mountains, [which reach heights of 6.1km](https://en.wikipedia.org/wiki/Lunar_orbit)).
    So now we need to find the distance [for this path](https://i.imgur.com/a8VxSnm.png). With some quick maths, we can figure this distance out as such [this](https://i.imgur.com/1zNeIMt.png) and our final maximum distance being a total of 431538km. Again if we ignore computation/processing time between the Payee and Payer then we have a maximum transfer time of 1.44 seconds.
-   I am happy to officially announce that Raiden Network will Moon in 1.21-1.44 seconds once the milestone is reached in Q4 2018.Hope this helps!
+   I am happy to officially announce that Raiden Network can Moon in 1.21-1.44 seconds. Hope this helps!
 
 rules: >
    Raiden Network Community telegram channel rules:
