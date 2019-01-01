@@ -21,6 +21,7 @@ extras: >
    /previousevents - previous events of 2018
    /pulse - The Raiden Pulse series
    /community - Community contributions
+   /tokenmodel - The Raiden Network Token Model
    /brainbot - Brainbot website and jobs
    /nightly - Nightly releases
    /releases - Github releases page
@@ -34,7 +35,7 @@ extras: >
    /ignorethat - Tell me to ignore what you just said
 
 start: >
-   Hi
+   Hi, start off with /commands
 
 heybot: >
    Hey
@@ -61,7 +62,7 @@ community: >
 
 events: >
    Upcoming Events:
-   TBD
+   March 5th-7th - [Ethereum Community Conference](https://ethcc.io/)
 
 previousevents: >
    Recent Events:
@@ -102,6 +103,7 @@ videos: >
    [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
    [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI) - Mattias
    [Devcon4 2018](https://youtu.be/v9UQlE2We50) - Lefteris
+   [Rock-Paper-Scissors on Raiden Network](https://youtu.be/Mv6Ukdu0Xso) - Loredana
 
 uraiden: >
    MicroRaiden:
@@ -165,6 +167,9 @@ email: >
 brainbot: >
    [Brainbot labs](https://brainbot.li/)
    [Jobs](https://angel.co/brainbot-group/jobs)
+
+tokenmodel: >
+   [The Raiden Network Token Model](https://medium.com/@raiden_network/the-raiden-network-token-model-9b6ef8d0b64)
 
 adminpolicy: >
    RNC Admin Policy:
