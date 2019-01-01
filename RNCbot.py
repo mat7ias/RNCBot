@@ -176,6 +176,12 @@ def rules(bot, update):
     msg = config['rules']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def tokenmodel(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['tokenmodel']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 def adminlist(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
@@ -185,7 +191,7 @@ def adminlist(bot, update):
 def ignorethat(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
-    update.message.reply_text("I'm not sure I want to ignore that, "+str(update.message.chat.first_name)+"...")
+    update.message.reply_text("I'm not sure I want to ignore that, "+str(update.message.from_user.first_name)+"...")
 
 def devcon(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -263,6 +269,7 @@ def main():
     dp.add_handler(CommandHandler("uraiden", uraiden))
     dp.add_handler(CommandHandler("whenmoon", whenmoon))
     dp.add_handler(CommandHandler("rules", rules))
+    dp.add_handler(CommandHandler("tokenmodel", tokenmodel))
     dp.add_handler(CommandHandler("adminlist", adminlist))
     dp.add_handler(CommandHandler("ignorethat", ignorethat))
     dp.add_handler(CommandHandler("devcon", devcon))
