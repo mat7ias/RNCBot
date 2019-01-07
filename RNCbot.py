@@ -240,6 +240,17 @@ def brainbot(bot, update):
     msg = config['brainbot']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def RemindMeIn5Years(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    update.message.reply_text("Setting a reminder for "+str(update.message.from_user.first_name)+" 5 years from now.")
+
+def disclaimer(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['disclaimer']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 ###############################################################################
 
 ###### Error logging
@@ -279,6 +290,8 @@ def main():
     dp.add_handler(CommandHandler("releases", releases))
     dp.add_handler(CommandHandler("email", email))
     dp.add_handler(CommandHandler("brainbot", brainbot))
+    dp.add_handler(CommandHandler("RemindMeIn5Years", RemindMeIn5Years))
+    dp.add_handler(CommandHandler("disclaimer", disclaimer))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.all, sameuser))
