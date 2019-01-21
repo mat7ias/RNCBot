@@ -251,6 +251,25 @@ def disclaimer(bot, update):
     msg = config['disclaimer']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def rapps(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['rapps']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
+def lefteris(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = bot.sendPhoto(chat_id=chat_id, photo=open("lefteris.jpg",'rb'))
+
+def weeklyupdate(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    user_id = update.message.from_user.id
+    if (user_id == ) or (user_id == 474621061):
+        msg = config['weeklyupdate']
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 ###############################################################################
 
 ###### Error logging
@@ -292,6 +311,9 @@ def main():
     dp.add_handler(CommandHandler("brainbot", brainbot))
     dp.add_handler(CommandHandler("RemindMeIn5Years", RemindMeIn5Years))
     dp.add_handler(CommandHandler("disclaimer", disclaimer))
+    dp.add_handler(CommandHandler("rapps", rapps))
+    dp.add_handler(CommandHandler("lefteris", lefteris))
+    dp.add_handler(CommandHandler("weeklyupdate", weeklyupdate))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.all, sameuser))
