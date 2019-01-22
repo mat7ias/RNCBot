@@ -34,6 +34,9 @@ else:
 bot_token = config['bot_token']
 bot = telegram.Bot(token=bot_token)
 
+ADMINS = config['ADMINS']
+
+
 def get_name(user):
         try:
             name = user.first_name
@@ -260,13 +263,14 @@ def rapps(bot, update):
 def lefteris(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
-    msg = bot.sendPhoto(chat_id=chat_id, photo=open("lefteris.jpg",'rb'))
+    if user_id in ADMINS:
+        msg = bot.sendPhoto(chat_id=chat_id, photo=open("lefteris.jpg",'rb'))
 
 def weeklyupdate(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
-    if (user_id == ) or (user_id == 474621061):
+    if user_id in ADMINS:
         msg = config['weeklyupdate']
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
@@ -278,7 +282,7 @@ def error(bot, update, error):
 
 ###### Running the bot
 def main():
-    # Create the EventHandler and pass it your bot's token.
+    # Create the EventHandler and pass it your bot's token.s
     print("Bot started")
     updater = Updater(bot_token)
 
