@@ -1,9 +1,14 @@
 #Load bot token
-"bot_token": YOUR_BOT_TOKEN
+"bot_token": BOT_TOKEN
 
 #Flood filter
 "previous_user_id": 0
 "msg_count": 0
+
+#Admins IDs
+ADMINS:
+  - 
+  -
 
 #Messages
 pmme: >
@@ -34,6 +39,7 @@ extras: >
   /id - Print my telegram ID (via PM)
   /ignorethat - Tell me to ignore what you just said
   /disclaimer - RNC telegram channel disclaimer
+  /rapps - A list of some apps implementing Raiden
 
 start: >
   Hi, start off with /commands
@@ -58,15 +64,17 @@ resources: >
 
 community: >
   Raideneer highlights:
-  [Raiden: Ethereum’s Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0) - Surferfc
+  [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0) - Surferfc
   [TopRDNtransfers telegram channel](https://t.me/TopRDNtransfers) - Kaleaso (Tim)
   [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/) - Surferfc
-  [This bot!](https://github.com/mat7ias/RNCbot)
-  [Non-profit 3D printed Raiden souvenir](https://www.shapeways.com/shops/raiden)
+  [This bot!](https://github.com/mat7ias/RNCbot) - Mattias
+  [Non-profit 3D printed Raiden souvenir](https://www.shapeways.com/shops/raiden) - Mattias
+  [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI) - Mattias
+  [Github Visualization](https://youtu.be/xqxTGF--Bhk) - Mattias
 
 events: >
   Upcoming Events:
-  January 31st - [GörliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
+  January 31st - [GoeliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
   February 4th - [CryptoMonday | Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)
   March 5th-7th - [Ethereum Community Conference](https://ethcc.io/)
   March 12th - [Mainz Crypto Community](https://www.meetup.com/Mainz-Crypto-Community/events/257370759/)
@@ -108,7 +116,6 @@ videos: >
   [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
   [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
   [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
-  [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI) - Mattias
   [Devcon4 2018](https://youtu.be/v9UQlE2We50) - Lefteris
   [Rock-Paper-Scissors on Raiden Network](https://youtu.be/Mv6Ukdu0Xso) - Loredana
 
@@ -203,4 +210,4 @@ adminpolicy: >
 weeklyupdate: >
   Hey guys, [Weekly Update 51](https://www.reddit.com/r/raidennetwork/comments/ai8fpo/git_weekly_update_51/) is up! :)
   TL;DR
-  Auxiliary services discussed into in more detail; a Pathfinding service (PFS) for routing payments is similarly comparable to a flight route application that we use anytime we need to make a flight with an intermediary airport (multihop). A Monitoring service (MS) will help ensure that @Mat7ias can’t cheat @BOR44 out of tokens while he’s offline.
+  Auxiliary services discussed into in more detail; a Pathfinding service (PFS) for routing payments is similarly comparable to a flight route application that we use anytime we need to make a flight with an intermediary airport (multihop). A Monitoring service (MS) will help ensure that @Mat7ias can't cheat @BOR44 out of tokens while he's offline.
