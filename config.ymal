@@ -211,3 +211,14 @@ weeklyupdate: >
   Hey guys, [Weekly Update 51](https://www.reddit.com/r/raidennetwork/comments/ai8fpo/git_weekly_update_51/) is up! :)
   TL;DR
   Auxiliary services discussed into in more detail; a Pathfinding service (PFS) for routing payments is similarly comparable to a flight route application that we use anytime we need to make a flight with an intermediary airport (multihop). A Monitoring service (MS) will help ensure that @Mat7ias can't cheat @BOR44 out of tokens while he's offline.
+
+mentions: >
+  [GridPlus](https://drive.google.com/file/d/0Bz90riPGRHquNDVXVE81RmppaUk/view)
+  [RightMesh](https://www.rightmesh.io/docs/RightMeshTechnicalWhitepaper3.1.pdf)
+  [EthFinex](https://www.bitfinex.com/ethfinex-whitepaper.pdf)
+  [Bitwin](https://token.bitwin.com/files/Bitwin-Whitepaper.pdf)
+  [EnjinCoin](https://enjincoin.io/enjincoin_whitepaper.pdf)
+  [Golem](https://golem.network/crowdfunding/Golemwhitepaper.pdf)
+  [Gnosis](https://twitter.com/koeppelmann/status/931572694000324608)
+  [SmartMesh/SmartRaiden](https://smartmesh.io/)
+  [Exchange Union](https://github.com/ExchangeUnion/Docs/blob/master/XU-TechnicalPaper.md)
