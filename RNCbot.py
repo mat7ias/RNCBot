@@ -23,8 +23,8 @@ logger.info("Running "+sys.argv[0])
 
 ##### Open config_file
 config = None
-if os.path.isfile("config.ymal"):
-    with open("config.ymal") as config_file:
+if os.path.isfile("config.yaml"):
+    with open("config.yaml") as config_file:
         config = yaml.load(config_file)
 else:
     exit("No configuration file 'config.yaml' found")
