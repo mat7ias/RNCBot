@@ -35,7 +35,7 @@ bot_token = config['bot_token']
 bot = telegram.Bot(token=bot_token)
 
 ADMINS = config['ADMINS']
-
+MENTIONTEAM = config['MENTIONTEAM']
 
 def get_name(user):
         try:
@@ -95,11 +95,7 @@ def getid(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
     chat_id = update.message.chat.id
-    if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
-        msg = config['pmme']
-        bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1)
-    else:
-        update.message.reply_text(str(update.message.chat.first_name)+" : "+str(update.message.chat.id))
+    update.message.reply_text(str(update.message.from_user.first_name)+" : "+str(update.message.from_user.id))
 
 def start(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -143,10 +139,10 @@ def resources(bot, update):
     msg = config['resources']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def events(bot, update):
+def conferences(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
-    msg = config['events']
+    msg = config['conferences']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def previousevents(bot, update):
@@ -274,6 +270,14 @@ def weeklyupdate(bot, update):
         msg = config['weeklyupdate']
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def mentions(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    user_id = update.message.from_user.id
+    if user_id in MENTIONTEAM:
+        msg = config['mentions']
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 ###############################################################################
 
 ###### Error logging
@@ -297,7 +301,7 @@ def main():
     dp.add_handler(CommandHandler("community", community))
     dp.add_handler(CommandHandler("heybot", heybot))
     dp.add_handler(CommandHandler("resources", resources))
-    dp.add_handler(CommandHandler("events", events))
+    dp.add_handler(CommandHandler("conferences", conferences))
     dp.add_handler(CommandHandler("previousevents", previousevents))
     dp.add_handler(CommandHandler("videos", videos))
     dp.add_handler(CommandHandler("uraiden", uraiden))
@@ -318,6 +322,7 @@ def main():
     dp.add_handler(CommandHandler("rapps", rapps))
     dp.add_handler(CommandHandler("lefteris", lefteris))
     dp.add_handler(CommandHandler("weeklyupdate", weeklyupdate))
+    dp.add_handler(CommandHandler("mentions", mentions))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.all, sameuser))
