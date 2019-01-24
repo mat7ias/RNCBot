@@ -266,7 +266,7 @@ def weeklyupdate(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
-    if user_id in ADMINS:
+    if (user_id in ADMINS) or (user_id in MENTIONTEAM):
         msg = config['weeklyupdate']
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
