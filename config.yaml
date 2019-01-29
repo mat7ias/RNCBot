@@ -1,6 +1,5 @@
-
 #Load bot token
-"bot_token": BOT_TOKEN
+"bot_token": YOUR_BOT_TOKEN
 
 #Flood filter
 "previous_user_id": 0
@@ -9,7 +8,12 @@
 #Admins IDs
 ADMINS:
   - 
-  -
+  - 
+
+MENTIONTEAM:
+  - 
+  - 
+  - 
 
 #Messages
 pmme: >
@@ -19,7 +23,7 @@ commands: >
   My commands:
   /resources - Raiden Network resources
   /videos - Raiden Network related videos
-  /events - Upcoming events
+  /conferences - Upcoming conferences or meetings
   /uraiden - MicroRaiden resources
   /extras - Extra commands
 
@@ -53,6 +57,7 @@ resources: >
   [Website](https://raiden.network/)
   [FAQ](https://raiden.network/faq.html)
   [Github](https://github.com/raiden-network/)
+  [Dev Chat](https://gitter.im/raiden-network/raiden)
   [Raiden Explorer](https://explorer.raiden.network/) ([Kovan](https://kovan.explorer.raiden.network), [Ropsten](https://ropsten.explorer.raiden.network), [Rinkeby](https://rinkeby.explorer.raiden.network))
   [Raiden Network Roadmap](https://raiden.network/roadmap.html)
   [Documentation](https://readthedocs.org/projects/raiden-network/)
@@ -68,17 +73,16 @@ community: >
   [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0) - Surferfc
   [TopRDNtransfers telegram channel](https://t.me/TopRDNtransfers) - Kaleaso (Tim)
   [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/) - Surferfc
-  [This bot!](https://github.com/mat7ias/RNCbot) - Mattias
-  [Non-profit 3D printed Raiden souvenir](https://www.shapeways.com/shops/raiden) - Mattias
-  [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI) - Mattias
-  [Github Visualization](https://youtu.be/xqxTGF--Bhk) - Mattias
+  [This bot!](https://github.com/mat7ias/RNCbot)
+  [Non-profit 3D printed Raiden souvenir](https://www.shapeways.com/shops/raiden)
+  [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI)
+  [Github Visualization](https://youtu.be/xqxTGF--Bhk)
 
-events: >
-  Upcoming Events:
-  January 31st - [GoeliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
+conferences: >
+  Upcoming conferences/meetings:
+  January 31st - [GoerliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
   February 4th - [CryptoMonday | Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)
   March 5th-7th - [Ethereum Community Conference](https://ethcc.io/)
-  March 12th - [Mainz Crypto Community](https://www.meetup.com/Mainz-Crypto-Community/events/257370759/)
 
 previousevents: >
   Recent Events:
@@ -103,7 +107,7 @@ videos: >
   [Devcon2](https://youtu.be/4igFqFqQga4) - Heiko
   [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ) - Lefteris
   [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687) - Augusto
-  [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
+  [Devcon3 interview](https://youtu.be/00RPE96LRVM) - Lefteris
   [Asseth](https://youtu.be/93qOwUSj4PQ) - Lefteris
   [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s) - Lefteris
   [L2 Summit State Channel Panel](https://youtu.be/jzoS0tPUAiQ?t=2h10m9s) - Lefteris
@@ -204,16 +208,17 @@ adminpolicy: >
   5.  Ban obvious non-human bots (or restrict them to read only).
   6.  In regards to direct shilling, make it clear this is a Raiden focused group and staying on topic is part of the Rules and Conduct in the Pinned Message. For indirect shilling please be polite and try and steer the conversation back to Raiden if you feel it's having a negative impact.
   7. Excessively negative comments towards other Raiden channel admins is not allowed by admins in the RNC group. Members can talk about it how they want but remind them to keep it civil if they start breaking RNC Rules Of Conduct.
-  8.  No changes to admins without cooperation and collaboration between that active admin or if they?re MIA then all active admins. Sometimes people don't want to mod anymore, that's fine as long as you bring it up. Please don't go MIA due to not wanting to put in effort to moderate. This isn?t a chore so if it feels that way please let one of the other admins know before it gets to that point.
+  8.  No changes to admins without cooperation and collaboration between that active admin or if they're MIA then all active admins. Sometimes people don't want to mod anymore, that's fine as long as you bring it up. Please don't go MIA due to not wanting to put in effort to moderate. This isn?t a chore so if it feels that way please let one of the other admins know before it gets to that point.
   9.  Any changes to admin policy or significant changes to Rules of Conduct and description/logo need a vote. Voting lasts for 24 hours or until majority is reached. Obviously if someone has mentioned they're on holidays or will be away this rule does not apply.
   10.  No admin can help link someone's identity to their personal account on telegram with the information they have within this admin channel. That will result in possible suspension and collaborative discussion of being removed from that admin of RNC.
 
 weeklyupdate: >
-  Hey guys, [Weekly Update 51](https://www.reddit.com/r/raidennetwork/comments/ai8fpo/git_weekly_update_51/) is up! :)
+  [Weekly Update 52](https://www.reddit.com/r/raidennetwork/comments/akme8i/git_weekly_update_52/) :)
   TL;DR
-  Auxiliary services discussed into in more detail; a Pathfinding service (PFS) for routing payments is similarly comparable to a flight route application that we use anytime we need to make a flight with an intermediary airport (multihop). A Monitoring service (MS) will help ensure that @Mat7ias can't cheat @BOR44 out of tokens while he's offline.
+  [Development update](https://medium.com/raiden-network/development-update-the-road-towards-ithaca-58c5d68954e0) on what's ahead regarding Raiden Service Bundle (RSB) and auxiliary services. Github development this we is focused on the road to Ithaca and [Raiden Services](https://github.com/raiden-network/raiden-services).
 
 mentions: >
+  Some of the mentions of Raiden:
   [GridPlus](https://drive.google.com/file/d/0Bz90riPGRHquNDVXVE81RmppaUk/view)
   [RightMesh](https://www.rightmesh.io/docs/RightMeshTechnicalWhitepaper3.1.pdf)
   [EthFinex](https://www.bitfinex.com/ethfinex-whitepaper.pdf)
