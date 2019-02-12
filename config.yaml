@@ -23,15 +23,16 @@ commands: >
   My commands:
   /resources - Raiden Network resources
   /videos - Raiden Network related videos
-  /conferences - Upcoming conferences or meetings
+  /conferences - Upcoming events
   /uraiden - MicroRaiden resources
   /extras - Extra commands
 
 extras: >
-  /previousevents - previous events of 2018
   /pulse - The Raiden Pulse series
   /community - Community contributions
+  /platforms - Discord/Slack/Riot
   /tokenmodel - The Raiden Network Token Model
+  /previousevents - previous conferences/events
   /brainbot - Brainbot website and jobs
   /nightly - Nightly releases
   /releases - Github releases page
@@ -78,15 +79,22 @@ community: >
   [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI)
   [Github Visualization](https://youtu.be/xqxTGF--Bhk)
 
+platforms: >
+  Connect to the RNC community through different platforms!
+  [Discord](https://discord.gg/zZjYJ6e)
+  [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI)
+  [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org)
+
 conferences: >
   Upcoming conferences/meetings:
-  January 31st - [GoerliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
-  February 4th - [CryptoMonday | Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)
   March 5th-7th - [Ethereum Community Conference](https://ethcc.io/)
+  March 12th - [Mainz Crypto Community](https://www.meetup.com/Mainz-Crypto-Community/events/257370759/)
 
 previousevents: >
   Recent Events:
-  7/12-9/12 - [Sponsoring](https://twitter.com/neutral_project/status/1064436809600397312) at [ETHSingapore](https://ethsingapore.co/)
+  February 4th - [CryptoMonday | Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)
+  31/1/19 - [GoeliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
+  7/12-9/12/18 - [Sponsoring](https://twitter.com/neutral_project/status/1064436809600397312) at [ETHSingapore](https://ethsingapore.co/)
   9/11 - [Raiden Workshop: lightning payment solution for Ethereum with its creators](https://eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319)
   8/11 - [Discover Raiden, a lightning payment solution for Ethereum](https://meetup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/)
   31/10-2/11 - [Devcon4](https://devcon4.ethereum.org/)
@@ -107,7 +115,7 @@ videos: >
   [Devcon2](https://youtu.be/4igFqFqQga4) - Heiko
   [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ) - Lefteris
   [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687) - Augusto
-  [Devcon3 interview](https://youtu.be/00RPE96LRVM) - Lefteris
+  [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
   [Asseth](https://youtu.be/93qOwUSj4PQ) - Lefteris
   [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s) - Lefteris
   [L2 Summit State Channel Panel](https://youtu.be/jzoS0tPUAiQ?t=2h10m9s) - Lefteris
@@ -116,13 +124,16 @@ videos: >
   [DAPPCON 2018 Panel Talking State Channels and Plasma](https://youtu.be/zmS0i3ZQZak) - Lefteris
   [Ethereum Asia Tour](https://youtu.be/MI5vgqq1hzA) - Jacob
   [Copenhagen Ethereum Meetup](https://youtu.be/arecj2vyjlE) - Jacob
-  [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w) - Lefteris
+  [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w) - Heiko
   [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Augusto
   [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
   [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
   [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
   [Devcon4 2018](https://youtu.be/v9UQlE2We50) - Lefteris
   [Rock-Paper-Scissors on Raiden Network](https://youtu.be/Mv6Ukdu0Xso) - Loredana
+  [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0) - Franziska
+  [CryptoMonday 2nd Layer Scaling on Ethereum](https://youtu.be/piT0GeE7Rw4)(Deutsch) - Christian and Oliver
+  [Stanford Blockchain Conference](https://youtu.be/_irp4Jx0qjM) - Pedro Moreno-Sanchez
 
 uraiden: >
   MicroRaiden:
@@ -213,9 +224,9 @@ adminpolicy: >
   10.  No admin can help link someone's identity to their personal account on telegram with the information they have within this admin channel. That will result in possible suspension and collaborative discussion of being removed from that admin of RNC.
 
 weeklyupdate: >
-  [Weekly Update 52](https://www.reddit.com/r/raidennetwork/comments/akme8i/git_weekly_update_52/) :)
+  [Weekly Update 53](https://www.reddit.com/r/raidennetwork/comments/amzyw5/git_weekly_update_53/)
   TL;DR
-  [Development update](https://medium.com/raiden-network/development-update-the-road-towards-ithaca-58c5d68954e0) on what's ahead regarding Raiden Service Bundle (RSB) and auxiliary services. Github development this we is focused on the road to Ithaca and [Raiden Services](https://github.com/raiden-network/raiden-services).
+  Raiden [attending GoerliCon](https://twitter.com/ETHBerlin/status/1090945136907964418) and how Goerli testnet [might benefit Raiden](https://www.reddit.com/r/ethereum/comments/alrmc6/görli_testnet_just_launched_live_at_görlicon_the/efiqgzu). [Github target date](https://github.com/raiden-network/raiden/milestone/36) on the path towards Ithaca, Raiden will be at CryptoMonday ([Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/en-AU/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)).
 
 mentions: >
   Some of the mentions of Raiden:
@@ -229,7 +240,7 @@ mentions: >
   [SmartMesh/SmartRaiden](https://smartmesh.io/)
   [Exchange Union](https://github.com/ExchangeUnion/Docs/blob/master/XU-TechnicalPaper.md)
   [Augur](https://medium.com/@AugurProject/augur-master-plan-42dda65a3e3d)
-  [Altcoin.io](Altcoin.io) Atomic Swap DEX
+  [Altcoin.io](https://www.altcoin.io/) Atomic Swap DEX
   [Credit Protocol](https://blockmason.io/cp-whitepaper/Introduction-amp-Features/) Democratized credit
   [Energy Web Foundation](http://energyweb.org/wp-content/uploads/2017/11/EWF_Test_Network_Public_PR_Nov_1_2017.pdf)
   [Indahash](https://s3.eu-central-1.amazonaws.com/idh-files/ico-landing/indahash_whitepaper_ico.pdf)
