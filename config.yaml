@@ -7,253 +7,449 @@
 
 #Admins IDs
 ADMINS:
-  - 
-  - 
+  - 12356789
+  - 12356789
 
 MENTIONTEAM:
-  - 
-  - 
-  - 
+  - 12356789
+  - 12356789
+  - 12356789
 
 #Messages
 pmme: >
+
   This response is unavailable in group chats. PM me @RaidenCommunityInfoBot
 
 commands: >
+
   My commands:
+
   /resources - Raiden Network resources
+
   /videos - Raiden Network related videos
+
   /conferences - Upcoming events
+
   /uraiden - MicroRaiden resources
+
   /extras - Extra commands
 
 extras: >
+
   /pulse - The Raiden Pulse series
+
   /community - Community contributions
+
   /platforms - Discord/Slack/Riot
+
   /tokenmodel - The Raiden Network Token Model
+
   /previousevents - previous conferences/events
+
   /brainbot - Brainbot website and jobs
+
   /nightly - Nightly releases
+
   /releases - Github releases page
+
   /email - Raiden contact email
+
   /heybot - Say hi!
+
   /adminlist - List the admins of @RaidenNetworkCommunity
+
   /adminpolicy - RNC telegram admin policy (via PM)
+
   /rules - RNC telegram channel rules
+
   /whenmoon - When?
+
   /id - Print my telegram ID (via PM)
+
   /ignorethat - Tell me to ignore what you just said
+
   /disclaimer - RNC telegram channel disclaimer
+
   /rapps - A list of some apps implementing Raiden
 
 start: >
+
   Hi, start off with /commands
 
 heybot: >
+
   Hey
 
 resources: >
+
   Raiden Network resources:
+
   [Website](https://raiden.network/)
+
   [FAQ](https://raiden.network/faq.html)
+
   [Github](https://github.com/raiden-network/)
+
   [Dev Chat](https://gitter.im/raiden-network/raiden)
+
   [Raiden Explorer](https://explorer.raiden.network/) ([Kovan](https://kovan.explorer.raiden.network), [Ropsten](https://ropsten.explorer.raiden.network), [Rinkeby](https://rinkeby.explorer.raiden.network))
+
   [Raiden Network Roadmap](https://raiden.network/roadmap.html)
+
   [Documentation](https://readthedocs.org/projects/raiden-network/)
+
   [Specification PDF](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
+
   [Medium Publications](https://medium.com/@raiden_network) and [Blog](https://medium.com/raiden-network)
+
   [Twitter](https://twitter.com/raiden_network)
+
   [Reddit](https://www.reddit.com/r/raidennetwork)
+
   [Weekly Reddit Github Update](https://reddit.com/user/bor4/posts/)
+
   [Workshops](http://workshop.raiden.network)
 
 community: >
+
   Raideneer highlights:
+
   [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0) - Surferfc
+
   [TopRDNtransfers telegram channel](https://t.me/TopRDNtransfers) - Kaleaso (Tim)
+
   [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/) - Surferfc
+
   [This bot!](https://github.com/mat7ias/RNCbot)
+
   [Non-profit 3D printed Raiden souvenir](https://www.shapeways.com/shops/raiden)
+
   [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI)
+
   [Github Visualization](https://youtu.be/xqxTGF--Bhk)
 
 platforms: >
+
   Connect to the RNC community through different platforms!
+
   [Discord](https://discord.gg/zZjYJ6e)
+
   [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI)
+
   [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org)
 
 conferences: >
+
   Upcoming conferences/meetings:
-  March 5th-7th - [Ethereum Community Conference](https://ethcc.io/)
+
+  March 5th-7th - [Ethereum Community Conference](https://ethcc.io/), [schedule](https://ethcc.io/images/schedule/EthCC2.pdf)
+
   March 12th - [Mainz Crypto Community](https://www.meetup.com/Mainz-Crypto-Community/events/257370759/)
 
 previousevents: >
+
   Recent Events:
+
   February 4th - [CryptoMonday | Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)
+
   31/1/19 - [GoeliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
+
   7/12-9/12/18 - [Sponsoring](https://twitter.com/neutral_project/status/1064436809600397312) at [ETHSingapore](https://ethsingapore.co/)
+
   9/11 - [Raiden Workshop: lightning payment solution for Ethereum with its creators](https://eventbrite.es/e/entradas-raiden-workshop-lightning-payment-solution-for-ethereum-with-its-creators-52005322319)
+
   8/11 - [Discover Raiden, a lightning payment solution for Ethereum](https://meetup.com/Devcentralised-Developing-DApps-Barcelona/events/255964749/)
+
   31/10-2/11 - [Devcon4](https://devcon4.ethereum.org/)
+
   29/10 - [The Future of LAYER 2: Prague Edition](https://www.eventbrite.com/e/the-future-of-layer-2-prague-edition-tickets-51535876193)
+
   1/10-31/10 - [Hacktoberfest](https://github.com/raiden-network/raiden/labels/hacktoberfest)
+
   5/9 - [Full Node: Mass adApption & use-cases](https://eventbrite.com/e/mass-adapption-use-cases-golem-raiden-status-tickets-49559434603)
+
   7/9-9/9 - [ETHBerlin Scaling & Interoperability Panel](https://ethberlin.com/)
+
   28/8 - [Copenhagen Ethereum Meetup](https://twitter.com/raiden_network/status/1030051960949551109)
+
   19/7-20/7 - [DappCon Lefteris and Augusto](https://dappcon.io/#speakers)
+
   30/6-1/7 - [Off The Chain Workshop in Berlin](https://binarydistrict.com/courses/master-workshop-off-the-chain/)
+
   18/5 - [State Channel Panel for Boston layer 2 scaling](https://workshopbostonblockchaincommunity.com/)
 
 videos: >
+
   Raiden Network videos/presentations:
+
   [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
+
   [Brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
+
   [Devcon1](https://youtu.be/h791zjvf3uQ) - Heiko
+
   [Devcon2](https://youtu.be/4igFqFqQga4) - Heiko
+
   [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ) - Lefteris
+
   [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687) - Augusto
+
   [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
+
   [Asseth](https://youtu.be/93qOwUSj4PQ) - Lefteris
+
   [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s) - Lefteris
+
   [L2 Summit State Channel Panel](https://youtu.be/jzoS0tPUAiQ?t=2h10m9s) - Lefteris
+
   [Off The Chain presentation](https://youtu.be/8Duil4pLzhI) - Lefteris
+
   [DAPPCON 2018](https://youtu.be/hSMIpl6e_Ow) - Lefteris
-  [DAPPCON 2018 Panel Talking State Channels and Plasma](https://youtu.be/zmS0i3ZQZak) - Lefteris
+
+  [DAPPCON 2018 Panel Talking State Channels and Plasma](https://youtu.be/zmS0i3ZQZak) - Augusto
+
   [Ethereum Asia Tour](https://youtu.be/MI5vgqq1hzA) - Jacob
+
   [Copenhagen Ethereum Meetup](https://youtu.be/arecj2vyjlE) - Jacob
+
   [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w) - Heiko
+
   [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Augusto
+
   [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
+
   [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
+
   [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
+
   [Devcon4 2018](https://youtu.be/v9UQlE2We50) - Lefteris
+
   [Rock-Paper-Scissors on Raiden Network](https://youtu.be/Mv6Ukdu0Xso) - Loredana
+
   [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0) - Franziska
+
   [CryptoMonday 2nd Layer Scaling on Ethereum](https://youtu.be/piT0GeE7Rw4)(Deutsch) - Christian and Oliver
+
   [Stanford Blockchain Conference](https://youtu.be/_irp4Jx0qjM) - Pedro Moreno-Sanchez
 
+  [Nugget's News Interview](https://youtu.be/Cp8hprIjJHc) - Lefteris
+
 uraiden: >
+
   MicroRaiden:
+
   [uRaiden Github](https://micro.raiden.network/)
+
   [uRaiden Codebase](https://github.com/raiden-network/microraiden)
+
   [uRaiden Docs](https://microraiden.readthedocs.io/en/docs-develop/)
+
   [uRaiden Dev Chat](https://gitter.im/raiden-network/microraiden)
+
   [uRaiden Demo](https://demo.micro.raiden.network/)
+
   MicroRaiden videos:
+
   [Presentation Devcon3](https://youtu.be/yx0__aFvjzk?t=9m35s) - Loredana
+
   [Berlin Meetup drone demo](https://youtube.com/watch?v=E6CIgJPxgpQ) - Loredana
+
   [ScalingNOW!](https://youtu.be/81gK-5qLFeg) - Loredana
 
 whenmoon: >
+
   The speed of light is 299.8km/s (or 299.792.458m/s). Average distance to the Moon is 384400km at the closest two points. 1.28 seconds on average for information traveling at the speed of light to reach the Moon.
+
   Although I think we can be more accurate about When Moon since the distance fluctuates between 363104-405704km. Which means that if we ignore computation/processing time the shortest time to the moon is 1.21 seconds ([time for light to reach the surface of the Moon from the Earth](https://i.imgur.com/nj8q3db.png)).
+
   For the longest time, we need to do a bit more and make some assumptions. First is that being the longest distance also implied that we have no direct line of sight and that we will need to send our Raiden Network transfer with the help of satellites. [OneWeb are setting up satellites with a low earth orbit of 1200km](https://en.wikipedia.org/wiki/OneWeb_satellite_constellation) so let's assume that's our satellite orbit for the Earth.
+
   For the Moon, we will also need to send the Raiden Network transfer to the furthest point and again need to use satellites. The lowest realistic lunar orbit is 15km (to avoid hitting lunar mountains, [which reach heights of 6.1km](https://en.wikipedia.org/wiki/Lunar_orbit)).
+
   So now we need to find the distance [for this path](https://i.imgur.com/a8VxSnm.png). With some quick maths, we can figure this distance out as such [this](https://i.imgur.com/1zNeIMt.png) and our final maximum distance being a total of 431538km. Again if we ignore computation/processing time between the Payee and Payer then we have a maximum transfer time of 1.44 seconds.
+
   I am happy to officially announce that Raiden Network can Moon in 1.21-1.44 seconds. Hope this helps!
 
 rules: >
+
   Raiden Network Community telegram channel rules:
+
   1) This channel is about freedom of speech, but please keep in mind that it has its limits. Passionate debate is welcome, but unreasonable disrespect to any fellow members of the group (and especially the Raiden team) will not be tolerated. Doing so may result in your message being removed (this will be discussed with you in private messages).
+
   2) Not allowed: referral links unrelated to Raiden, telegram channel links, self promo media, pump and dump groups, NSFW content,  excessive swearing, spam in general, doxxing.
+
   3) Excessive trolling will result in removed messages.
+
   4) Please stay on topic, this channel is about the Raiden Network and scaling.
 
 adminlist: >
+
   RNC Admin List:
+
   Boris - @BOR44
+
   Emil - @emiliorull
+
   Chomsky - @Chomsky12
+
   Ryan - @R2theD2
+
   Tim - @Kaleaso
+
   Hudazara - @Hudazara
+
   Mattias - @Mat7ias
 
 devcon: >
+
   Devcon4 has finished but here's some past resources!
+
   [Agenda](https://docs.google.com/spreadsheets/d/e/2PACX-1vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7-QBRka1AAwKrXO4kTP/pubhtml)
+
   [Livestream](https://devcon4.tv/)
+
   [Guidebook](https://guidebook.com/guide/117233/)
+
   [Handy Devcon Events summary by EthereumJesus](https://docs.google.com/spreadsheets/d/1gGlIdmx4AjtvRviAgL-PmqsO9y0-Lo2XXM5BHK_n188/edit#gid=0)
+
   [Guide to Layer 2 at Devcon](https://www.reddit.com/r/raidennetwork/comments/9sx9d0/con_a_guide_to_layer_2_and_scaling_at_devcon/)
 
 pulse: >
+
   Raiden [Pulse](https://medium.com/raiden-network):
+
   [Raiden Pulse #1: News from July and August](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e)
+
   [Raiden Pulse #2: News from September and October](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67)
+
   [Raiden Pulse #3: News from November and December](https://medium.com/raiden-network/raiden-pulse-3-news-from-november-and-december-dd0da04961d3)
 
 nightly: >
+
   [Raiden Network Nightlies Releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html)
 
 releases: >
+
   [Raiden Network Releases List](https://github.com/raiden-network/raiden/releases)
 
 email: >
+
   Raiden contact email: contact@raiden.network
 
 brainbot: >
+
   [Brainbot](https://brainbot.li/)
+
   [Jobs](https://angel.co/brainbot-group/jobs)
 
 tokenmodel: >
+
   [The Raiden Network Token Model](https://medium.com/@raiden_network/the-raiden-network-token-model-9b6ef8d0b64)
 
+
 disclaimer: >
+
   This is an unofficial community consensus driven channel. Content within the Raiden Network Community (RNC) telegram channel may contain views and opinions, errors and omissions by which the content creator(s), member(s) and/or administrator(s) of RNC telegram group (and also this community bot) cannot be held liable. The wording and concepts regarding financial terminology are used for entertainment only and should never be considered investment advice.
 
 rapps: >
+
+
   [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project)
+
   [Raidenooh](https://github.com/pisuthd/raiden-dooh)
-  [CryptoBotWars](https://cryptoplayer.one)
+
+  [CryptoBotWars](https://cryptoplayer.one), [GitHub](https://github.com/cryptoplayerone/cryptobotwars)
+
+  [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 
 adminpolicy: >
+
   RNC Admin Policy:
+
   1.  Enforce the Rules of Conduct for RNC with the conditions below.
+
   2.  No bans towards members regardless of how much they break the Rules of Conduct, given they?re not obviously bots (refer to rule 4)The most severe restriction available to non-bots is temporary Read-Only. If it?s not clear if they?re a bot then PM the user and judge depending on their response.
+
   3.  Don't ban trolls but give a warning then remove messages if it gets excessive and is breaking Rules of Conduct. We can collectively discuss actions beyond that with active admins (if you?re the only active admin and you decide urgent action is needed for the sake of the community then do it).
-  4.  Stay censorship free focused. Never use admin rights to silence other members on individual judgement. If Rules of Conduct for the group is being broken then that requires a discussion with that individual (starting with a warning referred to in rule 3) then if they continue a discussion with active admins is needed on whether or not to go ahead with temporarily restricting the user (starting with a short/temporary restriction, usually 7 days or less). A restriction can be requested to be reviewed at any point.
+
+  4.  Stay censorship free focused. Never use admin rights to silence other members on individual judgement. If Rules of Conduct for the group is being broken then that requires a discussion with that individual (starting with a warning referred to in rule 3) then if they continue a discussion with active admins is needed on whether or not to go ahead with temporarily restricting the user (starting with a short/temporary restriction, usually 7 days or less). A restriction can be requested to be
+  reviewed at any point.
+
   5.  Ban obvious non-human bots (or restrict them to read only).
+
   6.  In regards to direct shilling, make it clear this is a Raiden focused group and staying on topic is part of the Rules and Conduct in the Pinned Message. For indirect shilling please be polite and try and steer the conversation back to Raiden if you feel it's having a negative impact.
+
   7. Excessively negative comments towards other Raiden channel admins is not allowed by admins in the RNC group. Members can talk about it how they want but remind them to keep it civil if they start breaking RNC Rules Of Conduct.
+
   8.  No changes to admins without cooperation and collaboration between that active admin or if they're MIA then all active admins. Sometimes people don't want to mod anymore, that's fine as long as you bring it up. Please don't go MIA due to not wanting to put in effort to moderate. This isn?t a chore so if it feels that way please let one of the other admins know before it gets to that point.
+
   9.  Any changes to admin policy or significant changes to Rules of Conduct and description/logo need a vote. Voting lasts for 24 hours or until majority is reached. Obviously if someone has mentioned they're on holidays or will be away this rule does not apply.
+
   10.  No admin can help link someone's identity to their personal account on telegram with the information they have within this admin channel. That will result in possible suspension and collaborative discussion of being removed from that admin of RNC.
 
 weeklyupdate: >
+
   [Weekly Update 53](https://www.reddit.com/r/raidennetwork/comments/amzyw5/git_weekly_update_53/)
+
   TL;DR
-  Raiden [attending GoerliCon](https://twitter.com/ETHBerlin/status/1090945136907964418) and how Goerli testnet [might benefit Raiden](https://www.reddit.com/r/ethereum/comments/alrmc6/görli_testnet_just_launched_live_at_görlicon_the/efiqgzu). [Github target date](https://github.com/raiden-network/raiden/milestone/36) on the path towards Ithaca, Raiden will be at CryptoMonday ([Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/en-AU/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)).
+
+  Raiden [attending GoerliCon](https://twitter.com/ETHBerlin/status/1090945136907964418) and how Goerli testnet [might benefit Raiden](https://www.reddit.com/r/ethereum/comments/alrmc6/görli_testnet_just_launched_live_at_görlicon_the/efiqgzu). [Github target date](https://github.com/raiden-network/raiden/milestone/36) on the path towards Ithaca, Raiden will be at CryptoMonday ([Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/en-AU/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/
+  )).
 
 mentions: >
+
   Some of the mentions of Raiden:
+
   [GridPlus](https://drive.google.com/file/d/0Bz90riPGRHquNDVXVE81RmppaUk/view)
+
   [RightMesh](https://www.rightmesh.io/docs/RightMeshTechnicalWhitepaper3.1.pdf)
+
   [EthFinex](https://www.bitfinex.com/ethfinex-whitepaper.pdf)
+
   [Bitwin](https://token.bitwin.com/files/Bitwin-Whitepaper.pdf)
+
   [EnjinCoin](https://enjincoin.io/enjincoin_whitepaper.pdf)
+
   [Golem](https://golem.network/crowdfunding/Golemwhitepaper.pdf)
+
   [Gnosis](https://twitter.com/koeppelmann/status/931572694000324608)
+
   [SmartMesh/SmartRaiden](https://smartmesh.io/)
+
   [Exchange Union](https://github.com/ExchangeUnion/Docs/blob/master/XU-TechnicalPaper.md)
+
   [Augur](https://medium.com/@AugurProject/augur-master-plan-42dda65a3e3d)
+
   [Altcoin.io](https://www.altcoin.io/) Atomic Swap DEX
+
   [Credit Protocol](https://blockmason.io/cp-whitepaper/Introduction-amp-Features/) Democratized credit
+
   [Energy Web Foundation](http://energyweb.org/wp-content/uploads/2017/11/EWF_Test_Network_Public_PR_Nov_1_2017.pdf)
+
   [Indahash](https://s3.eu-central-1.amazonaws.com/idh-files/ico-landing/indahash_whitepaper_ico.pdf)
+
   [Kin](https://kin.kik.com/papers/Kin_Whitepaper_V1_English.pdf)
+
   [OpenANX](https://www.openanx.org/en/assets/whitepaper/openANX_White_Paper_ENU.pdf) DEX platform
+
   [PolySwarm](https://polyswarm.io/polyswarm-whitepaper.pdf) Threat intelligence
+
   [Raidex](https://raidex.io/) L2 DEX
+
   [Request](https://request.network/assets/pdf/request_whitepaper.pdf) Social marketplace
+
   [Soma](https://soma.co/wp-content/uploads/2017/07/Soma-tech-Whitepaper.pdf)
+
   [Trade](https://trade.io/whitepaper/EN.pdf) Trading platform
+
   [Trustlines Network](https://github.com/trustlines-network/trustlines-network.github.io/blob/8f2d9aeff4d373eff6a8bba123a8e975bd52f104/documents/Projects/trustlines-network.github.io-master/_includes/platform.html)
+
   [ULedger](https://uploads.strikinglycdn.com/files/2e0889ae-1cef-4c05-8486-6d077ad84c4d/ULD%20Key%20Tech%20Details%2011.4.17.pdf) IT Data and Storage
+
   [Wala](http://wala-tokensale-website.s3-website-eu-west-1.amazonaws.com/dalawhitepaper.pdf)
+
   [WALLETH](http://walleth.org/2017/11/28/thoughts-on-the-ux-of-payment-channels/) native Ethereum Android light client wallet
+
   [WePower](https://wepower.network/WhitePaper-WePower.pdf) Green Energy
+
   [Ankr](https://github.com/Ankr-network/ankr-research)
