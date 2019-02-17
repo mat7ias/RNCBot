@@ -23,8 +23,8 @@ logger.info("Running "+sys.argv[0])
 
 ##### Open config_file
 config = None
-if os.path.isfile("config.yaml"):
-    with open("config.yaml") as config_file:
+if os.path.isfile("bot/RaidenBot/config.yaml"):
+    with open("bot/RaidenBot/config.yaml") as config_file:
         config = yaml.load(config_file)
 else:
     exit("No configuration file 'config.yaml' found")
@@ -124,6 +124,12 @@ def community(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['community']
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
+def platforms(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['platforms']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def heybot(bot, update):
@@ -299,6 +305,7 @@ def main():
     dp.add_handler(CommandHandler("commands", commands))
     dp.add_handler(CommandHandler("extras", extras))
     dp.add_handler(CommandHandler("community", community))
+    dp.add_handler(CommandHandler("platforms", platforms))
     dp.add_handler(CommandHandler("heybot", heybot))
     dp.add_handler(CommandHandler("resources", resources))
     dp.add_handler(CommandHandler("conferences", conferences))
