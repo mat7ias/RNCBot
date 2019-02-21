@@ -7,6 +7,7 @@ from pprint import pprint
 import sys
 import yaml
 import telegram
+import random
 
 #### Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - '
@@ -80,14 +81,16 @@ def sameuser(bot, update):
         config['msg_count'] = count
         config['previous_user_id'] = user_id
 
-################################ Welcome #######################################
+############################### New Member #####################################
 
-def welcome(bot, update):
-    pprint(update.message.chat.__dict__, indent=4)
+def new_chat_member(bot, update):
+    user_id = update.message.from_user.id
     message_id = update.message.message_id
     chat_id = update.message.chat.id
-    msg = config['heybot']
-    update.message.reply_text("Welcome "+str(update.message.from_user.first_name)+"!")
+    if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
+        bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
+        pprint('New Member')
+        bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 ################################ Commands ######################################
 
@@ -106,7 +109,7 @@ def start(bot, update):
         bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1)
     else:
         msg = config['start']
-        update.message.reply_text("Hey "+str(update.message.chat.first_name)+"! Get a list of my commands with /commands")
+        update.message.reply_text("Hey "+str(update.message.chat.first_name)+"! I'm a resource bot, message me here or in @RaidenNetworkCommunity telegram group.\n\nGet a list of my commands with /commands")
 
 def commands(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -265,8 +268,14 @@ def rapps(bot, update):
 def lefteris(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
-    if user_id in ADMINS:
-        msg = bot.sendPhoto(chat_id=chat_id, photo=open("lefteris.jpg",'rb'))
+    lefterislist=["/home/ubuntu/lefteris.jpg", "/home/ubuntu/lefteris2.jpg"]
+    bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(lefterislist), "rb"))
+
+def meme(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    memelist=["/home/ubuntu/meme.mp4", "/home/ubuntu/meme3.mp4", "/home/ubuntu/meme6.mp4", "/home/ubuntu/meme7.mp4", "/home/ubuntu/meme8.mp4"]
+    bot.sendVideo(chat_id=chat_id,timeout=13, video=open(random.choice(memelist), "rb"))
 
 def weeklyupdate(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -284,6 +293,14 @@ def mentions(bot, update):
         msg = config['mentions']
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def bunny(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    user_id = update.message.from_user.id
+    bunnylist=["/home/ubuntu/rabbitpic.jpg", "/home/ubuntu/rabbit1.jpg", "/home/ubuntu/rabbit2.jpg", "/home/ubuntu/rabbit3.jpg", "/home/ubuntu/rabbit4.jpg", "/home/ubuntu/rabbit5.jpg", "/home/ubuntu/rabbit6.jpg", "/home/ubuntu/rabbit7.jpg", "/home/ubuntu/rabbit8.jpg", "/home/ubuntu/rabbit9.jpg", "/home/ubuntu/rabbit10.jpg", "/home/ubuntu/rabbit11.jpg", "/home/ubuntu/rabbit12.jpg", "/home/ubuntu/rabbit13.jpg", "/home/ubuntu/rabbit14.jpg", "/home/ubuntu/rabbit15.jpg"]
+    bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(bunnylist), "rb"))
+
+
 ###############################################################################
 
 ###### Error logging
@@ -292,9 +309,10 @@ def error(bot, update, error):
 
 ###### Running the bot
 def main():
-    # Create the EventHandler and pass it your bot's token.s
+
+# Create the EventHandler and pass it your bot's token
     print("Bot started")
-    updater = Updater(bot_token)
+    updater = Updater(bot_token,workers=10)
 
 ##### Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -330,10 +348,13 @@ def main():
     dp.add_handler(CommandHandler("lefteris", lefteris))
     dp.add_handler(CommandHandler("weeklyupdate", weeklyupdate))
     dp.add_handler(CommandHandler("mentions", mentions))
+    dp.add_handler(CommandHandler("bunny", bunny))
+    dp.add_handler(CommandHandler("meme", meme))
 
 ##### MessageHandlers
+    dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member))
     dp.add_handler(MessageHandler(Filters.all, sameuser))
-    dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, welcome))
+
 
 ##### Log all errors
     dp.add_error_handler(error)
