@@ -1,6 +1,5 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
-from time import time
 import time
 import os
 from pprint import pprint
@@ -87,10 +86,13 @@ def new_chat_member(bot, update):
     user_id = update.message.from_user.id
     message_id = update.message.message_id
     chat_id = update.message.chat.id
+    name = get_name(update.message.from_user)
     if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
         bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
         pprint('New Member')
         bot.delete_message(chat_id=chat_id,message_id=message_id)
+        msg = ("Welcome "+str(name)+"! Don't forget to check out the [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden. Feel free to DM me for more\xE2\x9A\xA1")
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 ################################ Commands ######################################
 
