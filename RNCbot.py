@@ -14,7 +14,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - '
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Configure Logging
+##### Configure Logging
 
 FORMAT = '%(asctime)s -- %(levelname)s -- %(module)s %(lineno)d -- %(message)s'
 logging.basicConfig(level=logging.INFO, format=FORMAT)
@@ -88,20 +88,21 @@ def new_chat_member(bot, update):
     chat_id = update.message.chat.id
     tag = update.message.from_user.username
     name = get_name(update.message.from_user)
-    if (len(name) < 21) and (update.message.chat.type == 'supergroup'):
+    #same_msg = config['previous_msg']
+    if update.message.chat.type == 'supergroup':
         bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
         pprint('New Member')
         bot.delete_message(chat_id=chat_id,message_id=message_id)
-        if tag != None:
-            msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        if (len(name) < 21):
+            if tag != None:
+                msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
+                bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            #else:
+                #msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
+                #bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                #config['previous_msg'] = new_chat_member
         else:
-            msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-    else:
-        bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
-        pprint('New Member Long Name')
-        bot.delete_message(chat_id=chat_id,message_id=message_id)
+            pprint('Long name or same_msg')
 
 ################################ Commands ######################################
 
@@ -126,13 +127,16 @@ def commands(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['commands']
+    same_msg = config['previous_msg']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def extras(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['extras']
+    #same_msg = config['previous_msg']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    config['previous_msg'] = extras
 
 def community(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -151,7 +155,8 @@ def heybot(bot, update):
     message_id = update.message.message_id
     chat_id = update.message.chat.id
     msg = config['heybot']
-    update.message.reply_text("Hey "+str(update.message.from_user.first_name)+"!")
+    update.message.reply_text("Hey "+str(update.message.from_user.first_name)+"! What's up?")
+    #config['previous_msg'] = heybot
 
 def resources(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -314,14 +319,14 @@ def bunny(bot, update):
 
 ###############################################################################
 
-###### Error logging
+##### Error logging
 def error(bot, update, error):
     logger.warning('Update "%s" caused error "%s"', update, error)
 
 ###### Running the bot
 def main():
 
-# Create the EventHandler and pass it your bot's token
+##### Create the EventHandler and pass it your bot's token
     print("Bot started")
     updater = Updater(bot_token,workers=10)
 
@@ -367,10 +372,10 @@ def main():
     dp.add_handler(MessageHandler(Filters.all, sameuser))
 
 
-##### Log all errors
+##### Error handler
     dp.add_error_handler(error)
 
-# Start the Bot
+##### Start the Bot
     updater.start_polling()
     updater.idle()
 
