@@ -4,16 +4,17 @@
 #Flood filter
 "previous_user_id": 0
 "msg_count": 0
+#"previous_msg": []
 
 #Admins IDs
 ADMINS:
-  - 12356789
-  - 12356789
+  - 
+  - 
 
 MENTIONTEAM:
-  - 12356789
-  - 12356789
-  - 12356789
+  - 
+  - 
+  - 
 
 #Messages
 pmme: >
@@ -44,7 +45,7 @@ extras: >
 
   /tokenmodel - The Raiden Network Token Model
 
-  /previousevents - previous conferences/events
+  /previousevents - Previous conferences/events
 
   /brainbot - Brainbot website and jobs
 
@@ -71,6 +72,10 @@ extras: >
   /disclaimer - RNC telegram channel disclaimer
 
   /rapps - A list of some apps implementing Raiden
+
+  /bunny - Show me a bunny rabbit!
+
+  /meme - Show me a meme!
 
 start: >
 
@@ -110,6 +115,10 @@ resources: >
 
   [Workshops](http://workshop.raiden.network)
 
+  [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
+
+  [PyPI](https://pypi.org/project/raiden/)
+
 community: >
 
   Raideneer highlights:
@@ -125,6 +134,8 @@ community: >
   [Non-profit 3D printed Raiden souvenir](https://www.shapeways.com/shops/raiden)
 
   [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI)
+
+  [Red Eyes on testnet](https://youtu.be/RpaAS64dI6k)
 
   [Github Visualization](https://youtu.be/xqxTGF--Bhk)
 
@@ -144,6 +155,8 @@ conferences: >
 
   March 5th-7th - [Ethereum Community Conference](https://ethcc.io/), [schedule](https://ethcc.io/images/schedule/EthCC2.pdf)
 
+  March 6th - [DeFi Meetup Paris](https://www.meetup.com/Women-in-Blockchain-Paris/events/259269569/)
+
   March 12th - [Mainz Crypto Community](https://www.meetup.com/Mainz-Crypto-Community/events/257370759/)
 
 previousevents: >
@@ -152,7 +165,7 @@ previousevents: >
 
   February 4th - [CryptoMonday | Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)
 
-  31/1/19 - [GoeliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
+  31/1/19 - [GoerliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
 
   7/12-9/12/18 - [Sponsoring](https://twitter.com/neutral_project/status/1064436809600397312) at [ETHSingapore](https://ethsingapore.co/)
 
@@ -184,7 +197,7 @@ videos: >
 
   [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
 
-  [Brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
+  [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
 
   [Devcon1](https://youtu.be/h791zjvf3uQ) - Heiko
 
@@ -316,13 +329,15 @@ devcon: >
 
 pulse: >
 
-  Raiden [Pulse](https://medium.com/raiden-network):
+  [Raiden Pulse](https://medium.com/raiden-network):
 
-  [Raiden Pulse #1: News from July and August](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e)
+  [Raiden Pulse #1:](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e) News from July and August
 
-  [Raiden Pulse #2: News from September and October](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67)
+  [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
 
-  [Raiden Pulse #3: News from November and December](https://medium.com/raiden-network/raiden-pulse-3-news-from-november-and-december-dd0da04961d3)
+  [Raiden Pulse #3:](https://medium.com/raiden-network/raiden-pulse-3-news-from-november-and-december-dd0da04961d3) News from November and December
+
+  [Raiden Pulse #4:](https://medium.com/raiden-network/raiden-pulse-4-news-from-january-and-february-a25dbee298de) News from January and February
 
 nightly: >
 
@@ -338,7 +353,7 @@ email: >
 
 brainbot: >
 
-  [Brainbot](https://brainbot.li/)
+  [brainbot](https://brainbot.li/)
 
   [Jobs](https://angel.co/brainbot-group/jobs)
 
@@ -346,13 +361,11 @@ tokenmodel: >
 
   [The Raiden Network Token Model](https://medium.com/@raiden_network/the-raiden-network-token-model-9b6ef8d0b64)
 
-
 disclaimer: >
 
   This is an unofficial community consensus driven channel. Content within the Raiden Network Community (RNC) telegram channel may contain views and opinions, errors and omissions by which the content creator(s), member(s) and/or administrator(s) of RNC telegram group (and also this community bot) cannot be held liable. The wording and concepts regarding financial terminology are used for entertainment only and should never be considered investment advice.
 
 rapps: >
-
 
   [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project)
 
@@ -453,3 +466,7 @@ mentions: >
   [WePower](https://wepower.network/WhitePaper-WePower.pdf) Green Energy
 
   [Ankr](https://github.com/Ankr-network/ankr-research)
+
+blacklist: >
+
+  @GoldenChimeras
