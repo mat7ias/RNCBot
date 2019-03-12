@@ -2,11 +2,13 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import time
 import os
+import string
 from pprint import pprint
 import sys
 import yaml
 import telegram
 import random
+
 
 #### Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - '
@@ -50,14 +52,18 @@ def get_name(user):
 
 ############################ Spam/Flood filter #################################
 
-def sameuser(bot, update):
+def spamfilter(bot, update):
     user_id = update.message.from_user.id
+    message_id = update.message.message_id
     previous_user = config['previous_user_id']
+    blacklist = config['blacklisted']
+    text = update.message.text
     count = config['msg_count']
     spammerid = int
     chat_id = update.message.chat.id
     pprint(update.message.chat.type)
 
+##### Flood filter
     if (user_id == previous_user) and (update.message.chat.type == 'supergroup'):
         config['msg_count'] = count + 1
         if (count == 5):
@@ -79,6 +85,13 @@ def sameuser(bot, update):
         count = 0
         config['msg_count'] = count
         config['previous_user_id'] = user_id
+
+##### Blacklist filter
+    for x in blacklist:
+        if x in text:
+            bot.delete_message(chat_id=chat_id, message_id=message_id)
+            bot.restrictChatMember(chat_id=chat_id,user_id=user_id,can_send_messages=False)
+            pprint('blacklisted word')
 
 ############################### New Member #####################################
 
@@ -127,7 +140,7 @@ def commands(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['commands']
-    same_msg = config['previous_msg']
+    #same_msg = config['previous_msg']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def extras(bot, update):
@@ -136,7 +149,7 @@ def extras(bot, update):
     msg = config['extras']
     #same_msg = config['previous_msg']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-    config['previous_msg'] = extras
+    #config['previous_msg'] = extras
 
 def community(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -316,6 +329,17 @@ def bunny(bot, update):
     bunnylist=["/home/ubuntu/rabbitpic.jpg", "/home/ubuntu/rabbit1.jpg", "/home/ubuntu/rabbit2.jpg", "/home/ubuntu/rabbit3.jpg", "/home/ubuntu/rabbit4.jpg", "/home/ubuntu/rabbit5.jpg", "/home/ubuntu/rabbit6.jpg", "/home/ubuntu/rabbit7.jpg", "/home/ubuntu/rabbit8.jpg", "/home/ubuntu/rabbit9.jpg", "/home/ubuntu/rabbit10.jpg", "/home/ubuntu/rabbit11.jpg", "/home/ubuntu/rabbit12.jpg", "/home/ubuntu/rabbit13.jpg", "/home/ubuntu/rabbit14.jpg", "/home/ubuntu/rabbit15.jpg"]
     bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(bunnylist), "rb"))
 
+def fistbump(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = '\xF0\x9F\x91\x8A'
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
+def doublefistbump(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = '\xF0\x9F\x91\x8A \xF0\x9F\x91\x8A'
+    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 ###############################################################################
 
@@ -366,10 +390,12 @@ def main():
     dp.add_handler(CommandHandler("mentions", mentions))
     dp.add_handler(CommandHandler("bunny", bunny))
     dp.add_handler(CommandHandler("meme", meme))
+    dp.add_handler(CommandHandler("fistbump", fistbump))
+    dp.add_handler(CommandHandler("doublefistbump", doublefistbump))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member))
-    dp.add_handler(MessageHandler(Filters.all, sameuser))
+    dp.add_handler(MessageHandler(Filters.all, spamfilter))
 
 
 ##### Error handler
