@@ -4,7 +4,8 @@
 #Flood filter
 "previous_user_id": 0
 "msg_count": 0
-#"previous_msg": []
+
+blacklisted: []
 
 #Admins IDs
 ADMINS:
@@ -75,7 +76,7 @@ extras: >
 
   /bunny - Show me a bunny rabbit!
 
-  /meme - Show me a meme!
+  /meme - Show me a Raiden meme!
 
 start: >
 
@@ -153,15 +154,15 @@ conferences: >
 
   Upcoming conferences/meetings:
 
-  March 5th-7th - [Ethereum Community Conference](https://ethcc.io/), [schedule](https://ethcc.io/images/schedule/EthCC2.pdf)
-
-  March 6th - [DeFi Meetup Paris](https://www.meetup.com/Women-in-Blockchain-Paris/events/259269569/)
-
   March 12th - [Mainz Crypto Community](https://www.meetup.com/Mainz-Crypto-Community/events/257370759/)
 
 previousevents: >
 
   Recent Events:
+
+  March 5th-7th - [Ethereum Community Conference](https://ethcc.io/), [schedule](https://ethcc.io/images/schedule/EthCC2.pdf)
+
+  March 6th - [DeFi Meetup Paris](https://www.meetup.com/Women-in-Blockchain-Paris/events/259269569/)
 
   February 4th - [CryptoMonday | Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)
 
@@ -209,7 +210,7 @@ videos: >
 
   [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
 
-  [Asseth](https://youtu.be/93qOwUSj4PQ) - Lefteris
+  [Asseth 2018](https://youtu.be/93qOwUSj4PQ) - Lefteris
 
   [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s) - Lefteris
 
@@ -246,6 +247,10 @@ videos: >
   [Stanford Blockchain Conference](https://youtu.be/_irp4Jx0qjM) - Pedro Moreno-Sanchez
 
   [Nugget's News Interview](https://youtu.be/Cp8hprIjJHc) - Lefteris
+
+  [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0) - Franziska
+
+  [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs) - Paul and Franziska
 
 uraiden: >
 
@@ -285,7 +290,7 @@ whenmoon: >
 
 rules: >
 
-  Raiden Network Community telegram channel rules:
+  @RaidenNetworkCommunity telegram channel rules:
 
   1) This channel is about freedom of speech, but please keep in mind that it has its limits. Passionate debate is welcome, but unreasonable disrespect to any fellow members of the group (and especially the Raiden team) will not be tolerated. Doing so may result in your message being removed (this will be discussed with you in private messages).
 
@@ -297,7 +302,7 @@ rules: >
 
 adminlist: >
 
-  RNC Admin List:
+  @RaidenNetworkCommunity Admin List:
 
   Boris - @BOR44
 
@@ -429,7 +434,7 @@ mentions: >
 
   [SmartMesh/SmartRaiden](https://smartmesh.io/)
 
-  [Exchange Union](https://github.com/ExchangeUnion/Docs/blob/master/XU-TechnicalPaper.md)
+  [Exchange Union](https://github.com/ExchangeUnion/Docs/blob/master/XU-TechnicalPaper.md) ([XUD raiden Integration](https://hackmd.io/s/SyZOK0OfN))
 
   [Augur](https://medium.com/@AugurProject/augur-master-plan-42dda65a3e3d)
 
@@ -467,6 +472,4 @@ mentions: >
 
   [Ankr](https://github.com/Ankr-network/ankr-research)
 
-blacklist: >
-
-  @GoldenChimeras
+  [Storj](https://medium.com/@storjproject/taking-payments-to-the-next-level-with-raiden-e36fbc99f64f) ([Github](https://github.com/stefanbenten/raiden-on-storj))
