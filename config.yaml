@@ -1,21 +1,27 @@
 #Load bot token
-"bot_token": YOUR_BOT_TOKEN
+"bot_token": BOT_TOKEN
 
 #Flood filter
 "previous_user_id": 0
 "msg_count": 0
+"resources_count": 6
+"videos_count": 10
+"moon_count": 100
 
+
+previous_msg: []
 blacklisted: []
 
 #Admins IDs
 ADMINS:
   - 
-  - 
+
 
 MENTIONTEAM:
   - 
-  - 
-  - 
+
+RNC_ID: 
+RNC_PLAYGROUND_ID: 
 
 #Messages
 pmme: >
@@ -66,7 +72,7 @@ extras: >
 
   /whenmoon - When?
 
-  /id - Print my telegram ID (via PM)
+  /getid - Print my telegram ID
 
   /ignorethat - Tell me to ignore what you just said
 
@@ -126,15 +132,11 @@ community: >
 
   [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0) - Surferfc
 
-  [TopRDNtransfers telegram channel](https://t.me/TopRDNtransfers) - Kaleaso (Tim)
-
   [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/) - Surferfc
 
   [This bot!](https://github.com/mat7ias/RNCbot)
 
   [Non-profit 3D printed Raiden souvenir](https://www.shapeways.com/shops/raiden)
-
-  [The Devcon4 workshop on Windows](https://youtu.be/GBidfC7eOYI)
 
   [Red Eyes on testnet](https://youtu.be/RpaAS64dI6k)
 
@@ -152,13 +154,19 @@ platforms: >
 
 conferences: >
 
-  Upcoming conferences/meetings:
+  Upcoming conferences/related meetups:
 
-  March 12th - [Mainz Crypto Community](https://www.meetup.com/Mainz-Crypto-Community/events/257370759/)
+  March 27th - [The Future of Storage, dApps, and Transactions: Buidling the new Internet.](https://www.meetup.com/DC-CryptoCurrency-Mining/events/259693512/) / Washington, USA
+
+  March 28th - [ETH/Web3 Community Town Hall #1 - Bringing the Community Together](https://www.meetup.com/Copenhagen-Ethereum-Meetup/events/258786291/) / København, Denmark
+
+  May 13th - [Payment-Channels: Lightning, Raiden & Co.](https://www.meetup.com/Altcoin-Krypto-Asset-Stuttgart/events/259192786/) / Stuttgart, Germany
 
 previousevents: >
 
   Recent Events:
+
+  March 12th - [Mainz Crypto Community](https://www.meetup.com/Mainz-Crypto-Community/events/257370759/)
 
   March 5th-7th - [Ethereum Community Conference](https://ethcc.io/), [schedule](https://ethcc.io/images/schedule/EthCC2.pdf)
 
@@ -288,6 +296,10 @@ whenmoon: >
 
   I am happy to officially announce that Raiden Network can Moon in 1.21-1.44 seconds. Hope this helps!
 
+whenmoonunavailable: >
+
+  When Moon is only available once every 100 messages!
+
 rules: >
 
   @RaidenNetworkCommunity telegram channel rules:
@@ -405,14 +417,6 @@ adminpolicy: >
 
   10.  No admin can help link someone's identity to their personal account on telegram with the information they have within this admin channel. That will result in possible suspension and collaborative discussion of being removed from that admin of RNC.
 
-weeklyupdate: >
-
-  [Weekly Update 53](https://www.reddit.com/r/raidennetwork/comments/amzyw5/git_weekly_update_53/)
-
-  TL;DR
-
-  Raiden [attending GoerliCon](https://twitter.com/ETHBerlin/status/1090945136907964418) and how Goerli testnet [might benefit Raiden](https://www.reddit.com/r/ethereum/comments/alrmc6/görli_testnet_just_launched_live_at_görlicon_the/efiqgzu). [Github target date](https://github.com/raiden-network/raiden/milestone/36) on the path towards Ithaca, Raiden will be at CryptoMonday ([Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/en-AU/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/
-  )).
 
 mentions: >
 
