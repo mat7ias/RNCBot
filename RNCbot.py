@@ -33,11 +33,14 @@ else:
     sys.exit()
 
 ##### load config
-bot_token = config['bot_token']
-bot = telegram.Bot(token=bot_token)
+bot_token      = config['bot_token']
+bot            = telegram.Bot(token=bot_token)
 
-ADMINS = config['ADMINS']
-MENTIONTEAM = config['MENTIONTEAM']
+ADMINS         = config['ADMINS']
+MENTIONTEAM    = config['MENTIONTEAM']
+RNC            = config['RNC_ID']
+RNC_PLAYGROUND = config['RNC_PLAYGROUND_ID']
+
 
 def get_name(user):
         try:
@@ -60,37 +63,43 @@ def spamfilter(bot, update):
     text = update.message.text
     count = config['msg_count']
     spammerid = int
+    name = get_name(update.message.from_user)
     chat_id = update.message.chat.id
-    pprint(update.message.chat.type)
-
+    config['previous_msg'] = 'new_message'
+    resources_count = config['resources_count']
+    videos_count = config['videos_count']
+    moon_count = config['moon_count']
+    print(chat_id,user_id,moon_count)
 ##### Flood filter
-    if (user_id == previous_user) and (update.message.chat.type == 'supergroup'):
+    if (user_id == previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         config['msg_count'] = count + 1
         if (count == 5):
 	    update.message.reply_text("\xF0\x9F\x8C\x8A")
         if (count >= 6):
             if spammerid != user_id:
                 spammerid = user_id
-                bot.restrictChatMember(chat_id,
-                user_id = spammerid,
-                can_send_messages=False,
-                until_date=time.time()+int(float(60)*60)) # 60 min restriction
-                update.message.reply_text("You're typing at \xE2\x9A\xA1 speed!"
-                " My flood filter has turned on to cool off that "
-                "\xF0\x9F\x94\xA5 for an hour.")
-                pprint('Flooder tripped')
+                bot.delete_message(chat_id=chat_id, message_id=message_id)
+                bot.restrictChatMember(chat_id,user_id = spammerid,can_send_messages=False,until_date=time.time()+int(float(60)*60)) # 60 min restriction
+                msg = ("Whoa there "+str(name)+"! You're typing at \xE2\x9A\xA1 speed! My flood filter has turned on to cool off that \xF0\x9F\x94\xA5 for an hour.")
+                bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 pprint(spammerid)
                 count = 0
-    else:
+    elif (user_id != previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         count = 0
         config['msg_count'] = count
         config['previous_user_id'] = user_id
+
+##### Prevent bot spam
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        config['resources_count'] = resources_count + 1
+        config['videos_count'] = videos_count + 1
+        config['moon_count'] = moon_count + 1
 
 ##### Blacklist filter
     for x in blacklist:
         if x in text:
             bot.delete_message(chat_id=chat_id, message_id=message_id)
-            bot.restrictChatMember(chat_id=chat_id,user_id=user_id,can_send_messages=False)
+            bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
             pprint('blacklisted word')
 
 ############################### New Member #####################################
@@ -101,15 +110,16 @@ def new_chat_member(bot, update):
     chat_id = update.message.chat.id
     tag = update.message.from_user.username
     name = get_name(update.message.from_user)
-    #same_msg = config['previous_msg']
+    same_msg = config['previous_msg']
     if update.message.chat.type == 'supergroup':
         bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
         pprint('New Member')
         bot.delete_message(chat_id=chat_id,message_id=message_id)
         if (len(name) < 21):
-            if tag != None:
+            if (tag != None and same_msg != 'new_chat_member'):
                 msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
                 bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                config['previous_msg'] = 'new_chat_member'
             #else:
                 #msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
                 #bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -131,7 +141,7 @@ def start(bot, update):
     chat_id = update.message.chat.id
     if (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
         msg = config['pmme']
-        bot.sendMessage(chat_id=chat_id,text=msg,reply_to_message_id=message_id, parse_mode="Markdown",disable_web_page_preview=1)
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
     else:
         msg = config['start']
         update.message.reply_text("Hey "+str(update.message.chat.first_name)+"! I'm a resource bot, message me here or in @RaidenNetworkCommunity telegram group.\n\nGet a list of my commands with /commands")
@@ -175,7 +185,15 @@ def resources(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['resources']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    resources_count = config['resources_count']
+    message_id = update.message.message_id
+    if (resources_count >= 6) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['resources_count'] = 0
+    if (resources_count < 6) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        bot.delete_message(chat_id=chat_id,message_id=message_id)
+    elif (chat_id != RNC and chat_id != RNC_PLAYGROUND):
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def conferences(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -193,7 +211,15 @@ def videos(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['videos']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    videos_count = config['videos_count']
+    message_id = update.message.message_id
+    if (videos_count >= 10) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['videos_count'] = 0
+    if (videos_count < 10) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        bot.delete_message(chat_id=chat_id,message_id=message_id)
+    elif (chat_id != RNC and chat_id != RNC_PLAYGROUND):
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def uraiden(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -205,7 +231,18 @@ def whenmoon(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['whenmoon']
-    bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    moon_count = config['moon_count']
+    message_id = update.message.message_id
+    if (moon_count >= 100) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['moon_count'] = 0
+    if (moon_count < 100) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        config['moon_count'] = moon_count + 1
+        moon_count_remaining = 100 - moon_count
+        msg = ("When Moon only available every 100 messages. "+str(moon_count_remaining)+" to go!")
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    elif (chat_id != RNC and chat_id != RNC_PLAYGROUND):
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def rules(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -358,7 +395,7 @@ def main():
     dp = updater.dispatcher
 
 ##### CommandHandlers
-    dp.add_handler(CommandHandler('id', getid))
+    dp.add_handler(CommandHandler('getid', getid))
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("commands", commands))
     dp.add_handler(CommandHandler("extras", extras))
