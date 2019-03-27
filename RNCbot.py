@@ -8,13 +8,7 @@ import sys
 import yaml
 import telegram
 import random
-
-
-#### Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - '
-                    '%(message)s',
-                    level=logging.INFO)
-logger = logging.getLogger(__name__)
+import json
 
 ##### Configure Logging
 
@@ -24,13 +18,20 @@ logger = logging.getLogger('root')
 logger.info("Running "+sys.argv[0])
 
 ##### Open config_file
-config = None
+
 if os.path.isfile("bot/RaidenBot/config.yaml"):
     with open("bot/RaidenBot/config.yaml") as config_file:
         config = yaml.load(config_file)
 else:
     exit("No configuration file 'config.yaml' found")
     sys.exit()
+
+
+if os.path.isfile("bot/RaidenBot/fortunes.json"):
+    with open("bot/RaidenBot/fortunes.json") as fortunes_file:
+        fortunes = json.load(fortunes_file)
+else:
+    print("No fortune cookies file 'fortunes.json' found")
 
 ##### load config
 bot_token      = config['bot_token']
@@ -40,6 +41,7 @@ ADMINS         = config['ADMINS']
 MENTIONTEAM    = config['MENTIONTEAM']
 RNC            = config['RNC_ID']
 RNC_PLAYGROUND = config['RNC_PLAYGROUND_ID']
+
 
 
 def get_name(user):
@@ -58,24 +60,25 @@ def get_name(user):
 def spamfilter(bot, update):
     user_id = update.message.from_user.id
     message_id = update.message.message_id
-    previous_user = config['previous_user_id']
+    previous_user = config['previous']['user_id']
     blacklist = config['blacklisted']
     text = update.message.text
-    count = config['msg_count']
+    msg_count = config['counts']['msg']
     spammerid = int
     name = get_name(update.message.from_user)
     chat_id = update.message.chat.id
     config['previous_msg'] = 'new_message'
-    resources_count = config['resources_count']
-    videos_count = config['videos_count']
-    moon_count = config['moon_count']
+    resources_count = config['counts']['resources']
+    videos_count = config['counts']['videos']
+    moon_count = config['counts']['moon']
     print(chat_id,user_id,moon_count)
-##### Flood filter
+
+	##### Flood filter
     if (user_id == previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-        config['msg_count'] = count + 1
-        if (count == 5):
-	    update.message.reply_text("\xF0\x9F\x8C\x8A")
-        if (count >= 6):
+        config['counts']['msg'] = msg_count + 1
+        if (msg_count == 5):
+	           update.message.reply_text("\xF0\x9F\x8C\x8A")
+        if (msg_count >= 6):
             if spammerid != user_id:
                 spammerid = user_id
                 bot.delete_message(chat_id=chat_id, message_id=message_id)
@@ -85,15 +88,15 @@ def spamfilter(bot, update):
                 pprint(spammerid)
                 count = 0
     elif (user_id != previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-        count = 0
-        config['msg_count'] = count
-        config['previous_user_id'] = user_id
+        msg_count = 0
+        config['counts']['msg'] = msg_count
+        config['previous']['user_id'] = user_id
 
 ##### Prevent bot spam
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-        config['resources_count'] = resources_count + 1
-        config['videos_count'] = videos_count + 1
-        config['moon_count'] = moon_count + 1
+        config['counts']['resources'] = resources_count + 1
+        config['counts']['videos'] = videos_count + 1
+        config['counts']['moon'] = moon_count + 1
 
 ##### Blacklist filter
     for x in blacklist:
@@ -185,11 +188,11 @@ def resources(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['resources']
-    resources_count = config['resources_count']
+    resources_count = config['counts']['resources']
     message_id = update.message.message_id
     if (resources_count >= 6) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-        config['resources_count'] = 0
+        config['counts']['resources'] = 0
     if (resources_count < 6) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         bot.delete_message(chat_id=chat_id,message_id=message_id)
     elif (chat_id != RNC and chat_id != RNC_PLAYGROUND):
@@ -231,13 +234,13 @@ def whenmoon(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['whenmoon']
-    moon_count = config['moon_count']
+    moon_count = config['counts']['moon']
     message_id = update.message.message_id
     if (moon_count >= 100) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-        config['moon_count'] = 0
+        config['counts']['moon'] = 0
     if (moon_count < 100) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-        config['moon_count'] = moon_count + 1
+        config['counts']['moon'] = moon_count + 1
         moon_count_remaining = 100 - moon_count
         msg = ("When Moon only available every 100 messages. "+str(moon_count_remaining)+" to go!")
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -363,7 +366,7 @@ def bunny(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
-    bunnylist=["/home/ubuntu/rabbitpic.jpg", "/home/ubuntu/rabbit1.jpg", "/home/ubuntu/rabbit2.jpg", "/home/ubuntu/rabbit3.jpg", "/home/ubuntu/rabbit4.jpg", "/home/ubuntu/rabbit5.jpg", "/home/ubuntu/rabbit6.jpg", "/home/ubuntu/rabbit7.jpg", "/home/ubuntu/rabbit8.jpg", "/home/ubuntu/rabbit9.jpg", "/home/ubuntu/rabbit10.jpg", "/home/ubuntu/rabbit11.jpg", "/home/ubuntu/rabbit12.jpg", "/home/ubuntu/rabbit13.jpg", "/home/ubuntu/rabbit14.jpg", "/home/ubuntu/rabbit15.jpg"]
+    bunnylist=["/home/ubuntu/rabbitpic.jpg", "/home/ubuntu/rabbit1.jpg", "/home/ubuntu/rabbit2.jpg", "/home/ubuntu/rabbit3.jpg", "/home/ubuntu/rabbit4.jpg", "/home/ubuntu/rabbit5.jpg", "/home/ubuntu/rabbit6.jpg", "/home/ubuntu/rabbit7.jpg", "/home/ubuntu/rabbit8.jpg", "/home/ubuntu/rabbit9.jpg", "/home/ubuntu/rabbit10.jpg", "/home/ubuntu/rabbit11.jpg", "/home/ubuntu/rabbit12.jpg", "/home/ubuntu/rabbit13.jpg", "/home/ubuntu/rabbit14.jpg", "/home/ubuntu/rabbit15.jpg", "/home/ubuntu/rabbit16.jpg", "/home/ubuntu/rabbit17.jpg", "/home/ubuntu/rabbit18.jpg", "/home/ubuntu/rabbit19.jpg"]
     bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(bunnylist), "rb"))
 
 def fistbump(bot, update):
@@ -377,6 +380,22 @@ def doublefistbump(bot, update):
     chat_id = update.message.chat.id
     msg = '\xF0\x9F\x91\x8A \xF0\x9F\x91\x8A'
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
+def fortune(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    user_id = update.message.from_user.id
+    previous_fortune_id = config['previous']['fortune']
+    if (user_id == previous_fortune_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        msg = ("One who asks for many fortunes in a row, is one who should rethink their life.")
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    if (user_id != previous_fortune_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        msg = random.choice(fortunes)
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['previous']['fortune'] = user_id
+    if update.message.chat.type != 'supergroup':
+        msg = random.choice(fortunes)
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 ###############################################################################
 
@@ -429,6 +448,7 @@ def main():
     dp.add_handler(CommandHandler("meme", meme))
     dp.add_handler(CommandHandler("fistbump", fistbump))
     dp.add_handler(CommandHandler("doublefistbump", doublefistbump))
+    dp.add_handler(CommandHandler("fortune", fortune))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member))
