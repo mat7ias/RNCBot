@@ -17,18 +17,19 @@ blacklisted: []
 
 #Admins IDs
 ADMINS:
-  - 
-  - 
+  -
+  -
 
 MENTIONTEAM:
-  - 
-  - 
-  - 
+  -
+  -
+  -
 
-RNC_ID: 
-RNC_PLAYGROUND_ID: 
+RNC_ID:
+RNC_PLAYGROUND_ID:
 
-#Messages
+
+################################# Messages #####################################
 pmme: >
 
   This response is unavailable in group chats. PM me @RaidenCommunityInfoBot
