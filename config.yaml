@@ -2,12 +2,15 @@
 "bot_token": BOT_TOKEN
 
 #Flood filter
-"previous_user_id": 0
-"msg_count": 0
-"resources_count": 6
-"videos_count": 10
-"moon_count": 100
+previous:
+  user_id: 0
+  fortune: 0
 
+counts:
+  resources: 6
+  videos: 10
+  moon: 100
+  msg: 0
 
 previous_msg: []
 blacklisted: []
@@ -15,9 +18,11 @@ blacklisted: []
 #Admins IDs
 ADMINS:
   - 
-
+  - 
 
 MENTIONTEAM:
+  - 
+  - 
   - 
 
 RNC_ID: 
@@ -83,6 +88,8 @@ extras: >
   /bunny - Show me a bunny rabbit!
 
   /meme - Show me a Raiden meme!
+
+  /fortune - Give me my fortune!
 
 start: >
 
