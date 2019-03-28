@@ -28,7 +28,6 @@ MENTIONTEAM:
 RNC_ID:
 RNC_PLAYGROUND_ID:
 
-
 ################################# Messages #####################################
 pmme: >
 
@@ -164,9 +163,9 @@ conferences: >
 
   Upcoming conferences/related meetups:
 
-  March 27th - [The Future of Storage, dApps, and Transactions: Buidling the new Internet.](https://www.meetup.com/DC-CryptoCurrency-Mining/events/259693512/) / Washington, USA
-
   March 28th - [ETH/Web3 Community Town Hall #1 - Bringing the Community Together](https://www.meetup.com/Copenhagen-Ethereum-Meetup/events/258786291/) / København, Denmark
+
+  April 12th-14th - [Blockchain MakerDays](https://chainist.de/challenge-iot-payment/) / Mainz, Germany
 
   May 13th - [Payment-Channels: Lightning, Raiden & Co.](https://www.meetup.com/Altcoin-Krypto-Asset-Stuttgart/events/259192786/) / Stuttgart, Germany
 

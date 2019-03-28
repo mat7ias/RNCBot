@@ -10,6 +10,7 @@ import telegram
 import random
 import json
 
+
 ##### Configure Logging
 
 FORMAT = '%(asctime)s -- %(levelname)s -- %(module)s %(lineno)d -- %(message)s'
@@ -67,13 +68,12 @@ def spamfilter(bot, update):
     spammerid = int
     name = get_name(update.message.from_user)
     chat_id = update.message.chat.id
-    config['previous_msg'] = 'new_message'
+    config['previous_msg'] = text
     resources_count = config['counts']['resources']
     videos_count = config['counts']['videos']
     moon_count = config['counts']['moon']
     print(chat_id,user_id,moon_count)
-
-	##### Flood filter
+##### Flood filter
     if (user_id == previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         config['counts']['msg'] = msg_count + 1
         if (msg_count == 5):
@@ -389,13 +389,25 @@ def fortune(bot, update):
     if (user_id == previous_fortune_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         msg = ("One who asks for many fortunes in a row, is one who should rethink their life.")
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-    if (user_id != previous_fortune_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+    elif (user_id != previous_fortune_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         msg = random.choice(fortunes)
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['previous']['fortune'] = user_id
-    if update.message.chat.type != 'supergroup':
+    else:
         msg = random.choice(fortunes)
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
+#To set moon value to something other than to be usable straight away
+def prev_moon(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    user_id = update.message.from_user.id
+    chat_id = update.message.chat.id
+    text = update.message.text
+    if user_id in ADMINS:
+        value = config['previous_msg']
+        msg = ("Time since moon is now "+str(value))
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['counts']['moon'] = int(value)
 
 ###############################################################################
 
@@ -405,9 +417,9 @@ def error(bot, update, error):
 
 ###### Running the bot
 def main():
+    print("Bot started")
 
 ##### Create the EventHandler and pass it your bot's token
-    print("Bot started")
     updater = Updater(bot_token,workers=10)
 
 ##### Get the dispatcher to register handlers
@@ -449,6 +461,8 @@ def main():
     dp.add_handler(CommandHandler("fistbump", fistbump))
     dp.add_handler(CommandHandler("doublefistbump", doublefistbump))
     dp.add_handler(CommandHandler("fortune", fortune))
+    dp.add_handler(CommandHandler("prev_moon", prev_moon))
+
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member))
