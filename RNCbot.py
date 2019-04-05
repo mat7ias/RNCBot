@@ -72,7 +72,9 @@ def spamfilter(bot, update):
     resources_count = config['counts']['resources']
     videos_count = config['counts']['videos']
     moon_count = config['counts']['moon']
-    print(chat_id,user_id,moon_count)
+    botpoints =  config['counts']['botpoints']
+    print(chat_id,user_id,moon_count,botpoints)
+    triggers = config['triggers']
 ##### Flood filter
     if (user_id == previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         config['counts']['msg'] = msg_count + 1
@@ -104,6 +106,13 @@ def spamfilter(bot, update):
             bot.delete_message(chat_id=chat_id, message_id=message_id)
             bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
             pprint('blacklisted word')
+
+##### Triggers
+    for y in triggers:
+        if y in text:
+            badword = y
+            msg = ("#No"+str(badword)+", watch out for scams!")
+            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 ############################### New Member #####################################
 
@@ -237,6 +246,8 @@ def whenmoon(bot, update):
     moon_count = config['counts']['moon']
     message_id = update.message.message_id
     if (moon_count >= 100) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        msg = ("We went "+str(moon_count)+" messages without asking when moon, good work team!")
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['counts']['moon'] = 0
     if (moon_count < 100) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
@@ -386,9 +397,13 @@ def fortune(bot, update):
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
     previous_fortune_id = config['previous']['fortune']
-    if (user_id == previous_fortune_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+    if (previous_fortune_id == user_id + 1) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        message_id = update.message.message_id
+        bot.delete_message(chat_id=chat_id, message_id=message_id)
+    elif (user_id == previous_fortune_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         msg = ("One who asks for many fortunes in a row, is one who should rethink their life.")
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['previous']['fortune'] = user_id + 1
     elif (user_id != previous_fortune_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         msg = random.choice(fortunes)
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -397,7 +412,45 @@ def fortune(bot, update):
         msg = random.choice(fortunes)
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-#To set moon value to something other than to be usable straight away
+def goodbot(bot, update):
+    chat_id = update.message.chat.id
+    user_id = update.message.from_user.id
+    botpoints = config['counts']['botpoints']
+    previous_botpoints_id = config['previous']['botpoints_id']
+    if (previous_botpoints_id == user_id + 1) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        message_id = update.message.message_id
+        bot.delete_message(chat_id=chat_id, message_id=message_id)
+    elif (user_id == previous_botpoints_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        msg = ("Only one point at a time.")
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['previous']['botpoints_id'] = user_id + 1
+    elif (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
+        botpoints = config['counts']['botpoints'] + 1
+        msg = (str(random.choice(config['goodbot']))+" "+str(botpoints))
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['counts']['botpoints'] = botpoints
+        config['previous']['botpoints_id'] = user_id
+
+def badbot(bot, update):
+    chat_id = update.message.chat.id
+    user_id = update.message.from_user.id
+    botpoints = config['counts']['botpoints']
+    previous_botpoints_id = config['previous']['botpoints_id']
+    if (previous_botpoints_id == user_id + 1) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        message_id = update.message.message_id
+        bot.delete_message(chat_id=chat_id, message_id=message_id)
+    elif (user_id == previous_botpoints_id) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        msg = ("Only one point at a time.")
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['previous']['botpoints_id'] = user_id + 1
+    elif (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
+        botpoints = config['counts']['botpoints'] - 1
+        msg = (str(random.choice(config['goodbot']))+" "+str(botpoints))
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['counts']['botpoints'] = botpoints
+
+
+#Edit time to moon
 def prev_moon(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     user_id = update.message.from_user.id
@@ -408,6 +461,18 @@ def prev_moon(bot, update):
         msg = ("Time since moon is now "+str(value))
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['counts']['moon'] = int(value)
+
+def prev_botpoints(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    user_id = update.message.from_user.id
+    chat_id = update.message.chat.id
+    text = update.message.text
+    if user_id in ADMINS:
+        value = config['previous_msg']
+        msg = ("Botpoints now "+str(value))
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        config['counts']['botpoints'] = int(value)
+
 
 ###############################################################################
 
@@ -461,8 +526,11 @@ def main():
     dp.add_handler(CommandHandler("fistbump", fistbump))
     dp.add_handler(CommandHandler("doublefistbump", doublefistbump))
     dp.add_handler(CommandHandler("fortune", fortune))
-    dp.add_handler(CommandHandler("prev_moon", prev_moon))
+    dp.add_handler(CommandHandler("goodbot", goodbot))
+    dp.add_handler(CommandHandler("badbot", badbot))
 
+    dp.add_handler(CommandHandler("prev_moon", prev_moon))
+    dp.add_handler(CommandHandler("prev_botpoints", prev_botpoints))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member))
