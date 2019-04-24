@@ -31,7 +31,7 @@ RNC_PLAYGROUND_ID:
 ################################# Messages #####################################
 pmme: >
 
-    This response is unavailable in group chats. PM me @RaidenCommunityInfoBot
+    This response is unavailable in group chats. PM me @RaidenInfoBot
 
 commands: >
 
@@ -111,11 +111,11 @@ resources: >
 
     [Dev Chat](https://gitter.im/raiden-network/raiden)
 
-    [Raiden Explorer](https://explorer.raiden.network/) ([Kovan](https://kovan.explorer.raiden.network), [Ropsten](https://ropsten.explorer.raiden.network), [Rinkeby](https://rinkeby.explorer.raiden.network))
+    [Raiden Explorer](https://explorer.raiden.network/) ([Kovan](https://kovan.explorer.raiden.network), [Ropsten](https://ropsten.explorer.raiden.network), [Rinkeby](https://rinkeby.explorer.raiden.network), [Goerli](https://goerli.explorer.raiden.network))
 
     [Raiden Network Roadmap](https://raiden.network/roadmap.html)
 
-    [Documentation](https://readthedocs.org/projects/raiden-network/)
+    [Documentation](https://readthedocs.org/projects/raiden-network/), [Services](https://raiden-services.readthedocs.io/en/latest/)
 
     [Specification PDF](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
 
@@ -131,7 +131,7 @@ resources: >
 
     [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
 
-    [PyPI](https://pypi.org/project/raiden/)
+    [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
 
 community: >
 
@@ -169,15 +169,15 @@ conferences: >
 
     Upcoming conferences/hackathons/related meetups:
 
-    April 12-14th - [Blockchain MakerDays](https://chainist.de/challenge-iot-payment/) / Mainz, Germany
-
-    April 19-21th - [ETHCapetown hackathon](https://ethcapetown.com/) / Cape Town, South Africa
-
     May 13th - [Payment-Channels: Lightning, Raiden & Co.](https://www.meetup.com/Altcoin-Krypto-Asset-Stuttgart/events/259192786/) / Stuttgart, Germany
+
+    August 12-23rd - [DappCon](https://www.dappcon.io/speakers/) / Berlin, Germany
 
 previousevents: >
 
     Recent Events:
+
+    April 19-21th - [ETHCapetown hackathon](https://twitter.com/raiden_network/status/1119888939328909312) / Cape Town, South Africa
 
     March 28th - [ETH/Web3 Community Town Hall #1 - Bringing the Community Together](https://www.meetup.com/Copenhagen-Ethereum-Meetup/events/258786291/) / København, Denmark
 
@@ -399,13 +399,24 @@ disclaimer: >
 
 rapps: >
 
-    [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project)
+    Rapps (in no particular order)
 
-    [Raidenooh](https://github.com/pisuthd/raiden-dooh)
+    1. [Fairspot](https://github.com/ilinzweilin/ethCapeTown) - WiFi internet access on the go (in 100kb chunks) using Raiden
 
-    [CryptoBotWars](https://cryptoplayer.one), [GitHub](https://github.com/cryptoplayerone/cryptobotwars), Medium posts [Part 1](https://medium.com/@loredana.cirstea/cryptobotwars-or-how-to-build-shitty-demos-and-why-19b5ecf60c76) and [Part 2](https://medium.com/@loredana.cirstea/cryptobotwars-part-2-conclusions-ebde6fa716f6)
+    2. [NUtube](https://nutube.network/#/), [Github](https://github.com/CryptoManiacsZone/nuTube.network), [demo](https://www.youtube.com/watch?v=Tx-j0TubY7k) - decentralized P2P live streaming w/ micropayments
 
-    [Storj](https://github.com/stefanbenten/raiden-on-storj), [Medium post](https://storj.io/blog/2018/12/taking-payments-to-the-next-level-with-raiden/)
+    3. [DTok](https://github.com/ethcapetown/burner-wallet/tree/dtok-raiden) - decentralized streaming and tipping platform w/ Raiden, BurnerWallet ([link](https://github.com/austintgriffith/burner-wallet)) and ENS domains
+
+    4. [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
+
+    5. [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project)
+
+    6. [Raidenooh](https://github.com/pisuthd/raiden-dooh)
+
+    7. [CryptoBotWars](https://cryptoplayer.one), [GitHub](https://github.com/cryptoplayerone/cryptobotwars), Medium posts [Part 1](https://medium.com/@loredana.cirstea/cryptobotwars-or-how-to-build-shitty-demos-and-why-19b5ecf60c76) and [Part 2](https://medium.com/@loredana.cirstea/cryptobotwars-part-2-conclusions-ebde6fa716f6)
+
+    8. [Storj](https://github.com/stefanbenten/raiden-on-storj), [Medium post](https://storj.io/blog/2018/12/taking-payments-to-the-next-level-with-raiden/)
+
 
 adminpolicy: >
 

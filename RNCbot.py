@@ -223,14 +223,14 @@ def videos(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['videos']
-    videos_count = config['videos_count']
+    videos_count = config['counts']['videos']
     message_id = update.message.message_id
     if (videos_count >= 10) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-        config['videos_count'] = 0
-    if (videos_count < 10) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        config['counts']['videos'] = 0
+    elif (videos_count < 10) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         bot.delete_message(chat_id=chat_id,message_id=message_id)
-    elif (chat_id != RNC and chat_id != RNC_PLAYGROUND):
+    else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def uraiden(bot, update):
