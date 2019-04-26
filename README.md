@@ -112,7 +112,7 @@
 - [Non-profit 3D printed Raiden model](https://www.shapeways.com/shops/raiden)
 - [Red Eyes on testnet](https://youtu.be/RpaAS64dI6k)
 - [Github Visualization](https://youtu.be/xqxTGF--Bhk)
-- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
+- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf) ([Github](https://github.com/raiden-map))
 - [DAppNode](https://twitter.com/raiden_network/status/1113492536285433860)
 
 ### Chats
