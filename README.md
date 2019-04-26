@@ -3,7 +3,7 @@
 
 ## Resource Contents Summary of RNCbot
 
-- [Raiden Network](#raiden-network-protocol)
+- [Raiden Network](#raiden-network)
   - [Specifications](#specifications)
 - [Applications](#applications)
   - [Explores](#explorers)
