@@ -118,9 +118,9 @@
 ### Chats
 
 - [RNC Telegram](https://t.me/RaidenNetworkCommunity)
-- [Discord](https://discord.gg/zZjYJ6e)
-- [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI)
-- [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org)
+- [Discord](https://discord.gg/zZjYJ6e) (bridge and feeds)
+- [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI) (bridge and feeds)
+- [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org) (bridge)
 
 ## MicroRaiden
 - [MicroRaiden Website](https://micro.raiden.network/)
