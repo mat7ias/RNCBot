@@ -67,6 +67,7 @@
 - [Raiden FAQ](https://raiden.network/faq.html)
 - [Reddit Weekly Update](https://www.reddit.com/r/raidennetwork/search?q=GIT&restrict_sr=1&sort=new)
 - [Medium Publications](https://medium.com/@raiden_network) and [Blog](https://medium.com/raiden-network)
+- [Raiden Network WebUI Demo](https://youtu.be/ASWeFdHDK-E) 
 - [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0)
 
 ### Talks
@@ -89,11 +90,9 @@
 - [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w) - Heiko 
 - [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Augusto 
 - [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris 
-- [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E) 
 - [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob 
 - [Devcon4 2018](https://youtu.be/v9UQlE2We50) - Lefteris 
 - [Rock-Paper-Scissors on Raiden Network](https://youtu.be/Mv6Ukdu0Xso) - Loredana 
-- [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0) - Franziska 
 - [CryptoMonday 2nd Layer Scaling on Ethereum](https://youtu.be/piT0GeE7Rw4)(Deutsch) - Christian and Oliver 
 - [Stanford Blockchain Conference](https://youtu.be/_irp4Jx0qjM) - Pedro Moreno-Sanchez 
 - [Nugget's News Interview](https://youtu.be/Cp8hprIjJHc) - Lefteris 
