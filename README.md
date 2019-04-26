@@ -6,7 +6,7 @@
 - [Raiden Network](#raiden-network)
   - [Specifications](#specifications)
 - [Applications](#applications)
-  - [Explores](#explorers)
+  - [Explorers](#explorers)
   - [RNapps](#rnapps)
 - [Developer Resources](#developer-resources)
 - [Learning Resources](#learning-resources)
