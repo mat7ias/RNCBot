@@ -57,7 +57,7 @@
 ## Developer Resources
 
 - [Workshop](https://workshop.raiden.network)
-- [Releases List](https://github.com/raiden-network/raiden/releases) ([nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html)
+- [Releases List](https://github.com/raiden-network/raiden/releases) ([nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
 - [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
 - [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
