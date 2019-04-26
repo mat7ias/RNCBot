@@ -1,4 +1,4 @@
-# RNCbot
+# RaidenInfoBot
 [Telegram bot](https://t.me/RaidenInfoBot) currently running in https://t.me/RaidenNetworkCommunity (unofficial)
 
 ## Resource Contents
