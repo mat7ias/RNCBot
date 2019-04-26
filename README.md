@@ -25,7 +25,7 @@
 - [Dev Chat](https://gitter.im/raiden-network/raiden)
 - [Reddit](https://www.reddit.com/r/raidennetwork)
 - [Twitter](https://twitter.com/raiden_network)
-- [Raiden Trust](https://www.raidentrust.li/)
+- [Raiden Trust](https://www.raidentrust.li/) ([Twitter](https://twitter.com/raiden_trust) and [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146))
 
 ### Specifications
 
