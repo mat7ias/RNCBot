@@ -62,7 +62,7 @@
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
 - [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
 - [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
-- [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) ((testnet version)[https://github.com/vdo/DAppnodePackage-raiden-testnet])
+- [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) ([testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet))
 
 ## Learning Resources
 
