@@ -1,5 +1,5 @@
 # RaidenInfoBot
-[Telegram bot](https://t.me/RaidenInfoBot) currently running in https://t.me/RaidenNetworkCommunity (unofficial)
+A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources about Raiden Network (and some misc. features). Currently running in https://t.me/RaidenNetworkCommunity (unofficial)
 
 ## Bot Resource Contents
 
