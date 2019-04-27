@@ -99,6 +99,7 @@
 - [Stanford Blockchain Conference](https://youtu.be/_irp4Jx0qjM) - Pedro Moreno-Sanchez 
 - [Nugget's News Interview](https://youtu.be/Cp8hprIjJHc) - Lefteris 
 - [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0) - Franziska 
+- [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4)
 - [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs) - Paul and Franziska
 
 ### Pulse
