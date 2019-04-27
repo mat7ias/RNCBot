@@ -42,6 +42,7 @@
 - [Kovan](https://kovan.explorer.raiden.network)
 - [Ropsten](https://ropsten.explorer.raiden.network)
 - [Goerli](https://goerli.explorer.raiden.network)
+- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 
 ### RNapps
 
@@ -61,6 +62,7 @@
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
 - [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
 - [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
+- [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden)
 
 ## Learning Resources
 
@@ -112,8 +114,6 @@
 - [Non-profit 3D printed Raiden model](https://www.shapeways.com/shops/raiden)
 - [Red Eyes on testnet](https://youtu.be/RpaAS64dI6k)
 - [Github Visualization](https://youtu.be/xqxTGF--Bhk)
-- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf) ([Github](https://github.com/raiden-map))
-- [DAppNode](https://twitter.com/raiden_network/status/1113492536285433860)
 
 ### Chats
 
