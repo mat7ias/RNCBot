@@ -133,3 +133,12 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Devcon3](https://youtu.be/yx0__aFvjzk?t=9m35s) - Loredana
 - [Berlin Meetup drone demo](https://youtube.com/watch?v=E6CIgJPxgpQ) - Loredana
 - [ScalingNOW!](https://youtu.be/81gK-5qLFeg) - Loredana
+
+
+## Misc. Bot Functions
+- Spam filtering
+- Blacklist
+- Updated dates and details for events/conferences/hackathons/meetups related to Raiden
+- Basic bot points system
+- Memes
+- Warnings to watch out for scams anytime airdrops or giveaways are mentioned
