@@ -142,3 +142,4 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - Basic bot points system
 - Memes
 - Warnings to watch out for scams anytime airdrops or giveaways are mentioned
+- Fortune cookies
