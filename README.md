@@ -17,7 +17,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [MicroRaiden](#microraiden)
   - [MicroTalks](#microtalks)
 - [MicroRaiden](#microraiden)
-- [Misc. Bot Functions](#misc.botfunctions)
+- [Misc. Bot Functions](#misc-bot-functions)
 
 ## Raiden Network
 
