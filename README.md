@@ -133,9 +133,9 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [MicroRaiden Dev Chat](https://gitter.im/raiden-network/microraiden)
 
 ### MicroTalks
-- [Devcon3](https://youtu.be/yx0__aFvjzk?t=9m35s) - Loredana
-- [Berlin Meetup drone demo](https://youtube.com/watch?v=E6CIgJPxgpQ) - Loredana
-- [ScalingNOW!](https://youtu.be/81gK-5qLFeg) - Loredana
+- [Devcon3](https://youtu.be/yx0__aFvjzk?t=9m35s)
+- [Berlin Meetup drone demo](https://youtube.com/watch?v=E6CIgJPxgpQ)
+- [ScalingNOW!](https://youtu.be/81gK-5qLFeg)
 
 
 ## Misc. Bot Functions
