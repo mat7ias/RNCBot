@@ -189,7 +189,6 @@ def heybot(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
     chat_id = update.message.chat.id
-    msg = config['heybot']
     update.message.reply_text("Hey "+str(update.message.from_user.first_name)+"! What's up?")
     #config['previous_msg'] = heybot
 
@@ -207,10 +206,10 @@ def resources(bot, update):
     elif (chat_id != RNC and chat_id != RNC_PLAYGROUND):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def conferences(bot, update):
+def events(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
-    msg = config['conferences']
+    msg = config['events']
     bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def previousevents(bot, update):
@@ -445,7 +444,7 @@ def badbot(bot, update):
         config['previous']['botpoints_id'] = user_id + 1
     elif (update.message.chat.type == 'group') or (update.message.chat.type == 'supergroup'):
         botpoints = config['counts']['botpoints'] - 1
-        msg = (str(random.choice(config['goodbot']))+" "+str(botpoints))
+        msg = (str(random.choice(config['badbot']))+" "+str(botpoints))
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['counts']['botpoints'] = botpoints
 
@@ -499,7 +498,7 @@ def main():
     dp.add_handler(CommandHandler("platforms", platforms))
     dp.add_handler(CommandHandler("heybot", heybot))
     dp.add_handler(CommandHandler("resources", resources))
-    dp.add_handler(CommandHandler("conferences", conferences))
+    dp.add_handler(CommandHandler("events", events))
     dp.add_handler(CommandHandler("previousevents", previousevents))
     dp.add_handler(CommandHandler("videos", videos))
     dp.add_handler(CommandHandler("uraiden", uraiden))

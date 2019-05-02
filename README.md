@@ -16,7 +16,8 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
   - [Chats](#irc)
 - [MicroRaiden](#microraiden)
   - [MicroTalks](#microtalks)
-
+- [MicroRaiden](#microraiden)
+- [Misc. Bot Functions](#misc.botfunctions)
 
 ## Raiden Network
 
@@ -108,6 +109,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
 - [Raiden Pulse #3:](https://medium.com/raiden-network/raiden-pulse-3-news-from-november-and-december-dd0da04961d3) News from November and December
 - [Raiden Pulse #4:](https://medium.com/raiden-network/raiden-pulse-4-news-from-january-and-february-a25dbee298de) News from January and February
+- [Raiden Pulse #5:](https://medium.com/raiden-network/raiden-pulse-5-news-from-march-and-april-56e781aea7c) News from March and April
 
 ## Community
 
