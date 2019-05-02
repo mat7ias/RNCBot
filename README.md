@@ -88,14 +88,14 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M)
 - [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w)
 - [Copenhagen Ethereum Meetup](https://youtu.be/arecj2vyjlE)
-- [Ethereum Asia Tour](https://youtu.be/MI5vgqq1hzA) - Jacob
+- [Ethereum Asia Tour](https://youtu.be/MI5vgqq1hzA)
 - [DAPPCON 2018 Panel Talking State Channels and Plasma](https://youtu.be/zmS0i3ZQZak)
 - [DAPPCON 2018](https://youtu.be/hSMIpl6e_Ow)
 - [Off The Chain presentation](https://youtu.be/8Duil4pLzhI)
 - [L2 Summit State Channel Panel](https://youtu.be/jzoS0tPUAiQ?t=2h10m9s)
 - [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s)
 - [Asseth 2018](https://youtu.be/93qOwUSj4PQ)
-- [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
+- [Devcon3](https://youtu.be/00RPE96LRVM)
 - [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687)
 - [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ)
 - [Devcon2](https://youtu.be/4igFqFqQga4)
