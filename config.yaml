@@ -125,13 +125,15 @@ resources: >
 
     [Reddit](https://www.reddit.com/r/raidennetwork)
 
-    [Weekly Reddit Github Update](https://reddit.com/user/bor4/posts/)
+    [Weekly Reddit Github Update](https://www.reddit.com/r/raidennetwork/search?q=GIT&restrict_sr=1&sort=new)
 
     [Workshops](http://workshop.raiden.network)
 
     [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
 
     [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
+
+    [Raiden Trust](https://www.raidentrust.li/) ([Twitter](https://twitter.com/raiden_trust) and [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146))
 
 community: >
 
@@ -143,17 +145,15 @@ community: >
 
     [This bot!](https://github.com/mat7ias/RNCbot)
 
-    [Non-profit 3D printed Raiden souvenir](https://www.shapeways.com/shops/raiden)
+    [Non-profit 3D printed Raiden model](https://www.shapeways.com/shops/raiden)
 
     [Red Eyes on testnet](https://youtu.be/RpaAS64dI6k)
 
     [Github Visualization](https://youtu.be/xqxTGF--Bhk)
 
+    Watchtower scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
+
     [eth.events](raiden.eth.events)
-
-    [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
-
-    [DAppNode](https://twitter.com/raiden_network/status/1113492536285433860)
 
 platforms: >
 
@@ -165,11 +165,13 @@ platforms: >
 
     [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org)
 
-conferences: >
+events: >
 
     Upcoming conferences/hackathons/related meetups:
 
     May 13th - [Payment-Channels: Lightning, Raiden & Co.](https://www.meetup.com/Altcoin-Krypto-Asset-Stuttgart/events/259192786/) / Stuttgart, Germany
+
+    May 22nd - [Scaling the public blockchain for payments](https://www.meetup.com/Frankfurt-Smart-Contracts-Meetup/events/259939649/) / Frankfurt, Germany
 
     August 12-23rd - [DappCon](https://www.dappcon.io/speakers/) / Berlin, Germany
 
@@ -217,69 +219,70 @@ previousevents: >
 
 videos: >
 
-    Raiden Network videos/presentations:
+    [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs) - Paul and Franziska
 
-    [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
-
-    [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
-
-    [Devcon1](https://youtu.be/h791zjvf3uQ) - Heiko
-
-    [Devcon2](https://youtu.be/4igFqFqQga4) - Heiko
-
-    [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ) - Lefteris
-
-    [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687) - Augusto
-
-    [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
-
-    [Asseth 2018](https://youtu.be/93qOwUSj4PQ) - Lefteris
-
-    [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s) - Lefteris
-
-    [L2 Summit State Channel Panel](https://youtu.be/jzoS0tPUAiQ?t=2h10m9s) - Lefteris
-
-    [Off The Chain presentation](https://youtu.be/8Duil4pLzhI) - Lefteris
-
-    [DAPPCON 2018](https://youtu.be/hSMIpl6e_Ow) - Lefteris
-
-    [DAPPCON 2018 Panel Talking State Channels and Plasma](https://youtu.be/zmS0i3ZQZak) - Augusto
-
-    [Ethereum Asia Tour](https://youtu.be/MI5vgqq1hzA) - Jacob
-
-    [Copenhagen Ethereum Meetup](https://youtu.be/arecj2vyjlE) - Jacob
-
-    [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w) - Heiko
-
-    [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Augusto
-
-    [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
-
-    [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
-
-    [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
-
-    [Devcon4 2018](https://youtu.be/v9UQlE2We50) - Lefteris
-
-    [Rock-Paper-Scissors on Raiden Network](https://youtu.be/Mv6Ukdu0Xso) - Loredana
+    [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4)
 
     [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0) - Franziska
-
-    [CryptoMonday 2nd Layer Scaling on Ethereum](https://youtu.be/piT0GeE7Rw4)(Deutsch) - Christian and Oliver
-
-    [Stanford Blockchain Conference](https://youtu.be/_irp4Jx0qjM) - Pedro Moreno-Sanchez
 
     [Nugget's News Interview](https://youtu.be/Cp8hprIjJHc) - Lefteris
 
-    [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0) - Franziska
+    [Stanford Blockchain Conference](https://youtu.be/_irp4Jx0qjM) - Pedro Moreno-Sanchez
 
-    [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs) - Paul and Franziska
+    [CryptoMonday 2nd Layer Scaling on Ethereum](https://youtu.be/piT0GeE7Rw4)(Deutsch) - Christian and Oliver
+
+    [Rock-Paper-Scissors on Raiden Network](https://youtu.be/Mv6Ukdu0Xso) - Loredana
+
+    [Devcon4 2018](https://youtu.be/v9UQlE2We50) - Lefteris
+
+    [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc) - Jacob
+
+    [Raiden Network Web Application Demo](https://youtu.be/ASWeFdHDK-E)
+
+    [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK) - Lefteris
+
+    [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M) - Augusto
+
+    [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w) - Heiko
+
+    [Copenhagen Ethereum Meetup](https://youtu.be/arecj2vyjlE) - Jacob
+
+    [Ethereum Asia Tour](https://youtu.be/MI5vgqq1hzA) - Jacob
+
+    [DAPPCON 2018 Panel Talking State Channels and Plasma](https://youtu.be/zmS0i3ZQZak) - Augusto
+
+    [DAPPCON 2018](https://youtu.be/hSMIpl6e_Ow) - Lefteris
+
+    [Off The Chain presentation](https://youtu.be/8Duil4pLzhI) - Lefteris
+
+    [L2 Summit State Channel Panel](https://youtu.be/jzoS0tPUAiQ?t=2h10m9s) - Lefteris
+
+    [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s) - Lefteris
+
+    [Asseth 2018](https://youtu.be/93qOwUSj4PQ) - Lefteris
+
+    [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
+
+    [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687) - Augusto
+
+    [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ) - Lefteris
+
+    [Devcon2](https://youtu.be/4igFqFqQga4) - Heiko
+
+    [Devcon1](https://youtu.be/h791zjvf3uQ) - Heiko
+
+    [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
+
+    [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
+
+    Raiden Network videos/presentations:
+
 
 uraiden: >
 
     MicroRaiden:
 
-    [uRaiden Github](https://micro.raiden.network/)
+    [uRaiden Website](https://micro.raiden.network/)
 
     [uRaiden Codebase](https://github.com/raiden-network/microraiden)
 
@@ -293,7 +296,7 @@ uraiden: >
 
     [Presentation Devcon3](https://youtu.be/yx0__aFvjzk?t=9m35s) - Loredana
 
-    [Berlin Meetup drone demo](https://youtube.com/watch?v=E6CIgJPxgpQ) - Loredana
+    [Berlin Meetup drone demo](https://youtu.be/E6CIgJPxgpQ) - Loredana
 
     [ScalingNOW!](https://youtu.be/81gK-5qLFeg) - Loredana
 
@@ -373,7 +376,7 @@ pulse: >
 
 nightly: >
 
-    [Raiden Network Nightlies Releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html)
+    [Raiden Network Nightly Releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html)
 
 releases: >
 
@@ -399,24 +402,33 @@ disclaimer: >
 
 rapps: >
 
-    Rapps (in no particular order)
+    RNapps and related dev tools/utilities (in no particular order):
 
-    1. [Fairspot](https://github.com/ilinzweilin/ethCapeTown) - WiFi internet access on the go (in 100kb chunks) using Raiden
+    [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
 
-    2. [NUtube](https://nutube.network/#/), [Github](https://github.com/CryptoManiacsZone/nuTube.network), [demo](https://www.youtube.com/watch?v=Tx-j0TubY7k) - decentralized P2P live streaming w/ micropayments
+    [Parity docker Raiden dev env](https://github.com/calinchiper/parity-docker-raiden-dev-env) - Dockerized POA Parity blockchain + Raiden network contracts deployment scripts & config generator
 
-    3. [DTok](https://github.com/ethcapetown/burner-wallet/tree/dtok-raiden) - decentralized streaming and tipping platform w/ Raiden, BurnerWallet ([link](https://github.com/austintgriffith/burner-wallet)) and ENS domains
+    [Fairspot](https://github.com/ilinzweilin/ethCapeTown) - WiFi internet access on the go (in 100kb chunks) using Raiden
 
-    4. [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
+    [NUtube](https://nutube.network/#/), [Github](https://github.com/CryptoManiacsZone/nuTube.network), [demo](https://www.youtube.com/watch?v=Tx-j0TubY7k) - decentralized P2P live streaming w/ micropayments
 
-    5. [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project)
+    [DTok](https://github.com/ethcapetown/burner-wallet/tree/dtok-raiden) - decentralized streaming and tipping platform w/ Raiden, BurnerWallet ([link](https://github.com/austintgriffith/burner-wallet)) and ENS domains
 
-    6. [Raidenooh](https://github.com/pisuthd/raiden-dooh)
+    [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
 
-    7. [CryptoBotWars](https://cryptoplayer.one), [GitHub](https://github.com/cryptoplayerone/cryptobotwars), Medium posts [Part 1](https://medium.com/@loredana.cirstea/cryptobotwars-or-how-to-build-shitty-demos-and-why-19b5ecf60c76) and [Part 2](https://medium.com/@loredana.cirstea/cryptobotwars-part-2-conclusions-ebde6fa716f6)
+    [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project) - pushing crypto to be simple enough to be used by the oldies
 
-    8. [Storj](https://github.com/stefanbenten/raiden-on-storj), [Medium post](https://storj.io/blog/2018/12/taking-payments-to-the-next-level-with-raiden/)
+    [Raidenooh](https://github.com/pisuthd/raiden-dooh) - decentralized digital signage platform
 
+    [CryptoBotWars](https://cryptoplayer.one), [GitHub](https://github.com/cryptoplayerone/cryptobotwars), Medium posts [Part 1](https://medium.com/@loredana.cirstea/cryptobotwars-or-how-to-build-shitty-demos-and-why-19b5ecf60c76) and [Part 2](https://medium.com/@loredana.cirstea/cryptobotwars-part-2-conclusions-ebde6fa716f6)
+
+    [Storj](https://github.com/stefanbenten/raiden-on-storj), [Medium post](https://storj.io/blog/2018/12/taking-payments-to-the-next-level-with-raiden/) - decentralized cloud storage
+
+    [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map) - Raiden Network analyzer
+
+    [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) ([testnet version]([)https://github.com/vdo/DAppnodePackage-raiden-testnet))
+
+    [Test environment scripts](https://github.com/kelsos/test-environment-scripts)
 
 adminpolicy: >
 
