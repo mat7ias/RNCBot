@@ -64,6 +64,11 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
 - [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
 - [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) ([testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet))
+- Need testnet Ether? (going off-chain with Raiden requires on-chain interactions)
+  - [Kovan](https://faucet.kovan.network/)
+  - [Ropsten](https://faucet.ropsten.be/)
+  - [Goerli](https://faucet.goerli.mudit.blog/)
+  - [Rinkeby](https://faucet.rinkeby.io/)
 
 ## Learning Resources
 
@@ -105,11 +110,12 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 
 ### Pulse
 
-- [Raiden Pulse #1:](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e) News from July and August
-- [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
-- [Raiden Pulse #3:](https://medium.com/raiden-network/raiden-pulse-3-news-from-november-and-december-dd0da04961d3) News from November and December
-- [Raiden Pulse #4:](https://medium.com/raiden-network/raiden-pulse-4-news-from-january-and-february-a25dbee298de) News from January and February
 - [Raiden Pulse #5:](https://medium.com/raiden-network/raiden-pulse-5-news-from-march-and-april-56e781aea7c) News from March and April
+- [Raiden Pulse #4:](https://medium.com/raiden-network/raiden-pulse-4-news-from-january-and-february-a25dbee298de) News from January and February
+- [Raiden Pulse #3:](https://medium.com/raiden-network/raiden-pulse-3-news-from-november-and-december-dd0da04961d3) News from November and December
+- [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
+- [Raiden Pulse #1:](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e) News from July and August
+
 
 ## Community
 
@@ -126,6 +132,8 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI) (bridge and feeds)
 - [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org) (bridge)
 
+note: community channels are run by the community
+
 ## MicroRaiden
 - [MicroRaiden Website](https://micro.raiden.network/)
 - [MicroRaiden Github repo](https://github.com/raiden-network/microraiden)
@@ -141,11 +149,14 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 ## Misc. Bot Functions
 - Spam filtering
   - Removes joining message and sets some basic permissions
+  - Welcome user with a tag joining the group, as long as the previous bot
   - Removes blacklisted words
-  - Welcome user with a tag joining the group, as long as the previous bot message wasn't a welcome (avoids the bot spamming)
+ message wasn't a welcome (avoids the bot spamming)
 - Updated dates and details for events/conferences/hackathons/meetups related to Raiden
 - Basic bot points system
 - Memes
 - Warnings to watch out for scams anytime airdrops or giveaways are mentioned
 - Fortune cookies
 - Get telegram ID
+- An open source list of projects that've previously mentioned interest in payment channels, like Raiden Network
+- A few functions specific to the RNC telegram group
