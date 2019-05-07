@@ -15,6 +15,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
   - [Pulse](#pulse)
 - [Community](#community)
   - [Community Channels](#community-channels)
+- [Raiden Trust](#raiden-trust)
 - [MicroRaiden](#microraiden)
   - [MicroTalks](#microtalks)
 - [Misc. Bot Functions](#misc-bot-functions)
@@ -26,7 +27,6 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Dev Chat](https://gitter.im/raiden-network/raiden)
 - [Reddit](https://www.reddit.com/r/raidennetwork)
 - [Twitter](https://twitter.com/raiden_network)
-- [Raiden Trust](https://www.raidentrust.li/) ([Twitter](https://twitter.com/raiden_trust) and [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146))
 
 ### Specifications
 
@@ -138,6 +138,11 @@ List of previous presentations, podcasts, channels, etc. related to Raiden Netwo
 - [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org) (bridge)
 
 note: community channels are run by the community
+
+## Raiden Trust
+- [Raiden Trust Website](https://www.raidentrust.li/)
+- [Twitter](https://twitter.com/raiden_trust) and
+- Announcement [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146))
 
 ## MicroRaiden
 
