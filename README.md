@@ -7,8 +7,9 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
   - [Specifications](#specifications)
 - [Applications](#applications)
   - [Explorers](#explorers)
-  - [RNapps](#rapps)
 - [Developer Resources](#developer-resources)
+  - [Tools](#tools)
+  - [RNapps](#rapps)
 - [Learning Resources](#learning-resources)
   - [Talks](#talks)
   - [Pulse](#pulse)
@@ -45,6 +46,24 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Goerli](https://goerli.explorer.raiden.network)
 - [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 
+## Developer Resources
+
+- [Workshop](https://workshop.raiden.network)
+- [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
+- Need testnet Ether? (going off-chain with Raiden requires on-chain interactions)
+  - [Kovan](https://faucet.kovan.network/)
+  - [Ropsten](https://faucet.ropsten.be/)
+  - [Goerli](https://faucet.goerli.mudit.blog/)
+  - [Rinkeby](https://faucet.rinkeby.io/)
+
+### Tools
+
+- [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
+- PyPI for [Raiden](https://pypi.org/project/raiden/) and [Raiden Services](https://pypi.org/project/raiden-services/)
+- [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) (+[DAppNode docs](https://dappnode.github.io/DAppNodeDocs/install/) +[testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet)) - DAppNode package for the Raiden network
+- [Test environment scripts](https://github.com/kelsos/test-environment-scripts) - a collection of scripts used to bootstrap a test raiden environment
+- [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client) - an Express Server that connects to a Raiden Client
+
 ### Rapps
 
 - [Fairspot](https://github.com/ilinzweilin/ethCapeTown) - WiFi internet access on the go (in 100kb chunks) using Raiden
@@ -55,20 +74,6 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
 - [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project) - pushing crypto to be simple enough to be used by the oldies
 - [Raidenooh](https://github.com/pisuthd/raiden-dooh) - decentralized digital signage platform
-- [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
-
-## Developer Resources
-
-- [Workshop](https://workshop.raiden.network)
-- [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
-- [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
-- PyPI for [Raiden](https://pypi.org/project/raiden/) and [Raiden Services](https://pypi.org/project/raiden-services/)
-- [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) (+[DAppNode docs](https://dappnode.github.io/DAppNodeDocs/install/) +[testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet))
-- Need testnet Ether? (going off-chain with Raiden requires on-chain interactions)
-  - [Kovan](https://faucet.kovan.network/)
-  - [Ropsten](https://faucet.ropsten.be/)
-  - [Goerli](https://faucet.goerli.mudit.blog/)
-  - [Rinkeby](https://faucet.rinkeby.io/)
 
 ## Learning Resources
 
