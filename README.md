@@ -29,9 +29,9 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 
 ### Specifications
 
-- [Documentation (stable)](https://raiden-network.readthedocs.io/en/stable/)
-- [Specification (latest)](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
-- [Raiden Services (latest)](https://raiden-services.readthedocs.io/en/latest/)
+- [Raiden Network Documentation (stable)](https://raiden-network.readthedocs.io/en/stable/)
+- [Raiden Network Specification (latest)](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
+- [Raiden Services Documentation (latest)](https://raiden-services.readthedocs.io/en/latest/)
 
 ## Applications
 
