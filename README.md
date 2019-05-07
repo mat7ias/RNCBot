@@ -5,11 +5,10 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 
 - [Raiden Network](#raiden-network)
   - [Specifications](#specifications)
-- [Applications](#applications)
-  - [Explorers](#explorers)
 - [Developer Resources](#developer-resources)
   - [Tools](#tools)
   - [RNapps](#rapps)
+- [Explorers](#explorers)
 - [Learning Resources](#learning-resources)
   - [Talks](#talks)
   - [Pulse](#pulse)
@@ -34,18 +33,6 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Raiden Network Specification (latest)](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
 - [Raiden Services Documentation (latest)](https://raiden-services.readthedocs.io/en/latest/)
 
-## Applications
-
-- [WebUI](https://github.com/raiden-network/webui)
-
-### Explorers
-
-- [Mainnet](https://explorer.raiden.network)
-- [Kovan](https://kovan.explorer.raiden.network)
-- [Ropsten](https://ropsten.explorer.raiden.network)
-- [Goerli](https://goerli.explorer.raiden.network)
-- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
-
 ## Developer Resources
 
 - [Workshop](https://workshop.raiden.network)
@@ -58,6 +45,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 
 ### Tools
 
+- [WebUI](https://github.com/raiden-network/webui) - Raiden Web User Interface
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
 - PyPI for [Raiden](https://pypi.org/project/raiden/) and [Raiden Services](https://pypi.org/project/raiden-services/)
 - [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) (+[DAppNode docs](https://dappnode.github.io/DAppNodeDocs/install/) +[testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet)) - DAppNode package for the Raiden network
@@ -74,6 +62,14 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
 - [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project) - pushing crypto to be simple enough to be used by the oldies
 - [Raidenooh](https://github.com/pisuthd/raiden-dooh) - decentralized digital signage platform
+
+## Explorers
+
+- [Mainnet](https://explorer.raiden.network)
+- [Kovan](https://kovan.explorer.raiden.network)
+- [Ropsten](https://ropsten.explorer.raiden.network)
+- [Goerli](https://goerli.explorer.raiden.network)
+- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map) (WIP)
 
 ## Learning Resources
 
