@@ -13,10 +13,9 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
   - [Talks](#talks)
   - [Pulse](#pulse)
 - [Community](#community)
-  - [Chats](#irc)
+  - [Community Channels](#community-channels)
 - [MicroRaiden](#microraiden)
   - [MicroTalks](#microtalks)
-- [MicroRaiden](#microraiden)
 - [Misc. Bot Functions](#misc-bot-functions)
 
 ## Raiden Network
@@ -80,6 +79,8 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 
 ### Talks
 
+- [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
+- [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
 - [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs)
 - [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4)
 - [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0)
@@ -105,8 +106,6 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ)
 - [Devcon2](https://youtu.be/4igFqFqQga4)
 - [Devcon1](https://youtu.be/h791zjvf3uQ)
-- [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
-- [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
 
 ### Pulse
 
