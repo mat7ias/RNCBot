@@ -55,6 +55,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
 - [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project) - pushing crypto to be simple enough to be used by the oldies
 - [Raidenooh](https://github.com/pisuthd/raiden-dooh) - decentralized digital signage platform
+- [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
 
 ## Developer Resources
 
@@ -68,7 +69,6 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
   - [Ropsten](https://faucet.ropsten.be/)
   - [Goerli](https://faucet.goerli.mudit.blog/)
   - [Rinkeby](https://faucet.rinkeby.io/)
-- [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
 
 ## Learning Resources
 
