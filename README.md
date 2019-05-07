@@ -69,13 +69,14 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Kovan](https://kovan.explorer.raiden.network)
 - [Ropsten](https://ropsten.explorer.raiden.network)
 - [Goerli](https://goerli.explorer.raiden.network)
+- [Rinkeby](https://rinkeby.explorer.raiden.network)
 - [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map) (WIP)
 
 ## Learning Resources
 
 - [Raiden FAQ](https://raiden.network/faq.html)
-- [Reddit Weekly Update](https://www.reddit.com/r/raidennetwork/search?q=GIT&restrict_sr=1&sort=new)
 - [Medium Publications](https://medium.com/@raiden_network) / [Blog](https://medium.com/raiden-network)
+- [Reddit Weekly Update](https://www.reddit.com/r/raidennetwork/search?q=GIT&restrict_sr=1&sort=new)
 - [Raiden Network WebUI Demo](https://youtu.be/ASWeFdHDK-E)
 - [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0)
 - [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4)
