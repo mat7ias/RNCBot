@@ -1,7 +1,7 @@
 # RaidenInfoBot
 A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources about Raiden Network (and some misc. features). Currently running in https://t.me/RaidenNetworkCommunity (unofficial)
 
-## Bot Resource Contents
+## Resource Contents
 
 - [Raiden Network](#raiden-network)
   - [Specifications](#specifications)
@@ -170,5 +170,4 @@ note: community channels are run by the community
 - Warnings to watch out for scams anytime airdrops or giveaways are mentioned
 - Fortune cookies
 - Get telegram ID
-- An open source list of projects that've previously mentioned interest in payment channels, like Raiden Network
 - A few functions specific to the RNC telegram group
