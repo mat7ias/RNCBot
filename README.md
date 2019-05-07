@@ -141,7 +141,7 @@ note: community channels are run by the community
 
 ## Raiden Trust
 - [Raiden Trust Website](https://www.raidentrust.li/)
-- [Twitter](https://twitter.com/raiden_trust) and
+- [Twitter](https://twitter.com/raiden_trust)
 - Announcement [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146)
 
 ## MicroRaiden
