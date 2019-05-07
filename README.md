@@ -31,6 +31,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 
 - [Documentation (stable)](https://raiden-network.readthedocs.io/en/stable/)
 - [Specification (latest)](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
+- [Raiden Services (latest)](https://raiden-services.readthedocs.io/en/latest/)
 
 ## Applications
 
@@ -58,24 +59,25 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 ## Developer Resources
 
 - [Workshop](https://workshop.raiden.network)
-- [Releases List](https://github.com/raiden-network/raiden/releases) ([nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
+- [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
-- [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
-- [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
-- [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) ([testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet))
+- PyPI for [Raiden](https://pypi.org/project/raiden/) and [Raiden Services](https://pypi.org/project/raiden-services/)
+- [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) (+[DAppNode docs](https://dappnode.github.io/DAppNodeDocs/install/) +[testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet))
 - Need testnet Ether? (going off-chain with Raiden requires on-chain interactions)
   - [Kovan](https://faucet.kovan.network/)
   - [Ropsten](https://faucet.ropsten.be/)
   - [Goerli](https://faucet.goerli.mudit.blog/)
   - [Rinkeby](https://faucet.rinkeby.io/)
+- [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
 
 ## Learning Resources
 
 - [Raiden FAQ](https://raiden.network/faq.html)
 - [Reddit Weekly Update](https://www.reddit.com/r/raidennetwork/search?q=GIT&restrict_sr=1&sort=new)
-- [Medium Publications](https://medium.com/@raiden_network) and [Blog](https://medium.com/raiden-network)
+- [Medium Publications](https://medium.com/@raiden_network) / [Blog](https://medium.com/raiden-network)
 - [Raiden Network WebUI Demo](https://youtu.be/ASWeFdHDK-E)
 - [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0)
+- [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4)
 
 ### Talks
 
@@ -83,7 +85,6 @@ List of previous presentations, podcasts, channels, etc. related to Raiden Netwo
 - [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
 - [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
 - [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs)
-- [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4)
 - [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0)
 - [Nugget's News Interview](https://youtu.be/Cp8hprIjJHc)
 - [Stanford Blockchain Conference](https://youtu.be/_irp4Jx0qjM)
@@ -134,12 +135,14 @@ List of previous presentations, podcasts, channels, etc. related to Raiden Netwo
 note: community channels are run by the community
 
 ## MicroRaiden
+
 - [MicroRaiden Website](https://micro.raiden.network/)
 - [MicroRaiden Github repo](https://github.com/raiden-network/microraiden)
 - [MicroRaiden Docs](https://microraiden.readthedocs.io/en/docs-develop/)
 - [MicroRaiden Dev Chat](https://gitter.im/raiden-network/microraiden)
 
 ### MicroTalks
+
 - [Devcon3](https://youtu.be/yx0__aFvjzk?t=9m35s)
 - [Berlin Meetup drone demo](https://youtube.com/watch?v=E6CIgJPxgpQ)
 - [ScalingNOW!](https://youtu.be/81gK-5qLFeg)
