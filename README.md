@@ -7,7 +7,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
   - [Specifications](#specifications)
 - [Applications](#applications)
   - [Explorers](#explorers)
-  - [RNapps](#rnapps)
+  - [RNapps](#rapps)
 - [Developer Resources](#developer-resources)
 - [Learning Resources](#learning-resources)
   - [Talks](#talks)
@@ -44,7 +44,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Goerli](https://goerli.explorer.raiden.network)
 - [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 
-### RNapps
+### Rapps
 
 - [Fairspot](https://github.com/ilinzweilin/ethCapeTown) - WiFi internet access on the go (in 100kb chunks) using Raiden
 - [NUtube](https://nutube.network/#/), [Github](https://github.com/CryptoManiacsZone/nuTube.network), [demo](https://www.youtube.com/watch?v=Tx-j0TubY7k) - decentralized P2P live streaming w/ micropayments
@@ -79,6 +79,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 
 ### Talks
 
+List of previous presentations, podcasts, channels, etc. related to Raiden Network
 - [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
 - [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
 - [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs)
@@ -115,7 +116,6 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
 - [Raiden Pulse #1:](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e) News from July and August
 
-
 ## Community
 
 - [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/)
@@ -126,7 +126,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 
 ### Community Channels
 
-- [RNC Telegram](https://t.me/RaidenNetworkCommunity)
+- [RNC Telegram](https://t.me/RaidenNetworkCommunity) (where this bot lives)
 - [Discord](https://discord.gg/zZjYJ6e) (bridge and feeds)
 - [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI) (bridge and feeds)
 - [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org) (bridge)
@@ -144,8 +144,8 @@ note: community channels are run by the community
 - [Berlin Meetup drone demo](https://youtube.com/watch?v=E6CIgJPxgpQ)
 - [ScalingNOW!](https://youtu.be/81gK-5qLFeg)
 
-
 ## Misc. Bot Functions
+
 - Spam filtering
   - Removes joining message and sets some basic permissions
   - Welcome user with a tag joining the group, as long as the previous bot
