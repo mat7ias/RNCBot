@@ -169,9 +169,8 @@ note: community channels are run by the community
 
 - Spam filtering
   - Removes joining message and sets some basic permissions
-  - Welcome user with a tag joining the group, as long as the previous bot
-  - Removes blacklisted words
- message wasn't a welcome (avoids the bot spamming)
+  - Welcome user with a tag joining the group, as long as the previous bot message wasn't a welcome (avoids the bot spamming welcome)
+  - Removes messages with blacklisted words, also checks edited messages for blacklisted words
 - Updated dates and details for events/conferences/hackathons/meetups related to Raiden
 - Basic bot points system
 - Memes
