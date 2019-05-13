@@ -91,6 +91,11 @@ extras: >
 
   /fortune - Give me my fortune!
 
+  /goodbot - Give me good bot points :)
+
+  /badbot - Give me bad bot points :(
+
+
 start: >
 
   Hi, start off with /commands
@@ -129,7 +134,7 @@ resources: >
 
   [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
 
-  [Raiden Trust](https://www.raidentrust.li/) ([Twitter](https://twitter.com/raiden_trust) and [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146))
+  [Raiden Trust](https://www.raidentrust.li/), ([Twitter](https://twitter.com/raiden_trust) and [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146))
 
 community: >
 
@@ -147,7 +152,7 @@ community: >
 
   [Github Visualization](https://youtu.be/xqxTGF--Bhk)
 
-  Watchtower scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
+  Watch Tower/Monitoring Service scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
 
   [eth.events](raiden.eth.events)
 
@@ -169,7 +174,7 @@ events: >
 
   May 22nd - [Scaling the public blockchain for payments](https://www.meetup.com/Frankfurt-Smart-Contracts-Meetup/events/259939649/) / Frankfurt, Germany
 
-  June 10–12th - [CogX](https://cogx.co/) / King's Cross, London
+  June 10-12th - [CogX](https://cogx.co/) / King's Cross, London
 
   August 21-23rd - [DappCon](https://www.dappcon.io/speakers/) / Berlin, Germany
 
@@ -191,7 +196,7 @@ previousevents: >
 
   February 4th - [CryptoMonday | Raiden - 2nd Layer Scaling on Ethereum](https://www.meetup.com/CryptoMonday-Bitcoin-Cologne/events/jmwnpqyzdbgb/)
 
-  31/1/19 - [GoerliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
+  January 31st - [GoerliCon](https://www.meetup.com/Department-of-Decentralization/events/258091601/)
 
   7/12-9/12/18 - [Sponsoring](https://twitter.com/neutral_project/status/1064436809600397312) at [ETHSingapore](https://ethsingapore.co/)
 
@@ -219,7 +224,11 @@ previousevents: >
 
 videos: >
 
-  Raiden Network videos/presentations:
+  Raiden Network related videos/presentations:
+
+  [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
+
+  [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
 
   [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs) - Paul and Franziska
 
@@ -272,10 +281,6 @@ videos: >
   [Devcon2](https://youtu.be/4igFqFqQga4) - Heiko
 
   [Devcon1](https://youtu.be/h791zjvf3uQ) - Heiko
-
-  [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
-
-  [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
 
 uraiden: >
 
@@ -349,31 +354,23 @@ adminlist: >
 
 devcon: >
 
-  Devcon4 has finished but here's some past resources!
+  Devcon5 resources
 
-  [Agenda](https://docs.google.com/spreadsheets/d/e/2PACX-1vTmQ1maZLMDSo3r7wVCzwMadNUCGctmE5byRgv1za6R52wTUgZw-XB9P9dNO7-QBRka1AAwKrXO4kTP/pubhtml)
-
-  [Livestream](https://devcon4.tv/)
-
-  [Guidebook](https://guidebook.com/guide/117233/)
-
-  [Handy Devcon Events summary by EthereumJesus](https://docs.google.com/spreadsheets/d/1gGlIdmx4AjtvRviAgL-PmqsO9y0-Lo2XXM5BHK_n188/edit#gid=0)
-
-  [Guide to Layer 2 at Devcon](https://www.reddit.com/r/raidennetwork/comments/9sx9d0/con_a_guide_to_layer_2_and_scaling_at_devcon/)
+  [Website](https://devcon.org/)
 
 pulse: >
 
   [Raiden Pulse](https://medium.com/raiden-network):
 
-  [Raiden Pulse #1:](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e) News from July and August
-
-  [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
-
-  [Raiden Pulse #3:](https://medium.com/raiden-network/raiden-pulse-3-news-from-november-and-december-dd0da04961d3) News from November and December
+  [Raiden Pulse #5:](https://medium.com/raiden-network/raiden-pulse-5-news-from-march-and-april-56e781aea7c) News from March and April
 
   [Raiden Pulse #4:](https://medium.com/raiden-network/raiden-pulse-4-news-from-january-and-february-a25dbee298de) News from January and February
 
-  [Raiden Pulse #5:](https://medium.com/raiden-network/raiden-pulse-5-news-from-march-and-april-56e781aea7c) News from March and April
+  [Raiden Pulse #3:](https://medium.com/raiden-network/raiden-pulse-3-news-from-november-and-december-dd0da04961d3) News from November and December
+
+  [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
+
+  [Raiden Pulse #1:](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e) News from July and August
 
 nightly: >
 
@@ -413,7 +410,7 @@ rapps: >
 
   [NUtube](https://nutube.network/#/), [Github](https://github.com/CryptoManiacsZone/nuTube.network), [demo](https://www.youtube.com/watch?v=Tx-j0TubY7k) - decentralized P2P live streaming w/ micropayments
 
-  [DTok](https://github.com/ethcapetown/burner-wallet/tree/dtok-raiden) - decentralized streaming and tipping platform w/ Raiden, BurnerWallet ([link](https://github.com/austintgriffith/burner-wallet)) and ENS domains
+  [DTok](https://github.com/ethcapetown/burner-wallet/tree/dtok-raiden), [demo](https://www.youtube.com/watch?v=2CFAJCfKs-8) - decentralized streaming and tipping platform w/ Raiden, BurnerWallet ([link](https://github.com/austintgriffith/burner-wallet)) and ENS domains. Also Stake Capital [Transcoder Campaign: Stake Capital](https://forum.livepeer.org/t/transcoder-campaign-stake-capital-0xa6a9/678) proposal
 
   [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
 
@@ -516,6 +513,12 @@ mentions: >
   [Ankr](https://github.com/Ankr-network/ankr-research)
 
   [Storj](https://medium.com/@storjproject/taking-payments-to-the-next-level-with-raiden-e36fbc99f64f) ([Github](https://github.com/stefanbenten/raiden-on-storj))
+
+  [Hey Bitcoin](https://heybitcoin.io/), [Medium](https://medium.com/@heybitcoin/which-technologies-are-used-by-the-hey-bitcoin-system-e440d203d3fc) - portfolio management
+
+weeklyupdate: >
+
+  [Weekly Reddit Github Update](https://www.reddit.com/r/raidennetwork/search?q=GIT&restrict_sr=1&sort=new)
 
 goodbot:
 

@@ -56,7 +56,7 @@ def get_name(user):
                 return	""
         return name
 
-############################ Spam/Flood filter #################################
+############################ Spam/Flood/Edit filter ############################
 
 def spamfilter(bot, update):
     user_id = update.message.from_user.id
@@ -75,6 +75,21 @@ def spamfilter(bot, update):
     botpoints =  config['counts']['botpoints']
     print(chat_id,user_id,moon_count,botpoints)
     triggers = config['triggers']
+
+##### Blacklist filter
+    for x in blacklist:
+        if x in text:
+            bot.delete_message(chat_id=chat_id, message_id=message_id)
+            bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
+            pprint('blacklisted word')
+
+##### Triggers
+    for y in triggers:
+        if y in text:
+            badword = y
+            msg = ("#No"+str(badword)+", watch out for scams!")
+            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 ##### Flood filter
     if (user_id == previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         config['counts']['msg'] = msg_count + 1
@@ -100,19 +115,18 @@ def spamfilter(bot, update):
         config['counts']['videos'] = videos_count + 1
         config['counts']['moon'] = moon_count + 1
 
-##### Blacklist filter
+##### Edit message filter
+
+def editfilter(bot, update):
+    text = update.edited_message.text
+    message_id = update.edited_message.message_id
+    chat_id = update.edited_message.chat.id
+    user_id = update.edited_message.from_user
+    blacklist = config['blacklisted']
     for x in blacklist:
         if x in text:
             bot.delete_message(chat_id=chat_id, message_id=message_id)
-            bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
-            pprint('blacklisted word')
-
-##### Triggers
-    for y in triggers:
-        if y in text:
-            badword = y
-            msg = ("#No"+str(badword)+", watch out for scams!")
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            pprint('blacklisted edited word')
 
 ############################### New Member #####################################
 
@@ -125,6 +139,7 @@ def new_chat_member(bot, update):
     same_msg = config['previous_msg']
     if update.message.chat.type == 'supergroup':
         bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
+        bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(60)*2)),can_send_messages=False)
         pprint('New Member')
         bot.delete_message(chat_id=chat_id,message_id=message_id)
         if (len(name) < 21):
@@ -449,7 +464,7 @@ def badbot(bot, update):
         config['counts']['botpoints'] = botpoints
 
 
-#Edit time to moon
+#Edit time to moon/points
 def prev_moon(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     user_id = update.message.from_user.id
@@ -527,13 +542,13 @@ def main():
     dp.add_handler(CommandHandler("fortune", fortune))
     dp.add_handler(CommandHandler("goodbot", goodbot))
     dp.add_handler(CommandHandler("badbot", badbot))
-
     dp.add_handler(CommandHandler("prev_moon", prev_moon))
     dp.add_handler(CommandHandler("prev_botpoints", prev_botpoints))
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member))
-    dp.add_handler(MessageHandler(Filters.all, spamfilter))
+    dp.add_handler(MessageHandler(Filters.all, spamfilter,edited_updates=False))
+    dp.add_handler(MessageHandler(Filters.all, editfilter,edited_updates=True))
 
 
 ##### Error handler
