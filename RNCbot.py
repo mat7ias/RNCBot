@@ -121,12 +121,18 @@ def editfilter(bot, update):
     text = update.edited_message.text
     message_id = update.edited_message.message_id
     chat_id = update.edited_message.chat.id
-    user_id = update.edited_message.from_user
     blacklist = config['blacklisted']
     for x in blacklist:
         if x in text:
             bot.delete_message(chat_id=chat_id, message_id=message_id)
             pprint('blacklisted edited word')
+
+##### Forwarded photo filter
+def forwardfilter(bot, update):
+    message_id = update.message.message_id
+    chat_id = update.message.chat.id
+    bot.delete_message(chat_id=chat_id, message_id=message_id)
+    pprint('forwarded photo')
 
 ############################### New Member #####################################
 
@@ -139,7 +145,7 @@ def new_chat_member(bot, update):
     same_msg = config['previous_msg']
     if update.message.chat.type == 'supergroup':
         bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
-        bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(60)*2)),can_send_messages=False)
+        #bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(60)*2)),can_send_messages=False)
         pprint('New Member')
         bot.delete_message(chat_id=chat_id,message_id=message_id)
         if (len(name) < 21):
@@ -463,8 +469,7 @@ def badbot(bot, update):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['counts']['botpoints'] = botpoints
 
-
-#Edit time to moon/points
+###### Edit time to moon/points
 def prev_moon(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     user_id = update.message.from_user.id
@@ -487,10 +492,9 @@ def prev_botpoints(bot, update):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['counts']['botpoints'] = int(value)
 
-
 ###############################################################################
 
-##### Error logging
+###### Error logging
 def error(bot, update, error):
     logger.warning('Update "%s" caused error "%s"', update, error)
 
@@ -547,9 +551,9 @@ def main():
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member))
+    dp.add_handler(MessageHandler((Filters.forwarded | Filters.photo), forwardfilter))
     dp.add_handler(MessageHandler(Filters.all, spamfilter,edited_updates=False))
     dp.add_handler(MessageHandler(Filters.all, editfilter,edited_updates=True))
-
 
 ##### Error handler
     dp.add_error_handler(error)
