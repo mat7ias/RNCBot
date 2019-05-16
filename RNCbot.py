@@ -130,9 +130,12 @@ def editfilter(bot, update):
 ##### Forwarded photo filter
 def forwardfilter(bot, update):
     message_id = update.message.message_id
+    user_id = update.message.from_user.id
     chat_id = update.message.chat.id
-    bot.delete_message(chat_id=chat_id, message_id=message_id)
-    pprint('forwarded photo')
+    profile_pics = bot.getUserProfilePhotos(user_id=user_id)
+    if profile_pics.total_count == 0:
+        bot.delete_message(chat_id=chat_id, message_id=message_id)
+        pprint('forwarded photo')
 
 ############################### New Member #####################################
 
