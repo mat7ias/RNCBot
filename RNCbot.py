@@ -38,12 +38,14 @@ else:
 bot_token      = config['bot_token']
 bot            = telegram.Bot(token=bot_token)
 
-ADMINS         = config['ADMINS']
-MENTIONTEAM    = config['MENTIONTEAM']
-RNC            = config['RNC_ID']
-RNC_PLAYGROUND = config['RNC_PLAYGROUND_ID']
-
-
+ADMINS               = config['ADMINS']
+MENTIONTEAM          = config['MENTIONTEAM']
+RNC                  = config['RNC_ID']
+RNC_PLAYGROUND       = config['RNC_PLAYGROUND_ID']
+PRIOR_WELCOME_MSG_ID = {
+	RNC   : 0,
+	RNC_PLAYGROUND   : 0
+}
 
 def get_name(user):
         try:
@@ -76,19 +78,21 @@ def spamfilter(bot, update):
     print(chat_id,user_id,moon_count,botpoints)
     triggers = config['triggers']
 
+    if text != None:
+
 ##### Blacklist filter
-    for x in blacklist:
-        if x in text:
-            bot.delete_message(chat_id=chat_id, message_id=message_id)
-            bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
-            pprint('blacklisted word')
+        for x in blacklist:
+            if x in text:
+                bot.delete_message(chat_id=chat_id, message_id=message_id)
+                bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
+                pprint('blacklisted word')
 
 ##### Triggers
-    for y in triggers:
-        if y in text:
-            badword = y
-            msg = ("#No"+str(badword)+", watch out for scams!")
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        for y in triggers:
+            if y in text:
+                badword = y
+                msg = ("#No"+str(badword)+", watch out for scams!")
+                bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 ##### Flood filter
     if (user_id == previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
@@ -122,10 +126,11 @@ def editfilter(bot, update):
     message_id = update.edited_message.message_id
     chat_id = update.edited_message.chat.id
     blacklist = config['blacklisted']
-    for x in blacklist:
-        if x in text:
-            bot.delete_message(chat_id=chat_id, message_id=message_id)
-            pprint('blacklisted edited word')
+    if text != None:
+        for x in blacklist:
+            if x in text:
+                bot.delete_message(chat_id=chat_id, message_id=message_id)
+                pprint('blacklisted edited word')
 
 ##### Forwarded photo filter
 def forwardfilter(bot, update):
@@ -145,17 +150,20 @@ def new_chat_member(bot, update):
     chat_id = update.message.chat.id
     tag = update.message.from_user.username
     name = get_name(update.message.from_user)
-    same_msg = config['previous_msg']
     if update.message.chat.type == 'supergroup':
         bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
         #bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(60)*2)),can_send_messages=False)
         pprint('New Member')
         bot.delete_message(chat_id=chat_id,message_id=message_id)
         if (len(name) < 21):
-            if (tag != None and same_msg != 'new_chat_member'):
+            if (tag != None):
+                if PRIOR_WELCOME_MSG_ID[chat_id] > 0:
+                    bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
                 msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
-                bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-                config['previous_msg'] = 'new_chat_member'
+                message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                PRIOR_WELCOME_MSG_ID[chat_id] = int(message.message_id)
+
+
             #else:
                 #msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
                 #bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
