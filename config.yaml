@@ -95,7 +95,6 @@ extras: >
 
   /badbot - Give me bad bot points :(
 
-
 start: >
 
   Hi, start off with /commands
@@ -170,8 +169,6 @@ events: >
 
   Upcoming conferences/hackathons/related meetups:
 
-  May 13th - [Payment-Channels: Lightning, Raiden & Co.](https://www.meetup.com/Altcoin-Krypto-Asset-Stuttgart/events/259192786/) / Stuttgart, Germany
-
   May 22nd - [Scaling the public blockchain for payments](https://www.meetup.com/Frankfurt-Smart-Contracts-Meetup/events/259939649/) / Frankfurt, Germany
 
   June 10-12th - [CogX](https://cogx.co/) / King's Cross, London
@@ -183,6 +180,8 @@ events: >
 previousevents: >
 
   Recent Events:
+
+  May 13th - [Payment-Channels: Lightning, Raiden & Co.](https://www.meetup.com/Altcoin-Krypto-Asset-Stuttgart/events/259192786/) / Stuttgart, Germany
 
   April 19-21th - [ETHCapetown hackathon](https://twitter.com/raiden_network/status/1119888939328909312) / Cape Town, South Africa
 
@@ -401,6 +400,8 @@ disclaimer: >
 rapps: >
 
   RNapps and related dev tools/utilities (in no particular order):
+
+  [Raiden Light Client](https://github.com/raiden-network/light-client) - Raiden Light Client SDK and dApp
 
   [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
 
