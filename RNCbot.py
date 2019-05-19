@@ -172,12 +172,12 @@ def new_chat_member(bot, update):
                 msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
                 message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 PRIOR_WELCOME_MSG_ID[chat_id] = int(message.message_id)
-
-
             #else:
+                #if PRIOR_WELCOME_MSG_ID[chat_id] > 0:
+                    #bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
                 #msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
-                #bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-                #config['previous_msg'] = new_chat_member
+                #message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                #PRIOR_WELCOME_MSG_ID[chat_id] = int(message.message_id)
         else:
             pprint('Long name')
 
@@ -266,8 +266,16 @@ def heybot(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
     chat_id = update.message.chat.id
-    update.message.reply_text("Hey "+str(update.message.from_user.first_name)+"! What's up?")
-    #config['previous_msg'] = heybot
+    msg = ("Hey "+str(update.message.from_user.first_name)+"! What's up?")
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if PRIOR_CMD_MSG_ID[chat_id] > 0:
+            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
+            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
+        PRIOR_CMD_ID[chat_id] = int(message_id)
+    else:
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def resources(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
