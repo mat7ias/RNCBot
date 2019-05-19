@@ -169,7 +169,7 @@ note: community channels are run by the community
 ## Misc. Bot Functions
 
 - Spam filtering
-  - Removes joining message and sets some basic permissions
+  - Removes joining message and sets some basic permissions (more strict against users with no profile picture)
   - Welcome user with a tag joining the group, as long as the previous bot message wasn't a welcome (avoids the bot spamming welcome)
   - Removes messages with blacklisted words, also checks edited messages for blacklisted words
   - Removes forwarded photos if user has no profile picture
@@ -180,3 +180,4 @@ note: community channels are run by the community
 - Fortune cookies
 - Get telegram ID
 - A few functions specific to the RNC telegram group
+  - Can't be spammed (i.e. deletes previous command+response in favour of the new command+response)
