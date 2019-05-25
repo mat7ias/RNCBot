@@ -171,6 +171,8 @@ events: >
 
   May 22nd - [Scaling the public blockchain for payments](https://www.meetup.com/Frankfurt-Smart-Contracts-Meetup/events/259939649/) / Frankfurt, Germany
 
+  June 10th - [Understand & use Raiden: A technical deep dive on payment channel networks](https://www.eventbrite.com/e/understand-use-raiden-a-technical-deep-dive-on-payment-channel-networks-tickets-61784831093#map-target) / Primalbase, London
+
   June 10-12th - [CogX](https://cogx.co/) / King's Cross, London
 
   August 21-23rd - [DappCon](https://www.dappcon.io/speakers/) / Berlin, Germany
@@ -271,7 +273,9 @@ videos: >
 
   [Asseth 2018](https://youtu.be/93qOwUSj4PQ) - Lefteris
 
-  [Devcon3](https://youtu.be/00RPE96LRVM) - Lefteris
+  [Devcon3 interview](https://youtu.be/00RPE96LRVM) - Lefteris
+
+  [Devcon3](https://youtu.be/yx0__aFvjzk) - Augusto
 
   [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687) - Augusto
 
@@ -425,7 +429,7 @@ rapps: >
 
   [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map) - Raiden Network analyzer
 
-  [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) ([testnet version]([)https://github.com/vdo/DAppnodePackage-raiden-testnet))
+  [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) ([testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet))
 
   [Test environment scripts](https://github.com/kelsos/test-environment-scripts)
 
@@ -532,3 +536,46 @@ badbot:
   - Oh okay. I'll have to do better, bot points at
 
   - I see how it is, now at
+
+communityfaq: >
+
+  Hi, this is an unofficial FAQ collection of common community questions. Please find the official FAQ [here](https://raiden.network/faq.html). What is your question related to?
+  1. Running a /mainnet or /testnet node
+  2. Lightning vs. Raiden BOLTs and /standardization
+  3. /Plasma in comparison to State Channels
+  4. Raiden in comparison to other State /Channels
+  5. Raiden /Monitoring or /Pathfinding Services
+
+mainnet: >
+  Running a node. Mainnet or Testnet
+  Mainnet:
+  For mainnet make sure to run an Ethereum node -
+  [Parity](https://github.com/paritytech/parity-ethereum/releases) (faster to sync) or [Geth](https://ethereum.github.io/go-ethereum/downloads/) (longer) then follow [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4). Or if you don't want to run an Ethereum node you can use [Infura](https://Infura.io) and add --eth-rpc-endpoint https://NETWORK.infura.io/v3/YOUR_INFURA_TOKEN making sure to run Raiden on the same network as Infura.
+  Find the Red Eyes Mainnet Tutorial documentation [here](https://raiden-network.readthedocs.io/en/latest/red_eyes_mainnet_tutorial.html)
+
+testnet: >
+
+  Testnet:
+  Try out Raiden quickly on testnet with the [workshop](http://workshop.raiden.network/) and [Infura](https://Infura.io) or here is an community/unofficial video going through the workshop on Windows https://youtu.be/RpaAS64dI6k
+  Infura address so you don't need to make your own for testing - https://kovan.infura.io/v3/abea3d8e44b245c2a8f3e4de1f5e8ce5 (DON'T USE ON MAINNET)
+
+standardization: >
+  Lightning vs. Raiden
+  Q: Bitcoin has one solution for layer 2 scaling that's almost canonical in that community, which is the Lightning Network. Whereas in Ethereum you have a much more fragmented space in L2, even within the Plasma community or the State Channels community, there isn't really one solution that everyone is coalescing around. Why do think that is and how much of a problem do you think that is for the community? [Answer summary](https://t.me/RaidenNetworkCommunity/26274)
+
+plasma: >
+
+  Plasma vs. State channels
+  Learn Plasma https://www.learnplasma.org/en/learn/framework.html
+  https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4
+
+channels: >
+  Raiden vs. other Ethereum state channels
+  Which? Connext, Celer, Counterfactual
+
+monitoring: >
+  Monitoring Services
+  Watchtower scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
+
+pathfinding: >
+  Pathfinding Services
