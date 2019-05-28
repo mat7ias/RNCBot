@@ -182,3 +182,4 @@ note: community channels are run by the community
 - A few functions specific to the RNC telegram group
   - Upcoming Raiden related events, updated regularly (called using /events)
   - Can't be spammed (i.e. deletes previous command+response in favour of the new command+response)
+  - A community FAQ
