@@ -169,9 +169,7 @@ events: >
 
   Upcoming conferences/hackathons/related meetups:
 
-  May 22nd - [Scaling the public blockchain for payments](https://www.meetup.com/Frankfurt-Smart-Contracts-Meetup/events/259939649/) / Frankfurt, Germany
-
-  June 10th - [Understand & use Raiden: A technical deep dive on payment channel networks](https://www.eventbrite.com/e/understand-use-raiden-a-technical-deep-dive-on-payment-channel-networks-tickets-61784831093#map-target) / Primalbase, London
+  June 10th - [Understand & use Raiden: A technical deep dive on payment channel networks](https://www.eventbrite.com/e/understand-use-raiden-a-technical-deep-dive-on-payment-channel-networks-tickets-61784831093) / Primalbase, London
 
   June 10-12th - [CogX](https://cogx.co/) / King's Cross, London
 
@@ -182,6 +180,8 @@ events: >
 previousevents: >
 
   Recent Events:
+
+  May 22nd - [Scaling the public blockchain for payments](https://www.meetup.com/Frankfurt-Smart-Contracts-Meetup/events/259939649/) / Frankfurt, Germany
 
   May 13th - [Payment-Channels: Lightning, Raiden & Co.](https://www.meetup.com/Altcoin-Krypto-Asset-Stuttgart/events/259192786/) / Stuttgart, Germany
 
@@ -539,43 +539,166 @@ badbot:
 
 communityfaq: >
 
-  Hi, this is an unofficial FAQ collection of common community questions. Please find the official FAQ [here](https://raiden.network/faq.html). What is your question related to?
+  Hi, this is an *unofficial* FAQ archive of common [community questions and answers](https://www.reddit.com/r/raidennetwork/comments/7hhkv5/work_in_progress_raiden_network_and_token_faq/). Please find the Raiden official FAQ [here](https://raiden.network/faq.html).
+
+
   1. Running a /mainnet or /testnet node
-  2. Lightning vs. Raiden BOLTs and /standardization
+
+  2. Lightning vs. Raiden progress. BOLTs and /standardization
+
   3. /Plasma in comparison to State Channels
+
   4. Raiden in comparison to other State /Channels
+
   5. Raiden /Monitoring or /Pathfinding Services
 
+  6. What is the reason behind the /cost advantage of Raiden?
+
+  7. What is the reason behind the /speed advantage of Raiden?
+
+  8. What is the reason behind the /privacy advantage of Raiden?
+
+  9. What things are we likely to see use the Raiden Network in the /future?
+
+  10. Why will other /developers build upon Raiden's Network?
+
+  11. Why won't Raiden be made /obsolete by future Ethereum upgrades?
+
+  12. Where can I find a resource with /everything (almost)?
+
+
+  /Remove menu
+
+  /CommunityFAQdisclaimer
+
 mainnet: >
-  Running a node. Mainnet or Testnet
+
   Mainnet:
-  For mainnet make sure to run an Ethereum node -
-  [Parity](https://github.com/paritytech/parity-ethereum/releases) (faster to sync) or [Geth](https://ethereum.github.io/go-ethereum/downloads/) (longer) then follow [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4). Or if you don't want to run an Ethereum node you can use [Infura](https://Infura.io) and add --eth-rpc-endpoint https://NETWORK.infura.io/v3/YOUR_INFURA_TOKEN making sure to run Raiden on the same network as Infura.
+
+  For mainnet make sure to run an Ethereum node - [Parity](https://github.com/paritytech/parity-ethereum/releases) (faster to sync) or [Geth](https://ethereum.github.io/go-ethereum/downloads/) (longer) then follow [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4). Or if you don't want to run an Ethereum node you can use [Infura](https://Infura.io) and add --eth-rpc-endpoint https://NETWORK.infura.io/v3/YOUR_INFURA_TOKEN making sure to run Raiden on the same network as Infura.
+
   Find the Red Eyes Mainnet Tutorial documentation [here](https://raiden-network.readthedocs.io/en/latest/red_eyes_mainnet_tutorial.html)
+
+
+  /back to menu
 
 testnet: >
 
   Testnet:
+
   Try out Raiden quickly on testnet with the [workshop](http://workshop.raiden.network/) and [Infura](https://Infura.io) or here is an community/unofficial video going through the workshop on Windows https://youtu.be/RpaAS64dI6k
-  Infura address so you don't need to make your own for testing - https://kovan.infura.io/v3/abea3d8e44b245c2a8f3e4de1f5e8ce5 (DON'T USE ON MAINNET)
+
+  Your Infura address should look like - https://kovan.infura.io/v3/<YourInfuraTOKEN>
+
+
+  /back to menu
+
 
 standardization: >
-  Lightning vs. Raiden
+
+  Lightning vs. Raiden:
+
   Q: Bitcoin has one solution for layer 2 scaling that's almost canonical in that community, which is the Lightning Network. Whereas in Ethereum you have a much more fragmented space in L2, even within the Plasma community or the State Channels community, there isn't really one solution that everyone is coalescing around. Why do think that is and how much of a problem do you think that is for the community? [Answer summary](https://t.me/RaidenNetworkCommunity/26274)
+
+
+  /additional community info (exits community FAQ and runs community function)
+
+  /back to menu
 
 plasma: >
 
-  Plasma vs. State channels
-  Learn Plasma https://www.learnplasma.org/en/learn/framework.html
-  https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4
+  Plasma vs. State channels:
+
+  Check out [Learn Plasma](https://www.learnplasma.org/en/learn/framework.html) and the [L4 blog](https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4).
+
+
+  /back to menu
 
 channels: >
-  Raiden vs. other Ethereum state channels
-  Which? Connext, Celer, Counterfactual
+
+  Raiden vs. other Ethereum state channels:
+
+  WIP
+
+
+  /back to menu
 
 monitoring: >
-  Monitoring Services
+
+  Monitoring Services:
+
   Watchtower scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
 
+
+  /back to menu
+
 pathfinding: >
+
   Pathfinding Services
+
+
+  /back to menu.
+
+cost: >
+
+  Blockchains are of limited capacity. The max capacity of Bitcoin was reached a long time ago, and the max capacity of Ethereum is starting to near it's maximum. Once the capacity is reached, the only way to ensure a transfer or smart contract is included is to pay more to get it on. The cost skyrockets, and Bitcoin is already at $5 dollar per transfers and rising, making it unusable for any regular payments. Raiden on the other hand can handle over 60.000 times more transfers than the Ethereum blockchain - and is basically free.
+
+  In fact, you can probably imagine transactions that are smaller in value than the transaction cost of using the blockchain. Thus Raiden opens the possibility for entire new methods of business that are simply impossible on the blockchain.
+
+
+  /back to menu.
+
+speed: >
+
+  To transfer something on the bitcoin blockchain and to get it validated by later blocks, takes about 90 minutes. For Ethereum, it takes several minutes. By the time the payment completes, the value of the token used could change a lot, and the information sold might be obsolete. Imagine the internet using minutes to load each page! Meanwhile, Raiden is nearly instant. Near instant transfers will be the only acceptable standard in the emerging machine-machine information economy.
+
+
+  /back to menu.
+
+privacy: >
+
+  On the blockchain, the entire world knows that Alice transfered 0.005 ETH to Bob, and the exact time of when it happened. Every transaction is communicated to every participant. This has been an reason why, for instance P2P solar power companies haven't used them - it goes against EU (and other countries) laws to publicize how much power each household is consuming. As an business or individual you generally don't care about having the entire world know each individual sale you did. Collecting everything in a payment channel and then putting the total balance on the blockchain at the end of the day is better for you.
+
+
+  /back to menu.
+
+
+future: >
+
+  Anything that requires speed and low fees. Especially, it is suitable for small payments in the Internet of things, where emerging machine connectivity and info derived from them could be extended into a single global marketplace.
+
+  Furthermore, it is for example, ideally suited for the small-scale solar power industry, where you can buy and sell power at much better rates than now. Also ad companies making payouts per second of watched ads, accessing paywalled content via a 'pay as you go' model, smaller businesses or temporary/seasonal businesses that can't access VISA or just wanna avoid expensive fees.
+
+  Lastly, getting near free global transfers makes possible totally new business-models that are unfathomable right now.
+
+  The Raiden team is also building raidEX, an decentralized exchange that will be on the network.
+
+
+  /back to menu.
+
+developers: >
+
+  The system has no fees except the ones needed to incentivize nodes in the network. They will thus have no reason to create their own network since that would be more costly and time-consuming for them.
+
+  The protocol itself is open for innovation and additions are encouraged. Already, a large number of companies have committed to using it or to build apps upon it. 3rd party developers building upon it is actively encouraged, with the Raiden team having dedicated 16% of all tokens towards funding 3rd party open source projects on the Raiden Network.
+
+
+  /back to menu.
+
+obsolete: >
+
+  First let's clarify, the Raiden Network is not intended to outcompete Ethereum, but to make it better and more valuable.
+
+  Secondly, the future improvements to Ethereum such as Casper, Sharding and Proof of Stake is needed anyway to increase capacity, and are vital for Ethereum to be mass adopted by the general public. The better Ethereum works, the better for Raiden. What can be said though, is that scaling Ethereum up is hard and will take years. It is also totally unfeasible that the transaction fees and speed will be able to compete with the Raiden network.
+
+remove: >
+
+  CommunityFAQ function ended.
+
+everything: >
+
+  (Here)[https://github.com/mat7ias/RaidenResourcesBot/blob/master/README.md]
+
+CommunityFAQdisclaimer: >
+
+  The community FAQ is a collected collected archive at the request of the Raiden community. They aren't checked for accuracy and aren't guaranteed to be accurate.
