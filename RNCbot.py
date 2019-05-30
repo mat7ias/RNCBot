@@ -71,15 +71,25 @@ PRIOR_CMD_ID = {
 
 
 def get_name(user):
+    try:
+        name = user.first_name
+    except (NameError, AttributeError):
         try:
-            name = user.first_name
+            name = user.username
         except (NameError, AttributeError):
-            try:
-                name = user.username
-            except (NameError, AttributeError):
-                logger.info("No username or first name")
-                return	""
-        return name
+            logger.info("No username or first name")
+            return	""
+    return name
+
+def delete(chat_id):
+    try:
+        bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    except:
+        pass
+    try:
+        bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
+    except:
+        pass
 
 ############################ Spam/Scam/Flood/Edit filter #######################
 
@@ -221,9 +231,8 @@ def commands(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -238,9 +247,8 @@ def extras(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -255,9 +263,8 @@ def community(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -272,9 +279,8 @@ def platforms(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -289,9 +295,8 @@ def heybot(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -306,9 +311,8 @@ def resources(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -323,9 +327,8 @@ def events(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -340,9 +343,8 @@ def previousevents(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -357,9 +359,8 @@ def videos(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -374,9 +375,8 @@ def uraiden(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -410,9 +410,8 @@ def rules(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -426,9 +425,8 @@ def tokenmodel(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -443,9 +441,8 @@ def adminlist(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -465,9 +462,8 @@ def devcon(bot, update):
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
-        if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        elif PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -494,8 +490,7 @@ def pulse(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -511,8 +506,7 @@ def nightly(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -528,8 +522,7 @@ def releases(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -545,8 +538,7 @@ def email(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -562,8 +554,7 @@ def brainbot(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -584,8 +575,7 @@ def disclaimer(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -601,8 +591,7 @@ def rapps(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -631,8 +620,7 @@ def weeklyupdate(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -657,8 +645,7 @@ def bunny(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(bunnylist), "rb"))
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -675,8 +662,7 @@ def fistbump(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -692,8 +678,7 @@ def doublefistbump(bot, update):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_ID[chat_id] = int(message_id)
@@ -731,235 +716,245 @@ def communityfaq(bot, update):
     message_id = update.message.message_id
 #    user_id = update.message.from_user.id if removed by someone other than the person using the FAQ might need to make it user specific
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-        if PRIOR_CMD_MSG_ID[chat_id] == 1:
-            bot.delete_message(chat_id=chat_id,message_id=message_id)
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_FAQ_MSG_ID[chat_id])
-        elif (PRIOR_CMD_MSG_ID[chat_id] > 1 and PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]):
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_FAQ_MSG_ID[chat_id])
-        elif PRIOR_CMD_MSG_ID[chat_id] > 1 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
-            bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_FAQ_MSG_ID[chat_id])
-        elif PRIOR_CMD_MSG_ID[chat_id] > 1:
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
-            bot.delete_message(chat_id=chat_id,message_id=PRIOR_FAQ_MSG_ID[chat_id])
+        if PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
+            try:
+                bot.delete_message(chat_id=chat_id,message_id=PRIOR_FAQ_MSG_ID[chat_id])
+            except:
+                print("Starting FAQ")
+                FAQ[chat_id] = True
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         PRIOR_FAQ_MSG_ID[chat_id] = int(message.message_id)
         PRIOR_CMD_MSG_ID[chat_id] = PRIOR_FAQ_MSG_ID[chat_id]
         PRIOR_CMD_ID[chat_id] = int(message_id)
-        if FAQ[chat_id] != True:
-            FAQ[chat_id] = True
+        FAQ[chat_id] = True
     else:
-        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def mainnet(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['mainnet']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def testnet(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['testnet']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def standardization(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['standardization']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def plasma(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['plasma']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def channels(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['channels']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def monitoring(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['monitoring']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def pathfinding(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['pathfinding']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def cost(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['cost']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def speed(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['speed']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def privacy(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['privacy']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def future(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['future']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def developers(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['developers']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def obsolete(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['obsolete']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
+
+def token(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['token']
+    message_id = update.message.message_id
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
+            message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
+            PRIOR_CMD_ID[chat_id] = int(message_id)
+        else:
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
+
+def CommunityFAQdisclaimer(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['CommunityFAQdisclaimer']
+    message_id = update.message.message_id
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
+            message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
+            PRIOR_CMD_ID[chat_id] = int(message_id)
+        else:
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 
 def everything(bot, update):
@@ -967,35 +962,27 @@ def everything(bot, update):
     chat_id = update.message.chat.id
     msg = config['everything']
     message_id = update.message.message_id
-    if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and (PRIOR_FAQ_MSG_ID[chat_id] != 0 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id])):
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            if PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]:
+                delete(chat_id)
             message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
             PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
             PRIOR_CMD_ID[chat_id] = int(message_id)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def back(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     message_id = update.message.message_id
     if FAQ[chat_id] == True:
-        if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if (PRIOR_CMD_MSG_ID[chat_id] > 1 and PRIOR_FAQ_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]):
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
-            elif PRIOR_CMD_MSG_ID[chat_id] > 1:
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+        if (chat_id == RNC or chat_id == RNC_PLAYGROUND) and (PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]):
+            delete(chat_id)
             bot.delete_message(chat_id=chat_id,message_id=message_id)
-            PRIOR_CMD_MSG_ID[chat_id] = PRIOR_FAQ_MSG_ID[chat_id]
-            PRIOR_CMD_ID[chat_id] = 1
+            communityfaq(bot, update)
         else:
-            bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-
+            bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 def remove(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -1004,27 +991,20 @@ def remove(bot, update):
     message_id = update.message.message_id
     if FAQ[chat_id] == True:
         if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
-            if PRIOR_CMD_MSG_ID[chat_id] == 1:
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_ID[chat_id])
-            elif (PRIOR_CMD_MSG_ID[chat_id] > 1 and PRIOR_CMD_MSG_ID[chat_id] == PRIOR_FAQ_MSG_ID[chat_id]):
+            delete(chat_id)
+            try:
                 bot.delete_message(chat_id=chat_id, message_id=PRIOR_FAQ_MSG_ID[chat_id])
-
-            elif (PRIOR_CMD_MSG_ID[chat_id] > 1 and PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]):
-
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_FAQ_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
-            elif PRIOR_CMD_MSG_ID[chat_id] > 1:
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_CMD_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id, message_id=PRIOR_FAQ_MSG_ID[chat_id])
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
-
-            message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-            PRIOR_CMD_MSG_ID[chat_id] = 0
-            PRIOR_CMD_ID[chat_id] = int(message_id)
-            PRIOR_FAQ_MSG_ID[chat_id] = 0
-            FAQ[chat_id] = False
-    else:
-        bot.delete_message(chat_id=chat_id, message_id=message_id)
+            except:
+                print("FAQ post already removed")
+            finally:
+                message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                PRIOR_CMD_MSG_ID[chat_id] = 0
+                PRIOR_CMD_ID[chat_id] = int(message_id)
+                PRIOR_FAQ_MSG_ID[chat_id] = 0
+                FAQ[chat_id] = False
+                print("Ending FAQ")
+        else:
+            bot.delete_message(chat_id=chat_id, message_id=message_id)
 
 
 ############################### Bot points functions ###########################
@@ -1178,8 +1158,8 @@ def main():
     dp.add_handler(CommandHandler("developers", developers))
     dp.add_handler(CommandHandler("obsolete", obsolete))
     dp.add_handler(CommandHandler("everything", everything))
-    dp.add_handler(CommandHandler("additional", community))
-
+    dp.add_handler(CommandHandler("token", token))
+    dp.add_handler(CommandHandler("CommunityFAQdisclaimer", CommunityFAQdisclaimer))
 
     dp.add_handler(CommandHandler("back", back))
     dp.add_handler(CommandHandler("remove", remove))
