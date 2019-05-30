@@ -12,6 +12,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 - [Learning Resources](#learning-resources)
   - [Talks](#talks)
   - [Pulse](#pulse)
+- [Other Resources](#other-resources)
 - [Community](#community)
   - [Community Channels](#community-channels)
 - [Raiden Trust](#raiden-trust)
@@ -124,6 +125,11 @@ List of previous presentations, podcasts, channels, etc. related to Raiden Netwo
 - [Raiden Pulse #3:](https://medium.com/raiden-network/raiden-pulse-3-news-from-november-and-december-dd0da04961d3) News from November and December
 - [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
 - [Raiden Pulse #1:](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e) News from July and August
+
+## Other Resources
+
+Resources indirectly related to Raiden Network
+- [dxDAO Vote Staking Interface](https://dxdao.daostack.io) - lock RDN tokens to earn voting power for the [@dxDAO](https://twitter.com/_dx_dao)
 
 ## Community
 
