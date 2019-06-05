@@ -43,6 +43,7 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
   - [Ropsten](https://faucet.ropsten.be/)
   - [Goerli](https://faucet.goerli.mudit.blog/)
   - [Rinkeby](https://faucet.rinkeby.io/)
+- [Grid Ethereum Plugin](https://github.com/PhilippLgh/ethereum-grid-tutorials/blob/cfb3b205374a34550e43cdbdbb4ec7e90a2d4bf4/Raiden.md)
 
 ### Tools
 
@@ -189,3 +190,4 @@ note: community channels are run by the community
   - Upcoming Raiden related events, updated regularly (called using /events)
   - Can't be spammed (i.e. deletes previous command+response in favour of the new command+response)
   - A community FAQ
+  - A message self destruct function if /secret is called after a message
