@@ -78,7 +78,7 @@ note: WIP's not filtered out
 - [Ropsten](https://ropsten.explorer.raiden.network)
 - [Goerli](https://goerli.explorer.raiden.network)
 - [Rinkeby](https://rinkeby.explorer.raiden.network)
-- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map) (WIP)
+- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 
 ## Learning Resources
 
