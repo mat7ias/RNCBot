@@ -142,10 +142,10 @@ Resources indirectly related to Raiden Network
 
 ### Community Channels
 
-- [RNC Telegram](https://t.me/RaidenNetworkCommunity) (where this bot lives)
-- [Discord](https://discord.gg/zZjYJ6e) (bridge and feeds)
-- [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI) (bridge and feeds)
-- [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org) (bridge)
+- [RNC Telegram](https://t.me/RaidenNetworkCommunity) - where this bot lives
+- [Discord](https://discord.gg/zZjYJ6e) - bridge and feeds (most maintained)
+- [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI) -bridge and feeds
+- [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org) - bridge
 
 note: community channels are run by the community
 
