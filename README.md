@@ -134,7 +134,7 @@ Resources indirectly related to Raiden Network
 
 ## Community
 
-- [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/)
+- [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/) and [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0)
 - [Non-profit 3D printed Raiden model](https://www.shapeways.com/shops/raiden)
 - [Red Eyes on testnet](https://youtu.be/RpaAS64dI6k)
 - [Github Visualization](https://youtu.be/xqxTGF--Bhk)
