@@ -1,4 +1,5 @@
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Job, JobQueue
+from telegram import ChatAction
 import logging
 import time
 import os
@@ -35,20 +36,22 @@ else:
     print("No fortune cookies file 'fortunes.json' found")
 
 ##### load config
-bot_token      = config['bot_token']
-bot            = telegram.Bot(token=bot_token)
+bot_token            = config['bot_token']
+bot                  = telegram.Bot(token=bot_token)
 
 ADMINS               = config['ADMINS']
 MENTIONTEAM          = config['MENTIONTEAM']
 RNC                  = config['RNC_ID']
 RNC_PLAYGROUND       = config['RNC_PLAYGROUND_ID']
 
-FAQ                  = {
+
+
+PRIOR_WELCOME_MSG_ID = {
 	RNC   : 0,
 	RNC_PLAYGROUND   : 0
 }
 
-PRIOR_WELCOME_MSG_ID = {
+PRIOR_WELCOME = {
 	RNC   : 0,
 	RNC_PLAYGROUND   : 0
 }
@@ -58,17 +61,36 @@ PRIOR_CMD_MSG_ID = {
 	RNC_PLAYGROUND   : 0
 }
 
-PRIOR_FAQ_MSG_ID = {
-	RNC   : 0,
-	RNC_PLAYGROUND   : 0
-}
-
 PRIOR_CMD_ID = {
 	RNC   : 0,
 	RNC_PLAYGROUND   : 0
 }
 
+PRIOR_USR_ID = {
+	RNC   : 0,
+	RNC_PLAYGROUND   : 0
+}
 
+PRIOR_USR_MSG_ID = {
+	RNC   : 0,
+	RNC_PLAYGROUND   : 0
+}
+
+PRIOR_SCRT_MSG_ID = {
+	RNC   : 0,
+	RNC_PLAYGROUND   : 0
+}
+
+##### FAQ IDs
+FAQ                  = {
+	RNC   : 0,
+	RNC_PLAYGROUND   : 0
+}
+
+PRIOR_FAQ_MSG_ID = {
+	RNC   : 0,
+	RNC_PLAYGROUND   : 0
+}
 
 def get_name(user):
     try:
@@ -94,20 +116,24 @@ def delete(chat_id):
 ############################ Spam/Scam/Flood/Edit filter #######################
 
 def spamfilter(bot, update):
+    chat_id = update.message.chat.id
     user_id = update.message.from_user.id
     message_id = update.message.message_id
-    previous_user = config['previous']['user_id']
-    blacklist = config['blacklisted']
     text = update.message.text
+    name = get_name(update.message.from_user)
+    blacklist = config['blacklisted']
     msg_count = config['counts']['msg']
     spammerid = int
-    name = get_name(update.message.from_user)
-    chat_id = update.message.chat.id
-    config['previous_msg'] = text
     moon_count = config['counts']['moon']
     botpoints =  config['counts']['botpoints']
     print(chat_id,user_id,moon_count,botpoints)
     triggers = config['triggers']
+    config['previous_msg'] = text
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        previous_user = PRIOR_USR_ID[chat_id]
+        config['previous_msg_id'] = message_id
+    else:
+        return
 
     if text != None:
 
@@ -133,6 +159,7 @@ def spamfilter(bot, update):
         if (msg_count >= 6):
             if spammerid != user_id:
                 spammerid = user_id
+                PRIOR_USR_ID[chat_id] = user_id
                 bot.delete_message(chat_id=chat_id, message_id=message_id)
                 bot.restrictChatMember(chat_id,user_id = spammerid,can_send_messages=False,until_date=time.time()+int(float(60)*60)) # 60 min restriction
                 msg = ("Whoa there "+str(name)+"! You're typing at \xE2\x9A\xA1 speed! My flood filter has turned on to cool off that \xF0\x9F\x94\xA5 for an hour.")
@@ -142,7 +169,7 @@ def spamfilter(bot, update):
     elif (user_id != previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         msg_count = 0
         config['counts']['msg'] = msg_count
-        config['previous']['user_id'] = user_id
+        PRIOR_USR_ID[chat_id] = user_id
 
 ##### Prevent bot spam
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
@@ -173,13 +200,18 @@ def forwardfilter(bot, update):
 
 ############################### New Member #####################################
 
-def new_chat_member(bot, update):
+def new_chat_member(bot, update, job_queue):
     user_id = update.message.from_user.id
     message_id = update.message.message_id
     chat_id = update.message.chat.id
     tag = update.message.from_user.username
     name = get_name(update.message.from_user)
     profile_pics = bot.getUserProfilePhotos(user_id=user_id)
+##### Turn on welcome destruct timer
+    if PRIOR_WELCOME[chat_id] == 0:
+        PRIOR_WELCOME[chat_id] = 1
+
+#### Welcome and give permissions
     if update.message.chat.type == 'supergroup':
         bot.delete_message(chat_id=chat_id,message_id=message_id)
         if (profile_pics.total_count == 0 or tag == None):
@@ -188,19 +220,23 @@ def new_chat_member(bot, update):
         else:
             bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=True,can_send_other_messages=False,can_add_web_page_previews=False)
             pprint('New Member')
-        if (len(name) < 21):
+        if (len(name) < 14):
             if tag != None:
                 if PRIOR_WELCOME_MSG_ID[chat_id] > 0:
                     bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
+                    PRIOR_WELCOME[chat_id] = 0
                 msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
                 message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 PRIOR_WELCOME_MSG_ID[chat_id] = int(message.message_id)
+                job = job_queue.run_once(welcome_destruct, 300, context=chat_id)
             elif profile_pics.total_count != 0:
                 if PRIOR_WELCOME_MSG_ID[chat_id] > 0:
                     bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
+                    PRIOR_WELCOME[chat_id] = 0
                 msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
                 message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 PRIOR_WELCOME_MSG_ID[chat_id] = int(message.message_id)
+                job = job_queue.run_once(welcome_destruct, 300, context=chat_id)
         else:
             pprint('Long name')
 
@@ -1006,6 +1042,85 @@ def remove(bot, update):
         else:
             bot.delete_message(chat_id=chat_id, message_id=message_id)
 
+###################################### Secret ##################################
+
+###### send self destruct message
+def self_destruct(bot, job):
+    message = bot.send_message(job.context, text='Message self destructing.')
+    bot.sendChatAction(job.context, ChatAction.TYPING)
+    time.sleep(5)
+    bot.delete_message(job.context,message_id=message.message_id)
+    try:
+        bot.delete_message(job.context,message_id=PRIOR_CMD_MSG_ID[job.context])
+        bot.delete_message(job.context,message_id=PRIOR_SCRT_MSG_ID[job.context])
+        message = bot.send_message(job.context, text='Message self destructed.')
+    except:
+        print("Message already deleted.")
+    PRIOR_SCRT_MSG_ID[job.context] = 0
+    print("Message self destruct success")
+
+def welcome_destruct(bot, job):
+    if PRIOR_WELCOME[job.context] != 0:
+        bot.delete_message(job.context,message_id=PRIOR_WELCOME_MSG_ID[job.context])
+        PRIOR_WELCOME[job.context] = 0
+        PRIOR_WELCOME_MSG_ID[job.context] = 0
+        print("Welcome destruct success")
+
+###### register self destruct command and arg
+def secret(bot, update, args, job_queue):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat_id
+    message_id = update.message.message_id
+    user_id = update.message.from_user.id
+#    config['previous_msg'] = text
+    name = get_name(update.message.from_user)
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if (PRIOR_USR_ID[chat_id] == user_id and PRIOR_SCRT_MSG_ID[chat_id] == 0):
+            secret_id = config['previous_msg_id']
+            try:
+                # args[0] should contain the time for the timer in minutes
+                due = int(args[0])*60
+                if due == 60:
+                    msg = (str(name)+" set a message self destruct for 1 minute.")
+                else:
+                    msg = (str(name)+" set a message self destruct for "+str(due / 60)+" minutes.")
+                if due < 0:
+                    update.message.reply_text('Sorry we can not go back to the future!')
+                    return
+                elif due > 600:
+                    update.message.reply_text('Too Long. Max value: 10')
+                    return
+                else:
+                    # Add job to queue
+                    message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
+                    PRIOR_SCRT_MSG_ID[chat_id] = int(secret_id)
+                    PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
+                    PRIOR_CMD_ID[chat_id] = int(message_id)
+                    job = job_queue.run_once(self_destruct, due, context=chat_id)
+                    try:
+                        bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+                    except:
+                        print("Message already deleted.")
+            except (IndexError, ValueError):
+                print("Error in value. Self destruct set to default.")
+                msg = ("No value specified. Message self destruct of 1 minute set.")
+                message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                PRIOR_SCRT_MSG_ID[chat_id] = int(secret_id)
+                PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
+                PRIOR_CMD_ID[chat_id] = int(message_id)
+                job = job_queue.run_once(self_destruct, 60, context=chat_id)
+                try:
+                    bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+                except:
+                    print("Message already deleted.")
+        else:
+            print("Secret failed. Not in RNC or not same user")
+            try:
+                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+            except:
+                print("Message already deleted.")
+
 
 ############################### Bot points functions ###########################
 def goodbot(bot, update):
@@ -1160,9 +1275,12 @@ def main():
     dp.add_handler(CommandHandler("everything", everything))
     dp.add_handler(CommandHandler("token", token))
     dp.add_handler(CommandHandler("CommunityFAQdisclaimer", CommunityFAQdisclaimer))
-
     dp.add_handler(CommandHandler("back", back))
     dp.add_handler(CommandHandler("remove", remove))
+
+##### Secret and self destruct
+    dp.add_handler(CommandHandler("secret", secret, pass_args=True, pass_job_queue=True))
+
 
 
 ##### Bot points functions
@@ -1177,7 +1295,7 @@ def main():
 
 
 ##### MessageHandlers
-    dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member))
+    dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member, pass_job_queue=True))
     dp.add_handler(MessageHandler((Filters.forwarded & Filters.photo), forwardfilter))
     dp.add_handler(MessageHandler(Filters.all, spamfilter,edited_updates=False))
     dp.add_handler(MessageHandler(Filters.all, editfilter,edited_updates=True))
