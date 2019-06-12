@@ -32,7 +32,10 @@ A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources abou
 
 - [Raiden Network Documentation (stable)](https://raiden-network.readthedocs.io/en/stable/)
 - [Raiden Network Specification (latest)](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
-- [Raiden Services Documentation (latest)](https://raiden-services.readthedocs.io/en/latest/) and [MS](https://raiden-network-specification.readthedocs.io/en/latest/monitoring_service.html) + [PFS](https://raiden-network-specification.readthedocs.io/en/latest/pathfinding_service.html#raiden-pathfinding-service) specs
+- [Raiden Services Documentation (latest)](https://raiden-services.readthedocs.io/en/latest/) 
+  - [Monitoring Service](https://raiden-network-specification.readthedocs.io/en/latest/monitoring_service.html) 
+  - [Pathfinding Service](https://raiden-network-specification.readthedocs.io/en/latest/pathfinding_service.html)
+  - [Smart contracts for Raiden Services](https://raiden-network-specification.readthedocs.io/en/latest/service_contracts.html)
 
 ## Developer Resources
 
