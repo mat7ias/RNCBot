@@ -1,5 +1,4 @@
-# RaidenInfoBot
-A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources about Raiden Network (and some misc. features). Currently running in https://t.me/RaidenNetworkCommunity (unofficial)
+# Awesome Raiden
 
 ## Resource Contents
 
@@ -175,6 +174,9 @@ note: community channels are run by the community
 - [AppStoreFoundation](https://hackernoon.com/anu-2-app-store-foundation-and-dev-status-a3de6d144e5f), [Github](https://github.com/AppStoreFoundation/asf-sdk) - sell in-app items for AppCoins
 - [SmartMesh/SmartRaiden](https://smartmesh.io/) - internet-free digital payments and transactions
 - [RightMesh](https://www.rightmesh.io/) - ad hoc mobile mesh networking platform and protocol
+
+# RaidenInfoBot
+A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources about Raiden Network (and some misc. features). Currently running in https://t.me/RaidenNetworkCommunity (unofficial)
 
 ## Misc. Bot Functions
 
