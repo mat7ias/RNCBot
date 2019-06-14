@@ -141,6 +141,7 @@ Resources indirectly related to Raiden Network
 - [Red Eyes on testnet](https://youtu.be/RpaAS64dI6k)
 - [Github Visualization](https://youtu.be/xqxTGF--Bhk)
 - Watchtower scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
+- [Messari Raiden Network profile report](https://messari.io/asset/raiden-network#profile)
 
 ### Community Channels
 
