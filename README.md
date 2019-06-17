@@ -121,6 +121,11 @@ List of previous presentations, podcasts, channels, etc. related to Raiden Netwo
 - [Devcon2](https://youtu.be/4igFqFqQga4)
 - [Devcon1](https://youtu.be/h791zjvf3uQ)
 
+## Research Calls
+
+- [Layer 2 Community Call #1: Routing in state channel networks](https://youtu.be/SUxe_WJw5Yw)
+- [State Channel Researchers Call #6](https://youtu.be/YzomDzpLW_o)
+
 ### Pulse
 
 - [Raiden Pulse #5:](https://medium.com/raiden-network/raiden-pulse-5-news-from-march-and-april-56e781aea7c) News from March and April
