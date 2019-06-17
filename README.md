@@ -10,6 +10,7 @@
 - [Explorers](#explorers)
 - [Learning Resources](#learning-resources)
   - [Talks](#talks)
+  - [Research Calls](#research-calls)
   - [Pulse](#pulse)
 - [Other Resources](#other-resources)
 - [Community](#community)
@@ -121,7 +122,7 @@ List of previous presentations, podcasts, channels, etc. related to Raiden Netwo
 - [Devcon2](https://youtu.be/4igFqFqQga4)
 - [Devcon1](https://youtu.be/h791zjvf3uQ)
 
-## Research Calls
+### Research Calls
 
 - [Layer 2 Community Call #1: Routing in state channel networks](https://youtu.be/SUxe_WJw5Yw)
 - [State Channel Researchers Call #6](https://youtu.be/YzomDzpLW_o)
