@@ -53,6 +53,8 @@ extras: >
 
   /community - Community contributions
 
+  /communityfaq - Archive of community Q&As
+
   /platforms - Discord/Slack/Riot
 
   /tokenmodel - The Raiden Network Token Model
@@ -94,6 +96,10 @@ extras: >
   /goodbot - Give me good bot points :)
 
   /badbot - Give me bad bot points :(
+
+  /communityfaq - An archive of community questions and answers
+
+  /secret - Make your previous message self destruct
 
 start: >
 
@@ -169,9 +175,7 @@ events: >
 
   Upcoming conferences/hackathons/related meetups:
 
-  June 10th - [Understand & use Raiden: A technical deep dive on payment channel networks](https://www.eventbrite.com/e/understand-use-raiden-a-technical-deep-dive-on-payment-channel-networks-tickets-61784831093) / Primalbase, London
-
-  June 10-12th - [CogX](https://cogx.co/) / King's Cross, London
+  June 24th-July 10th - [BEYOND BLOCKCHAIN](https://github.com/mat7ias/RaidenResourcesBot#hackathon)
 
   August 21-23rd - [DappCon](https://www.dappcon.io/speakers/) / Berlin, Germany
 
@@ -180,6 +184,10 @@ events: >
 previousevents: >
 
   Recent Events:
+
+  June 10th - [Understand & use Raiden: A technical deep dive on payment channel networks](https://www.eventbrite.com/e/understand-use-raiden-a-technical-deep-dive-on-payment-channel-networks-tickets-61784831093) / Primalbase, London
+
+  June 10-12th - [CogX](https://cogx.co/) / King's Cross, London
 
   May 22nd - [Scaling the public blockchain for payments](https://www.meetup.com/Frankfurt-Smart-Contracts-Meetup/events/259939649/) / Frankfurt, Germany
 
@@ -313,7 +321,7 @@ whenmoon: >
 
   Although I think we can be more accurate about When Moon since the distance fluctuates between 363104-405704km. Which means that if we ignore computation/processing time the shortest time to the moon is 1.21 seconds ([time for light to reach the surface of the Moon from the Earth](https://i.imgur.com/nj8q3db.png)).
 
-  For the longest time, we need to do a bit more and make some assumptions. First is that being the longest distance also implied that we have no direct line of sight and that we will need to send our Raiden Network transfer with the help of satellites. [OneWeb are setting up satellites with a low earth orbit of 1200km](https://en.wikipedia.org/wiki/OneWeb_satellite_constellation) so let's assume that's our satellite orbit for the Earth.
+  For the longest time, we need to do a bit more and make some assumptions. First is that being the longest distance also implies that we have no direct line of sight and that we will need to send our Raiden Network transfer with the help of satellites. [OneWeb are setting up satellites with a low earth orbit of 1200km](https://en.wikipedia.org/wiki/OneWeb_satellite_constellation) so let's assume that's our satellite orbit for the Earth.
 
   For the Moon, we will also need to send the Raiden Network transfer to the furthest point and again need to use satellites. The lowest realistic lunar orbit is 15km (to avoid hitting lunar mountains, [which reach heights of 6.1km](https://en.wikipedia.org/wiki/Lunar_orbit)).
 
@@ -693,13 +701,12 @@ obsolete: >
 
   Secondly, the future improvements to Ethereum such as Casper, Sharding and Proof of Stake is needed anyway to increase capacity, and are vital for Ethereum to be mass adopted by the general public. The better Ethereum works, the better for Raiden. What can be said though, is that scaling Ethereum up is hard and will take years. It is also totally unfeasible that the transaction fees and speed will be able to compete with the Raiden network.
 
-remove: >
-
-  CommunityFAQ function ended.
-
 everything: >
 
-  [Here!](https://github.com/mat7ias/RaidenResourcesBot/blob/master/README.md)
+  [Make me one with everything](https://github.com/mat7ias/RaidenResourcesBot/blob/master/README.md) - Gandhi
+
+
+  /back to menu.
 
 token: >
 
@@ -709,6 +716,20 @@ token: >
 
   These fees are necessary for such an network to function, because running larger full nodes has a cost in effort, bandwidth and the number of tokens locked in a channel deposit.
 
+
+  /back to menu.
+
 CommunityFAQdisclaimer: >
 
   The community FAQ is an archive of questions and answers by the community collected at the request of the Raiden community. They aren't checked for accuracy and aren't guaranteed to be correct.
+
+
+  /back to menu.
+
+remove: >
+
+  CommunityFAQ function ended.
+
+secret: >
+
+  Message self destruct set.
