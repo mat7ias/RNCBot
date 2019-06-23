@@ -77,7 +77,7 @@ note: WIP's not filtered out
 - [Raidenooh](https://github.com/pisuthd/raiden-dooh) - decentralized digital signage platform
 
 ### Hackathon
-The [BEYOND BLOCKCHAIN](https://gitcoin.co/hackathon/beyondblocks) hackthon. June 24th, 2019 - July 10th, 2019.
+The [BEYOND BLOCKCHAIN](https://gitcoin.co/hackathon/beyondblocks) hackathon. June 24th, 2019 - July 10th, 2019.
 A three-week virtual hackathon where global developers and entrepreneurs will collaborate to push blockchain applications to new frontiers of business + technology + social change.
 - [Join the BEYOND BLOCKCHAIN discord channel](https://discordapp.com/invite/TxRKTn8)
 - [Gitcoin](https://github.com/gitcoinco/beyondblockchainteams) issue board to discuss hackathon ideas and find teams!
@@ -162,7 +162,7 @@ Resources indirectly related to Raiden Network
 
 - [RNC Telegram](https://t.me/RaidenNetworkCommunity) - where this bot lives
 - [Discord](https://discord.gg/zZjYJ6e) - bridge and feeds (most maintained)
-- [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI) -bridge and feeds
+- [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI) - bridge and feeds
 - [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org) - bridge
 
 note: community channels are run by the community
