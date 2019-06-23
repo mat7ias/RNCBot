@@ -169,13 +169,14 @@ note: community channels are run by the community
 - [Raiden Trust Website](https://www.raidentrust.li/)
 - [Twitter](https://twitter.com/raiden_trust)
 - Announcement [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146)
+- [Apply now](https://medium.com/raiden-network/apply-now-for-a-raiden-trust-grant-aca7d3e1e908)
 
 ## MicroRaiden
 
 - [MicroRaiden Website](https://micro.raiden.network/)
 - [MicroRaiden Github repo](https://github.com/raiden-network/microraiden)
 - [MicroRaiden Docs](https://microraiden.readthedocs.io/en/docs-develop/)
-- [MicroRaiden Dev Chat](https://gitter.im/raiden-network/microraiden)
+- [MicroRaiden Dev Chat](https://gitter.im/raiden-network/microraiden) for the first wave of Raiden Trust grants
 
 ### MicroTalks
 
