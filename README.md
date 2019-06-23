@@ -7,7 +7,7 @@
 - [Developer Resources](#developer-resources)
   - [Tools](#tools)
   - [RNapps](#rapps)
-  - [Hackathon](#hackathon)
+  - [Hackathon](#hackathon) (BEYOND BLOCKCHAIN June 24th, 2019 - July 10th, 2019)
 - [Explorers](#explorers)
 - [Learning Resources](#learning-resources)
   - [Talks](#talks)
