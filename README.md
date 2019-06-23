@@ -7,6 +7,7 @@
 - [Developer Resources](#developer-resources)
   - [Tools](#tools)
   - [RNapps](#rapps)
+  - [Hackathon](#hackathon)
 - [Explorers](#explorers)
 - [Learning Resources](#learning-resources)
   - [Talks](#talks)
@@ -74,6 +75,11 @@ note: WIP's not filtered out
 - [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
 - [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project) - pushing crypto to be simple enough to be used by the oldies
 - [Raidenooh](https://github.com/pisuthd/raiden-dooh) - decentralized digital signage platform
+
+### Hackathon
+The [BEYOND BLOCKCHAIN](https://gitcoin.co/hackathon/beyondblocks) hackthon. June 24th, 2019 - July 10th, 2019.
+A three-week virtual hackathon where global developers and entrepreneurs will collaborate to push blockchain applications to new frontiers of business + technology + social change.
+- [Github Repo](https://github.com/raiden-network/hackathons/issues)
 
 ## Explorers
 
