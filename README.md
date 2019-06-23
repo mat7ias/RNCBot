@@ -79,7 +79,8 @@ note: WIP's not filtered out
 ### Hackathon
 The [BEYOND BLOCKCHAIN](https://gitcoin.co/hackathon/beyondblocks) hackthon. June 24th, 2019 - July 10th, 2019.
 A three-week virtual hackathon where global developers and entrepreneurs will collaborate to push blockchain applications to new frontiers of business + technology + social change.
-- [Github Repo](https://github.com/raiden-network/hackathons/issues)
+- [Join the BEYOND BLOCKCHAIN discord channel](https://discordapp.com/invite/TxRKTn8)
+- [Raiden specific hackathon repo](https://github.com/raiden-network/hackathons/issues)
 
 ## Explorers
 
