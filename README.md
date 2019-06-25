@@ -33,8 +33,8 @@
 
 - [Raiden Network Documentation (stable)](https://raiden-network.readthedocs.io/en/stable/)
 - [Raiden Network Specification (latest)](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
-- [Raiden Services Documentation (latest)](https://raiden-services.readthedocs.io/en/latest/) 
-  - [Monitoring Service](https://raiden-network-specification.readthedocs.io/en/latest/monitoring_service.html) 
+- [Raiden Services Documentation (latest)](https://raiden-services.readthedocs.io/en/latest/)
+  - [Monitoring Service](https://raiden-network-specification.readthedocs.io/en/latest/monitoring_service.html)
   - [Pathfinding Service](https://raiden-network-specification.readthedocs.io/en/latest/pathfinding_service.html)
   - [Smart contracts for Raiden Services](https://raiden-network-specification.readthedocs.io/en/latest/service_contracts.html)
 
@@ -62,6 +62,9 @@
 - [Parity Docker Raiden dev env](https://github.com/calinchiper/parity-docker-raiden-dev-env) - Dockerized POA Parity blockchain + Raiden network contracts deployment scripts & config generator
 note: WIP's not filtered out
 - [Token Network's Channels](https://github.com/manuelwedler/token-network-channels) - Small dApp displaying Token Network's Channels (part of the Raiden network)
+- [Raiden Invoice](https://github.com/ChaeByunghoon/raiden-invoice) - A library for encoding and decoding Raiden network payment requests
+
+
 
 ### Rapps
 
