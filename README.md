@@ -39,6 +39,7 @@
   - [Smart contracts for Raiden Services](https://raiden-network-specification.readthedocs.io/en/latest/service_contracts.html)
 
 ## Developer Resources
+Note: Some of the resource in this and the following two sections (Tools+Rapps) are WIP.
 
 - [Workshop](https://workshop.raiden.network)
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
