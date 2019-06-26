@@ -39,7 +39,7 @@
   - [Smart contracts for Raiden Services](https://raiden-network-specification.readthedocs.io/en/latest/service_contracts.html)
 
 ## Developer Resources
-Note: Some of the resource in this and the following two sections (Tools+Rapps) are WIP.
+Note: This and the following two sections (Tools+Rapps) include WIP projects.
 
 - [Workshop](https://workshop.raiden.network)
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
@@ -61,7 +61,6 @@ Note: Some of the resource in this and the following two sections (Tools+Rapps) 
 - [Test environment scripts](https://github.com/kelsos/test-environment-scripts) - a collection of scripts used to bootstrap a test raiden environment
 - [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client) - an Express Server that connects to a Raiden Client
 - [Parity Docker Raiden dev env](https://github.com/calinchiper/parity-docker-raiden-dev-env) - Dockerized POA Parity blockchain + Raiden network contracts deployment scripts & config generator
-note: WIP's not filtered out
 - [Token Network's Channels](https://github.com/manuelwedler/token-network-channels) - Small dApp displaying Token Network's Channels (part of the Raiden network)
 - [Raiden Invoice](https://github.com/ChaeByunghoon/raiden-invoice) - A library for encoding and decoding Raiden network payment requests
 
