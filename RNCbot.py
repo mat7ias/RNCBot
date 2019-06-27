@@ -425,17 +425,18 @@ def whenmoon(bot, update):
     msg = config['whenmoon']
     moon_count = config['counts']['moon']
     message_id = update.message.message_id
+    name = get_name(update.message.from_user)
     if (moon_count >= 100) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         msg = ("We went "+str(moon_count)+" messages without asking when moon, good work team!")
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['counts']['moon'] = 0
-    if (moon_count < 100) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+    elif (moon_count < 100) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         config['counts']['moon'] = moon_count + 1
         moon_count_remaining = 100 - moon_count
-        msg = ("When Moon only available every 100 messages. "+str(moon_count_remaining)+" to go!")
+        msg = ("Sorry "+str(name)+"! When Moon only available every 100 messages. "+str(moon_count_remaining)+" to go!")
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
-    elif (chat_id != RNC and chat_id != RNC_PLAYGROUND):
+    else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def rules(bot, update):
