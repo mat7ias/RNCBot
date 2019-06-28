@@ -119,6 +119,8 @@ resources: >
 
   [Raiden Explorer](https://explorer.raiden.network/) ([Kovan](https://kovan.explorer.raiden.network), [Ropsten](https://ropsten.explorer.raiden.network), [Rinkeby](https://rinkeby.explorer.raiden.network), [Goerli](https://goerli.explorer.raiden.network))
 
+  [The Raiden dApp](http://lightclient.raiden.network) - a reference implementation of the Raiden Light Client SDK
+
   [Raiden Network Roadmap](https://raiden.network/roadmap.html)
 
   [Documentation](https://readthedocs.org/projects/raiden-network/), [Services](https://raiden-services.readthedocs.io/en/latest/)
@@ -372,6 +374,8 @@ devcon: >
 pulse: >
 
   [Raiden Pulse](https://medium.com/raiden-network):
+
+  [Raiden Pulse #6:](https://medium.com/raiden-network/raiden-pulse-6-news-from-may-and-june-f519818e7650) News from May and June
 
   [Raiden Pulse #5:](https://medium.com/raiden-network/raiden-pulse-5-news-from-march-and-april-56e781aea7c) News from March and April
 
