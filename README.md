@@ -90,7 +90,7 @@ Resources for trying the WIP Raiden Light Client.
   - [Kovan](https://faucet.kovan.network/)
   - [Ropsten](https://faucet.ropsten.be/)
   - [Rinkeby](https://faucet.rinkeby.io/)
-  - [Goerli](https://faucet.goerli.mudit.blog/) - wrapping on Gorli can't be done following the next step.
+  - [Goerli](https://faucet.goerli.mudit.blog/) - wrapping on Gorli can't be done following the next step, it'll be easier for you to pick one of the others above.
 - Wrap Ether using the [0x Portal](https://0x.org/portal).
 - You can now use the dApp to open, close and setlle channels.
 
