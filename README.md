@@ -1,6 +1,6 @@
 # Awesome Raiden
 
-## Resource Contents
+### Resource Contents
 
 - [Raiden Network](#raiden-network)
   - [Specifications](#specifications)
