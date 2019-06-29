@@ -1,27 +1,24 @@
 #Load bot token
-"bot_token": BOT_TOKEN
+bot_token:
 
 #Flood filter
 previous:
   user_id: 0
   fortune: 0
+  botpoints_id: 0
 
 counts:
-  resources: 6
-  videos: 10
   moon: 100
   msg: 0
+  botpoints: 0
 
 previous_msg: []
+previous_msg_id: 0
 blacklisted: []
+triggers: []
 
 #Admins IDs
 ADMINS:
-  -
-  -
-
-MENTIONTEAM:
-  -
   -
   -
 
@@ -58,6 +55,8 @@ extras: >
   /platforms - Discord/Slack/Riot
 
   /tokenmodel - The Raiden Network Token Model
+
+  /faucets - Get testnet Ether!
 
   /previousevents - Previous conferences/events
 
@@ -444,6 +443,16 @@ rapps: >
   [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) ([testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet))
 
   [Test environment scripts](https://github.com/kelsos/test-environment-scripts)
+
+faucets: >
+
+  [Ropsten](https://faucet.ropsten.be/)
+
+  [Rinkeby](https://faucet.rinkeby.io/)
+
+  [Kovan](https://faucet.kovan.network/)
+
+  [Goerli](https://faucet.goerli.mudit.blog/)
 
 adminpolicy: >
 

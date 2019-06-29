@@ -40,7 +40,6 @@ bot_token            = config['bot_token']
 bot                  = telegram.Bot(token=bot_token)
 
 ADMINS               = config['ADMINS']
-MENTIONTEAM          = config['MENTIONTEAM']
 RNC                  = config['RNC_ID']
 RNC_PLAYGROUND       = config['RNC_PLAYGROUND_ID']
 
@@ -197,6 +196,8 @@ def forwardfilter(bot, update):
     if profile_pics.total_count == 0:
         bot.delete_message(chat_id=chat_id, message_id=message_id)
         pprint('forwarded photo')
+
+    ## check blacklist for forwards with "recruiting members!" and "Join now for free!"
 
 ############################### New Member #####################################
 
@@ -635,6 +636,22 @@ def rapps(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
+def faucets(bot, update):
+    pprint(update.message.chat.__dict__, indent=4)
+    chat_id = update.message.chat.id
+    msg = config['faucets']
+    message_id = update.message.message_id
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            remove(bot, update)
+        if PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
+        message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
+        PRIOR_CMD_ID[chat_id] = int(message_id)
+    else:
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+
 def lefteris(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
@@ -668,9 +685,15 @@ def mentions(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
-    if user_id in MENTIONTEAM:
-        msg = config['mentions']
+    msg = config['mentions']
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
+        if FAQ[chat_id] == True:
+            remove(bot, update)
+        if PRIOR_CMD_MSG_ID[chat_id] > 0:
+            delete(chat_id)
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+    else:
+        bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(bunnylist), "rb"))
 
 def bunny(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -1249,6 +1272,7 @@ def main():
     dp.add_handler(CommandHandler("RemindMeIn5Years", RemindMeIn5Years))
     dp.add_handler(CommandHandler("disclaimer", disclaimer))
     dp.add_handler(CommandHandler("rapps", rapps))
+    dp.add_handler(CommandHandler("faucets", faucets))
     dp.add_handler(CommandHandler("lefteris", lefteris))
     dp.add_handler(CommandHandler("weeklyupdate", weeklyupdate))
     dp.add_handler(CommandHandler("mentions", mentions))
@@ -1282,8 +1306,6 @@ def main():
 ##### Secret and self destruct
     dp.add_handler(CommandHandler("secret", secret, pass_args=True, pass_job_queue=True))
 
-
-
 ##### Bot points functions
     dp.add_handler(CommandHandler("goodbot", goodbot))
     dp.add_handler(CommandHandler("badbot", badbot))
@@ -1292,8 +1314,6 @@ def main():
 ##### Misc functions
     dp.add_handler(CommandHandler("prev_moon", prev_moon))
     dp.add_handler(CommandHandler("prev_botpoints", prev_botpoints))
-
-
 
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member, pass_job_queue=True))
