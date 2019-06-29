@@ -91,8 +91,9 @@ Resources for trying the WIP Raiden Light Client.
   - [Goerli](https://faucet.goerli.mudit.blog/)
   - [Rinkeby](https://faucet.rinkeby.io/)
 - Wrap Ether usinging metamask on the [0x Portal](https://0x.org/portal)
+- You can now use the dApp to open, close and setlle channels.
 
-note: current dApp functionality is opening, closing and settling channels. To send payments you will need to run a full Raiden node. You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to try it on Goerli without syncing an Ethereum node.
+note: The dApp is shown as live development progress. To send payments you will need to run a full Raiden node. You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to try it on Goerli without syncing an Ethereum node.
 
 ## Explorers
 
