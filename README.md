@@ -60,7 +60,6 @@
 - [Token Network's Channels](https://github.com/manuelwedler/token-network-channels) - Small dApp displaying Token Network's Channels (part of the Raiden network)
 - [Raiden Invoice](https://github.com/ChaeByunghoon/raiden-invoice) - A library for encoding and decoding Raiden network payment requests
 
-
 ### Rapps
 
 - [Grid Ethereum Plugin](https://github.com/PhilippLgh/ethereum-grid-tutorials/blob/cfb3b205374a34550e43cdbdbb4ec7e90a2d4bf4/Raiden.md) - the functionality with a plugin and a Web UI
@@ -95,7 +94,7 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 Resources for trying the WIP Raiden dApp in your browser. The Light Client works on Ropsten/Rinkeby/Goerli/Kovan, here we'll use Ropsten.
 1. Make sure you have MetaMask installed and connected to Ropsten Test Network
 ![ropsten](assets/ropsten.png).
-2. Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts) on [Ropsten](https://faucet.ropsten.be/).
+2. Get testnet Ether on [Ropsten](https://faucet.ropsten.be/) (going off-chain with Raiden requires on-chain interactions).
 3. Wrap Ether using the [0x Portal](https://0x.org/portal/weth). Metamask might not show the correct wrapped Ether on testnet after you've wrapped it. If so, click on MetaMask and add Custom Token 0xc778417e063141139fce010982780140aa0cd5ab
 ![addweth](assets/addweth.png)
 4. Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and settle channels.
