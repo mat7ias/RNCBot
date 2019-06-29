@@ -62,7 +62,7 @@ Note: The following two sections (Tools+Rapps) include WIP projects.
 
 ### Rapps
 
-- [Grid Ethereum Plugin](https://github.com/PhilippLgh/ethereum-grid-tutorials/blob/cfb3b205374a34550e43cdbdbb4ec7e90a2d4bf4/Raiden.md)
+- [Grid Ethereum Plugin](https://github.com/PhilippLgh/ethereum-grid-tutorials/blob/cfb3b205374a34550e43cdbdbb4ec7e90a2d4bf4/Raiden.md) - the functionality with a plugin and a Web UI
 - [Fairspot](https://github.com/ilinzweilin/ethCapeTown) - WiFi internet access on the go (in 100kb chunks) using Raiden
 - [NUtube](https://nutube.network/#/), [Github](https://github.com/CryptoManiacsZone/nuTube.network), [demo](https://www.youtube.com/watch?v=Tx-j0TubY7k) - decentralized P2P live streaming w/ micropayments
 - [DTok](https://github.com/ethcapetown/burner-wallet/tree/dtok-raiden), [demo](https://www.youtube.com/watch?v=2CFAJCfKs-8) - decentralized streaming and tipping platform w/ Raiden, BurnerWallet ([link](https://github.com/austintgriffith/burner-wallet)) and ENS domains
@@ -83,6 +83,7 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 - [Raiden specific hackathon repo](https://github.com/raiden-network/hackathons/issues)
 
 ### dApp Testing
+
 Resources for trying the WIP Raiden Light Client.
 - Start the Raiden dApp [here](http://lightclient.raiden.network).
 - Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts)
