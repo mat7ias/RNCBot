@@ -99,7 +99,7 @@ Resources for trying the WIP Raiden dApp in your browser. The Light Client works
 ![addweth](assets/addweth.png)
 4. Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and settle channels.
 
-note: The dApp user interface is very early WIP, the first milestone will enable sending tokens and not receiving them<sup>[explained well here](https://t.me/RaidenNetworkCommunity/28310)</sup>. If you're interested in trying Raiden you will want to run a full Raiden node and use the WebUI to get a good experience. To try this quickly, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to skip signing up for Infura. Alternatively, try Raiden with [DAppNode](https://medium.com/raiden-network/run-raiden-on-dappnode-a45a1f63609b)!
+note: The dApp user interface is very early WIP, the first milestone will enable sending tokens and not receiving them<sup>[explained more here](https://t.me/RaidenNetworkCommunity/28310)</sup>. If you're interested in trying Raiden you will want to run a full Raiden node and use the WebUI to get a good experience. To try this quickly, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to skip signing up for Infura. Alternatively, try Raiden with [DAppNode](https://medium.com/raiden-network/run-raiden-on-dappnode-a45a1f63609b)!
 
 ## Explorers
 
