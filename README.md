@@ -85,7 +85,7 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 ### dApp Testing
 
 Resources for trying the WIP Raiden Light Client.
-- Make sure you have Metamask and start the Raiden dApp [here](http://lightclient.raiden.network).
+- Make sure you have Metamask installed on your browser, then start the Raiden dApp [here](http://lightclient.raiden.network).
 - Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts)
   - [Kovan](https://faucet.kovan.network/)
   - [Ropsten](https://faucet.ropsten.be/)
