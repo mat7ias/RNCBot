@@ -8,6 +8,7 @@
   - [Tools](#tools)
   - [RNapps](#rapps)
   - [Hackathon](#hackathon) (BEYOND BLOCKCHAIN June 24th, 2019 - July 10th, 2019)
+  - [dApp Testing and Ether Faucets](#dapp-testing)
 - [Explorers](#explorers)
 - [Learning Resources](#learning-resources)
   - [Talks](#talks)
@@ -38,20 +39,13 @@
   - [Pathfinding Service](https://raiden-network-specification.readthedocs.io/en/latest/pathfinding_service.html)
   - [Smart contracts for Raiden Services](https://raiden-network-specification.readthedocs.io/en/latest/service_contracts.html)
 
-## Developer/Testing Resources
-Note: This and the following two sections (Tools+Rapps) include WIP projects.
+## Developer Resources
 
 - [Workshop](https://workshop.raiden.network)
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
 
-- Need testnet Ether? (going off-chain with Raiden requires on-chain interactions)
-  - [Kovan](https://faucet.kovan.network/)
-  - [Ropsten](https://faucet.ropsten.be/)
-  - [Goerli](https://faucet.goerli.mudit.blog/)
-  - [Rinkeby](https://faucet.rinkeby.io/)
-- Wrap Ether usinging metamask on the [0x Portal](https://0x.org/portal)
-
 ### Tools
+Note: The following two sections (Tools+Rapps) include WIP projects.
 
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden) and Use Docker, Infura.io to [Build Raiden Network on Ubuntu 18.04](https://medium.com/@szhao_31738/use-docker-infura-io-to-build-raiden-network-on-ubuntu-18-04-a5eae7357f61) tutorial
 - PyPI for [Raiden](https://pypi.org/project/raiden/) and [Raiden Services](https://pypi.org/project/raiden-services/)
@@ -64,7 +58,6 @@ Note: This and the following two sections (Tools+Rapps) include WIP projects.
 - [Parity Docker Raiden dev env](https://github.com/calinchiper/parity-docker-raiden-dev-env) - Dockerized POA Parity blockchain + Raiden network contracts deployment scripts & config generator
 - [Token Network's Channels](https://github.com/manuelwedler/token-network-channels) - Small dApp displaying Token Network's Channels (part of the Raiden network)
 - [Raiden Invoice](https://github.com/ChaeByunghoon/raiden-invoice) - A library for encoding and decoding Raiden network payment requests
-
 
 
 ### Rapps
@@ -88,6 +81,17 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 - [Join the BEYOND BLOCKCHAIN discord channel](https://discordapp.com/invite/TxRKTn8)
 - [Gitcoin](https://github.com/gitcoinco/beyondblockchainteams) issue board to discuss hackathon ideas and find teams!
 - [Raiden specific hackathon repo](https://github.com/raiden-network/hackathons/issues)
+
+### dApp Testing
+Resources for trying the WIP Raiden Light Client.
+- Start the Raiden dApp [here](http://lightclient.raiden.network).
+- Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts)
+  - [Kovan](https://faucet.kovan.network/)
+  - [Ropsten](https://faucet.ropsten.be/)
+  - [Goerli](https://faucet.goerli.mudit.blog/)
+  - [Rinkeby](https://faucet.rinkeby.io/)
+- Wrap Ether usinging metamask on the [0x Portal](https://0x.org/portal)
+note: current dApp functionality is opening, closing and settling channels. To send payments you will need to run a full Raiden node. You can use --eth-rpc-endpoint https://rpc.slock.it/goerli flag to try it on Goerli without syncing an Ethereum node.
 
 ## Explorers
 
