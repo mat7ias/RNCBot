@@ -23,7 +23,7 @@
   - [MicroTalks](#microtalks)
 - [Misc. Bot Functions](#misc-bot-functions)
 
-## Raiden Network
+# Raiden Network
 
 - [Website](https://raiden.network/)
 - [Github](https://github.com/raiden-network/)
