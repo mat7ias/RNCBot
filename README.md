@@ -92,7 +92,7 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 
 ### dApp Testing
 
-Resources for trying the WIP Raiden Light Client. The Light Client works on Ropsten/Rinkeby/Goerli/Kovan, here we'll use Ropsten.
+Resources for trying the WIP Raiden dApp in your browser. The Light Client works on Ropsten/Rinkeby/Goerli/Kovan, here we'll use Ropsten.
 1. Make sure you have MetaMask installed on your browser and connected to Ropsten Test Network.
 2. Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts) on [Ropsten](https://faucet.ropsten.be/).
 3. Wrap Ether using the [0x Portal](https://0x.org/portal/weth). Metamask might not show the correct wrapped Ether on testnet after you've wrapped it. If so, click on MetaMask and add Custom Token 0xccb65599610D22135E632B0f9Ca85ebEBcDECf6f
