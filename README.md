@@ -96,7 +96,7 @@ Resources for trying the WIP Raiden Light Client. The Light Client works on Rops
 - Make sure you have Metamask installed on your browser and connected to Ropsten Test Network.
 - Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts) on [Ropsten](https://faucet.ropsten.be/).
 - Wrap Ether using the [0x Portal](https://0x.org/portal).
-  - Metamask might not show the correct wrapped Ether on testnet. If so add Custom Token 0xccb65599610D22135E632B0f9Ca85ebEBcDECf6f
+  - Metamask might not show the correct wrapped Ether on testnet after you've wrapped it. If so, click on metamask and add Custom Token 0xccb65599610D22135E632B0f9Ca85ebEBcDECf6f
 - Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and setlle channels.
 
 note: The dApp is shown as live development progress. To send payments you will need to run a full Raiden node. To try this quickly, follow the [workshop](http://workshop.raiden.network). You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to skip syncing an Ethereum node on testnet.
