@@ -8,7 +8,8 @@
   - [Tools](#tools)
   - [RNapps](#rapps)
   - [Hackathon](#hackathon) (BEYOND BLOCKCHAIN June 24th, 2019 - July 10th, 2019)
-  - [dApp Testing and Ether Faucets](#dapp-testing)
+  - [Ether Faucets](#ether-faucets)
+  - [dApp Testing](#dapp-testing)
 - [Explorers](#explorers)
 - [Learning Resources](#learning-resources)
   - [Talks](#talks)
@@ -82,20 +83,21 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 - [Gitcoin](https://github.com/gitcoinco/beyondblockchainteams) issue board to discuss hackathon ideas and find teams!
 - [Raiden specific hackathon repo](https://github.com/raiden-network/hackathons/issues)
 
+### Ether Faucets
+
+- [Ropsten](https://faucet.ropsten.be/)
+- [Rinkeby](https://faucet.rinkeby.io/)
+- [Kovan](https://faucet.kovan.network/)
+- [Goerli](https://faucet.goerli.mudit.blog/)
+
 ### dApp Testing
 
-Resources for trying the WIP Raiden Light Client.
-- Make sure you have Metamask installed on your browser, then start the Raiden dApp [here](http://lightclient.raiden.network).
-- Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts) on one of:
-  - [Ropsten](https://faucet.ropsten.be/)
-  - [Rinkeby](https://faucet.rinkeby.io/)
-  - [Kovan](https://faucet.kovan.network/)
-  - [Goerli](https://faucet.goerli.mudit.blog/) - the dApp works on Goerli, wrapping in the next step might not. Just use Ropsten or Rinkeby if you have trouble.
+Resources for trying the WIP Raiden Light Client. The Light Client works on Ropsten/Rinkeby/Goerli/Kovan but here we'll only use Ropsten.
+- Make sure you have Metamask installed on your browser and connected to Ropsten Test Network.
+- Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts) on [Ropsten](https://faucet.ropsten.be/).
 - Wrap Ether using the [0x Portal](https://0x.org/portal).
-- Metamask might not show the correct wrapped Ether on testnet. If so add:
-  - Ropsten: 0xccb65599610D22135E632B0f9Ca85ebEBcDECf6f
-  - Rinkeby
-- You can now use the dApp to open, close and setlle channels.
+  - Metamask might not show the correct wrapped Ether on testnet. If so add Custom Token 0xccb65599610D22135E632B0f9Ca85ebEBcDECf6f
+- Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and setlle channels.
 
 note: The dApp is shown as live development progress. To send payments you will need to run a full Raiden node. To try this quickly, follow the [workshop](http://workshop.raiden.network). You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to skip syncing an Ethereum node on testnet.
 
