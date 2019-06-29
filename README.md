@@ -46,7 +46,7 @@
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
 
 ### Tools
-Note: The following two sections (Tools+Rapps) include WIP projects.
+<sub><sup>Note: The following two sections (Tools+Rapps) include WIP projects.</sup></sub>
 
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden) and Use Docker, Infura.io to [Build Raiden Network on Ubuntu 18.04](https://medium.com/@szhao_31738/use-docker-infura-io-to-build-raiden-network-on-ubuntu-18-04-a5eae7357f61) tutorial
 - PyPI for [Raiden](https://pypi.org/project/raiden/) and [Raiden Services](https://pypi.org/project/raiden-services/)
@@ -99,7 +99,7 @@ Resources for trying the WIP Raiden Light Client. The Light Client works on Rops
   - Metamask might not show the correct wrapped Ether on testnet after you've wrapped it. If so, click on metamask and add Custom Token 0xccb65599610D22135E632B0f9Ca85ebEBcDECf6f
 - Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and setlle channels.
 
-note: light client and dApp UI are very early WIP and shown as live development progress. To send payments you will need to run a full Raiden node. To try this quickly, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to skip signing up for Infura.
+<sub><sup>note: light client and dApp UI are very early WIP and shown as live development progress. To send payments you will need to run a full Raiden node. To try this quickly, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to skip signing up for Infura.</sup></sub>
 
 ## Explorers
 
