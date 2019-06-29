@@ -100,7 +100,6 @@ Resources for trying the WIP Raiden Light Client. The Light Client works on Rops
 - Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and setlle channels.
 
 <sub><sup>note: light client and dApp UI are very early WIP and shown as live development progress. To send payments you will need to run a full Raiden node. To try this quickly, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs).
-
 You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to skip signing up for Infura.</sup></sub>
 
 ## Explorers
