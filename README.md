@@ -84,7 +84,7 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 
 ### Ether Faucets
 
-- [Ropsten](https://faucet.ropsten.be/)
+- [Ropsten](https://faucet.ropsten.be/) and backup one [here](https://faucet.metamask.io)
 - [Rinkeby](https://faucet.rinkeby.io/)
 - [Kovan](https://faucet.kovan.network/)
 - [Goerli](https://faucet.goerli.mudit.blog/)
