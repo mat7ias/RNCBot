@@ -93,11 +93,11 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 ### dApp Testing
 
 Resources for trying the WIP Raiden Light Client. The Light Client works on Ropsten/Rinkeby/Goerli/Kovan, here we'll use Ropsten.
-- Make sure you have Metamask installed on your browser and connected to Ropsten Test Network.
-- Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts) on [Ropsten](https://faucet.ropsten.be/).
-- Wrap Ether using the [0x Portal](https://0x.org/portal/weth).
+1. Make sure you have Metamask installed on your browser and connected to Ropsten Test Network.
+2. Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts) on [Ropsten](https://faucet.ropsten.be/).
+3. Wrap Ether using the [0x Portal](https://0x.org/portal/weth).
   - Metamask might not show the correct wrapped Ether on testnet after you've wrapped it. If so, click on metamask and add Custom Token 0xccb65599610D22135E632B0f9Ca85ebEBcDECf6f
-- Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and settle channels.
+4. Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and settle channels.
 
 <sub><sup>note: light client and dApp UI are very early WIP and shown as live development progress. To send payments you will need to run a full Raiden node. To try this quickly, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). You can start it on Goerli with "--eth-rpc-endpoint https://rpc.slock.it/goerli" to skip signing up for Infura.</sup></sub>
 
