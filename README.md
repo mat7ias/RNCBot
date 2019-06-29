@@ -38,17 +38,18 @@
   - [Pathfinding Service](https://raiden-network-specification.readthedocs.io/en/latest/pathfinding_service.html)
   - [Smart contracts for Raiden Services](https://raiden-network-specification.readthedocs.io/en/latest/service_contracts.html)
 
-## Developer Resources
+## Developer/Testing Resources
 Note: This and the following two sections (Tools+Rapps) include WIP projects.
 
 - [Workshop](https://workshop.raiden.network)
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
+
 - Need testnet Ether? (going off-chain with Raiden requires on-chain interactions)
   - [Kovan](https://faucet.kovan.network/)
   - [Ropsten](https://faucet.ropsten.be/)
   - [Goerli](https://faucet.goerli.mudit.blog/)
   - [Rinkeby](https://faucet.rinkeby.io/)
-- [Grid Ethereum Plugin](https://github.com/PhilippLgh/ethereum-grid-tutorials/blob/cfb3b205374a34550e43cdbdbb4ec7e90a2d4bf4/Raiden.md)
+- Wrap Ether usinging metamask on the [0x Portal](https://0x.org/portal)
 
 ### Tools
 
@@ -68,6 +69,7 @@ Note: This and the following two sections (Tools+Rapps) include WIP projects.
 
 ### Rapps
 
+- [Grid Ethereum Plugin](https://github.com/PhilippLgh/ethereum-grid-tutorials/blob/cfb3b205374a34550e43cdbdbb4ec7e90a2d4bf4/Raiden.md)
 - [Fairspot](https://github.com/ilinzweilin/ethCapeTown) - WiFi internet access on the go (in 100kb chunks) using Raiden
 - [NUtube](https://nutube.network/#/), [Github](https://github.com/CryptoManiacsZone/nuTube.network), [demo](https://www.youtube.com/watch?v=Tx-j0TubY7k) - decentralized P2P live streaming w/ micropayments
 - [DTok](https://github.com/ethcapetown/burner-wallet/tree/dtok-raiden), [demo](https://www.youtube.com/watch?v=2CFAJCfKs-8) - decentralized streaming and tipping platform w/ Raiden, BurnerWallet ([link](https://github.com/austintgriffith/burner-wallet)) and ENS domains
