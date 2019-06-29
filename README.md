@@ -86,11 +86,11 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 
 Resources for trying the WIP Raiden Light Client.
 - Make sure you have Metamask installed on your browser, then start the Raiden dApp [here](http://lightclient.raiden.network).
-- Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts):
+- Get testnet Ether (going off-chain with Raiden requires on-chain interactions with Raiden's contracts) on one of:
   - [Kovan](https://faucet.kovan.network/)
   - [Ropsten](https://faucet.ropsten.be/)
-  - [Goerli](https://faucet.goerli.mudit.blog/)
   - [Rinkeby](https://faucet.rinkeby.io/)
+  - [Goerli](https://faucet.goerli.mudit.blog/) - wrapping on Gorli can't be done following the next step.
 - Wrap Ether using the [0x Portal](https://0x.org/portal).
 - You can now use the dApp to open, close and setlle channels.
 
