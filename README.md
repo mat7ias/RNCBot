@@ -46,7 +46,7 @@
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
 
 ### Tools
-<sub><sup>Note: The following two sections (Tools+Rapps) include WIP projects.</sup></sub>
+<sub><sup>Note: The following sections include WIP projects.</sup></sub>
 
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden) and Use Docker, Infura.io to [Build Raiden Network on Ubuntu 18.04](https://medium.com/@szhao_31738/use-docker-infura-io-to-build-raiden-network-on-ubuntu-18-04-a5eae7357f61) tutorial
 - PyPI for [Raiden](https://pypi.org/project/raiden/) and [Raiden Services](https://pypi.org/project/raiden-services/)
@@ -95,7 +95,7 @@ Resources for trying the WIP Raiden dApp in your browser. The Light Client works
 1. Make sure you have MetaMask installed and connected to Ropsten Test Network
 ![ropsten](assets/ropsten.png).
 2. Get testnet Ether on [Ropsten](https://faucet.ropsten.be/) (going off-chain with Raiden requires on-chain interactions, i.e. Gas).
-3. Wrap Ether using the [0x Portal](https://0x.org/portal/weth). Metamask might not show the correct wrapped Ether on testnet after you've wrapped it. If so, click on MetaMask and add Custom Token 0xc778417e063141139fce010982780140aa0cd5ab
+3. Wrap Ether using the [0x Portal](https://0x.org/portal/weth). MetaMask might not show the correct wrapped Ether on testnet after you've wrapped it. If so, click on MetaMask and add Custom Token 0xc778417e063141139fce010982780140aa0cd5ab
 ![addweth](assets/addweth.png)
 4. Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and settle channels.
 
@@ -121,7 +121,7 @@ note: The dApp user interface is very early WIP<sup>[explained more here](https:
 
 ### Talks
 
-List of previous presentations, podcasts, channels, etc. related to Raiden Network
+List of presentations, podcasts, channels, etc. related to Raiden Network
 - [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
 - [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
 - [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs)
@@ -176,6 +176,7 @@ Resources indirectly related to Raiden Network
 - [Github Visualization](https://youtu.be/xqxTGF--Bhk)
 - Watchtower scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
 - [Messari Raiden Network profile report](https://messari.io/asset/raiden-network#profile)
+- [Community built FAQ on Reddit](https://www.reddit.com/r/raidennetwork/comments/7hhkv5/work_in_progress_raiden_network_and_token_faq/)
 
 ### Community Channels
 
