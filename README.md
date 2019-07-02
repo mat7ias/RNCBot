@@ -87,7 +87,7 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 - [Ropsten](https://faucet.ropsten.be/)
 - [Rinkeby](https://faucet.rinkeby.io/)
 - [Kovan](https://faucet.kovan.network/)
-- [Goerli](https://faucet.goerli.mudit.blog/)
+- [Goerli](https://faucet.goerli.mudit.blog/)   
 Or use the [MetaMask faucets](https://faucet.metamask.io). It should detect which network you're on if you have MetaMask installed.
 
 ### dApp Testing
