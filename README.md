@@ -84,10 +84,11 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 
 ### Ether Faucets
 
-- [Ropsten](https://faucet.ropsten.be/) and backup one [here](https://faucet.metamask.io)
+- [Ropsten](https://faucet.ropsten.be/)
 - [Rinkeby](https://faucet.rinkeby.io/)
 - [Kovan](https://faucet.kovan.network/)
 - [Goerli](https://faucet.goerli.mudit.blog/)
+Or use the [MetaMask faucets](https://faucet.metamask.io). It should detect which network you're on if you have MetaMask installed.
 
 ### dApp Testing
 
