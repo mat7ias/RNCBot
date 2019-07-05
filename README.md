@@ -81,6 +81,7 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 - [Join the BEYOND BLOCKCHAIN discord channel](https://discordapp.com/invite/TxRKTn8)
 - [Gitcoin](https://github.com/gitcoinco/beyondblockchainteams) issue board to discuss hackathon ideas and find teams!
 - [Raiden specific hackathon repo](https://github.com/raiden-network/hackathons/issues)
+- Video: ["Beyond Blockchain Hackathon: Raiden"](https://youtu.be/wdz8M3RXJQs)
 
 ### Ether Faucets
 
@@ -89,7 +90,7 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 - [Kovan](https://faucet.kovan.network/)
 - [Goerli](https://faucet.goerli.mudit.blog/)
 
-Or use the [MetaMask faucets](https://faucet.metamask.io). It should detect which network you're on if you have MetaMask installed.
+Or use the [MetaMask faucets](https://faucet.metamask.io). It should detect which testnet you're on if you have MetaMask installed.
 
 ### dApp Testing
 
@@ -126,6 +127,7 @@ note: The dApp user interface is very early WIP<sup>[explained more here](https:
 List of presentations, podcasts, channels, etc. related to Raiden Network
 - [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
 - [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
+- [Beyond Blockchain Hackathon: Raiden](https://youtu.be/wdz8M3RXJQs)
 - [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs)
 - [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0)
 - [Nugget's News Interview](https://youtu.be/Cp8hprIjJHc)
