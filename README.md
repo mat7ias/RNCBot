@@ -43,6 +43,7 @@
 ## Developer Resources
 
 - [Workshop](https://workshop.raiden.network)
+- [Raiden Workshop Configurator](https://workshops.raiden.network/) - host a Raiden workshop or meetup
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
 
 ### Tools
