@@ -173,7 +173,7 @@ List of presentations, podcasts, channels, etc. related to Raiden Network
 ## Other Resources
 
 Resources indirectly related to Raiden Network
-- [dxDAO Vote Staking Interface](https://dxdao.daostack.io) - lock RDN tokens to earn voting power for the [@dxDAO](https://twitter.com/_dx_dao)
+- [dxDAO Vote Staking Interface](https://dxdao.daostack.io) - lock RDN tokens to earn voting power for the [@dxDAO](https://twitter.com/_dx_dao). Staking period is ongoing. Newly staking tokens has finished.
 
 ## Community
 
