@@ -46,7 +46,7 @@
 - [Raiden Workshop Configurator](https://workshops.raiden.network/) - host a Raiden workshop or meetup
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
 
-<sub><sup>Note: The following sections include WIP projects.</sup></sub>
+<sub><sup>Note: The following sections include WIP and demo projects.</sup></sub>
 ### Tools
 
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden) and Use Docker, Infura.io to [Build Raiden Network on Ubuntu 18.04](https://medium.com/@szhao_31738/use-docker-infura-io-to-build-raiden-network-on-ubuntu-18-04-a5eae7357f61) tutorial
@@ -79,6 +79,7 @@
 - [Raidenooh](https://github.com/pisuthd/raiden-dooh) - decentralized digital signage platform
 
 ### Hackathon
+
 The [BEYOND BLOCKCHAIN](https://gitcoin.co/hackathon/beyondblocks) hackathon. June 24th, 2019 - July 10th, 2019.
 A three-week virtual hackathon where global developers and entrepreneurs will collaborate to push blockchain applications to new frontiers of business + technology + social change.
 - [Join the BEYOND BLOCKCHAIN discord channel](https://discord.gg/eVxbav)
