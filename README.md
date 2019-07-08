@@ -141,6 +141,7 @@ List of presentations, podcasts, channels, etc. related to Raiden Network
 - [Devcon4 2018](https://youtu.be/v9UQlE2We50)
 - [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc)
 - [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK)
+- [Atomic Swap of ERC20 tokens on the raiden network](https://youtu.be/1Q3q2o4DKZE)
 - [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M)
 - [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w)
 - [Copenhagen Ethereum Meetup](https://youtu.be/arecj2vyjlE)
