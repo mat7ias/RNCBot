@@ -9,6 +9,7 @@
   - [RNapps](#rapps)
   - [Hackathon](#hackathon) (BEYOND BLOCKCHAIN June 24th, 2019 - July 10th, 2019)
   - [Ether Faucets](#ether-faucets)
+    - [ERC20 Faucets](#erc20-faucets)
   - [dApp Testing](#dapp-testing)
 - [Explorers](#explorers)
 - [Learning Resources](#learning-resources)
@@ -88,13 +89,21 @@ A three-week virtual hackathon where global developers and entrepreneurs will co
 - Video: ["Beyond Blockchain Hackathon: Raiden"](https://youtu.be/wdz8M3RXJQs)
 
 ### Ether Faucets
-
+Need testnet Ether?!
 - [Ropsten](https://faucet.ropsten.be/)
 - [Rinkeby](https://faucet.rinkeby.io/)
 - [Kovan](https://faucet.kovan.network/)
 - [Goerli](https://faucet.goerli.mudit.blog/)
 
 Or use the [MetaMask faucets](https://faucet.metamask.io). It should detect which testnet you're on if you have MetaMask installed.
+
+#### ERC20 faucets
+Need ERC20 tokens?! Try @bokkypoobah's [ERC20 token faucet](https://github.com/bokkypoobah/WeenusTokenFaucet). For example, send a 0 value transaction from your account to the token contract addresses below on your preferred network and you'll get 1,000 💪XEENUS tokens:
+- [Mainnet](https://etherscan.io/address/0xeEf5E2d8255E973d587217f9509B416b41CA5870#code): 0xeEf5E2d8255E973d587217f9509B416b41CA5870
+- [Ropsten]((https://ropsten.etherscan.io/address/0x7E0480Ca9fD50EB7A3855Cf53c347A1b4d6A2FF5#code): 0x7E0480Ca9fD50EB7A3855Cf53c347A1b4d6A2FF5
+- [Kovan](https://kovan.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
+- [Rinkeby](https://rinkeby.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
+- [Goerli](https://goerli.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
 
 ### dApp Testing
 
@@ -179,6 +188,7 @@ Resources indirectly related to Raiden Network
 
 ## Community
 
+- [Emerging Tech for Beginners: Convergence of Emerging Technologies with Brett Robertson of Ethereum](https://youtu.be/81_pz2J5zRs)
 - [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/) and [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0)
 - [Non-profit 3D printed Raiden model](https://www.shapeways.com/shops/raiden)
 - [Red Eyes on testnet](https://youtu.be/RpaAS64dI6k)
