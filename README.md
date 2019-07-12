@@ -96,7 +96,7 @@ Need testnet Ether?!
 
 Or use the [MetaMask faucets](https://faucet.metamask.io). It should detect which testnet you're on if you have MetaMask installed.
 
-#### ERC20 faucets
+#### ERC20 Faucets
 Need ERC20 tokens?! Try [@bokkypoobah](https://github.com/bokkypoobah/WeenusTokenFaucet)'s ERC20 token faucet. For example, send a 0 value transaction from your account to the token contract addresses below on your preferred network and you'll get 1,000 💪XEENUS tokens:
 - [Mainnet](https://etherscan.io/address/0xeEf5E2d8255E973d587217f9509B416b41CA5870#code): 0xeEf5E2d8255E973d587217f9509B416b41CA5870
 - [Ropsten](https://ropsten.etherscan.io/address/0x7E0480Ca9fD50EB7A3855Cf53c347A1b4d6A2FF5#code): 0x7E0480Ca9fD50EB7A3855Cf53c347A1b4d6A2FF5
@@ -195,6 +195,7 @@ Resources indirectly related to Raiden Network
 - Watchtower scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
 - [Messari Raiden Network profile report](https://messari.io/asset/raiden-network#profile)
 - [Community built FAQ on Reddit](https://www.reddit.com/r/raidennetwork/comments/7hhkv5/work_in_progress_raiden_network_and_token_faq/)
+- [Raiden PFS in action!](https://twitter.com/mat77ias/status/1148921006863466497)
 
 ### Community Channels
 
