@@ -4,6 +4,7 @@
 
 - [Raiden Network](#raiden-network)
   - [Specifications](#specifications)
+  - [Explorers](#explorers)
 - [⚡ Developer Resources](#-developer-resources)
   - [Tools](#tools)
   - [RNapps](#rapps)
@@ -12,7 +13,6 @@
     - [ERC20 Faucets](#erc20-faucets)
   - [Running a Raiden Full Node](#running-a-raiden-full-node)
   - [dApp Testing](#dapp-testing)
-- [⚡ Explorers](#-explorers)
 - [⚡ Learning Resources](#-learning-resources)
   - [Talks](#talks)
   - [Research Calls](#research-calls)
@@ -41,6 +41,14 @@
   - [Monitoring Service](https://raiden-network-specification.readthedocs.io/en/latest/monitoring_service.html)
   - [Pathfinding Service](https://raiden-network-specification.readthedocs.io/en/latest/pathfinding_service.html)
   - [Smart contracts for Raiden Services](https://raiden-network-specification.readthedocs.io/en/latest/service_contracts.html)
+
+### Explorers
+
+- [Mainnet](https://explorer.raiden.network)
+- [Kovan](https://kovan.explorer.raiden.network)
+- [Ropsten](https://ropsten.explorer.raiden.network)
+- [Goerli](https://goerli.explorer.raiden.network)
+- [Rinkeby](https://rinkeby.explorer.raiden.network)
 
 ## ⚡ Developer Resources
 
@@ -73,6 +81,7 @@
 - [Raiden Light Client](https://github.com/raiden-network/light-client) - Raiden Light Client SDK and dApp
 - [The Raiden dApp](http://lightclient.raiden.network) - a reference implementation of the Raiden Light Client SDK
 - [XUD](https://github.com/ExchangeUnion/xud/) - a decentralized exchange built on the Lightning and Raiden networks to enable instant and trustless cryptocurrency swaps
+- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 - [Storj](https://github.com/stefanbenten/raiden-on-storj), [Medium post](https://storj.io/blog/2018/12/taking-payments-to-the-next-level-with-raiden/) - decentralized cloud storage
 - [CryptoBotWars](https://cryptoplayer.one), [GitHub](https://github.com/cryptoplayerone/cryptobotwars), Medium posts [Part 1](https://medium.com/@loredana.cirstea/cryptobotwars-or-how-to-build-shitty-demos-and-why-19b5ecf60c76) and [Part 2](https://medium.com/@loredana.cirstea/cryptobotwars-part-2-conclusions-ebde6fa716f6) - Tic Tac Toe w/ micropayments and a Game Guardian
 - [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
@@ -129,15 +138,6 @@ Resources for trying the WIP Raiden dApp in your browser. The Light Client works
 4. Start the Raiden dApp [here](http://lightclient.raiden.network). You can now use the dApp to open, close and settle channels.
 
 note: The dApp user interface is very early WIP<sup>[explained more here](https://t.me/RaidenNetworkCommunity/28310)</sup>, the first milestone will enable sending tokens and not receiving them. If you're interested to get the full experience of Raiden you will want to run a full Raiden node and use the WebUI to get a good experience.
-
-## ⚡ Explorers
-
-- [Mainnet](https://explorer.raiden.network)
-- [Kovan](https://kovan.explorer.raiden.network)
-- [Ropsten](https://ropsten.explorer.raiden.network)
-- [Goerli](https://goerli.explorer.raiden.network)
-- [Rinkeby](https://rinkeby.explorer.raiden.network)
-- [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 
 ## ⚡ Learning Resources
 
