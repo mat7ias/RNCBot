@@ -104,8 +104,10 @@ Need testnet ERC20 tokens?! Try [@bokkypoobah](https://github.com/bokkypoobah/We
 - [Goerli](https://goerli.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
 
 Can't find an online node? Here's a short list of some nodes I'm running that you can connect to. :)
+
 Ropsten:
 - 0x5257964Ef9b81fba7276AF2a97c111AaD7B840D6
+
 Goerli (six nodes connected 1<->6 on XEENUS token network):
 - 0x038F01A36Ab37e7674CF41bc2d3Ac5634F603553
 - 0x34e140cf9b711F738f05E1BC9AFB8425083d03a5
