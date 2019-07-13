@@ -4,7 +4,7 @@
 
 - [Raiden Network](#raiden-network)
   - [Specifications](#specifications)
-- [Developer Resources](#developer-resources)
+- [⚡ Developer Resources](#developer-resources)
   - [Tools](#tools)
   - [RNapps](#rapps)
   - [Hackathon](#hackathon)
@@ -12,18 +12,18 @@
     - [ERC20 Faucets](#erc20-faucets)
   - [Running a Raiden Full Node](#running-a-raiden-full-node)
   - [dApp Testing](#dapp-testing)
-- [Explorers](#explorers)
-- [Learning Resources](#learning-resources)
+- [⚡ Explorers](#explorers)
+- [⚡ Learning Resources](#learning-resources)
   - [Talks](#talks)
   - [Research Calls](#research-calls)
   - [Pulse](#pulse)
-- [Other Resources](#other-resources)
-- [Community](#community)
+- [⚡ Other Resources](#other-resources)
+- [⚡ Community](#community)
   - [Community Channels](#community-channels)
-- [Raiden Trust](#raiden-trust)
-- [MicroRaiden](#microraiden)
+- [⚡ Raiden Trust](#raiden-trust)
+- [⚡ MicroRaiden](#microraiden)
   - [MicroTalks](#microtalks)
-- [Raiden Information Bot](#raideninfobot)
+- [⚡ Raiden Information Bot](#raideninfobot)
 
 # Raiden Network
 
@@ -224,10 +224,10 @@ Resources indirectly related to Raiden Network
 - [SmartMesh/SmartRaiden](https://smartmesh.io/) - internet-free digital payments and transactions
 - [RightMesh](https://www.rightmesh.io/) - ad hoc mobile mesh networking platform and protocol
 
-# ⚡ RaidenInfoBot
+## ⚡ RaidenInfoBot
 A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources about Raiden Network (and some misc. features). Currently running in https://t.me/RaidenNetworkCommunity (unofficial)
 
-## Misc. Bot Functions
+Misc. Bot Functions:
 
 - Spam filtering
   - Removes joining message and sets some basic permissions (more strict against users with no profile picture or tag)
