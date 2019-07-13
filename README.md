@@ -10,7 +10,7 @@
   - [Hackathon](#hackathon) (BEYOND BLOCKCHAIN June 24th, 2019 - July 10th, 2019)
   - [Ether Faucets](#ether-faucets)
     - [ERC20 Faucets](#erc20-faucets)
-  - [Running a Raiden Full Node](#running-a-faiden-full-node)
+  - [Running a Raiden Full Node](#running-a-raiden-full-node)
   - [dApp Testing](#dapp-testing)
 - [Explorers](#explorers)
 - [Learning Resources](#learning-resources)
