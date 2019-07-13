@@ -147,7 +147,7 @@ note: The dApp user interface is very early WIP<sup>[explained more here](https:
 - [Raiden Network WebUI Demo](https://youtu.be/ASWeFdHDK-E)
 - [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0)
 - [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4)
-- [Raiden Service Bundle Explained](https://medium.com/raiden-network/raiden-service-bundle-explained-f9bd3f6f358d) - fees paid in RDN
+- [Raiden Service Bundle Explained](https://medium.com/raiden-network/raiden-service-bundle-explained-f9bd3f6f358d) - fees to Monitoring Services and Pathfinding Services paid in RDN
 
 ### Talks
 
