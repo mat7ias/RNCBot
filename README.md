@@ -17,12 +17,12 @@
   - [Talks](#talks)
   - [Research Calls](#research-calls)
   - [Pulse](#pulse)
-- [⚡ Other Resources](#-other-resources)
 - [⚡ Community](#-community)
   - [Community Channels](#community-channels)
 - [⚡ Raiden Trust](#-raiden-trust)
 - [⚡ MicroRaiden](#-microraiden)
   - [MicroTalks](#microtalks)
+- [⚡ Other Resources](#-other-resources)
 - [⚡ Raiden Information Bot](#-raideninfobot)
 
 # Raiden Network
@@ -173,11 +173,6 @@ List of presentations, podcasts, channels, etc. related to Raiden Network
 - [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
 - [Raiden Pulse #1:](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e) News from July and August
 
-## ⚡ Other Resources
-
-Resources indirectly related to Raiden Network
-- [dxDAO Vote Staking Interface](https://dxdao.daostack.io) - lock RDN tokens to earn voting power for the [@dxDAO](https://twitter.com/_dx_dao). Staking period is ongoing. Newly staking tokens has finished.
-
 ## ⚡ Community
 
 - [Emerging Tech for Beginners: Convergence of Emerging Technologies with Brett Robertson of Ethereum](https://youtu.be/81_pz2J5zRs)
@@ -204,6 +199,11 @@ Resources indirectly related to Raiden Network
 - [Twitter](https://twitter.com/raiden_trust)
 - Announcement [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146)
 - [Apply now](https://medium.com/raiden-network/apply-now-for-a-raiden-trust-grant-aca7d3e1e908) for the first wave of Raiden Trust grants
+
+## ⚡ Other Resources
+
+Resources indirectly related to Raiden Network
+- [dxDAO Vote Staking Interface](https://dxdao.daostack.io) - lock RDN tokens to earn voting power for the [@dxDAO](https://twitter.com/_dx_dao). Staking period is ongoing. Newly staking tokens has finished.
 
 ## ⚡ MicroRaiden
 
