@@ -96,7 +96,7 @@ Need testnet Ether?!
 - [Kovan](https://faucet.kovan.network/)
 - [Goerli](https://faucet.goerli.mudit.blog/)
 
-Or use the [MetaMask faucets](https://faucet.metamask.io). It should detect which testnet you're on if you have MetaMask installed.
+Or if you have MetaMask installed then try the [MetaMask faucets](https://faucet.metamask.io).
 
 #### ERC20 Faucets
 
