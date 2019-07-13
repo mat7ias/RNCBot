@@ -10,7 +10,7 @@
   - [RNapps](#rapps)
   - [Ether Faucets](#ether-faucets)
     - [ERC20 Faucets](#erc20-faucets)
-  - [Running a Raiden Full Node](#running-a-raiden-full-node)
+  - [Starting a Raiden Full Node](#starting-a-raiden-full-node)
   - [dApp Testing](#dapp-testing)
 - [⚡ Learning Resources](#-learning-resources)
   - [Talks](#talks)
@@ -106,7 +106,7 @@ Need testnet ERC20 tokens?! Try [bokkypoobah](https://github.com/bokkypoobah/Wee
 - [Kovan](https://kovan.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
 - [Goerli](https://goerli.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
 
-### Running a Raiden Full Node
+### Starting a Raiden Full Node
 
 To run a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). If you happen to be on Windows, [this community video](https://youtu.be/RpaAS64dI6k) shows starting a node with WSL. You can skip signing up for Infura on Goerli by starting the node with
 ```
