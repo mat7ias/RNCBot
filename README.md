@@ -44,7 +44,7 @@
 ## Developer Resources
 
 - [Workshop](https://workshop.raiden.network)
-- [Raiden Workshop Configurator](https://workshops.raiden.network/) - host a Raiden workshop or meetup
+- [Raiden Workshop Configurator](https://workshops.raiden.network/) - host a Raiden workshop or meetup! 😃
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
 
 <sub><sup>Note: The following sections include WIP and demo projects.</sup></sub>
@@ -102,6 +102,17 @@ Need testnet ERC20 tokens?! Try [@bokkypoobah](https://github.com/bokkypoobah/We
 - [Rinkeby](https://rinkeby.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
 - [Kovan](https://kovan.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
 - [Goerli](https://goerli.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
+
+Can't find an online node? Here's a short list of some nodes I'm running that you can connect to. :)
+Ropsten:
+- 0x5257964Ef9b81fba7276AF2a97c111AaD7B840D6
+Goerli (six nodes connected 1<->6 on XEENUS token network):
+- 0x038F01A36Ab37e7674CF41bc2d3Ac5634F603553
+- 0x34e140cf9b711F738f05E1BC9AFB8425083d03a5
+- 0xef0BCf6BBE8E67DEcc1F395CA67922663529F4F4
+- 0xD4945bC6D538709B3431A84c4bEf24be341FbacB
+- 0x2cCEfE5eCEc08A8de5bA96A064d789C0ABa50558
+- 0x83c761f7ABa11A840c59d461921504603d8fc6e8
 
 ### dApp Testing
 
