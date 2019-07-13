@@ -114,7 +114,7 @@ To run a full Raiden node, follow the [workshop](https://github.com/raiden-netwo
 ```
 Another option is to use Raiden with [DAppNode](https://medium.com/raiden-network/run-raiden-on-dappnode-a45a1f63609b)!
 
-Want to find an online Raiden node quickly? Here's a short list that you can open channels to. :)
+Want to find an online Raiden node quickly? Here's a few online nodes :)
 - [Mainnet](https://etherscan.io/address/0x865b332B0B058C472Ee3B46C5a66b8D1699740E1)
 - [Ropsten](https://ropsten.etherscan.io/address/0x5257964ef9b81fba7276af2a97c111aad7b840d6)
 - Goerli: [1](https://goerli.etherscan.io/address/0x038F01A36Ab37e7674CF41bc2d3Ac5634F603553), [2](https://goerli.etherscan.io/address/0x34e140cf9b711F738f05E1BC9AFB8425083d03a5), [3](https://goerli.etherscan.io/address/0xef0BCf6BBE8E67DEcc1F395CA67922663529F4F4), [4](https://goerli.etherscan.io/address/0xD4945bC6D538709B3431A84c4bEf24be341FbacB), [5](https://goerli.etherscan.io/address/0x2cCEfE5eCEc08A8de5bA96A064d789C0ABa50558), [6](https://goerli.etherscan.io/address/0x83c761f7ABa11A840c59d461921504603d8fc6e8) (connected 1<->6 on the XEENUS token network, if you want to try multi-hop payments quickly)
