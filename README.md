@@ -42,7 +42,7 @@
   - [Pathfinding Service](https://raiden-network-specification.readthedocs.io/en/latest/pathfinding_service.html)
   - [Smart contracts for Raiden Services](https://raiden-network-specification.readthedocs.io/en/latest/service_contracts.html)
 
-## Developer Resources
+## ⚡ Developer Resources
 
 - [Workshop](https://workshop.raiden.network)
 - [Raiden Workshop Configurator](https://workshops.raiden.network/) - host a Raiden workshop or meetup! 😃
@@ -130,7 +130,7 @@ Resources for trying the WIP Raiden dApp in your browser. The Light Client works
 
 note: The dApp user interface is very early WIP<sup>[explained more here](https://t.me/RaidenNetworkCommunity/28310)</sup>, the first milestone will enable sending tokens and not receiving them. If you're interested to get the full experience of Raiden you will want to run a full Raiden node and use the WebUI to get a good experience.
 
-## Explorers
+## ⚡ Explorers
 
 - [Mainnet](https://explorer.raiden.network)
 - [Kovan](https://kovan.explorer.raiden.network)
@@ -139,7 +139,7 @@ note: The dApp user interface is very early WIP<sup>[explained more here](https:
 - [Rinkeby](https://rinkeby.explorer.raiden.network)
 - [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 
-## Learning Resources
+## ⚡ Learning Resources
 
 - [Raiden FAQ](https://raiden.network/faq.html)
 - [Medium Publications](https://medium.com/@raiden_network) / [Blog](https://medium.com/raiden-network)
@@ -173,12 +173,12 @@ List of presentations, podcasts, channels, etc. related to Raiden Network
 - [Raiden Pulse #2:](https://medium.com/raiden-network/raiden-pulse-2-news-from-september-and-october-6a6c6be8ad67) News from September and October
 - [Raiden Pulse #1:](https://medium.com/raiden-network/raiden-pulse-1-news-from-july-and-august-423fae4e9d3e) News from July and August
 
-## Other Resources
+## ⚡ Other Resources
 
 Resources indirectly related to Raiden Network
 - [dxDAO Vote Staking Interface](https://dxdao.daostack.io) - lock RDN tokens to earn voting power for the [@dxDAO](https://twitter.com/_dx_dao). Staking period is ongoing. Newly staking tokens has finished.
 
-## Community
+## ⚡ Community
 
 - [Emerging Tech for Beginners: Convergence of Emerging Technologies with Brett Robertson of Ethereum](https://youtu.be/81_pz2J5zRs)
 - [Meeting Raiden @ Web3Summit](http://reddit.com/r/raidennetwork/comments/9red2i/meeting_raiden_web3summit/) and [Raiden: Ethereum's Payment Channel Network](https://medium.com/@surferfc/raiden-ethereums-payment-channel-network-acc6e5c709b0)
@@ -199,13 +199,13 @@ Resources indirectly related to Raiden Network
 
 <sub><sup>note: community channels are run by the community</sup></sub>
 
-## Raiden Trust
+## ⚡ Raiden Trust
 - [Raiden Trust Website](https://www.raidentrust.li/)
 - [Twitter](https://twitter.com/raiden_trust)
 - Announcement [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146)
 - [Apply now](https://medium.com/raiden-network/apply-now-for-a-raiden-trust-grant-aca7d3e1e908) for the first wave of Raiden Trust grants
 
-## MicroRaiden
+## ⚡ MicroRaiden
 
 - [MicroRaiden Website](https://micro.raiden.network/)
 - [MicroRaiden Github repo](https://github.com/raiden-network/microraiden)
@@ -224,7 +224,7 @@ Resources indirectly related to Raiden Network
 - [SmartMesh/SmartRaiden](https://smartmesh.io/) - internet-free digital payments and transactions
 - [RightMesh](https://www.rightmesh.io/) - ad hoc mobile mesh networking platform and protocol
 
-# RaidenInfoBot
+# ⚡ RaidenInfoBot
 A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources about Raiden Network (and some misc. features). Currently running in https://t.me/RaidenNetworkCommunity (unofficial)
 
 ## Misc. Bot Functions
