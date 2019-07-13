@@ -2,7 +2,7 @@
 
 ### Contents
 
-- [Raiden Network](#raiden-network)
+- [⚡ Raiden Network](#-raiden-network)
   - [Specifications](#specifications)
   - [Explorers](#explorers)
 - [⚡ Developer Resources](#-developer-resources)
@@ -25,7 +25,7 @@
 - [⚡ Other Resources](#-other-resources)
 - [⚡ Raiden Information Bot](#-raideninfobot)
 
-# Raiden Network
+# ⚡ Raiden Network
 
 - [Website](https://raiden.network/)
 - [Github](https://github.com/raiden-network/)
