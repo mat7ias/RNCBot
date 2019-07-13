@@ -12,7 +12,6 @@
     - [ERC20 Faucets](#erc20-faucets)
   - [Running a Raiden Full Node](#running-a-raiden-full-node)
   - [dApp Testing](#dapp-testing)
-  - [Hackathon](#hackathon)
 - [⚡ Learning Resources](#-learning-resources)
   - [Talks](#talks)
   - [Research Calls](#research-calls)
@@ -88,14 +87,6 @@
 - [Team SCG](https://github.com/StupidCatGentlemen/Ether) - buying and supplying electricity on an open marketplace using Raiden for payments.
 - [Cryptogrannies](https://github.com/swops-io/ETHSingapore-project) - pushing crypto to be simple enough to be used by the oldies
 - [Raidenooh](https://github.com/pisuthd/raiden-dooh) - decentralized digital signage platform
-
-### Hackathon
-
-The [BEYOND BLOCKCHAIN](https://gitcoin.co/hackathon/beyondblocks) hackathon HAS FINISHED.
-- [Join the BEYOND BLOCKCHAIN discord channel](https://discord.gg/eVxbav)
-- [Gitcoin](https://github.com/gitcoinco/beyondblockchainteams) issue board to discuss hackathon ideas and find teams!
-- [Raiden specific hackathon repo](https://github.com/raiden-network/hackathons/issues)
-- Video: ["Beyond Blockchain Hackathon: Raiden"](https://youtu.be/wdz8M3RXJQs)
 
 ### Ether Faucets
 
