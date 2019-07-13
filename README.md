@@ -64,7 +64,6 @@
 - [Raiden Invoice](https://github.com/ChaeByunghoon/raiden-invoice) and [Invoice Server](https://github.com/ChaeByunghoon/raiden-invoice-server) - A library for encoding and decoding Raiden network payment requests
 - [Go Raiden Client](https://github.com/cpurta/go-raiden-client) - A Raiden node client written in Go
 
-
 ### Rapps
 
 - [Grid Ethereum Plugin](https://github.com/PhilippLgh/ethereum-grid-tutorials/blob/cfb3b205374a34550e43cdbdbb4ec7e90a2d4bf4/Raiden.md) - the functionality with a plugin and a Web UI
@@ -89,6 +88,7 @@ The [BEYOND BLOCKCHAIN](https://gitcoin.co/hackathon/beyondblocks) hackathon HAS
 - Video: ["Beyond Blockchain Hackathon: Raiden"](https://youtu.be/wdz8M3RXJQs)
 
 ### Ether Faucets
+
 Need testnet Ether?!
 - [Ropsten](https://faucet.ropsten.be/)
 - [Rinkeby](https://faucet.rinkeby.io/)
@@ -98,6 +98,7 @@ Need testnet Ether?!
 Or use the [MetaMask faucets](https://faucet.metamask.io). It should detect which testnet you're on if you have MetaMask installed.
 
 #### ERC20 Faucets
+
 Need testnet ERC20 tokens?! Try [@bokkypoobah](https://github.com/bokkypoobah/WeenusTokenFaucet)'s ERC20 token faucet. For example, send a 0 value transaction from your account to the token contract addresses below on your preferred network and you'll get 1,000 💪XEENUS tokens:
 - [Ropsten](https://ropsten.etherscan.io/address/0x7E0480Ca9fD50EB7A3855Cf53c347A1b4d6A2FF5#code): 0x7E0480Ca9fD50EB7A3855Cf53c347A1b4d6A2FF5
 - [Rinkeby](https://rinkeby.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
@@ -106,7 +107,7 @@ Need testnet ERC20 tokens?! Try [@bokkypoobah](https://github.com/bokkypoobah/We
 
 ### Running a Raiden Full Node
 
-To run a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). You can skip signing up for Infura on Goerli by starting the node with
+To run a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). If you happen to be on Windows, [this community video](https://youtu.be/RpaAS64dI6k) shows starting a node WSL. You can skip signing up for Infura on Goerli by starting the node with instead of Infura
 ```
 --eth-rpc-endpoint https://rpc.slock.it/goerli
 ```
@@ -152,32 +153,11 @@ note: The dApp user interface is very early WIP<sup>[explained more here](https:
 List of presentations, podcasts, channels, etc. related to Raiden Network
 - [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
 - [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
+- [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4)
 - [Beyond Blockchain Hackathon: Raiden](https://youtu.be/wdz8M3RXJQs)
 - [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs)
-- [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0)
-- [Nugget's News Interview](https://youtu.be/Cp8hprIjJHc)
-- [Stanford Blockchain Conference](https://youtu.be/_irp4Jx0qjM)
-- [CryptoMonday 2nd Layer Scaling on Ethereum](https://youtu.be/piT0GeE7Rw4)(Deutsch)
-- [Rock-Paper-Scissors on Raiden Network](https://youtu.be/Mv6Ukdu0Xso)
-- [Devcon4 2018](https://youtu.be/v9UQlE2We50)
-- [The Future of Layer 2 - Prague Edition](https://youtu.be/htyJrK9VuCc)
-- [ETHBerlin](https://view.ly/v/MrLm3vSB1XEK)
-- [Atomic Swap of ERC20 tokens on the raiden network](https://youtu.be/1Q3q2o4DKZE)
-- [Mass Adoption and Use-Cases](https://youtu.be/GrWqRVDOC4M)
-- [Tackling Scalability Panel](https://youtu.be/AH2g-KpPk7w)
-- [Copenhagen Ethereum Meetup](https://youtu.be/arecj2vyjlE)
-- [Ethereum Asia Tour](https://youtu.be/MI5vgqq1hzA)
-- [DAPPCON 2018 Panel Talking State Channels and Plasma](https://youtu.be/zmS0i3ZQZak)
-- [DAPPCON 2018](https://youtu.be/hSMIpl6e_Ow)
-- [Off The Chain presentation](https://youtu.be/8Duil4pLzhI)
-- [L2 Summit State Channel Panel](https://youtu.be/jzoS0tPUAiQ?t=2h10m9s)
-- [Edcon 2018](https://youtu.be/VsZuDJMmVPY?t=7h45m51s)
-- [Asseth 2018](https://youtu.be/93qOwUSj4PQ)
-- [Devcon3](https://youtu.be/00RPE96LRVM)
-- [Oktahedron podcast](https://oktahedron.diskordia.org/?podcast=oh007-raiden#t=1:56.687)
-- [Berlin Ethereum 2016](https://youtu.be/JuVP4iDVkoQ)
-- [Devcon2](https://youtu.be/4igFqFqQga4)
-- [Devcon1](https://youtu.be/h791zjvf3uQ)
+- Send "/videos" to [RaidenInfoBot](https://t.me/RaidenInfoBot) for 20+ more videos!
+
 
 ### Research Calls
 
