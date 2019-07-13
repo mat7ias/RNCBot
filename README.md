@@ -108,7 +108,7 @@ Need testnet ERC20 tokens?! Try [bokkypoobah](https://github.com/bokkypoobah/Wee
 
 ### Running a Raiden Full Node
 
-To run a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). If you happen to be on Windows, [this community video](https://youtu.be/RpaAS64dI6k) shows starting a node with WSL. You can skip signing up for Infura on Goerli by starting the node with instead of Infura
+To run a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). If you happen to be on Windows, [this community video](https://youtu.be/RpaAS64dI6k) shows starting a node with WSL. You can skip signing up for Infura on Goerli by starting the node with
 ```
 --eth-rpc-endpoint https://rpc.slock.it/goerli
 ```
