@@ -10,7 +10,7 @@
   - [Hackathon](#hackathon) (BEYOND BLOCKCHAIN June 24th, 2019 - July 10th, 2019)
   - [Ether Faucets](#ether-faucets)
     - [ERC20 Faucets](#erc20-faucets)
-  - [Full Node Testing](#full-node-testing)
+  - [Running a Raiden Full Node](#running-a-faiden-full-node)
   - [dApp Testing](#dapp-testing)
 - [Explorers](#explorers)
 - [Learning Resources](#learning-resources)
@@ -104,7 +104,7 @@ Need testnet ERC20 tokens?! Try [@bokkypoobah](https://github.com/bokkypoobah/We
 - [Kovan](https://kovan.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
 - [Goerli](https://goerli.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c#code): 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
 
-### Full Node Testing
+### Running a Raiden Full Node
 
 To run a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). You can skip signing up for Infura on Goerli by starting the node with
 ```
