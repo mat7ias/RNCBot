@@ -106,11 +106,11 @@ Need testnet ERC20 tokens?! Try [@bokkypoobah](https://github.com/bokkypoobah/We
 
 ### Full Node Testing
 
-To try running a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). You can start it on Goerli with
+To run a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). You can skip signing up for Infura on Goerli by starting the node with
 ```
 --eth-rpc-endpoint https://rpc.slock.it/goerli
 ```
-to skip signing up for Infura. Another option is to use Raiden with [DAppNode](https://medium.com/raiden-network/run-raiden-on-dappnode-a45a1f63609b)!
+Another option is to use Raiden with [DAppNode](https://medium.com/raiden-network/run-raiden-on-dappnode-a45a1f63609b)!
 
 Want to find an online Raiden node quickly? Here's a short list that you can open channels to. :)
 - [Mainnet](https://etherscan.io/address/0x865b332B0B058C472Ee3B46C5a66b8D1699740E1)
