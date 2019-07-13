@@ -57,6 +57,7 @@
 - [Releases List](https://github.com/raiden-network/raiden/releases) (+[nightly releases](https://raiden-nightlies.ams3.digitaloceanspaces.com/index.html))
 
 <sub><sup>Note: The following sections include WIP and demo projects.</sup></sub>
+
 ### Tools
 
 - [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden) and Use Docker, Infura.io to [Build Raiden Network on Ubuntu 18.04](https://medium.com/@szhao_31738/use-docker-infura-io-to-build-raiden-network-on-ubuntu-18-04-a5eae7357f61) tutorial
@@ -116,7 +117,7 @@ Need testnet ERC20 tokens?! Try [@bokkypoobah](https://github.com/bokkypoobah/We
 
 ### Running a Raiden Full Node
 
-To run a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). If you happen to be on Windows, [this community video](https://youtu.be/RpaAS64dI6k) shows starting a node WSL. You can skip signing up for Infura on Goerli by starting the node with instead of Infura
+To run a full Raiden node, follow the [workshop](https://github.com/raiden-network/workshop/tree/tu-berlin-blockchain-labs). If you happen to be on Windows, [this community video](https://youtu.be/RpaAS64dI6k) shows starting a node with WSL. You can skip signing up for Infura on Goerli by starting the node with instead of Infura
 ```
 --eth-rpc-endpoint https://rpc.slock.it/goerli
 ```
