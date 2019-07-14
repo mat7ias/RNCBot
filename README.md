@@ -71,9 +71,12 @@
 - [Token Network's Channels](https://github.com/manuelwedler/token-network-channels) - Small dApp displaying Token Network's Channels (part of the Raiden network)
 - [Raiden Invoice](https://github.com/ChaeByunghoon/raiden-invoice) and [Invoice Server](https://github.com/ChaeByunghoon/raiden-invoice-server) - A library for encoding and decoding Raiden network payment requests
 - [Go Raiden Client](https://github.com/cpurta/go-raiden-client) - A Raiden node client written in Go
+- [PyRaiden](https://github.com/nanspro/PyRaiden) - A client library to interact with Raiden Network written in python.
 
 ### Rapps
 
+- [Raiden Ticker](https://github.com/pisuthd/raiden-ticker) - integrate Raiden's payment channel with IoT devices
+- [Raiden Burner](https://github.com/johngrantuk/raidenburner) - add an easy to use Raiden payment option to the [Burner Wallet](https://github.com/austintgriffith/burner-wallet)
 - [Grid Ethereum Plugin](https://github.com/PhilippLgh/ethereum-grid-tutorials/blob/cfb3b205374a34550e43cdbdbb4ec7e90a2d4bf4/Raiden.md) - the functionality with a plugin and a Web UI
 - [Fairspot](https://github.com/ilinzweilin/ethCapeTown) - WiFi internet access on the go (in 100kb chunks) using Raiden
 - [NUtube](https://nutube.network/#/), [Github](https://github.com/CryptoManiacsZone/nuTube.network), [demo](https://www.youtube.com/watch?v=Tx-j0TubY7k) - decentralized P2P live streaming w/ micropayments
@@ -114,7 +117,7 @@ To test a full Raiden node quick for the first time 🏃, follow the [workshop](
 ```
 Another option is to use Raiden with [DAppNode](https://medium.com/raiden-network/run-raiden-on-dappnode-a45a1f63609b)!
 
-Want to find an online Raiden node? Here's a few online nodes :)
+Want to find some online Raiden nodes to connect to? Here's a few :)
 - [Mainnet](https://etherscan.io/address/0x865b332B0B058C472Ee3B46C5a66b8D1699740E1)
 - [Ropsten](https://ropsten.etherscan.io/address/0x5257964ef9b81fba7276af2a97c111aad7b840d6)
 - Goerli: [1](https://goerli.etherscan.io/address/0x038F01A36Ab37e7674CF41bc2d3Ac5634F603553), [2](https://goerli.etherscan.io/address/0x34e140cf9b711F738f05E1BC9AFB8425083d03a5), [3](https://goerli.etherscan.io/address/0xef0BCf6BBE8E67DEcc1F395CA67922663529F4F4), [4](https://goerli.etherscan.io/address/0xD4945bC6D538709B3431A84c4bEf24be341FbacB), [5](https://goerli.etherscan.io/address/0x2cCEfE5eCEc08A8de5bA96A064d789C0ABa50558), [6](https://goerli.etherscan.io/address/0x83c761f7ABa11A840c59d461921504603d8fc6e8) (connected 1<->6 on the XEENUS token network, if you want to try multi-hop payments quickly)
