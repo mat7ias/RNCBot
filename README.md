@@ -1,6 +1,8 @@
-# [Awesome Raiden is has moved!](https://github.com/mat7ias/awesome-raiden) ⚡
+# [Awesome Raiden is has moved!](https://github.com/raiden-network/awesome-raiden) ⚡
 
 [14/7/2019] The scope of the Awesome Raiden list went too far past the scope of the RaidenInfoBot repo. Awesome Raiden is being continued in it's own repo https://github.com/mat7ias/awesome-raiden
+
+[6/8/2019] Awesome Raiden moved to https://github.com/raiden-network/awesome-raiden/
 
 ## ⚡ RaidenInfoBot
 A [Telegram bot](https://t.me/RaidenInfoBot) with a collection of resources about Raiden Network (and some misc. features). Currently running in https://t.me/RaidenNetworkCommunity (unofficial)
