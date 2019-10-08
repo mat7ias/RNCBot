@@ -1,5 +1,5 @@
 #Load bot token
-bot_token:
+bot_token: YOUR_BOT_TOKEN
 
 #Flood filter
 previous:
@@ -19,11 +19,11 @@ triggers: []
 
 #Admins IDs
 ADMINS:
-  -
-  -
+  - 
+  - 
 
-RNC_ID:
-RNC_PLAYGROUND_ID:
+RNC_ID: 
+RNC_PLAYGROUND_ID: 
 
 ################################# Messages #####################################
 pmme: >
@@ -116,31 +116,31 @@ resources: >
 
   [Dev Chat](https://gitter.im/raiden-network/raiden)
 
-  [Raiden Explorer](https://explorer.raiden.network/) ([Kovan](https://kovan.explorer.raiden.network), [Ropsten](https://ropsten.explorer.raiden.network), [Rinkeby](https://rinkeby.explorer.raiden.network), [Goerli](https://goerli.explorer.raiden.network))
-
-  [The Raiden dApp](http://lightclient.raiden.network) - a reference implementation of the Raiden Light Client SDK
-
   [Raiden Network Roadmap](https://raiden.network/roadmap.html)
 
-  [Documentation](https://readthedocs.org/projects/raiden-network/), [Services](https://raiden-services.readthedocs.io/en/latest/)
+  [Documentation](https://readthedocs.org/projects/raiden-network/), [Services](https://raiden-services.readthedocs.io/en/latest/), [Raiden Wizard](https://github.com/raiden-network/raiden-documentation)
 
   [Specification PDF](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
 
   [Medium Publications](https://medium.com/@raiden_network) and [Blog](https://medium.com/raiden-network)
 
+  [Awesome Raiden](https://github.com/raiden-network/awesome-raiden)
+
   [Twitter](https://twitter.com/raiden_network)
 
   [Reddit](https://www.reddit.com/r/raidennetwork)
 
-  [Weekly Reddit Github Update](https://www.reddit.com/r/raidennetwork/search?q=GIT&restrict_sr=1&sort=new)
+  [Weekly Update on Reddit](https://www.reddit.com/r/raidennetwork/search?q=GIT&restrict_sr=1&sort=new)
 
-  [Workshops](http://workshop.raiden.network)
+  [Workshop](http://workshop.raiden.network)
 
-  [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden)
+  [Raiden Workshop Configurator](https://workshops.raiden.network/)
 
-  [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
+  /more
 
-  [Raiden Trust](https://www.raidentrust.li/), ([Twitter](https://twitter.com/raiden_trust) and [Introducing Raiden Trust](https://medium.com/raiden-network/introducing-the-raiden-trust-cd47db60146))
+more: >
+
+  /tools
 
 community: >
 
@@ -160,7 +160,7 @@ community: >
 
   Watch Tower/Monitoring Service scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
 
-  [eth.events](raiden.eth.events)
+  [eth.events](https://raiden.eth.events)
 
 platforms: >
 
@@ -176,15 +176,23 @@ events: >
 
   Upcoming conferences/hackathons/related meetups:
 
-  June 24th-July 10th - [BEYOND BLOCKCHAIN](https://github.com/mat7ias/RaidenResourcesBot#hackathon)
-
-  August 21-23rd - [DappCon](https://www.dappcon.io/speakers/) / Berlin, Germany
-
-  August 23-25th - [ETHBerlinZwei](https://ethberlinzwei.com/) / Berlin, Germany
+  October 8th-11th - [Devcon5](http://devcon.org)
 
 previousevents: >
 
   Recent Events:
+
+  August 21st -[ETHBerlin Opening Party](https://www.eventbrite.com/e/ethberlinzwei-presents-the-opening-party-tickets-68470784961)
+
+  August 21st - [Layer 2 Blockchain Week Berlin edition](https://www.eventbrite.com/e/layer-2-meetup-blockchain-week-berlin-edition-tickets-64527833487) / Berlin, Germany
+
+  August 21-23rd - [DappCon](https://www.dappcon.io/speakers/) / Berlin, Germany
+
+  August 23-25th - [ETHBerlinZwei](https://ethberlinzwei.com/) and [hackathon](https://medium.com/raiden-network/hack-with-raiden-at-ethberlin-a3c3860d9dfe) / Berlin, Germany
+
+  July 29th-August 15th - [GROW ETHEREUM](https://gitcoin.co/hackathon/grow-ethereum) hackathon
+
+  June 24th-July 10th - BEYOND BLOCKCHAIN Gitcoin hackathon
 
   June 10th - [Understand & use Raiden: A technical deep dive on payment channel networks](https://www.eventbrite.com/e/understand-use-raiden-a-technical-deep-dive-on-payment-channel-networks-tickets-61784831093) / Primalbase, London
 
@@ -234,17 +242,35 @@ previousevents: >
 
 videos: >
 
-  Raiden Network related videos/presentations:
+  Raiden Network related videos:
 
-  [Raiden youtube channel](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg)
+  [Raiden youtube](https://youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg) and [brainbot Technologies](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos) channels
 
-  [brainbot Technologies channel](https://youtube.com/channel/UCAfSoSy9FK5UqlSxqcsQElA/videos)
+  Subsequent videos in reverse chronological order (newest first):
+
+  [BUIDL meetup #2 with MythX and Raiden Network](https://youtu.be/3BQo7FLWxyE) - Boris
+
+  [First-ever off-chain BTC/DAI Atomic Swap](https://youtu.be/3vzMJypkZVc) - Exchange Union
+
+  [DAPPCON 2019 Alderaan: Raiden's Upcoming Release](https://youtu.be/WKkaKKY9z4I) - Lefteris
+
+  [DAPPCON 2019: Panel - The Road to Scalability](https://youtu.be/mNWvDOEA8eo) - Lefteris
+
+  [Layer 2 Meetup Blockchain Week Berlin Edition](https://youtu.be/5LnLkRotcuU) - Dominik
+
+  [EthBerlin2: Raiden Workshop](https://youtu.be/2XMBrJabsgE) - Franzi
+
+  [Beyond Blockchain Hackathon Raiden](https://youtu.be/wdz8M3RXJQs) - Franzi
+
+  [Raiden Network for instant crypto payment & lower fees](https://youtu.be/hr_cPSvE8Ao) - Pisuth
+
+  [Layer 2 Community Call #1: Routing in state channel networks](https://youtu.be/SUxe_WJw5Yw) - Dominik and Karl
 
   [Asseth 2019 - Paris](https://youtu.be/pN2jEgH1Nbs) - Paul and Franziska
 
   [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4)
 
-  [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0) - Franziska
+  [Red Eyes on Mainnet and 2019 Outlook](https://youtu.be/g7hgGWl8vb0) - Franzi
 
   [Nugget's News Interview](https://youtu.be/Cp8hprIjJHc) - Lefteris
 
@@ -362,6 +388,8 @@ adminlist: >
 
   Hudazara - @Hudazara
 
+  surferfc - @surferfc
+
   Mattias - @Mat7ias
 
 devcon: >
@@ -373,6 +401,8 @@ devcon: >
 pulse: >
 
   [Raiden Pulse](https://medium.com/raiden-network):
+
+  [Raiden Pulse #7:](https://medium.com/raiden-network/raiden-pulse-7-news-from-july-and-august-f1f9e4b7b6d3) News from July and August
 
   [Raiden Pulse #6:](https://medium.com/raiden-network/raiden-pulse-6-news-from-may-and-june-f519818e7650) News from May and June
 
@@ -414,13 +444,27 @@ disclaimer: >
 
 rapps: >
 
-  RNapps and related dev tools/utilities (in no particular order):
+  RApps and related dev tools/utilities (in no particular order):
 
-  [Raiden Light Client](https://github.com/raiden-network/light-client) - Raiden Light Client SDK and dApp
+  [Raiden-graphql](https://github.com/mingderwang/raiden-graphql) - GraphQL interface to the Raiden Network ([demo](https://raiden-graphql.now.sh/graphql))
 
-  [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
+  [ETHBerlin Bauhaus Raiden](https://ethberlin.raiden.network) - Interactive artwork via micropayments [instructions](https://twitter.com/raiden_network/status/1165314748054945794)
 
-  [Parity docker Raiden dev env](https://github.com/calinchiper/parity-docker-raiden-dev-env) - Dockerized POA Parity blockchain + Raiden network contracts deployment scripts & config generator
+  [Tip_raiden](https://github.com/nanspro/tip_raiden) - A twitter bot for micro-payments using raiden network ([docs]())
+
+  [Ez-raiden](https://github.com/michaelcohen716/ez-raiden) - A no-frills UI for interacting with the Raiden Payment Network
+
+  [Raiden-client-js](https://github.com/npafitis/raiden-client-js) - Lightweight, well-documented and clean Javascript client library for Raiden API, written in typescript.
+
+  [Raiden_py](https://github.com/viraja1/raiden_py) - Raiden Python Client Library
+
+  [Raiden-api-sdk](https://github.com/drdgvhbh/raiden-api-sdk) - Server/Client side SDK for interacting with the Raiden API ([docs](https://raiden-client-python.readthedocs.io/en/latest/))
+
+  [Raiden-client-python](https://github.com/maddevsio/raiden-client-python) - Raiden API python client
+
+  [Raiden Ticker](https://github.com/pisuthd/raiden-ticker) - LED matrix display controlled by ESP8266 to display messages paid for through Raiden
+
+  [Raiden Burner](https://github.com/johngrantuk/raidenburner), [demo](https://youtu.be/Pn0gsljGalo) - add an easy to use Raiden payment option to the [Burner Wallet](https://github.com/austintgriffith/burner-wallet)
 
   [Fairspot](https://github.com/ilinzweilin/ethCapeTown) - WiFi internet access on the go (in 100kb chunks) using Raiden
 
@@ -436,13 +480,60 @@ rapps: >
 
   [CryptoBotWars](https://cryptoplayer.one), [GitHub](https://github.com/cryptoplayerone/cryptobotwars), Medium posts [Part 1](https://medium.com/@loredana.cirstea/cryptobotwars-or-how-to-build-shitty-demos-and-why-19b5ecf60c76) and [Part 2](https://medium.com/@loredana.cirstea/cryptobotwars-part-2-conclusions-ebde6fa716f6)
 
-  [Storj](https://github.com/stefanbenten/raiden-on-storj), [Medium post](https://storj.io/blog/2018/12/taking-payments-to-the-next-level-with-raiden/) - decentralized cloud storage
+  /projects
 
-  [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map) - Raiden Network analyzer
+  /tools
+
+tools: >
+
+  [EthArmbian](http://ethraspbian.com/) - turns NanoPC-T4 or RockPro64 into a full Ethereum node. Includes components of the Ethereum ecosystem such as Raiden Network([version check](https://github.com/diglos/userpatches#ethereum-framework)), Trinity, Status.im, IPFS, Swarm and Vipnode. Initial support for Eth2.0 clients.
+
+  [Grid Ethereum Plugin](https://github.com/PhilippLgh/grid-raiden-extension) - the functionality with a plugin and a Web UI ([tutorial](https://github.com/PhilippLgh/ethereum-grid-tutorials/blob/master/Raiden.md))
+
+  [Docker Hub](https://hub.docker.com/r/raidennetwork/raiden) Use Docker, Infura.io to Build Raiden Network on Ubuntu 18.04 [tutorial](https://medium.com/@szhao_31738/use-docker-infura-io-to-build-raiden-network-on-ubuntu-18-04-a5eae7357f61)
+
+  [PyPI](https://pypi.org/project/raiden/) and [Services](https://pypi.org/project/raiden-services/)
+
+  [Parity docker Raiden dev env](https://github.com/calinchiper/parity-docker-raiden-dev-env) - Dockerized POA Parity blockchain + Raiden network contracts deployment scripts & config generator
+
+  [Raiden Express Server](https://github.com/TarCode/raiden-express-server) and [Raiden React Client](https://github.com/TarCode/raiden-react-client)
+
+  [Token Network's Channels](https://github.com/manuelwedler/token-network-channels) - Small dApp displaying Token Network's Channels (part of the Raiden network)
+
+  [Go Raiden Client](https://github.com/cpurta/go-raiden-client) - A Raiden node client written in Go
+
+  [PyRaiden](https://github.com/nanspro/PyRaiden) - A client library to interact with Raiden Network written in python
+
+  [Local Raiden](https://github.com/ConsenSys/Local-Raiden) - Run a local Raiden network in docker containers for demo and testing purposes
+
+  [Raiden-api-client](https://github.com/wslyvh/raiden-api-client) - A lightweight Raiden Network API TypeScript client to interact with a Raiden Network node
 
   [DAppNode](https://github.com/dappnode/DAppNodePackage-raiden) ([testnet version](https://github.com/vdo/DAppnodePackage-raiden-testnet))
 
-  [Test environment scripts](https://github.com/kelsos/test-environment-scripts)
+  [Raiden Scenario Player](https://github.com/raiden-network/scenario-player) - integration testing tool
+
+  [Homebrew Tap](https://github.com/raiden-network/homebrew-raiden) for Raiden
+
+  [WebUI](https://github.com/raiden-network/webui) - Raiden Web User Interface
+
+  [Raiden Light Client](https://github.com/raiden-network/light-client) - Raiden Light Client SDK and dApp
+
+  [The Raiden dApp](https://lightclient.raiden.network) - a reference implementation of the Raiden Light Client SDK
+
+  /MoreTools
+
+moretools: >
+
+  [Test environment scripts](https://github.com/kelsos/test-environment-scripts) - a collection of scripts used to bootstrap a test raiden environment
+
+
+projects: >
+
+  [Storj](https://github.com/stefanbenten/raiden-on-storj), [Medium post](https://storj.io/blog/2018/12/taking-payments-to-the-next-level-with-raiden/) - decentralized cloud storage
+
+  [Exchange Union XUD](https://github.com/ExchangeUnion/xud/), cover of the [integration idea](https://hackmd.io/s/SyZOK0OfN)
+
+  [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 
 faucets: >
 
@@ -482,7 +573,15 @@ adminpolicy: >
 
 mentions: >
 
-  Some of the mentions of Raiden:
+  note: list not up-to-date. More RApps and Tools [found here](https://github.com/raiden-network/awesome-raiden)
+
+  Some of the mentions of Raiden Network or MicroRaiden, including research:
+
+  [PyCon Thailand](https://youtu.be/hr_cPSvE8Ao) - Pisuth Daengthongdee
+
+  [Serenity Source](https://medium.com/@pakradenmas66/serenity-source-8002d175e267)
+
+  [Lumino](https://github.com/rsksmart/lumino)
 
   [GridPlus](https://drive.google.com/file/d/0Bz90riPGRHquNDVXVE81RmppaUk/view)
 
@@ -500,7 +599,7 @@ mentions: >
 
   [SmartMesh/SmartRaiden](https://smartmesh.io/)
 
-  [Exchange Union](https://github.com/ExchangeUnion/Docs/blob/master/XU-TechnicalPaper.md) ([XUD raiden Integration](https://hackmd.io/s/SyZOK0OfN))
+  [Exchange Union](https://github.com/ExchangeUnion/Docs/blob/master/XU-TechnicalPaper.md)
 
   [Augur](https://medium.com/@AugurProject/augur-master-plan-42dda65a3e3d)
 
@@ -518,13 +617,11 @@ mentions: >
 
   [PolySwarm](https://polyswarm.io/polyswarm-whitepaper.pdf) Threat intelligence
 
-  [Raidex](https://raidex.io/) L2 DEX
+  [Raidex](https://raidex.io/)
 
   [Request](https://request.network/assets/pdf/request_whitepaper.pdf) Social marketplace
 
   [Soma](https://soma.co/wp-content/uploads/2017/07/Soma-tech-Whitepaper.pdf)
-
-  [Trade](https://trade.io/whitepaper/EN.pdf) Trading platform
 
   [Trustlines Network](https://github.com/trustlines-network/trustlines-network.github.io/blob/8f2d9aeff4d373eff6a8bba123a8e975bd52f104/documents/Projects/trustlines-network.github.io-master/_includes/platform.html)
 
@@ -541,6 +638,14 @@ mentions: >
   [Storj](https://medium.com/@storjproject/taking-payments-to-the-next-level-with-raiden-e36fbc99f64f) ([Github](https://github.com/stefanbenten/raiden-on-storj))
 
   [Hey Bitcoin](https://heybitcoin.io/), [Medium](https://medium.com/@heybitcoin/which-technologies-are-used-by-the-hey-bitcoin-system-e440d203d3fc) - portfolio management
+
+  [Alchemy](https://medium.com/@alchemy.foundation/alchemy-a-leading-hybrid-crypto-and-fiat-mobile-payment-company-in-asia-18125ac74488) - [PULLPAY video](https://youtu.be/xjS2L-NWsdE)
+
+  [Flying Carpet](https://www.flyingcarpet.network/)
+
+  [Aptoide](http://www.aptoide.com)
+
+  [Konrad](https://www.konrad.holdings), [Medium article](https://medium.com/@konradholdings/want-speed-scale-it-off-the-chain-or-to-another-chain-2aea457b7673)
 
 weeklyupdate: >
 
@@ -560,7 +665,7 @@ badbot:
 
 communityfaq: >
 
-  Hi, this is an *unofficial* FAQ archive of common community questions and answers([many of which are sourced from here](https://www.reddit.com/r/raidennetwork/comments/7hhkv5/work_in_progress_raiden_network_and_token_faq/)). Please find the Raiden official FAQ [here](https://raiden.network/faq.html).
+  Hi, this is an *unofficial* FAQ archive of common community questions and answers ([many of which are sourced from here](https://www.reddit.com/r/raidennetwork/comments/7hhkv5/work_in_progress_raiden_network_and_token_faq/)). Please find the Raiden official FAQ [here](https://raiden.network/faq.html).
 
 
   1. Running a /mainnet or /testnet node
@@ -569,25 +674,23 @@ communityfaq: >
 
   3. /Plasma in comparison to State Channels
 
-  4. Raiden in comparison to other State /Channels
+  4. Raiden /Monitoring or /Pathfinding Services
 
-  5. Raiden /Monitoring or /Pathfinding Services
+  5. What is the reason behind the /cost advantage of Raiden?
 
-  6. What is the reason behind the /cost advantage of Raiden?
+  6. What is the reason behind the /speed advantage of Raiden?
 
-  7. What is the reason behind the /speed advantage of Raiden?
+  7. What is the reason behind the /privacy advantage of Raiden?
 
-  8. What is the reason behind the /privacy advantage of Raiden?
+  8. What things are we likely to see use the Raiden Network in the /future?
 
-  9. What things are we likely to see use the Raiden Network in the /future?
+  9. Why will other /developers build upon Raiden's Network?
 
-  10. Why will other /developers build upon Raiden's Network?
+  10. Why won't Raiden be made /obsolete by future Ethereum upgrades?
 
-  11. Why won't Raiden be made /obsolete by future Ethereum upgrades?
+  11. Why is the Raiden Network /Token worth anything?
 
-  12. Why is the Raiden Network /Token worth anything?
-
-  13. Where can I find a resource with /everything (almost)?
+  12. Where can I find a resource with /everything (almost)?
 
 
 
@@ -599,7 +702,7 @@ mainnet: >
 
   Mainnet:
 
-  For mainnet make sure to run an Ethereum node - [Parity](https://github.com/paritytech/parity-ethereum/releases) (faster to sync) or [Geth](https://ethereum.github.io/go-ethereum/downloads/) (longer) then follow [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4). Or if you don't want to run an Ethereum node you can use [Infura](https://Infura.io) and add --eth-rpc-endpoint https://NETWORK.infura.io/v3/YOUR_INFURA_TOKEN making sure to run Raiden on the same network as Infura.
+  For mainnet make sure to run an Ethereum node - [Parity](https://github.com/paritytech/parity-ethereum/releases) (faster to sync) or [Geth](https://ethereum.github.io/go-ethereum/downloads/) (longer) then follow [How to install a Raiden node on the Ethereum Mainnet](https://youtu.be/fy2ctCQHfD4). Or if you don't want to run an Ethereum node you can use [Infura](https://Infura.io) and add --eth-rpc-endpoint https://NETWORK.infura.io/v3/YOUR_INFURA_TOKEN making sure to run Raiden on the same network as Infura. If you're on Goerli, you can skip signing up for Infura and use --eth-rpc-endpoint https://rpc.slock.it/goerli
 
   Find the Red Eyes Mainnet Tutorial documentation [here](https://raiden-network.readthedocs.io/en/latest/red_eyes_mainnet_tutorial.html)
 
@@ -636,18 +739,11 @@ plasma: >
 
   /back to menu
 
-channels: >
-
-  Raiden vs. other Ethereum state channels:
-
-  WIP
-
-
-  /back to menu
-
 monitoring: >
 
   Monitoring Services:
+
+  The [MS](https://raiden-network-specification.readthedocs.io/en/latest/monitoring_service.html) allows users to go offline safely by watching open payment channels. The [Raiden Service Bundle (RSB)](https://medium.com/raiden-network/raiden-service-bundle-explained-f9bd3f6f358d) registry is planned to list all service providers.
 
   Watchtower scaling: Lightning VS Raiden [#1](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-differences-c8eb0f724e68), [#2](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-monitoring-services-solutions-e243f7793d19) and [#3](https://medium.com/crypto-punks/lightning-vs-raiden-watchtowers-accountability-business-models-celer-pisa-833384f01ad0)
 
@@ -658,7 +754,7 @@ pathfinding: >
 
   Pathfinding Services
 
-  [PFS](https://raiden-network-specification.readthedocs.io/en/latest/pathfinding_service.html#raiden-pathfinding-service) specs and [Raiden Services Documentation (latest)](https://raiden-services.readthedocs.io/en/latest/).
+  The [PFS](https://raiden-network-specification.readthedocs.io/en/latest/pathfinding_service.html#raiden-pathfinding-service) specs and [Raiden Services Documentation (latest)](https://raiden-services.readthedocs.io/en/latest/) is part of Raiden Services which will allow for finding short or cheap routes through the network. The [Raiden Service Bundle (RSB)](https://medium.com/raiden-network/raiden-service-bundle-explained-f9bd3f6f358d) registry is planned to list all service providers.
 
   /back to menu.
 
@@ -716,7 +812,7 @@ obsolete: >
 
 everything: >
 
-  [Make me one with everything](https://github.com/mat7ias/RaidenResourcesBot/blob/master/README.md) - Gandhi
+  [Awesome Raiden](https://github.com/mat7ias/awesome-raiden) - A Buddhist monk
 
 
   /back to menu.
