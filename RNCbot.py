@@ -1,5 +1,5 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Job, JobQueue
-from telegram import ChatAction
+from telegram import ChatAction #is this needed?
 import logging
 import time
 import os
@@ -21,16 +21,16 @@ logger.info("Running "+sys.argv[0])
 
 ##### Open config_file
 
-if os.path.isfile("bot/RaidenBot/config.yaml"):
-    with open("bot/RaidenBot/config.yaml") as config_file:
+if os.path.isfile("./config.yaml"):
+    with open("./config.yaml") as config_file:
         config = yaml.load(config_file)
 else:
     exit("No configuration file 'config.yaml' found")
     sys.exit()
 
-
-if os.path.isfile("bot/RaidenBot/fortunes.json"):
-    with open("bot/RaidenBot/fortunes.json") as fortunes_file:
+##### Open fortune cookies
+if os.path.isfile("./fortunes.json"):
+    with open("./fortunes.json") as fortunes_file:
         fortunes = json.load(fortunes_file)
 else:
     print("No fortune cookies file 'fortunes.json' found")
@@ -44,7 +44,7 @@ RNC                  = config['RNC_ID']
 RNC_PLAYGROUND       = config['RNC_PLAYGROUND_ID']
 
 
-
+##### global variables
 PRIOR_WELCOME_MSG_ID = {
 	RNC   : 0,
 	RNC_PLAYGROUND   : 0
@@ -192,12 +192,10 @@ def forwardfilter(bot, update):
     message_id = update.message.message_id
     user_id = update.message.from_user.id
     chat_id = update.message.chat.id
-    profile_pics = bot.getUserProfilePhotos(user_id=user_id)
-    if profile_pics.total_count == 0:
+#    profile_pics = bot.getUserProfilePhotos(user_id=user_id)
+    if PRIOR_WELCOME[chat_id] == 1 and user_id == PRIOR_USR_ID[chat_id]:
         bot.delete_message(chat_id=chat_id, message_id=message_id)
         pprint('forwarded photo')
-
-    ## check blacklist for forwards with "recruiting members!" and "Join now for free!"
 
 ############################### New Member #####################################
 
@@ -214,22 +212,18 @@ def new_chat_member(bot, update, job_queue):
 
 #### Welcome and give permissions
     if update.message.chat.type == 'supergroup':
+        bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
         bot.delete_message(chat_id=chat_id,message_id=message_id)
-        if (profile_pics.total_count == 0 or tag == None):
-            bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
-            pprint('New Member. No profile pic or tag')
-        else:
-            bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=True,can_send_other_messages=False,can_add_web_page_previews=False)
-            pprint('New Member')
-        if (len(name) < 14):
+        pprint('New Member')
+        if (len(tag) < 14):
             if tag != None:
-                if PRIOR_WELCOME_MSG_ID[chat_id] > 0:
+                if (PRIOR_WELCOME_MSG_ID[chat_id] > 0 and profile_pics.total_count != 0):
                     bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
                     PRIOR_WELCOME[chat_id] = 0
                 msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
                 message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 PRIOR_WELCOME_MSG_ID[chat_id] = int(message.message_id)
-                job = job_queue.run_once(welcome_destruct, 300, context=chat_id)
+                job = job_queue.run_once(welcome_destruct, 300, context=(chat_id, user_id))
             elif profile_pics.total_count != 0:
                 if PRIOR_WELCOME_MSG_ID[chat_id] > 0:
                     bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
@@ -237,7 +231,7 @@ def new_chat_member(bot, update, job_queue):
                 msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
                 message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 PRIOR_WELCOME_MSG_ID[chat_id] = int(message.message_id)
-                job = job_queue.run_once(welcome_destruct, 300, context=chat_id)
+                job = job_queue.run_once(welcome_destruct, 300, context=(chat_id, user_id))
         else:
             pprint('Long name')
 
@@ -686,14 +680,17 @@ def mentions(bot, update):
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
     msg = config['mentions']
+    message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
             remove(bot, update)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
-        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+        PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
+        PRIOR_CMD_ID[chat_id] = int(message_id)
     else:
-        bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(bunnylist), "rb"))
+        bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 def bunny(bot, update):
     pprint(update.message.chat.__dict__, indent=4)
@@ -1065,30 +1062,39 @@ def remove(bot, update):
                 print("Ending FAQ")
         else:
             bot.delete_message(chat_id=chat_id, message_id=message_id)
+#    else:   ###maybe make remove function work anytime
+#        if ((chat_id == RNC or chat_id == RNC_PLAYGROUND) and PRIOR_CMD_MSG_ID[chat_id] > 0):
+#            delete(chat_id)
 
 ###################################### Secret ##################################
 
 ###### send self destruct message
 def self_destruct(bot, job):
-    message = bot.send_message(job.context, text='Message self destructing.')
-    bot.sendChatAction(job.context, ChatAction.TYPING)
+    chat_id = job.context[0]
+    user_id = job.context[1]
+    message = bot.send_message(chat_id, text='Message self destructing.')
+    bot.sendChatAction(chat_id, ChatAction.TYPING)
     time.sleep(5)
-    bot.delete_message(job.context,message_id=message.message_id)
+    bot.delete_message(chat_id,message_id=message.message_id)
     try:
-        bot.delete_message(job.context,message_id=PRIOR_CMD_MSG_ID[job.context])
-        bot.delete_message(job.context,message_id=PRIOR_SCRT_MSG_ID[job.context])
-        message = bot.send_message(job.context, text='Message self destructed.')
+        bot.delete_message(chat_id,message_id=PRIOR_CMD_MSG_ID[chat_id])
+        bot.delete_message(chat_id,message_id=PRIOR_SCRT_MSG_ID[chat_id])
+        message = bot.send_message(chat_id, text='Message self destructed.')
     except:
         print("Message already deleted.")
-    PRIOR_SCRT_MSG_ID[job.context] = 0
+    PRIOR_SCRT_MSG_ID[chat_id] = 0
     print("Message self destruct success")
 
 def welcome_destruct(bot, job):
-    if PRIOR_WELCOME[job.context] != 0:
-        bot.delete_message(job.context,message_id=PRIOR_WELCOME_MSG_ID[job.context])
-        PRIOR_WELCOME[job.context] = 0
-        PRIOR_WELCOME_MSG_ID[job.context] = 0
+    chat_id = job.context[0]
+    user_id = job.context[1]
+    if PRIOR_WELCOME[chat_id] != 0:
+        bot.delete_message(chat_id,message_id=PRIOR_WELCOME_MSG_ID[chat_id])
+        PRIOR_WELCOME[chat_id] = 0
+        PRIOR_WELCOME_MSG_ID[chat_id] = 0
         print("Welcome destruct success")
+    bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=True,can_send_other_messages=False,can_add_web_page_previews=False)
+    print("time-increase permissions")
 
 ###### register self destruct command and arg
 def secret(bot, update, args, job_queue):
@@ -1226,8 +1232,6 @@ def prev_botpoints(bot, update):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['counts']['botpoints'] = int(value)
 
-
-
 ###############################################################################
 
 ###### Error logging
@@ -1245,7 +1249,7 @@ def main():
     dp = updater.dispatcher
 
 ##### CommandHandlers
-    dp.add_handler(CommandHandler('getid', getid))
+    dp.add_handler(CommandHandler("getid", getid))
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("commands", commands))
     dp.add_handler(CommandHandler("extras", extras))
