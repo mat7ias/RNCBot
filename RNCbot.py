@@ -1,5 +1,5 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Job, JobQueue
-from telegram import ChatAction #is this needed?
+from telegram import ChatAction, ChatPermissions
 import logging
 import time
 import os
@@ -23,7 +23,7 @@ logger.info("Running "+sys.argv[0])
 
 if os.path.isfile("./config.yaml"):
     with open("./config.yaml") as config_file:
-        config = yaml.load(config_file)
+        config = yaml.load(config_file, Loader=yaml.FullLoader)
 else:
     exit("No configuration file 'config.yaml' found")
     sys.exit()
@@ -114,7 +114,7 @@ def delete(chat_id):
 
 ############################ Spam/Scam/Flood/Edit filter #######################
 
-def spamfilter(bot, update):
+def spamfilter(update, context):
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
     message_id = update.message.message_id
@@ -139,8 +139,8 @@ def spamfilter(bot, update):
 ##### Blacklist filter
         for x in blacklist:
             if x in text:
-                bot.delete_message(chat_id=chat_id, message_id=message_id)
-                bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
+                context.bot.delete_message(chat_id=chat_id, message_id=message_id)
+                context.bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
                 pprint('blacklisted word')
 
 ##### Scam Triggers
@@ -148,7 +148,7 @@ def spamfilter(bot, update):
             if y in text:
                 badword = y
                 msg = ("#No"+str(badword)+", watch out for scams!")
-                bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                context.bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
 ##### Flood filter
     if (user_id == previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
@@ -159,10 +159,10 @@ def spamfilter(bot, update):
             if spammerid != user_id:
                 spammerid = user_id
                 PRIOR_USR_ID[chat_id] = user_id
-                bot.delete_message(chat_id=chat_id, message_id=message_id)
-                bot.restrictChatMember(chat_id,user_id = spammerid,can_send_messages=False,until_date=time.time()+int(float(60)*60)) # 60 min restriction
+                context.bot.delete_message(chat_id=chat_id, message_id=message_id)
+                context.bot.restrictChatMember(chat_id,user_id = spammerid,can_send_messages=False,until_date=time.time()+int(float(60)*60)) # 60 min restriction
                 msg = ("Whoa there "+str(name)+"! You're typing at \xE2\x9A\xA1 speed! My flood filter has turned on to cool off that \xF0\x9F\x94\xA5 for an hour.")
-                bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                context.bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 pprint(spammerid)
                 count = 0
     elif (user_id != previous_user) and (chat_id == RNC or chat_id == RNC_PLAYGROUND):
@@ -176,7 +176,7 @@ def spamfilter(bot, update):
 
 ##### Edit message filter
 
-def editfilter(bot, update):
+def editfilter(update, context):
     text = update.edited_message.text
     message_id = update.edited_message.message_id
     chat_id = update.edited_message.chat.id
@@ -188,7 +188,7 @@ def editfilter(bot, update):
                 pprint('blacklisted edited word')
 
 ##### Forwarded photo filter
-def forwardfilter(bot, update):
+def forwardfilter(update, context):
     message_id = update.message.message_id
     user_id = update.message.from_user.id
     chat_id = update.message.chat.id
@@ -199,51 +199,50 @@ def forwardfilter(bot, update):
 
 ############################### New Member #####################################
 
-def new_chat_member(bot, update, job_queue):
+def new_chat_member(update, context):
     user_id = update.message.from_user.id
     message_id = update.message.message_id
     chat_id = update.message.chat.id
     tag = update.message.from_user.username
     name = get_name(update.message.from_user)
-    profile_pics = bot.getUserProfilePhotos(user_id=user_id)
+    profile_pics = context.bot.getUserProfilePhotos(user_id=user_id)
+
 ##### Turn on welcome destruct timer
     if PRIOR_WELCOME[chat_id] == 0:
         PRIOR_WELCOME[chat_id] = 1
-
-#### Welcome and give permissions
-    if update.message.chat.type == 'supergroup':
-        bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
+#### Welcome
+    if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         bot.delete_message(chat_id=chat_id,message_id=message_id)
         pprint('New Member')
         if (len(tag) < 14):
             if tag != None:
                 if (PRIOR_WELCOME_MSG_ID[chat_id] > 0 and profile_pics.total_count != 0):
-                    bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
+                    context.bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
                     PRIOR_WELCOME[chat_id] = 0
-                msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
-                message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](http://discord.raiden.community) for feeds on all things Raiden\xE2\x9A\xA1")
+                message = context.bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 PRIOR_WELCOME_MSG_ID[chat_id] = int(message.message_id)
-                job = job_queue.run_once(welcome_destruct, 300, context=(chat_id, user_id))
+                job = context.job_queue.run_once(welcome_destruct, 300, context=(chat_id, user_id))
             elif profile_pics.total_count != 0:
                 if PRIOR_WELCOME_MSG_ID[chat_id] > 0:
-                    bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
+                    context.bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
                     PRIOR_WELCOME[chat_id] = 0
-                msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](https://discord.gg/zZjYJ6e) for feeds on all things Raiden\xE2\x9A\xA1")
-                message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
+                msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](http://discord.raiden.community) for feeds on all things Raiden\xE2\x9A\xA1")
+                message = context.bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 PRIOR_WELCOME_MSG_ID[chat_id] = int(message.message_id)
-                job = job_queue.run_once(welcome_destruct, 300, context=(chat_id, user_id))
+                job = context.job_queue.run_once(welcome_destruct, 300, context=(chat_id, user_id))
         else:
             pprint('Long name')
 
 ################################ Commands ######################################
 
-def getid(bot, update):
+def getid(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
     chat_id = update.message.chat.id
     update.message.reply_text(str(update.message.from_user.first_name)+" : "+str(update.message.from_user.id))
 
-def start(bot, update):
+def start(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
     chat_id = update.message.chat.id
@@ -254,14 +253,14 @@ def start(bot, update):
         msg = config['start']
         update.message.reply_text("Hey "+str(update.message.chat.first_name)+"! I'm a resource bot, message me here or in @RaidenNetworkCommunity telegram group.\n\nGet a list of my commands with /commands")
 
-def commands(bot, update):
+def commands(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['commands']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -270,14 +269,14 @@ def commands(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def extras(bot, update):
+def extras(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
     chat_id = update.message.chat.id
     msg = config['extras']
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -286,14 +285,14 @@ def extras(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def community(bot, update):
+def community(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['community']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -302,14 +301,14 @@ def community(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def platforms(bot, update):
+def platforms(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['platforms']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -318,14 +317,14 @@ def platforms(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def heybot(bot, update):
+def heybot(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
     chat_id = update.message.chat.id
     msg = ("Hey "+str(update.message.from_user.first_name)+"! What's up?")
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -334,14 +333,14 @@ def heybot(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def resources(bot, update):
+def resources(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['resources']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -350,14 +349,14 @@ def resources(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def events(bot, update):
+def events(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['events']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -366,14 +365,14 @@ def events(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def previousevents(bot, update):
+def previousevents(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['previousevents']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -382,14 +381,14 @@ def previousevents(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def videos(bot, update):
+def videos(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['videos']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -398,14 +397,14 @@ def videos(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def uraiden(bot, update):
+def uraiden(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['uraiden']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -414,7 +413,7 @@ def uraiden(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def whenmoon(bot, update):
+def whenmoon(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['whenmoon']
@@ -434,14 +433,14 @@ def whenmoon(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def rules(bot, update):
+def rules(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['rules']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -450,13 +449,13 @@ def rules(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def tokenmodel(bot, update):
+def tokenmodel(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['tokenmodel']
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -465,14 +464,14 @@ def tokenmodel(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def adminlist(bot, update):
+def adminlist(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['adminlist']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -481,19 +480,19 @@ def adminlist(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def ignorethat(bot, update):
+def ignorethat(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     update.message.reply_text("I'm not sure I want to ignore that, "+str(update.message.from_user.first_name)+"...")
 
-def devcon(bot, update):
+def devcon(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['devcon']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         elif PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -502,7 +501,7 @@ def devcon(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def adminpolicy(bot, update):
+def adminpolicy(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     message_id = update.message.message_id
     chat_id = update.message.chat.id
@@ -513,14 +512,14 @@ def adminpolicy(bot, update):
         msg = config['adminpolicy']
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def pulse(bot, update):
+def pulse(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['pulse']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -529,14 +528,14 @@ def pulse(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def nightly(bot, update):
+def nightly(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['nightly']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -545,14 +544,14 @@ def nightly(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def releases(bot, update):
+def releases(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['releases']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -561,14 +560,14 @@ def releases(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def email(bot, update):
+def email(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['email']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -577,14 +576,14 @@ def email(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def brainbot(bot, update):
+def brainbot(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['brainbot']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -593,19 +592,19 @@ def brainbot(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def RemindMeIn5Years(bot, update):
+def RemindMeIn5Years(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     update.message.reply_text("Setting a reminder for "+str(update.message.from_user.first_name)+" 5 years from now.")
 
-def disclaimer(bot, update):
+def disclaimer(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['disclaimer']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -614,14 +613,14 @@ def disclaimer(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def rapps(bot, update):
+def rapps(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['rapps']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -630,14 +629,14 @@ def rapps(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def faucets(bot, update):
+def faucets(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['faucets']
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -646,19 +645,19 @@ def faucets(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def lefteris(bot, update):
+def lefteris(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     lefterislist=["/home/ubuntu/lefteris.jpg", "/home/ubuntu/lefteris2.jpg"]
     bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(lefterislist), "rb"))
 
-def meme(bot, update):
+def meme(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     memelist=["/home/ubuntu/meme.mp4", "/home/ubuntu/meme3.mp4", "/home/ubuntu/meme6.mp4", "/home/ubuntu/meme7.mp4", "/home/ubuntu/meme8.mp4"]
     bot.sendVideo(chat_id=chat_id,timeout=13, video=open(random.choice(memelist), "rb"))
 
-def weeklyupdate(bot, update):
+def weeklyupdate(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
@@ -666,7 +665,7 @@ def weeklyupdate(bot, update):
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -675,7 +674,7 @@ def weeklyupdate(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def mentions(bot, update):
+def mentions(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
@@ -683,7 +682,7 @@ def mentions(bot, update):
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -692,7 +691,7 @@ def mentions(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def bunny(bot, update):
+def bunny(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
@@ -700,7 +699,7 @@ def bunny(bot, update):
     bunnylist=["/home/ubuntu/rabbitpic.jpg", "/home/ubuntu/rabbit1.jpg", "/home/ubuntu/rabbit2.jpg", "/home/ubuntu/rabbit3.jpg", "/home/ubuntu/rabbit4.jpg", "/home/ubuntu/rabbit5.jpg", "/home/ubuntu/rabbit6.jpg", "/home/ubuntu/rabbit7.jpg", "/home/ubuntu/rabbit8.jpg", "/home/ubuntu/rabbit9.jpg", "/home/ubuntu/rabbit10.jpg", "/home/ubuntu/rabbit11.jpg", "/home/ubuntu/rabbit12.jpg", "/home/ubuntu/rabbit13.jpg", "/home/ubuntu/rabbit14.jpg", "/home/ubuntu/rabbit15.jpg", "/home/ubuntu/rabbit16.jpg", "/home/ubuntu/rabbit17.jpg", "/home/ubuntu/rabbit18.jpg", "/home/ubuntu/rabbit19.jpg"]
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(bunnylist), "rb"))
@@ -710,14 +709,14 @@ def bunny(bot, update):
         bot.sendPhoto(chat_id=chat_id, photo=open(random.choice(bunnylist), "rb"))
 
 
-def fistbump(bot, update):
+def fistbump(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = '\xF0\x9F\x91\x8A'
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -726,14 +725,14 @@ def fistbump(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def doublefistbump(bot, update):
+def doublefistbump(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = '\xF0\x9F\x91\x8A \xF0\x9F\x91\x8A'
     message_id = update.message.message_id
     if (chat_id == RNC or chat_id == RNC_PLAYGROUND):
         if FAQ[chat_id] == True:
-            remove(bot, update)
+            remove(update, context)
         if PRIOR_CMD_MSG_ID[chat_id] > 0:
             delete(chat_id)
         message = bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -742,7 +741,7 @@ def doublefistbump(bot, update):
     else:
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
 
-def fortune(bot, update):
+def fortune(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
@@ -765,7 +764,7 @@ def fortune(bot, update):
 
 ############################### FAQ functions ##################################
 
-def communityfaq(bot, update):
+def communityfaq(update, context):
 
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
@@ -788,7 +787,7 @@ def communityfaq(bot, update):
     else:
         bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def mainnet(bot, update):
+def mainnet(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['mainnet']
@@ -803,7 +802,7 @@ def mainnet(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def testnet(bot, update):
+def testnet(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['testnet']
@@ -818,7 +817,7 @@ def testnet(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def standardization(bot, update):
+def standardization(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['standardization']
@@ -833,7 +832,7 @@ def standardization(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def plasma(bot, update):
+def plasma(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['plasma']
@@ -848,7 +847,7 @@ def plasma(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def channels(bot, update):
+def channels(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['channels']
@@ -863,7 +862,7 @@ def channels(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def monitoring(bot, update):
+def monitoring(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['monitoring']
@@ -878,7 +877,7 @@ def monitoring(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def pathfinding(bot, update):
+def pathfinding(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['pathfinding']
@@ -893,7 +892,7 @@ def pathfinding(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def cost(bot, update):
+def cost(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['cost']
@@ -908,7 +907,7 @@ def cost(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def speed(bot, update):
+def speed(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['speed']
@@ -923,7 +922,7 @@ def speed(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def privacy(bot, update):
+def privacy(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['privacy']
@@ -938,7 +937,7 @@ def privacy(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def future(bot, update):
+def future(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['future']
@@ -953,7 +952,7 @@ def future(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def developers(bot, update):
+def developers(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['developers']
@@ -968,7 +967,7 @@ def developers(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def obsolete(bot, update):
+def obsolete(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['obsolete']
@@ -983,7 +982,7 @@ def obsolete(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def token(bot, update):
+def token(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['token']
@@ -998,7 +997,7 @@ def token(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def CommunityFAQdisclaimer(bot, update):
+def CommunityFAQdisclaimer(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['CommunityFAQdisclaimer']
@@ -1014,7 +1013,7 @@ def CommunityFAQdisclaimer(bot, update):
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
 
-def everything(bot, update):
+def everything(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['everything']
@@ -1029,7 +1028,7 @@ def everything(bot, update):
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def back(bot, update):
+def back(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     message_id = update.message.message_id
@@ -1037,11 +1036,11 @@ def back(bot, update):
         if (chat_id == RNC or chat_id == RNC_PLAYGROUND) and (PRIOR_CMD_MSG_ID[chat_id] != PRIOR_FAQ_MSG_ID[chat_id]):
             delete(chat_id)
             bot.delete_message(chat_id=chat_id,message_id=message_id)
-            communityfaq(bot, update)
+            communityfaq(update, context)
         else:
             bot.delete_message(chat_id=chat_id,message_id=message_id)
 
-def remove(bot, update):
+def remove(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat.id
     msg = config['remove']
@@ -1069,12 +1068,10 @@ def remove(bot, update):
 ###################################### Secret ##################################
 
 ###### send self destruct message
-def self_destruct(bot, job):
-    chat_id = job.context[0]
-    user_id = job.context[1]
+def self_destruct(context):
+    chat_id = context.job.context[0]
+    user_id = context.job.context[1]
     message = bot.send_message(chat_id, text='Message self destructing.')
-    bot.sendChatAction(chat_id, ChatAction.TYPING)
-    time.sleep(5)
     bot.delete_message(chat_id,message_id=message.message_id)
     try:
         bot.delete_message(chat_id,message_id=PRIOR_CMD_MSG_ID[chat_id])
@@ -1085,19 +1082,17 @@ def self_destruct(bot, job):
     PRIOR_SCRT_MSG_ID[chat_id] = 0
     print("Message self destruct success")
 
-def welcome_destruct(bot, job):
-    chat_id = job.context[0]
-    user_id = job.context[1]
+def welcome_destruct(context):
+    chat_id = context.job.context[0]
+    user_id = context.job.context[1]
     if PRIOR_WELCOME[chat_id] != 0:
         bot.delete_message(chat_id,message_id=PRIOR_WELCOME_MSG_ID[chat_id])
         PRIOR_WELCOME[chat_id] = 0
         PRIOR_WELCOME_MSG_ID[chat_id] = 0
         print("Welcome destruct success")
-    bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,until_date=(time.time()+int(float(6000)*6000)),can_send_messages=True,can_send_media_messages=True,can_send_other_messages=False,can_add_web_page_previews=False)
-    print("time-increase permissions")
 
 ###### register self destruct command and arg
-def secret(bot, update, args, job_queue):
+def secret(update, context, args):
     pprint(update.message.chat.__dict__, indent=4)
     chat_id = update.message.chat_id
     message_id = update.message.message_id
@@ -1127,7 +1122,7 @@ def secret(bot, update, args, job_queue):
                     PRIOR_SCRT_MSG_ID[chat_id] = int(secret_id)
                     PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
                     PRIOR_CMD_ID[chat_id] = int(message_id)
-                    job = job_queue.run_once(self_destruct, due, context=chat_id)
+                    job = context.job_queue.run_once(self_destruct, due, context=chat_id)
                     try:
                         bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
                     except:
@@ -1139,7 +1134,7 @@ def secret(bot, update, args, job_queue):
                 PRIOR_SCRT_MSG_ID[chat_id] = int(secret_id)
                 PRIOR_CMD_MSG_ID[chat_id] = int(message.message_id)
                 PRIOR_CMD_ID[chat_id] = int(message_id)
-                job = job_queue.run_once(self_destruct, 60, context=chat_id)
+                job = context.job_queue.run_once(self_destruct, 60, context=chat_id)
                 try:
                     bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
                 except:
@@ -1147,13 +1142,13 @@ def secret(bot, update, args, job_queue):
         else:
             print("Secret failed. Not in RNC or not same user")
             try:
-                bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
+                context.bot.delete_message(chat_id=chat_id,message_id=PRIOR_CMD_ID[chat_id])
             except:
                 print("Message already deleted.")
 
 
 ############################### Bot points functions ###########################
-def goodbot(bot, update):
+def goodbot(update, context):
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
     botpoints = config['counts']['botpoints']
@@ -1172,7 +1167,7 @@ def goodbot(bot, update):
         config['counts']['botpoints'] = botpoints
         config['previous']['botpoints_id'] = user_id
 
-def badbot(bot, update):
+def badbot(update, context):
     chat_id = update.message.chat.id
     user_id = update.message.from_user.id
     botpoints = config['counts']['botpoints']
@@ -1190,7 +1185,7 @@ def badbot(bot, update):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['counts']['botpoints'] = botpoints
 
-def botpoints(bot, update):
+def botpoints(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     user_id = update.message.from_user.id
     chat_id = update.message.chat.id
@@ -1210,7 +1205,7 @@ def botpoints(bot, update):
 
 ############################### Misc functions #################################
 ###### Edit time to moon/points
-def prev_moon(bot, update):
+def prev_moon(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     user_id = update.message.from_user.id
     chat_id = update.message.chat.id
@@ -1221,7 +1216,7 @@ def prev_moon(bot, update):
         bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
         config['counts']['moon'] = int(value)
 
-def prev_botpoints(bot, update):
+def prev_botpoints(update, context):
     pprint(update.message.chat.__dict__, indent=4)
     user_id = update.message.from_user.id
     chat_id = update.message.chat.id
@@ -1235,7 +1230,7 @@ def prev_botpoints(bot, update):
 ###############################################################################
 
 ###### Error logging
-def error(bot, update, error):
+def error(update, error):
     logger.warning('Update "%s" caused error "%s"', update, error)
 
 ###### Running the bot
@@ -1243,7 +1238,7 @@ def main():
     print("Bot started")
 
 ##### Create the EventHandler and pass it your bot's token
-    updater = Updater(bot_token,workers=10)
+    updater = Updater(bot_token, use_context=True)
 
 ##### Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -1322,8 +1317,10 @@ def main():
 ##### MessageHandlers
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_chat_member, pass_job_queue=True))
     dp.add_handler(MessageHandler((Filters.forwarded & Filters.photo), forwardfilter))
-    dp.add_handler(MessageHandler(Filters.all, spamfilter,edited_updates=False))
-    dp.add_handler(MessageHandler(Filters.all, editfilter,edited_updates=True))
+    dp.add_handler(MessageHandler(Filters.update.edited_message, editfilter))
+    dp.add_handler(MessageHandler(Filters.forwarded, forwardfilter))
+    dp.add_handler(MessageHandler(Filters.text & (~ (Filters.forwarded | Filters.update.edited_message)), spamfilter))
+
 
 ##### Error handler
     dp.add_error_handler(error)
