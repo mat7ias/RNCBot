@@ -118,7 +118,7 @@ resources: >
 
   [Raiden Network Roadmap](https://raiden.network/roadmap.html)
 
-  [Documentation](https://readthedocs.org/projects/raiden-network/), [Services](https://raiden-services.readthedocs.io/en/latest/), [Raiden Wizard](https://github.com/raiden-network/raiden-documentation)
+  [Documentation](https://readthedocs.org/projects/raiden-network/), [Services](https://raiden-services.readthedocs.io/en/latest/), [Raiden Website docs](https://docs.raiden.network/)
 
   [Specification PDF](https://media.readthedocs.org/pdf/raiden-network-specification/latest/raiden-network-specification.pdf)
 
@@ -136,7 +136,7 @@ resources: >
 
   [Raiden Workshop Configurator](https://workshops.raiden.network/)
 
-  /more
+  /extras
 
 more: >
 
@@ -166,21 +166,23 @@ platforms: >
 
   Connect to the RNC community through different platforms!
 
-  [Discord](https://discord.gg/zZjYJ6e)
+  [Discord](discord.raiden.community)
 
   [Slack](https://join.slack.com/t/raidencommunity/shared_invite/enQtNTQwMTM5MjY4MTQ4LTBlOTQzMjUyOGFkMTgwOGQyMmMyNTE0MmI0YmI4OTQ5MjY3N2FkYTVlNWRkODdkNmIwMWQzZDBjODAyZGFhOWI)
 
-  [Matrix/Riot](https://riot.im/app/#/room/#raidencommunity:matrix.org)
+  [Matrix/Riot](riot.raiden.community)
 
 events: >
 
   Upcoming conferences/hackathons/related meetups:
 
-  October 8th-11th - [Devcon5](http://devcon.org)
+  November 14th - [Frankfurt Ethereum Meetup](https://www.meetup.com/Ethereum-Frankfurt/events/266103899/)
 
 previousevents: >
 
   Recent Events:
+
+  October 8th-11th - [Devcon5](http://devcon.org)
 
   August 21st -[ETHBerlin Opening Party](https://www.eventbrite.com/e/ethberlinzwei-presents-the-opening-party-tickets-68470784961)
 
@@ -531,7 +533,7 @@ projects: >
 
   [Storj](https://github.com/stefanbenten/raiden-on-storj), [Medium post](https://storj.io/blog/2018/12/taking-payments-to-the-next-level-with-raiden/) - decentralized cloud storage
 
-  [Exchange Union XUD](https://github.com/ExchangeUnion/xud/), cover of the [integration idea](https://hackmd.io/s/SyZOK0OfN)
+  [Exchange Union XUD](https://github.com/ExchangeUnion/xud/), cover of the [integration idea](https://hackmd.io/s/SyZOK0OfN), mainnet [demo](https://youtu.be/3vzMJypkZVc) and [subsequent presentation](https://youtu.be/euSr9A6tI90)
 
   [Raiden Maps](https://medium.com/raiden-map/raiden-map-mockups-5586082693bf), [Github](https://github.com/raiden-map)
 
@@ -573,15 +575,27 @@ adminpolicy: >
 
 mentions: >
 
-  note: list not up-to-date. More RApps and Tools [found here](https://github.com/raiden-network/awesome-raiden)
+  note: More RApps and Tools [found here](https://github.com/raiden-network/awesome-raiden)
 
   Some of the mentions of Raiden Network or MicroRaiden, including research:
+
+  Research citing: [SoK: Off The Chain Transactions](https://eprint.iacr.org/2019/360.pdf)
+
+  Research citing: [Perun: Virtual Payment Hubs over Cryptocurrencies](https://eprint.iacr.org/2017/635.pdf)
+
+  Research citing: [Elastic and cost-effective data carrier architecture for smart contract in blockchain](https://www.sciencedirect.com/science/article/pii/S0167739X18328334) - costs
+
+  Research citing: [ForceMove: an n-party state channel protocol](https://magmo.com/force-move-games.pdf)
+
+  [decrypt](https://decrypt.co/resources/raiden-network)
+
+  [Alchemy](https://medium.com/@rianstalkers/alchemy-e5d7ac6a20a9)
 
   [PyCon Thailand](https://youtu.be/hr_cPSvE8Ao) - Pisuth Daengthongdee
 
   [Serenity Source](https://medium.com/@pakradenmas66/serenity-source-8002d175e267)
 
-  [Lumino](https://github.com/rsksmart/lumino)
+  [Lumino](https://github.com/rsksmart/lumino) - Raiden Network fork
 
   [GridPlus](https://drive.google.com/file/d/0Bz90riPGRHquNDVXVE81RmppaUk/view)
 
@@ -604,6 +618,8 @@ mentions: >
   [Augur](https://medium.com/@AugurProject/augur-master-plan-42dda65a3e3d)
 
   [Altcoin.io](https://www.altcoin.io/) Atomic Swap DEX
+
+  [OpenDEX Network](https://opendex.network/) a community maintaining the OpenDEX protocol specifications called BOLD
 
   [Credit Protocol](https://blockmason.io/cp-whitepaper/Introduction-amp-Features/) Democratized credit
 
