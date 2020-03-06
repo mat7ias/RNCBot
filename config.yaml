@@ -14,16 +14,15 @@ counts:
 
 previous_msg: []
 previous_msg_id: 0
-blacklisted: []
-triggers: []
+blacklisted: ["/potato", "7、", "mytoken", "电报/微信群拉币圈活人", "https://t.me/", "http://bit.ly", "tinyurl.com", "Chimera", "ewoplacechina", "TheShelters", "Signals", "@maximumpump", "Details for the pump","https://m.bihu.com/article/1485909230?from=singlemessage&isappinstalled=0","http://t.cn/","BotTestedNoScam"]
+triggers: ["airdrop","air drop","giveaway","Airdrop","Air drop","Giveaway"]
 
 #Admins IDs
 ADMINS:
   - 
-  - 
 
-RNC_ID: 
-RNC_PLAYGROUND_ID: 
+RNC_ID: -1001241070370
+RNC_PLAYGROUND_ID: -1001378039121
 
 ################################# Messages #####################################
 pmme: >
