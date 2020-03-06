@@ -217,7 +217,7 @@ def new_chat_member(update, context):
         if (len(tag) < 14):
             if tag != None:
                 if (PRIOR_WELCOME_MSG_ID[chat_id] > 0 and profile_pics.total_count != 0):
-                    context.bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
+                    bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
                     PRIOR_WELCOME[chat_id] = 0
                 msg = ("Welcome @"+str(tag)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](http://discord.raiden.community) for feeds on all things Raiden\xE2\x9A\xA1")
                 message = context.bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
@@ -225,7 +225,7 @@ def new_chat_member(update, context):
                 job = context.job_queue.run_once(welcome_destruct, 300, context=(chat_id, user_id))
             elif profile_pics.total_count != 0:
                 if PRIOR_WELCOME_MSG_ID[chat_id] > 0:
-                    context.bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
+                    bot.delete_message(chat_id=chat_id, message_id=PRIOR_WELCOME_MSG_ID[chat_id])
                     PRIOR_WELCOME[chat_id] = 0
                 msg = ("Welcome "+str(name)+"! Check out our [Pinned Post](https://t.me/RaidenNetworkCommunity/2) and community [Discord](http://discord.raiden.community) for feeds on all things Raiden\xE2\x9A\xA1")
                 message = context.bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
