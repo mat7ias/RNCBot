@@ -139,8 +139,8 @@ def spamfilter(update, context):
 ##### Blacklist filter
         for x in blacklist:
             if x in text:
-                context.bot.delete_message(chat_id=chat_id, message_id=message_id)
-                context.bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
+                bot.delete_message(chat_id=chat_id, message_id=message_id)
+                bot.restrict_chat_member(chat_id=chat_id,user_id=user_id,can_send_messages=False,can_send_media_messages=False,can_send_other_messages=False,can_add_web_page_previews=False)
                 pprint('blacklisted word')
 
 ##### Scam Triggers
@@ -159,9 +159,9 @@ def spamfilter(update, context):
             if spammerid != user_id:
                 spammerid = user_id
                 PRIOR_USR_ID[chat_id] = user_id
-                context.bot.delete_message(chat_id=chat_id, message_id=message_id)
-                context.bot.restrictChatMember(chat_id,user_id = spammerid,can_send_messages=False,until_date=time.time()+int(float(60)*60)) # 60 min restriction
-                msg = ("Whoa there "+str(name)+"! You're typing at \xE2\x9A\xA1 speed! My flood filter has turned on to cool off that \xF0\x9F\x94\xA5 for an hour.")
+                bot.delete_message(chat_id=chat_id, message_id=message_id)
+#                bot.restrictChatMember(chat_id,user_id = spammerid,can_send_messages=False,until_date=time.time()+int(float(60)*60)) # 60 min restriction
+#                msg = ("Whoa there "+str(name)+"! You're typing at \xE2\x9A\xA1 speed! My flood filter has turned on to cool off that \xF0\x9F\x94\xA5 for an hour.")
                 context.bot.sendMessage(chat_id=chat_id,text=msg,parse_mode="Markdown",disable_web_page_preview=1)
                 pprint(spammerid)
                 count = 0
